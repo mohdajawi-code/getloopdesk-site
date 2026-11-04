@@ -1,0 +1,799 @@
+<title>Loopdesk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Loopdesk is a growth partner for appointment businesses: psychology that brings clients back and sells more. Its rhythm engine brings each client back at the right moment, in the name of the person they always see. For salons first, then cosmetic clinics, dentists and barbershops in the UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+/* Direction: calm premium tech. White space, one modern sans, large photography, very little decoration.
+   One quiet accent (rose) used only where the rhythm lives. */
+:root{
+  --bg:#FFFFFF; --soft:#F5F5F7; --ink:#0B0B0F; --ink-2:#3A3A42; --muted:#6E6E78; --line:#E6E6EA;
+  --rose:#D9466E; --rose-soft:#FBE8EE; --night:#0B0B0F; --on-night:#F5F5F7; --on-night-dim:#A1A1AA;
+  --font:"Geist", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ar:"IBM Plex Sans Arabic", "Geist", "Geeza Pro", Tahoma, sans-serif;
+  --r:24px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B0B0F; --soft:#16161B; --ink:#F5F5F7; --ink-2:#D4D4DA; --muted:#A1A1AA; --line:#26262D;
+  --rose:#F0739A; --rose-soft:#2A1820; --night:#16161B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B0B0F; --soft:#16161B; --ink:#F5F5F7; --ink-2:#D4D4DA; --muted:#A1A1AA; --line:#26262D;
+  --rose:#F0739A; --rose-soft:#2A1820; --night:#16161B; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+.narrow{max-width:760px}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:8px}
+p{margin:0} h1,h2,h3{margin:0}
+
+html.lang-ar .en, html:not(.lang-ar) .ar{display:none!important}
+html.lang-ar body{direction:rtl;font-family:var(--ar);letter-spacing:0}
+.ltr{direction:ltr;unicode-bidi:isolate}
+
+/* type scale 14 / 17 / 20 / 28 / 44 / 72 */
+.kicker{font-size:15px;font-weight:600;color:var(--rose);margin-bottom:14px}
+.h1{font-size:clamp(44px,7vw,80px);line-height:1.02;font-weight:650;letter-spacing:-.035em;text-wrap:balance}
+.h2{font-size:clamp(34px,4.6vw,56px);line-height:1.06;font-weight:650;letter-spacing:-.03em;text-wrap:balance}
+html.lang-ar .h1,html.lang-ar .h2{letter-spacing:0;line-height:1.3;font-weight:700}
+.sub{font-size:clamp(18px,1.7vw,21px);color:var(--muted);line-height:1.5;max-width:36em}
+.muted{color:var(--muted)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;font:600 16px var(--font);text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+html.lang-ar .btn{font-family:var(--ar)}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{opacity:.86}
+.btn-light{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-light:hover{border-color:var(--ink)}
+.btn-sm{height:38px;padding:0 16px;font-size:14px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb, var(--bg) 82%, transparent);backdrop-filter:saturate(1.6) blur(16px);-webkit-backdrop-filter:saturate(1.6) blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:650;font-size:19px;letter-spacing:-.02em}
+.logo svg{width:24px;height:24px}
+.nav-links{display:flex;gap:28px;font-size:15px;color:var(--ink-2)}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--ink)}
+.nav-right{display:flex;gap:8px;align-items:center}
+#langbtn{font-family:var(--ar)}
+html.lang-ar #langbtn{font-family:var(--font)}
+@media (max-width:860px){.nav-links{display:none}}
+@media (max-width:420px){.nav-right .btn-dark{display:none}}
+
+/* hero */
+.hero{text-align:center;padding-block:clamp(56px,9vw,120px) clamp(36px,5vw,56px)}
+.hero .h1{max-width:13em;margin:0 auto}
+.hero .sub{margin:22px auto 0}
+.hero .ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.hero .tiny{margin-top:18px;font-size:14px;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink-2);background:var(--soft);border-radius:999px;padding:6px 14px 6px 8px;margin-bottom:26px}
+.chip b{background:var(--rose);color:#fff;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:600}
+
+.showcase{position:relative;margin-bottom:clamp(40px,6vw,80px)}
+.photo{position:relative;overflow:hidden;border-radius:var(--r);background:var(--soft)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.showcase .photo{aspect-ratio:16/8.4;max-width:100%}
+.showcase .photo img{object-position:60% center}
+.wa{position:absolute;inset-inline-start:clamp(16px,4vw,48px);bottom:clamp(16px,4vw,48px);width:min(340px,80%);background:rgba(255,255,255,.92);color:#0B0B0F;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:20px;padding:14px;box-shadow:0 24px 60px -20px rgba(0,0,0,.35);font-size:15px;line-height:1.45}
+html.lang-ar .wa{inset-inline-start:auto;left:clamp(16px,4vw,48px)}
+.wa-head{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.av{width:32px;height:32px;border-radius:50%;background:#0B0B0F;color:#fff;display:grid;place-items:center;font-weight:600;font-size:14px;flex:none}
+.wa-head b{display:block;font-size:14px}
+.wa-head span{font-size:12px;color:#6E6E78}
+.bubble{background:#F1F1F4;border-radius:14px;border-start-start-radius:4px;padding:10px 12px}
+.bubble .t{display:block;text-align:end;font-size:11px;color:#8A8A94;margin-top:3px}
+.qr{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+.qr span{background:#fff;border:1px solid #E6E6EA;border-radius:10px;padding:8px;text-align:center;font-weight:600;font-size:14px;color:#D9466E}
+.example{font-size:11px;color:#8A8A94;margin-top:8px;text-transform:uppercase;letter-spacing:.06em}
+html.lang-ar .example{letter-spacing:0;font-size:12px}
+@media (max-width:700px){
+  .showcase .photo{aspect-ratio:4/5}
+  .showcase .photo img{object-position:72% center}
+  .wa{position:relative;inset:auto;left:auto;margin:-70px auto 0;width:min(360px,92%)}
+}
+
+/* statement */
+.statement{padding-block:clamp(48px,7vw,96px);border-top:1px solid var(--line)}
+.statement p{font-size:clamp(26px,3.3vw,40px);line-height:1.25;font-weight:550;letter-spacing:-.02em;max-width:24em;text-wrap:pretty}
+html.lang-ar .statement p{letter-spacing:0;line-height:1.6;font-weight:600}
+.statement p span{color:var(--muted)}
+
+
+/* messages */
+.words{padding-block:clamp(72px,9vw,128px)}
+.words-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:44px}
+.words-head > *{min-width:0}
+.msg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.mcard{min-width:0;background:var(--soft);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:16px}
+.moment{font-size:13px;font-weight:600;color:var(--rose);text-transform:uppercase;letter-spacing:.06em}
+html.lang-ar .moment{letter-spacing:0;text-transform:none;font-size:14px}
+.mcard .bubble{background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5;padding:14px 16px;border-radius:16px;border-start-start-radius:4px;box-shadow:0 1px 0 var(--line)}
+.why{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.why li{font-size:15px;color:var(--muted);padding-inline-start:16px;position:relative}
+.why li::before{content:"";position:absolute;inset-inline-start:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--rose)}
+.why b{display:block;color:var(--ink);font-weight:600}
+.fine{margin-top:20px;font-size:14px;color:var(--muted)}
+@media (max-width:860px){.words-head,.msg-grid{grid-template-columns:1fr}}
+/* rhythm */
+.rhythm{background:var(--soft);padding-block:clamp(72px,9vw,128px)}
+.rhythm-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.rhythm-grid > *{min-width:0}
+.rhythm .sub{margin-top:18px}
+.steps{list-style:none;padding:0;margin:36px 0 0;display:grid;gap:22px}
+.steps li{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start}
+.steps .ic{width:36px;height:36px;border-radius:12px;background:var(--bg);display:grid;place-items:center;box-shadow:0 1px 0 var(--line)}
+.steps .ic svg{width:18px;height:18px;stroke:var(--rose);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.steps h3{font-size:17px;font-weight:600;margin-bottom:2px}
+.steps p{font-size:15px;color:var(--muted)}
+.dial-card{background:var(--bg);border-radius:28px;padding:clamp(18px,3vw,32px);box-shadow:0 30px 80px -40px rgba(11,11,15,.25);display:grid;gap:16px;justify-items:center}
+.seg{display:flex;flex-wrap:nowrap;gap:2px;background:var(--soft);border-radius:999px;padding:4px;justify-content:space-between}
+.seg button{flex:1 1 0;min-width:0;white-space:nowrap;font:500 14px var(--font);background:transparent;color:var(--ink-2);border:0;border-radius:999px;padding:7px 8px;cursor:pointer}
+@media (max-width:420px){.seg button{font-size:13px;padding:7px 4px}}
+html.lang-ar .seg button{font-family:var(--ar)}
+.seg button[aria-pressed="true"]{background:var(--bg);color:var(--ink);box-shadow:0 1px 3px rgba(11,11,15,.12)}
+#dial{width:min(100%,440px);height:auto;max-width:100%;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-inline-end:6px;vertical-align:middle}
+.due{width:100%;background:var(--rose-soft);color:var(--ink);border-radius:14px;padding:12px 14px;font-size:15px;display:flex;gap:10px;align-items:flex-start}
+.due i{width:8px;height:8px;border-radius:50%;background:var(--rose);margin-top:8px;flex:none}
+
+.cmp{width:100%;display:grid;gap:18px}
+.who-line{font-size:15px;font-weight:600;text-align:center;color:var(--ink)}
+.track-block{display:grid;gap:8px}
+.tl-head{display:flex;justify-content:space-between;align-items:baseline;gap:4px 12px;flex-wrap:wrap;font-size:15px}
+.tl-head span{color:var(--muted);font-size:14px}
+.track{position:relative;height:30px;margin-inline:8px}
+.track::before{content:"";position:absolute;inset-inline:-8px;top:50%;height:2px;margin-top:-1px;background:var(--line);border-radius:2px}
+.on .track::before{background:var(--rose-soft)}
+.track i{position:absolute;top:50%;width:14px;height:14px;margin-top:-7px;margin-inline-start:-7px;border-radius:50%}
+.off .track i{background:var(--muted);opacity:.45}
+.on .track i{background:var(--rose);box-shadow:0 0 0 4px var(--rose-soft)}
+.tl-foot{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl-foot strong{color:var(--ink);font-weight:600}
+.on .tl-foot strong{color:var(--rose)}
+.months{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px;margin-inline:8px}
+.gain{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gain > div{background:var(--rose-soft);border-radius:16px;padding:16px 18px;min-width:0}
+.gain .big{display:block;font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-.03em;line-height:1.1;color:var(--rose);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+html.lang-ar .gain .big{letter-spacing:0}
+.gain small{font-size:14px;color:var(--ink-2)}
+.scale{font-size:17px;font-weight:600;text-align:center;line-height:1.45;text-wrap:balance}
+.cmp .example{text-align:center;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.track i{animation:pop .45s cubic-bezier(.2,.8,.2,1.2) both}}
+@keyframes pop{from{transform:scale(0)}to{transform:none}}
+@media (max-width:900px){.rhythm-grid{grid-template-columns:1fr}}
+
+/* outcomes */
+.outcomes{padding-block:clamp(72px,9vw,128px)}
+.outcomes-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:44px}
+.outcomes-head > *{min-width:0}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--soft);border-radius:var(--r);padding:28px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.card .w{font-size:clamp(40px,4.4vw,56px);font-weight:650;letter-spacing:-.04em;line-height:1}
+html.lang-ar .card .w{letter-spacing:0;line-height:1.3;font-weight:700}
+.card:nth-child(2) .w{color:var(--rose)}
+.card h3{font-size:18px;font-weight:600;margin-top:28px}
+.card p{font-size:15px;color:var(--muted)}
+.note-line{margin-top:18px;font-size:14px;color:var(--muted)}
+@media (max-width:860px){.outcomes-head,.cards3{grid-template-columns:1fr}.card{min-height:0}}
+
+/* ease */
+.ease{padding-block:0 clamp(72px,9vw,128px)}
+.ease-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.ease-grid > *{min-width:0}
+.ease .photo{aspect-ratio:4/5;max-width:100%}
+.ease .photo .wa{inset-inline-start:auto;right:clamp(14px,3vw,28px);left:auto;bottom:clamp(14px,3vw,28px);width:min(310px,84%)}
+.rows{margin-top:30px;display:grid;border-top:1px solid var(--line)}
+.rows div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.rows b{font-weight:600}
+.rows span{color:var(--muted)}
+@media (max-width:860px){.ease-grid{grid-template-columns:1fr}.ease .photo .wa{position:absolute}}
+@media (max-width:480px){.rows div{grid-template-columns:1fr;gap:2px}}
+
+/* products */
+.products{background:var(--soft);padding-block:clamp(72px,9vw,128px)}
+.products .sub{margin-top:18px}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.pcard{min-width:0;background:var(--bg);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.pcard .photo{border-radius:0;aspect-ratio:4/5;max-width:100%}
+.pcard .body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pcard .st{align-self:flex-start;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:var(--soft);color:var(--ink-2)}
+.pcard.now .st{background:var(--rose);color:#fff}
+.pcard h3{font-size:20px;font-weight:600;letter-spacing:-.01em}
+.pcard h3 small{display:block;font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}
+.pcard p{font-size:15px;color:var(--muted)}
+.more{margin-top:24px;font-size:15px;color:var(--muted)}
+.more a{color:var(--ink);font-weight:600}
+@media (max-width:1000px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.pgrid{grid-template-columns:1fr}}
+
+/* pilot */
+.pilot{padding-block:clamp(72px,9vw,128px)}
+.pilot-card{background:var(--night);color:var(--on-night);border-radius:32px;padding:clamp(32px,6vw,80px);display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:end}
+.pilot-card > *{min-width:0}
+.pilot-card .sub{color:var(--on-night-dim);margin-top:18px}
+.mailbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;display:grid;gap:12px}
+.mailbox small{color:var(--on-night-dim);font-size:13px}
+.mailrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mailrow span{font-size:20px;font-weight:600;overflow-wrap:anywhere}
+.copy{font:600 14px var(--font);background:var(--on-night);color:#0B0B0F;border:0;border-radius:999px;height:36px;padding:0 16px;cursor:pointer}
+html.lang-ar .copy{font-family:var(--ar)}
+@media (max-width:860px){.pilot-card{grid-template-columns:1fr}}
+
+/* legal */
+.legal-wrap{padding-block:56px 40px}
+.legal h1{font-size:clamp(36px,5vw,52px);font-weight:650;letter-spacing:-.03em;line-height:1.1;margin:0 0 10px}
+html.lang-ar .legal h1{letter-spacing:0;line-height:1.35}
+.legal h3{margin:30px 0 6px;font-size:18px;font-weight:600}
+.legal p,.legal li{max-width:64ch;color:var(--ink-2)}
+.legal p{margin-bottom:10px}
+.legal ul{padding-inline-start:20px;margin:0 0 12px}
+.legal li{margin-bottom:4px}
+.legal a{color:var(--rose)}
+.updated{font-size:14px;color:var(--muted)}
+.back{display:inline-block;margin-bottom:26px;font-size:15px;color:var(--muted);text-decoration:none}
+
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:32px 48px;display:grid;gap:12px;font-size:14px;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:22px}
+footer nav a{text-decoration:none;color:var(--ink-2)}
+footer nav a:hover{color:var(--ink)}
+.tm{font-size:12px;max-width:80ch}
+
+@media (prefers-reduced-motion:no-preference){
+  .reveal{animation:up .9s cubic-bezier(.2,.7,.1,1) both}
+  .reveal.d1{animation-delay:.08s}.reveal.d2{animation-delay:.16s}.reveal.d3{animation-delay:.24s}
+  #dial .pulse{animation:pulse 2.2s ease-out infinite;transform-box:fill-box;transform-origin:center}
+}
+@keyframes up{from{transform:translateY(14px)}to{transform:none}}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.6);opacity:0}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="18.6" cy="6.6" r="2.4" fill="#D9466E"/></symbol>
+</svg>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#home" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
+  <nav class="nav-links">
+    <a href="#messages"><span class="en">Messages</span><span class="ar">الرسائل</span></a>
+    <a href="#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a>
+    <a href="#ease"><span class="en">How it works</span><span class="ar">كيف تعمل</span></a>
+    <a href="#products"><span class="en">Products</span><span class="ar">المنتجات</span></a>
+  </nav>
+  <div class="nav-right">
+    <button class="btn btn-light btn-sm" id="langbtn" type="button">العربية</button>
+    <a class="btn btn-dark btn-sm" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
+  </div>
+</div></header>
+
+<main>
+<div data-view="home">
+
+<section class="wrap hero">
+  <div class="chip reveal"><b class="en">New</b><b class="ar">جديد</b><span class="en">Your growth partner. Psychology that brings clients back and sells more.</span><span class="ar">فنّ العودة… وسرّ الزيادة.</span></div>
+  <h1 class="h1 reveal d1 en">Every client has a rhythm. Loopdesk keeps it.</h1>
+  <h1 class="h1 reveal d1 ar">لكلّ عميلٍ موعدُ عودة… وLoopdesk لا تُخطئه.</h1>
+  <p class="sub reveal d2 en">Loopdesk answers and books on your WhatsApp, day and night. Then it does what matters most: it brings each client back at the right moment, in the name of the person they always see.</p>
+  <p class="sub reveal d2 ar">تجيب وتحجز على واتساب في أيّ ساعة. لكنّ سرّها الحقيقي في مكان آخر: تعرف متى يشتاق عملاؤكم للعودة، فتدعوهم في اللحظة المناسبة، بصوت من يعرفونه ويرتاحون إليه.</p>
+  <div class="ctas reveal d3">
+    <a class="btn btn-dark" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
+    <a class="btn btn-light" href="#rhythm"><span class="en">See how it works</span><span class="ar">كيف تعمل؟</span></a>
+  </div>
+  <p class="tiny en">English and Arabic · Nothing to install</p>
+  <p class="tiny ar">عربي وإنجليزي · بلا تطبيقات ولا تعقيد</p>
+</section>
+
+<section class="wrap showcase">
+  <div class="photo"><img src="img/hero.jpg" alt="A stylist and her client laughing together in a salon in Dubai" onerror="this.remove()"></div>
+  <div class="wa en" aria-label="Example rhythm note from a salon">
+    <div class="wa-head"><div class="av">L</div><div><b>Layali Beauty Lounge</b><span>Example message</span></div></div>
+    <div class="bubble">Your nails have been so loyal for 16 days… but they're dreaming of a fresh new look 💅 Joy is free Thursday at 6pm. Shall we?<span class="t">10:12</span></div>
+    <div class="qr"><span>Book Thursday 6pm</span><span>Another time</span></div>
+  </div>
+  <div class="wa ar" aria-label="مثال على رسالة إيقاع من صالون">
+    <div class="wa-head"><div class="av">ل</div><div><b>صالون ليالي</b><span>مثال لرسالة</span></div></div>
+    <div class="bubble">16 يومًا وأظافركِ وفيّةٌ لكِ… لكنّها بدأت تحلم بإطلالة جديدة 💅 جوي متفرّغة الخميس الساعة 6 مساءً. نحجز لكِ؟<span class="t">10:12</span></div>
+    <div class="qr"><span>نعم، الخميس 6 مساءً</span><span>في وقت آخر</span></div>
+  </div>
+</section>
+
+<section class="wrap statement">
+  <p class="en">Most booking tools wait for the client to remember. <span>Loopdesk doesn't. It learns when each client is due, invites them back just before it's time, and suggests one extra that suits them.</span></p>
+  <p class="ar">أغلب أنظمة الحجز تجلس وتنتظر. <span>Loopdesk تبادر: تعرف موعد كلّ عميل قبل أن يتذكّره هو، فتدعوه قبله بقليل، وتقترح عليه ما يليق به.</span></p>
+</section>
+
+<section class="wrap words" id="messages">
+  <div class="words-head">
+    <div>
+      <div class="kicker en">The messages</div><div class="kicker ar">الرسائل</div>
+      <h2 class="h2 en">The words do the work.</h2>
+      <h2 class="h2 ar">الكلمة الطيّبة… تبيع.</h2>
+    </div>
+    <p class="sub en">Every note is built on behavioural science and sent in the voice of the person your client already trusts. Here's what's inside four of them.</p>
+    <p class="sub ar">وراء كلّ رسالة فهمٌ عميق لطبيعة الناس، وتصل بصوت من يثق به عملاؤكم أصلًا. إليكم أسرار أربع منها.</p>
+  </div>
+  <div class="msg-grid en">
+    <article class="mcard">
+      <div class="moment">Day 16 · just before she notices</div>
+      <div class="bubble">Your nails have been so loyal for 16 days… but they're dreaming of a fresh new look 💅 Joy is free Thursday at 6pm. Shall we?</div>
+      <ul class="why">
+        <li><b>Perfect timing</b>It lands the day her gel starts to lift, not a week after it chips.</li>
+        <li><b>Playful, never pushy</b>The nails do the asking, so it feels like a smile, not a sales message.</li>
+        <li><b>Her own stylist, a real slot</b>One tap and it's booked.</li>
+      </ul>
+    </article>
+    <article class="mcard">
+      <div class="moment">Leaving the salon</div>
+      <div class="bubble">You look beautiful, Sophie 💛 Your gel usually lasts about 3 weeks. Shall we save the same time with Joy on Monday 23 Nov? You're 3 of 8 visits to a free spa pedicure.</div>
+      <ul class="why">
+        <li><b>Asked at her best moment</b>A plan made when she feels great is the easiest yes.</li>
+        <li><b>Progress she can see</b>3 of 8 toward a reward pulls her back.</li>
+      </ul>
+    </article>
+    <article class="mcard">
+      <div class="moment">Day 26 · two treatments, one visit</div>
+      <div class="bubble">It's been almost a month since Dana worked her magic, and your brows are starting to have opinions again 😄 Dana has Monday at 5pm, and Joy is free right after for your nails. Both in one visit?</div>
+      <ul class="why">
+        <li><b>What's due, plus what's nearly due</b>One trip for her, a bigger bill for you.</li>
+        <li><b>Humour that disarms</b>A smile gets read. A reminder gets ignored.</li>
+      </ul>
+    </article>
+    <article class="mcard">
+      <div class="moment">Week 7 · if she goes quiet</div>
+      <div class="bubble">We've missed you, Sophie 🌸 No pressure at all. Joy still keeps your shade on her shelf. Whenever you're ready, one tap brings you back.</div>
+      <ul class="why">
+        <li><b>No discount, no guilt</b>Warmth works better than a coupon and keeps your prices whole.</li>
+        <li><b>She's remembered</b>Her shade, her stylist. That feeling brings people back.</li>
+      </ul>
+    </article>
+  </div>
+  <div class="msg-grid ar">
+    <article class="mcard">
+      <div class="moment">اليوم 16 · قبل أن تلاحظ</div>
+      <div class="bubble">16 يومًا وأظافركِ وفيّةٌ لكِ… لكنّها بدأت تحلم بإطلالة جديدة 💅 جوي متفرّغة الخميس الساعة 6 مساءً. نحجز لكِ؟</div>
+      <ul class="why">
+        <li><b>توقيت في الصميم</b>تصلها حين يبدأ الجل بالانفصال، لا بعد أن يتقشّر.</li>
+        <li><b>دعابة لا إلحاح</b>الأظافر هي من تطلب، فتبتسم بدل أن تتجاهل.</li>
+        <li><b>خبيرتها، وموعد حقيقي</b>لمسة واحدة… وتمّ الحجز.</li>
+      </ul>
+    </article>
+    <article class="mcard">
+      <div class="moment">عند مغادرة الصالون</div>
+      <div class="bubble">تبدين رائعة يا صوفي 💛 الجل يدوم عادةً نحو ثلاثة أسابيع، فهل نحجز لكِ الموعد نفسه مع جوي يوم الاثنين 23 نوفمبر؟ وبالمناسبة: هذه زيارتكِ الثالثة من 8 نحو باديكير سبا مجاني.</div>
+      <ul class="why">
+        <li><b>السؤال في أسعد لحظاتها</b>وهي راضية عن زيارتها، تأتي «نعم» بسهولة.</li>
+        <li><b>المكافأة تلوح</b>3 من 8… والهدية صارت قريبة.</li>
+      </ul>
+    </article>
+    <article class="mcard">
+      <div class="moment">اليوم 26 · خدمتان في زيارة واحدة</div>
+      <div class="bubble">مرّ قرابة شهر على سحر دانة، وحاجباكِ بدآ يُبديان رأيهما 😄 دانة متاحة الاثنين الساعة 5 مساءً، وجوي بعدها مباشرةً لأظافركِ. نجمعهما في زيارة واحدة؟</div>
+      <ul class="why">
+        <li><b>عصفوران بحجر واحد</b>مشوار واحد لها، وفاتورة أكبر لكم.</li>
+        <li><b>الابتسامة تفتح الأبواب</b>رسالة تُضحكها تُقرأ، والتذكير الجافّ يُنسى.</li>
+      </ul>
+    </article>
+    <article class="mcard">
+      <div class="moment">الأسبوع 7 · إن غابت</div>
+      <div class="bubble">اشتقنا لكِ يا صوفي 🌸 بلا أيّ استعجال… جوي ما زالت تحفظ لونكِ المفضّل على رفّها. ومتى شئتِ، لمسة واحدة تعيدكِ إلينا.</div>
+      <ul class="why">
+        <li><b>لا خصم ولا عتاب</b>الودّ يُعيدها أسرع من أيّ خصم، وأسعاركم تبقى محفوظة.</li>
+        <li><b>تشعر أنها في البال</b>لونها محفوظ، وخبيرتها بانتظارها. وهذا وحده يكفي.</li>
+      </ul>
+    </article>
+  </div>
+  <p class="fine en">Every message uses real availability and real offers set by the business. Loopdesk never invents urgency.</p>
+  <p class="fine ar">كلّ رسالة مبنيّة على مواعيد حقيقية وعروض تحدّدونها أنتم. لا استعجال مصطنع، أبدًا.</p>
+</section>
+
+<section class="rhythm" id="rhythm">
+  <div class="wrap rhythm-grid">
+    <div>
+      <div class="kicker en">The rhythm engine</div><div class="kicker ar">محرّك الإيقاع</div>
+      <h2 class="h2 en" data-c="h2">Same client. More visits.</h2>
+      <h2 class="h2 ar" data-c="h2">العميلة نفسها… تعود أكثر.</h2>
+      <p class="sub en" data-c="sub">Every service has a natural cycle. Loopdesk starts from it and learns each client's own rhythm after two or three visits.</p>
+      <p class="sub ar" data-c="sub">لكلّ خدمة دورة طبيعية، ومنها تبدأ Loopdesk. وبعد زيارتين أو ثلاث، تحفظ إيقاع كلّ عميلة كما تحفظه أقرب موظفاتكم.</p>
+      <ul class="steps en">
+        <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><div><h3>Learns</h3><p data-c="s1">Each client's real return cycle, for every service.</p></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v10H8l-4 4z"/></svg></span><div><h3>Invites</h3><p data-c="s2">A warm note in their usual stylist's name, always with "another time".</p></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><h3>Suggests</h3><p data-c="s3">One extra that suits them, at the moment they book. Never a sales list.</p></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span><div><h3>Respects</h3><p data-c="s4">Consent first. At most two notes a month, 10am to 9pm. STOP works instantly.</p></div></li>
+      </ul>
+      <ul class="steps ar">
+        <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><div><h3>تتعلّم</h3><p data-c="s1">متى تعود كلّ عميلة فعلًا، لكلّ خدمة.</p></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v10H8l-4 4z"/></svg></span><div><h3>تدعو</h3><p data-c="s2">برسالة ودودة باسم من يخدمها، ومعها دائمًا «في وقت آخر».</p></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><h3>تقترح</h3><p data-c="s3">إضافة واحدة تليق بها، في لحظة الحجز. لا قوائم ولا إلحاح.</p></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span><div><h3>تحترم</h3><p data-c="s4">بموافقتها أولًا. رسالتان في الشهر كحدّ أقصى، بين 10 صباحًا و9 مساءً. و«توقّف» تعني توقّف، فورًا.</p></div></li>
+      </ul>
+    </div>
+    <div class="dial-card">
+      <div class="seg tabs" role="group" aria-label="Choose a business">
+        <button type="button" data-k="salon" aria-pressed="true"><span class="en">Salon</span><span class="ar">صالون</span></button>
+        <button type="button" data-k="cosmetic" aria-pressed="false"><span class="en">Cosmetic</span><span class="ar">تجميل</span></button>
+        <button type="button" data-k="dental" aria-pressed="false"><span class="en">Dental</span><span class="ar">أسنان</span></button>
+        <button type="button" data-k="barber" aria-pressed="false"><span class="en">Barber</span><span class="ar">حلاقة</span></button>
+      </div>
+      <div class="cmp">
+        <div class="who-line" id="who"></div>
+        <div class="track-block off">
+          <div class="tl-head"><b><span class="en">Without Loopdesk</span><span class="ar">بدون Loopdesk</span></b><span id="offnote"></span></div>
+          <div class="track" id="trackOff"></div>
+          <div class="tl-foot"><span id="offv"></span><strong id="offr"></strong></div>
+        </div>
+        <div class="track-block on">
+          <div class="tl-head"><b><span class="en">With Loopdesk</span><span class="ar">مع Loopdesk</span></b><span id="onnote"></span></div>
+          <div class="track" id="trackOn"></div>
+          <div class="tl-foot"><span id="onv"></span><strong id="onr"></strong></div>
+        </div>
+        <div class="months" id="months"></div>
+        <div class="gain">
+          <div><span class="big" id="gainv"></span><small class="en">more visits a year</small><small class="ar">زيارات إضافية في السنة</small></div>
+          <div><span class="big" id="gainr"></span><small class="en" id="gainlbl-en">more from one client</small><small class="ar" id="gainlbl-ar">دخل إضافي من عميلة واحدة</small></div>
+        </div>
+        <p class="scale" id="scale"></p>
+        <div class="example en">Example figures</div><div class="example ar">أرقام توضيحية</div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap outcomes">
+  <div class="outcomes-head">
+    <div>
+      <div class="kicker en">What it changes</div><div class="kicker ar">ما الذي يتغيّر</div>
+      <h2 class="h2 en">More visits from the clients you already have.</h2>
+      <h2 class="h2 ar">نموّ… من عملائكم أنتم.</h2>
+    </div>
+    <p class="sub en">Winning a new client costs far more than keeping one. Loopdesk works on the clients already in your diary.</p>
+    <p class="sub ar">كسب عميل جديد يكلّف أضعاف الحفاظ على عميل دائم. لذلك تبدأ Loopdesk من أثمن ما لديكم: عملاؤكم.</p>
+  </div>
+  <div class="cards3 en">
+    <div class="card"><span class="w">Sooner</span><h3>Shorter gaps between visits</h3><p>Clients come back on their rhythm, not whenever they happen to remember.</p></div>
+    <div class="card"><span class="w">More</span><h3>More services per visit</h3><p>One well-timed suggestion, made while they're already booking.</p></div>
+    <div class="card"><span class="w">At risk</span><h3>Caught before they leave</h3><p>When a regular goes quiet, Loopdesk spots it and sends a warm welcome back before she drifts elsewhere.</p></div>
+  </div>
+  <div class="cards3 ar">
+    <div class="card"><span class="w">أقرب</span><h3>زيارات أقرب من بعضها</h3><p>يعود عملاؤكم على إيقاعهم، لا على المصادفة.</p></div>
+    <div class="card"><span class="w">أكثر</span><h3>خدمات أكثر في الزيارة الواحدة</h3><p>اقتراح واحد ذكي، في لحظة الحجز.</p></div>
+    <div class="card"><span class="w">في خطر</span><h3>نلحق بهم قبل أن يرحلوا</h3><p>حين يغيب عميل دائم، تنتبه Loopdesk وتبادره بترحيب دافئ، قبل أن يجذبه غيركم.</p></div>
+  </div>
+</section>
+
+<section class="wrap ease" id="ease">
+  <div class="ease-grid">
+    <div class="photo">
+      <img src="img/owner.jpg" alt="A salon owner checking last week's results on her phone" onerror="this.remove()">
+      <div class="wa en"><div class="wa-head"><div class="av">L</div><div><b>Loopdesk</b><span>Monday 09:00</span></div></div>
+        <div class="bubble">Good morning! Last week Loopdesk invited 86 clients back. 61 have rebooked and 24 added an extra service. That's AED 18,400 in new bookings.</div>
+        <div class="qr"><span>See details</span><span>Change rules</span></div><div class="example">Example</div></div>
+      <div class="wa ar"><div class="wa-head"><div class="av">L</div><div><b>Loopdesk</b><span>الإثنين 09:00</span></div></div>
+        <div class="bubble">صباح الخير! الأسبوع الماضي دعت Loopdesk ‏86 عميلًا للعودة، فحجز 61 منهم، وأضاف 24 منهم خدمةً أخرى. الحصيلة: 18,400 درهم من حجوزات جديدة.</div>
+        <div class="qr"><span>التفاصيل</span><span>تعديل القواعد</span></div><div class="example">مثال</div></div>
+    </div>
+    <div>
+      <div class="kicker en">Easy for everyone</div><div class="kicker ar">سهلة على الجميع</div>
+      <h2 class="h2 en">Nothing to install. Nothing to learn.</h2>
+      <h2 class="h2 ar">بلا تطبيقات. بلا تدريب.</h2>
+      <p class="sub en" style="margin-top:18px">Everything happens on WhatsApp, the app your clients and team already use every day.</p>
+      <p class="sub ar" style="margin-top:18px">كلّ شيء على واتساب، حيث يقضي عملاؤكم وفريقكم يومهم أصلًا.</p>
+      <div class="rows en">
+        <div><b>Clients</b><span>Book, move and cancel in a chat, in English or Arabic, at any hour.</span></div>
+        <div><b>Your team</b><span>Log walk-ins and phone bookings on their own WhatsApp line.</span></div>
+        <div><b>You</b><span>Set the rules once. Loopdesk runs on its own, and you get the results on WhatsApp every week.</span></div>
+      </div>
+      <div class="rows ar">
+        <div><b>عملاؤكم</b><span>يحجزون ويعدّلون ويلغون بمحادثة، بالعربية أو الإنجليزية، في أيّ وقت.</span></div>
+        <div><b>فريقكم</b><span>يسجّل الحضور المباشر والحجوزات الهاتفية من رقم واتساب خاص به.</span></div>
+        <div><b>أنتم</b><span>تضعون القواعد مرّة واحدة، وLoopdesk تتولّى الباقي. وكلّ أسبوع، تصلكم النتائج على واتساب.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="kicker en">Products</div><div class="kicker ar">المنتجات</div>
+    <h2 class="h2 en">One engine. Built for each kind of business.</h2>
+    <h2 class="h2 ar">محرّك واحد… ولكلّ قطاع منتجه.</h2>
+    <p class="sub en">A blow-dry every three weeks is not a check-up every six months. So each business gets its own product, in the order we're launching them.</p>
+    <p class="sub ar">تسريحة كلّ ثلاثة أسابيع شيء، وفحص أسنان كلّ ستة أشهر شيء آخر. لذلك لكلّ قطاع منتجٌ مصمّم له، نطلقه في وقته.</p>
+    <div class="pgrid en">
+      <article class="pcard now"><div class="photo"><img src="img/hero.jpg" alt="" onerror="this.remove()" style="object-position:70% center"></div><div class="body"><span class="st">Coming soon</span><h3><small>For salons</small>Romy</h3><p>She knows beauty. She knows business. Above all, Romy knows when to say what: when to sell, when to be funny and when to be serious.</p></div></article>
+      <article class="pcard"><div class="photo"><img src="img/cosmetic.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Later</span><h3>Cosmetic clinics</h3><p>Treatment courses and top-ups, timed to each client.</p></div></article>
+      <article class="pcard"><div class="photo"><img src="img/dental.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Later</span><h3>Dental clinics</h3><p>Check-ups, cleanings and recalls, without chasing.</p></div></article>
+      <article class="pcard"><div class="photo"><img src="img/barber.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Later</span><h3>Barbershops</h3><p>Regular cuts and beard trims, with the barber each client prefers.</p></div></article>
+    </div>
+    <div class="pgrid ar">
+      <article class="pcard now"><div class="photo"><img src="img/hero.jpg" alt="" onerror="this.remove()" style="object-position:70% center"></div><div class="body"><span class="st">قريبًا</span><h3><small>للصالونات</small>رومي</h3><p>تفهم في الجمال، وتفهم في التجارة. والأهمّ أنّ رومي تعرف أنّ لكلّ مقامٍ مقالًا: متى تبيع، ومتى تُمازح، ومتى تَجِدّ.</p></div></article>
+      <article class="pcard"><div class="photo"><img src="img/cosmetic.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">لاحقًا</span><h3>عيادات التجميل</h3><p>جلسات العلاج ومواعيد التجديد، كلٌّ في وقته، لكلّ عميلة.</p></div></article>
+      <article class="pcard"><div class="photo"><img src="img/dental.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">لاحقًا</span><h3>عيادات الأسنان</h3><p>الفحص الدوري والتنظيف والمتابعة، دون أن تطاردوا أحدًا.</p></div></article>
+      <article class="pcard"><div class="photo"><img src="img/barber.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">لاحقًا</span><h3>صالونات الحلاقة</h3><p>القصّة المعتادة وتهذيب اللحية، مع الحلّاق الذي يرتاح إليه كلّ زبون.</p></div></article>
+    </div>
+    <p class="more en">More appointment businesses will follow. <a href="#demo">Tell us how you book today →</a></p>
+    <p class="more ar">والقادم أكثر: كلّ عمل يقوم على المواعيد. <a href="#demo">حدّثونا عن عملكم ←</a></p>
+  </div>
+</section>
+
+<section class="wrap pilot" id="demo">
+  <div class="pilot-card">
+    <div>
+      <h2 class="h2 en">See Loopdesk with your own services.</h2>
+      <h2 class="h2 ar">شاهدوا Loopdesk بخدماتكم أنتم.</h2>
+      <p class="sub en">Tell us about your business and we'll set up a live demo with your services, prices and team. Salons come first. Cosmetic clinics, dental practices and barbershops can reserve a place now.</p>
+      <p class="sub ar">حدّثونا عن عملكم، ونجهّز لكم جولة حيّة بخدماتكم وأسعاركم وفريقكم. البداية مع الصالونات، ويمكن لعيادات التجميل والأسنان وصالونات الحلاقة حجز مكانها من الآن.</p>
+    </div>
+    <div class="mailbox">
+      <small class="en">Sales · we reply within one working day</small><small class="ar">المبيعات · نردّ خلال يوم عمل واحد</small>
+      <div class="mailrow"><span class="ltr" id="mailaddr">sales@getloopdesk.com</span><button class="copy" type="button" data-copy="sales@getloopdesk.com"><span class="en">Copy</span><span class="ar">نسخ</span></button></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="wrap narrow legal-wrap">
+<!-- PRIVACY -->
+<div id="view-privacy" data-view="privacy" class="legal" hidden>
+  <a class="back" href="#home"><span class="en">← Back to Loopdesk</span><span class="ar">العودة إلى Loopdesk →</span></a>
+  <div class="en">
+    <h1>Privacy policy</h1>
+    <p class="updated">Last updated: 4 November 2026</p>
+    <h3>Who we are</h3>
+    <p>Loopdesk is a software company based in the United Arab Emirates. Contact: hello@getloopdesk.com.</p>
+    <h3>Our role</h3>
+    <p>Businesses such as salons and clinics use Loopdesk to answer and book their own clients. For client messages and bookings, the business decides what is collected and why, and we process that data on its behalf and on its instructions. For the owners and staff who use our service, we are responsible for their account data.</p>
+    <h3>What we process</h3>
+    <ul>
+      <li>Business details: name, address, services, prices, opening hours, staff names and working times.</li>
+      <li>Client details sent by the business's clients: name, phone number, messages, booking history and stated preferences.</li>
+      <li>Consent records: when a client agreed to receive messages and when they asked to stop.</li>
+      <li>Technical data: message delivery status and service logs.</li>
+    </ul>
+    <p>Booking an appointment does not need medical records. We ask clinics not to send them through Loopdesk.</p>
+    <h3>Why we process it</h3>
+    <ul>
+      <li>To reply to clients, book, change and cancel appointments, and send reminders.</li>
+      <li>To keep the business's diary and send the owner a summary.</li>
+      <li>To keep the service secure, fix faults and improve replies.</li>
+    </ul>
+    <p>We do not sell personal data, and we do not use client data for our own marketing.</p>
+    <h3>Who we share it with</h3>
+    <ul>
+      <li>Meta Platforms, through the WhatsApp Business Platform, to send and receive messages.</li>
+      <li>Our hosting and AI providers, under contract and only to run the service.</li>
+      <li>Authorities, where UAE law requires it.</li>
+    </ul>
+    <h3>How long we keep it</h3>
+    <p>We keep client data for as long as the business uses Loopdesk, then delete it within 90 days of the end of the contract, unless the law requires us to keep it longer.</p>
+    <h3>Your choices</h3>
+    <p>Clients can reply STOP at any time to stop messages. To see, correct or delete your data, contact the business or email hello@getloopdesk.com and we will help within 30 days.</p>
+    <h3>Security</h3>
+    <p>Data is encrypted in transit and at rest, and access is limited to people who need it to run the service.</p>
+    <h3>Law</h3>
+    <p>We follow UAE Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data. The service is not meant for people under 18 to sign up to.</p>
+    <h3>Changes</h3>
+    <p>We will post any change on this page and update the date above.</p>
+  </div>
+  <div class="ar">
+    <h1>سياسة الخصوصية</h1>
+    <p class="updated">آخر تحديث: 4 نوفمبر 2026</p>
+    <h3>من نحن</h3>
+    <p>Loopdesk شركة برمجيات مقرّها دولة الإمارات العربية المتحدة. للتواصل: <span class="ltr">hello@getloopdesk.com</span>.</p>
+    <h3>دورنا</h3>
+    <p>تستخدم المنشآت، كالصالونات والعيادات، Loopdesk للردّ على عملائها وحجز مواعيدهم. بالنسبة إلى رسائل العملاء وحجوزاتهم، تحدّد المنشأة ما يُجمَع ولأيّ غرض، ونعالج نحن هذه البيانات نيابةً عنها ووفق تعليماتها. أمّا بيانات حسابات أصحاب المنشآت وموظفيها فنحن المسؤولون عنها.</p>
+    <h3>البيانات التي نعالجها</h3>
+    <ul>
+      <li>بيانات المنشأة: الاسم، والعنوان، والخدمات، والأسعار، وساعات العمل، وأسماء الموظفين وأوقات عملهم.</li>
+      <li>بيانات العملاء: الاسم، ورقم الهاتف، والرسائل، وسجلّ الحجوزات، والتفضيلات التي يذكرها العميل.</li>
+      <li>سجلّات الموافقة: متى وافق العميل على تلقّي الرسائل، ومتى طلب إيقافها.</li>
+      <li>بيانات تقنية: حالة تسليم الرسائل وسجلّات تشغيل الخدمة.</li>
+    </ul>
+    <p>لا يتطلّب حجز الموعد أيّ سجلّات طبية، ونطلب من العيادات عدم إرسالها عبر Loopdesk.</p>
+    <h3>لماذا نعالجها</h3>
+    <ul>
+      <li>للردّ على العملاء، وحجز المواعيد وتعديلها وإلغائها، وإرسال التذكيرات.</li>
+      <li>لتنظيم جدول مواعيد المنشأة وإرسال ملخّص إلى صاحبها.</li>
+      <li>لحماية الخدمة، وإصلاح الأعطال، وتحسين الردود.</li>
+    </ul>
+    <p>لا نبيع البيانات الشخصية، ولا نستخدم بيانات العملاء في تسويق خدماتنا.</p>
+    <h3>مع من نشاركها</h3>
+    <ul>
+      <li>شركة Meta Platforms عبر منصّة WhatsApp Business، لإرسال الرسائل واستقبالها.</li>
+      <li>مزوّدو الاستضافة والذكاء الاصطناعي، بموجب عقود، ولتشغيل الخدمة فقط.</li>
+      <li>الجهات الرسمية، متى اشترط القانون الإماراتي ذلك.</li>
+    </ul>
+    <h3>مدّة الاحتفاظ</h3>
+    <p>نحتفظ ببيانات العملاء طوال مدّة استخدام المنشأة للخدمة، ثم نحذفها خلال 90 يومًا من انتهاء العقد، ما لم يُلزمنا القانون بمدّة أطول.</p>
+    <h3>خياراتكم</h3>
+    <p>يمكنكم إرسال كلمة «توقف» أو STOP في أي وقت لإيقاف الرسائل. للاطلاع على بياناتكم أو تصحيحها أو حذفها، تواصلوا مع المنشأة أو راسلونا على <span class="ltr">hello@getloopdesk.com</span> وسنساعدكم خلال 30 يومًا.</p>
+    <h3>الأمان</h3>
+    <p>تُشفَّر البيانات أثناء نقلها وتخزينها، ويقتصر الوصول إليها على من يحتاجه لتشغيل الخدمة.</p>
+    <h3>القانون</h3>
+    <p>نلتزم بالمرسوم بقانون اتحادي رقم 45 لسنة 2021 بشأن حماية البيانات الشخصية. لا يحقّ لمن هم دون 18 عامًا التسجيل في الخدمة.</p>
+    <h3>التعديلات</h3>
+    <p>ننشر أي تعديل على هذه الصفحة ونحدّث التاريخ أعلاه.</p>
+  </div>
+</div>
+
+<!-- TERMS -->
+<div id="view-terms" data-view="terms" class="legal" hidden>
+  <a class="back" href="#home"><span class="en">← Back to Loopdesk</span><span class="ar">العودة إلى Loopdesk →</span></a>
+  <div class="en">
+    <h1>Terms of service</h1>
+    <p class="updated">Last updated: 4 November 2026</p>
+    <h3>The service</h3>
+    <p>Loopdesk ("we") is software that answers, books and reminds a business's clients on that business's own WhatsApp Business number. These terms apply to businesses that use it.</p>
+    <h3>Your account</h3>
+    <ul>
+      <li>You must be authorised to act for the business and to connect its number.</li>
+      <li>You give us correct details about services, prices, staff and opening hours, and keep them up to date.</li>
+    </ul>
+    <h3>Messaging rules</h3>
+    <ul>
+      <li>You only message clients who have agreed to hear from you, and you honour every STOP request.</li>
+      <li>You follow the WhatsApp Business Messaging Policy and Commerce Policy.</li>
+      <li>You do not use Loopdesk for spam, illegal goods or misleading offers.</li>
+      <li>You do not send medical records or diagnoses through Loopdesk.</li>
+    </ul>
+    <h3>Fees</h3>
+    <p>Fees are set out in your written order or agreement. Meta may charge separately for some messages; we pass these on at cost unless agreed otherwise.</p>
+    <h3>Availability</h3>
+    <p>We work to keep Loopdesk running at all times, but it depends on third parties such as Meta and may sometimes be unavailable. The business stays responsible for its appointments and services.</p>
+    <h3>Your data</h3>
+    <p>Your business's data stays yours. Our <a href="#privacy">privacy policy</a> explains how we handle it.</p>
+    <h3>Ending the service</h3>
+    <p>Either side may end the service with 30 days' written notice, or at once if the other side seriously breaks these terms.</p>
+    <h3>Liability</h3>
+    <p>To the extent the law allows, our total liability is limited to the fees you paid us in the 3 months before the claim.</p>
+    <h3>Law</h3>
+    <p>These terms are governed by the laws of the United Arab Emirates, and the UAE courts handle any dispute.</p>
+    <h3>Contact</h3>
+    <p>hello@getloopdesk.com</p>
+  </div>
+  <div class="ar">
+    <h1>شروط الخدمة</h1>
+    <p class="updated">آخر تحديث: 4 نوفمبر 2026</p>
+    <h3>الخدمة</h3>
+    <p>Loopdesk («نحن») برمجية تردّ على عملاء المنشأة وتحجز مواعيدهم وتذكّرهم، على رقم WhatsApp Business الخاص بالمنشأة نفسها. تسري هذه الشروط على المنشآت التي تستخدمها.</p>
+    <h3>حسابكم</h3>
+    <ul>
+      <li>يجب أن تكونوا مخوَّلين بالتصرّف نيابةً عن المنشأة وربط رقمها.</li>
+      <li>تزوّدوننا ببيانات صحيحة عن الخدمات والأسعار والموظفين وساعات العمل، وتحدّثونها باستمرار.</li>
+    </ul>
+    <h3>قواعد المراسلة</h3>
+    <ul>
+      <li>لا تراسلون إلا العملاء الذين وافقوا على ذلك، وتحترمون كلّ طلب إيقاف.</li>
+      <li>تلتزمون بسياسة مراسلة WhatsApp Business وسياسة التجارة.</li>
+      <li>لا تستخدمون Loopdesk للرسائل المزعجة أو السلع غير القانونية أو العروض المضلّلة.</li>
+      <li>لا ترسلون سجلّات طبية أو تشخيصات عبر Loopdesk.</li>
+    </ul>
+    <h3>الرسوم</h3>
+    <p>تُحدَّد الرسوم في طلب الشراء أو الاتفاقية المكتوبة. قد تفرض Meta رسومًا منفصلة على بعض الرسائل، ونمرّرها بسعر التكلفة ما لم يُتَّفق على غير ذلك.</p>
+    <h3>توفّر الخدمة</h3>
+    <p>نحرص على تشغيل Loopdesk دائمًا، لكنها تعتمد على أطراف أخرى مثل Meta وقد تتوقف أحيانًا. تظلّ المنشأة مسؤولة عن مواعيدها وخدماتها.</p>
+    <h3>بياناتكم</h3>
+    <p>بيانات منشأتكم ملك لكم. توضّح <a href="#privacy">سياسة الخصوصية</a> كيف نتعامل معها.</p>
+    <h3>إنهاء الخدمة</h3>
+    <p>يحقّ لأيّ طرف إنهاء الخدمة بإشعار كتابي قبل 30 يومًا، أو فورًا إذا أخلّ الطرف الآخر إخلالًا جسيمًا بهذه الشروط.</p>
+    <h3>المسؤولية</h3>
+    <p>في حدود ما يسمح به القانون، لا تتجاوز مسؤوليتنا الإجمالية الرسوم التي دفعتموها خلال الأشهر الثلاثة السابقة للمطالبة.</p>
+    <h3>القانون</h3>
+    <p>تخضع هذه الشروط لقوانين دولة الإمارات العربية المتحدة، وتختصّ محاكمها بأيّ نزاع.</p>
+    <h3>التواصل</h3>
+    <p><span class="ltr">hello@getloopdesk.com</span></p>
+  </div>
+</div>
+
+</div>
+</main>
+
+<footer><div class="wrap">
+  <nav>
+    <a href="#home"><span class="en">Home</span><span class="ar">الرئيسية</span></a>
+    <a href="#ease"><span class="en">How it works</span><span class="ar">كيف تعمل</span></a>
+    <a href="#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a>
+    <a href="#products"><span class="en">Products</span><span class="ar">المنتجات</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="ar">تواصلوا معنا</span></a>
+    <a href="#privacy"><span class="en">Privacy policy</span><span class="ar">سياسة الخصوصية</span></a>
+    <a href="#terms"><span class="en">Terms of service</span><span class="ar">شروط الخدمة</span></a>
+  </nav>
+  <div id="contact"><span class="en">© 2026 Loopdesk · United Arab Emirates · Contact us: hello@getloopdesk.com · Sales: sales@getloopdesk.com</span><span class="ar">© 2026 Loopdesk · الإمارات العربية المتحدة · تواصلوا معنا: <span class="ltr">hello@getloopdesk.com</span> · المبيعات: <span class="ltr">sales@getloopdesk.com</span></span></div>
+  <div class="tm"><span class="en">WhatsApp is a trademark of Meta Platforms, Inc. Loopdesk is an independent company and is not affiliated with or endorsed by Meta.</span><span class="ar">WhatsApp علامة تجارية مملوكة لشركة Meta Platforms, Inc. وLoopdesk شركة مستقلة لا ترتبط بشركة Meta ولا تحظى بتأييدها.</span></div>
+</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('langbtn');
+  function isAr(){return root.classList.contains('lang-ar')}
+  function setLang(l){
+    root.classList.toggle('lang-ar', l==='ar');
+    root.lang = l==='ar' ? 'ar' : 'en';
+    root.dir = l==='ar' ? 'rtl' : 'ltr';
+    btn.textContent = l==='ar' ? 'English' : 'العربية';
+    try{localStorage.setItem('ld-lang', l)}catch(e){}
+    draw();
+  }
+
+  /* ---------- rhythm comparison ---------- */
+  var DATA={
+    salon:{off:8,on:5,price:350,n:100,
+      en:{who:'Sophie · colour and blow-dry · AED 350 a visit',off:'Every 8 weeks, when she remembers',on:'Every 5 weeks, invited on her rhythm',scale:'If just 100 of your regulars come back like Sophie, that\'s AED {T} more a year.'},
+      ar:{who:'صوفي · صبغة وتسريحة · 350 درهمًا للزيارة',off:'كلّ 8 أسابيع، حين تتذكّر',on:'كلّ 5 أسابيع، بدعوة في موعدها',scale:'لو عادت 100 فقط من عميلاتكم الدائمات كما تعود صوفي، فهذه {T} درهم إضافية كلّ سنة.'}},
+    cosmetic:{off:8,on:4,price:450,n:50,
+      en:{who:'Priya · skin treatment · AED 450 a visit',off:'Every 8 weeks, when she finds time',on:'Every 4 weeks, as her course needs',scale:'If just 50 of your clients come back like Priya, that\'s AED {T} more a year.'},
+      ar:{who:'بريا · جلسة عناية بالبشرة · 450 درهمًا للزيارة',off:'كلّ 8 أسابيع، حين تجد وقتًا',on:'كلّ 4 أسابيع، كما تحتاج جلساتها',scale:'لو عادت 50 فقط من عميلاتكم كما تعود بريا، فهذه {T} درهم إضافية كلّ سنة.'}},
+    dental:{off:52,on:26,price:400,n:300,
+      en:{who:'Daniel · check-up and clean · AED 400 a visit',off:'Once a year, when something hurts',on:'Every 6 months, invited on time',scale:'If just 300 of your patients come back like Daniel, that\'s AED {T} more a year.'},
+      ar:{who:'دانيال · فحص وتنظيف · 400 درهم للزيارة',off:'مرّة في السنة، حين يشعر بألم',on:'كلّ 6 أشهر، بدعوة في موعده',scale:'لو عاد 300 فقط من مرضاكم مثل دانيال، فهذه {T} درهم إضافية كلّ سنة.'}},
+    barber:{off:5,on:3,price:120,n:150,
+      en:{who:'Omar · cut and beard · AED 120 a visit',off:'Every 5 weeks, when he walks past',on:'Every 3 weeks, his chair kept for him',scale:'If just 150 of your regulars come back like Omar, that\'s AED {T} more a year.'},
+      ar:{who:'عمر · قصّ الشعر واللحية · 120 درهمًا للزيارة',off:'كلّ 5 أسابيع، حين يمرّ بالمحل',on:'كلّ 3 أسابيع، وكرسيّه محجوز له',scale:'لو عاد 150 فقط من زبائنكم مثل عمر، فهذه {T} درهم إضافية كلّ سنة.'}}
+  };
+  var current='salon';
+  var COPY={"salon": {"en": {"h2": "Same client. More visits.", "sub": "Every service has a natural cycle. Loopdesk starts from it and learns each client's own rhythm after two or three visits.", "s1": "Each client's real return cycle, for every service.", "s2": "A warm note in her usual stylist's name, always with \"another time\".", "s3": "One extra that suits her, at the moment she books. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "العميلة نفسها… تعود أكثر.", "sub": "لكلّ خدمة دورة طبيعية، ومنها تبدأ Loopdesk. وبعد زيارتين أو ثلاث، تحفظ إيقاع كلّ عميلة كما تحفظه أقرب موظفاتكم.", "s1": "متى تعود كلّ عميلة فعلًا، لكلّ خدمة.", "s2": "برسالة ودودة باسم من يخدمها، ومعها دائمًا «في وقت آخر».", "s3": "إضافة واحدة تليق بها، في لحظة الحجز. لا قوائم ولا إلحاح.", "s4": "بموافقتها أولًا. رسالتان في الشهر كحدّ أقصى، بين 10 صباحًا و9 مساءً. و«توقّف» تعني توقّف، فورًا."}}, "cosmetic": {"en": {"h2": "Same client. Every session on time.", "sub": "Every treatment has its course. Loopdesk follows it, and learns each client's own pace after two or three sessions.", "s1": "When each client is really due, for every treatment.", "s2": "A warm note in her usual specialist's name, always with \"another time\".", "s3": "One add-on that completes her treatment, at the moment she books. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "العميلة نفسها… في موعد كلّ جلسة.", "sub": "لكلّ علاج مساره، وLoopdesk تتبعه. وبعد جلستين أو ثلاث، تحفظ وتيرة كلّ عميلة كما تحفظها أخصائيّتها.", "s1": "متى يحين موعد كلّ عميلة فعلًا، لكلّ علاج.", "s2": "برسالة ودودة باسم أخصائيّتها، ومعها دائمًا «في وقت آخر».", "s3": "إضافة واحدة تكمّل علاجها، في لحظة الحجز. لا قوائم ولا إلحاح.", "s4": "بموافقتها أولًا. رسالتان في الشهر كحدّ أقصى، بين 10 صباحًا و9 مساءً. و«توقّف» تعني توقّف، فورًا."}}, "dental": {"en": {"h2": "Same patient. Never overdue.", "sub": "Every check-up has its interval. Loopdesk follows it, and learns each patient's pattern after a couple of visits.", "s1": "When each patient is really due: check-ups, cleanings, follow-ups.", "s2": "A friendly note in their dentist's name, always with \"another time\".", "s3": "The cleaning or whitening that fits, at the moment they book. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "المريض نفسه… في موعده دائمًا.", "sub": "لكلّ فحص دوري موعده، وLoopdesk لا تفوّته. وبعد زيارتين، تحفظ نمط كلّ مريض كما يحفظه طبيبه.", "s1": "متى يحين موعد كلّ مريض: فحص، تنظيف، متابعة.", "s2": "برسالة ودودة باسم طبيبه، ومعها دائمًا «في وقت آخر».", "s3": "التنظيف أو التبييض المناسب، في لحظة الحجز. لا قوائم ولا إلحاح.", "s4": "بموافقته أولًا. رسالتان في الشهر كحدّ أقصى، بين 10 صباحًا و9 مساءً. و«توقّف» تعني توقّف، فورًا."}}, "barber": {"en": {"h2": "Same client. Sharp, more often.", "sub": "Every cut has its cycle. Loopdesk learns each client's rhythm after two or three visits.", "s1": "When each client really needs a cut or a trim.", "s2": "A friendly note from his usual barber, always with \"another time\".", "s3": "The beard trim or hot towel that suits him, at the moment he books. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "الزبون نفسه… بإطلالة أنيقة دائمًا.", "sub": "لكلّ قصّة دورتها، وبعد زيارتين أو ثلاث تحفظ Loopdesk إيقاع كلّ زبون كما يحفظه حلّاقه.", "s1": "متى يحتاج كلّ زبون قصّته أو تهذيب لحيته فعلًا.", "s2": "برسالة ودودة باسم حلّاقه المعتاد، ومعها دائمًا «في وقت آخر».", "s3": "تهذيب اللحية أو المنشفة الساخنة التي تناسبه، في لحظة الحجز. لا قوائم ولا إلحاح.", "s4": "بموافقته أولًا. رسالتان في الشهر كحدّ أقصى، بين 10 صباحًا و9 مساءً. و«توقّف» تعني توقّف، فورًا."}}};
+  function copyFor(){var c=COPY[current];['en','ar'].forEach(function(l){document.querySelectorAll('#rhythm .'+l+'[data-c], #rhythm .'+l+' [data-c]').forEach(function(el){var t=c[l][el.dataset.c];if(t)el.textContent=t})})}
+
+  var AR_DIG='0123456789';
+  function fmt(n){var t=n.toLocaleString('en-US');return t}
+  function visitsWord(v){if(!isAr())return fmt(v)+(v===1?' visit':' visits');return fmt(v)+(v===1?' زيارة':v===2?' زيارتان':v<=10?' زيارات':' زيارة')}
+  function aed(n){return isAr()?fmt(n)+' درهم':'AED '+fmt(n)}
+  function fill(id,c){var t=document.getElementById(id);if(!t)return;t.innerHTML='';
+    for(var w=1,i=0;w<=52;w+=c,i++){var d=document.createElement('i');d.style.insetInlineStart=((w-1)/51*100)+'%';d.style.animationDelay=(i*40)+'ms';t.appendChild(d)}}
+  function draw(){
+    copyFor();
+    var G={salon:['more from one client','دخل إضافي من عميلة واحدة'],cosmetic:['more from one client','دخل إضافي من عميلة واحدة'],dental:['more from one patient','دخل إضافي من مريض واحد'],barber:['more from one client','دخل إضافي من زبون واحد']}[current];
+    document.getElementById('gainlbl-en').textContent=G[0];document.getElementById('gainlbl-ar').textContent=G[1];
+    var d=DATA[current], L=isAr()?d.ar:d.en;
+    var vo=Math.floor(51/d.off)+1, vn=Math.floor(51/d.on)+1, ro=vo*d.price, rn=vn*d.price;
+    document.getElementById('who').textContent=L.who;
+    document.getElementById('offnote').textContent=L.off;
+    document.getElementById('onnote').textContent=L.on;
+    fill('trackOff',d.off); fill('trackOn',d.on);
+    document.getElementById('offv').textContent=visitsWord(vo);
+    document.getElementById('onv').textContent=visitsWord(vn);
+    document.getElementById('offr').textContent=aed(ro);
+    document.getElementById('onr').textContent=aed(rn);
+    document.getElementById('gainv').textContent='+'+fmt(vn-vo);
+    document.getElementById('gainr').textContent='+'+aed(rn-ro);
+    document.getElementById('scale').textContent=L.scale.replace('{T}',fmt((rn-ro)*d.n));
+    var m=document.getElementById('months'); m.innerHTML='';
+    (isAr()?['يناير','أبريل','يوليو','أكتوبر','ديسمبر']:['Jan','Apr','Jul','Oct','Dec']).forEach(function(x){var s=document.createElement('span');s.textContent=x;m.appendChild(s)});
+  }
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click',function(){current=b.dataset.k;
+      document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});draw();});
+  });
+
+  var saved='en'; try{saved=localStorage.getItem('ld-lang')||'en'}catch(e){}
+  setLang(saved);
+  btn.addEventListener('click',function(){setLang(isAr()?'en':'ar')});
+
+  function route(){
+    var h=(location.hash||'#home').slice(1);
+    var view=(h==='privacy'||h==='terms')?h:'home';
+    document.querySelectorAll('[data-view]').forEach(function(v){v.hidden = v.dataset.view!==view});
+    if(view!=='home'||h==='home'){window.scrollTo(0,0)}
+    else {var e=document.getElementById(h); if(e) e.scrollIntoView()}
+  }
+  window.addEventListener('hashchange',route); route();
+  try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw)}catch(e){}
+  new MutationObserver(draw).observe(root,{attributes:true,attributeFilter:['data-theme']});
+
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.dataset.copy, label=b.innerHTML;
+      function done(){b.textContent = isAr()?'تم النسخ':'Copied'; setTimeout(function(){b.innerHTML=label},1500)}
+      function sel(){var s=document.getElementById('mailaddr'),r=document.createRange();r.selectNodeContents(s);var w=getSelection();w.removeAllRanges();w.addRange(r)}
+      try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+    });
+  });
+})();
+</script>

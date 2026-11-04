@@ -131,9 +131,9 @@ html.lang-ar .moment{letter-spacing:0;text-transform:none;font-size:14px}
 .steps h3{font-size:17px;font-weight:600;margin-bottom:2px}
 .steps p{font-size:15px;color:var(--muted)}
 .dial-card{background:var(--bg);border-radius:28px;padding:clamp(18px,3vw,32px);box-shadow:0 30px 80px -40px rgba(11,11,15,.25);display:grid;gap:16px;justify-items:center}
-.seg{display:flex;flex-wrap:nowrap;gap:2px;background:var(--soft);border-radius:999px;padding:4px;justify-content:space-between}
-.seg button{flex:1 1 0;min-width:0;white-space:nowrap;font:500 14px var(--font);background:transparent;color:var(--ink-2);border:0;border-radius:999px;padding:7px 8px;cursor:pointer}
-@media (max-width:420px){.seg button{font-size:13px;padding:7px 4px}}
+.seg{display:flex;flex-wrap:nowrap;gap:4px;background:var(--soft);border-radius:999px;padding:4px;width:max-content;max-width:100%;margin-inline:auto}
+.seg button{flex:0 0 auto;white-space:nowrap;font:500 14px var(--font);background:transparent;color:var(--ink-2);border:0;border-radius:999px;padding:7px 16px;cursor:pointer}
+@media (max-width:420px){.seg{gap:2px}.seg button{font-size:13px;padding:7px 11px}}
 html.lang-ar .seg button{font-family:var(--ar)}
 .seg button[aria-pressed="true"]{background:var(--bg);color:var(--ink);box-shadow:0 1px 3px rgba(11,11,15,.12)}
 #dial{width:min(100%,440px);height:auto;max-width:100%;display:block}

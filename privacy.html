@@ -69,7 +69,8 @@ main a{color:var(--rose)}
 .toc{font-size:15px;color:var(--muted);margin:22px 0 0}
 .toc a{color:var(--muted)}
 footer{border-top:1px solid var(--line)}
-footer .wrap{padding-block:28px 44px;display:grid;gap:10px;font-size:14px;color:var(--muted);max-width:1200px}
+footer .wrap{padding-block:32px 48px;display:grid;gap:12px;font-size:14px;color:var(--muted);max-width:1200px;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+footer nav a:hover{color:var(--ink)}
 footer nav{display:flex;flex-wrap:wrap;gap:22px}
 footer nav a{text-decoration:none;color:var(--ink-2)}
 .tm{font-size:12px;max-width:80ch}
@@ -320,10 +321,14 @@ footer nav a{text-decoration:none;color:var(--ink-2)}
 <footer><div class="wrap">
   <nav>
     <a href="/"><span class="en">Home</span><span class="ar">الرئيسية</span></a>
+    <a href="/#ease"><span class="en">How it works</span><span class="ar">كيف تعمل</span></a>
+    <a href="/#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a>
+    <a href="/#products"><span class="en">Products</span><span class="ar">المنتجات</span></a>
+    <a href="/#contact"><span class="en">Contact</span><span class="ar">تواصلوا معنا</span></a>
     <a href="/privacy"><span class="en">Privacy policy</span><span class="ar">سياسة الخصوصية</span></a>
-    <a href="/#terms"><span class="en">Terms of service</span><span class="ar">شروط الخدمة</span></a>
+    <a href="/terms"><span class="en">Terms of service</span><span class="ar">شروط الخدمة</span></a>
   </nav>
-  <div><span class="en">© 2026 Loopdesk · United Arab Emirates · hello@getloopdesk.com</span><span class="ar">© 2026 Loopdesk · الإمارات العربية المتحدة · <span class="ltr">hello@getloopdesk.com</span></span></div>
+  <div id="contact"><span class="en">© 2026 Loopdesk · United Arab Emirates · Contact us: hello@getloopdesk.com · Sales: sales@getloopdesk.com</span><span class="ar">© 2026 Loopdesk · الإمارات العربية المتحدة · تواصلوا معنا: <span class="ltr">hello@getloopdesk.com</span> · المبيعات: <span class="ltr">sales@getloopdesk.com</span></span></div>
   <div class="tm"><span class="en">WhatsApp is a trademark of Meta Platforms, Inc. Loopdesk is an independent company and is not affiliated with or endorsed by Meta.</span><span class="ar">WhatsApp علامة تجارية مملوكة لشركة Meta Platforms, Inc. وLoopdesk شركة مستقلة لا ترتبط بشركة Meta ولا تحظى بتأييدها.</span></div>
 </div></footer>
 

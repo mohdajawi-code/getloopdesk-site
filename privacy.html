@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy policy · Loopdesk</title>
+<meta name="description" content="How Loopdesk handles client chats, bookings and owner sign-in numbers, and how to see, correct or delete your data.">
+<link rel="canonical" href="https://getloopdesk.com/privacy">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Loopdesk">
+<meta property="og:url" content="https://getloopdesk.com/privacy">
+<meta property="og:title" content="Privacy policy · Loopdesk">
+<meta property="og:description" content="How Loopdesk handles client chats, bookings and owner sign-in numbers.">
+<meta property="og:image" content="https://getloopdesk.com/og-share2.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<script>
+/* Pick the language before the page paints: ?lang=ar|en, else the visitor's choice on the home page. */
+(function(){var l='en';try{l=localStorage.getItem('ld-lang')||'en'}catch(e){}
+var q=/[?&]lang=(ar|en)\b/.exec(location.search);if(q)l=q[1];
+var r=document.documentElement;if(l==='ar'){r.classList.add('lang-ar');r.lang='ar';r.dir='rtl'}})();
+</script>
+<style>
+:root{
+  --bg:#FFFFFF; --soft:#F5F5F7; --ink:#0B0B0F; --ink-2:#3A3A42; --muted:#6E6E78; --line:#E6E6EA;
+  --rose:#D9466E; --rose-soft:#FBE8EE;
+  --font:"Geist", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ar:"IBM Plex Sans Arabic", "Geist", "Geeza Pro", Tahoma, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B0B0F; --soft:#16161B; --ink:#F5F5F7; --ink-2:#D4D4DA; --muted:#A1A1AA; --line:#26262D;
+  --rose:#F0739A; --rose-soft:#2A1820; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B0B0F; --soft:#16161B; --ink:#F5F5F7; --ink-2:#D4D4DA; --muted:#A1A1AA; --line:#26262D;
+  --rose:#F0739A; --rose-soft:#2A1820; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+html.lang-ar .en, html:not(.lang-ar) .ar{display:none!important}
+html.lang-ar body{direction:rtl;font-family:var(--ar);letter-spacing:0;line-height:1.8}
+.ltr{direction:ltr;unicode-bidi:isolate}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:8px}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 82%, transparent);backdrop-filter:saturate(1.6) blur(16px);-webkit-backdrop-filter:saturate(1.6) blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;max-width:1200px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:650;font-size:19px;letter-spacing:-.02em;font-family:var(--font)}
+.logo svg{width:24px;height:24px}
+.btn{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:999px;font:600 14px var(--ar);background:transparent;color:var(--ink);border:1px solid var(--line);cursor:pointer}
+html.lang-ar .btn{font-family:var(--font)}
+.btn:hover{border-color:var(--ink)}
+main{padding-block:48px 40px}
+h1{font-size:clamp(36px,6vw,52px);font-weight:650;letter-spacing:-.03em;line-height:1.1;margin:0 0 10px}
+html.lang-ar h1{letter-spacing:0;line-height:1.35}
+h2{margin:36px 0 8px;font-size:20px;font-weight:600;letter-spacing:-.01em}
+html.lang-ar h2{letter-spacing:0}
+h3{margin:20px 0 4px;font-size:17px;font-weight:600}
+p,li{color:var(--ink-2);overflow-wrap:anywhere}
+p{margin:0 0 12px}
+ul{padding-inline-start:22px;margin:0 0 14px}
+li{margin-bottom:6px}
+main a{color:var(--rose)}
+.updated{font-size:14px;color:var(--muted)}
+.short{background:var(--soft);border-radius:20px;padding:22px 24px 10px;margin:28px 0 8px}
+.short h2{margin-top:0}
+.short li{color:var(--ink)}
+.toc{font-size:15px;color:var(--muted);margin:22px 0 0}
+.toc a{color:var(--muted)}
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:28px 44px;display:grid;gap:10px;font-size:14px;color:var(--muted);max-width:1200px}
+footer nav{display:flex;flex-wrap:wrap;gap:22px}
+footer nav a{text-decoration:none;color:var(--ink-2)}
+.tm{font-size:12px;max-width:80ch}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="18.6" cy="6.6" r="2.4" fill="#D9466E"/></symbol>
+</svg>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
+  <button class="btn" id="langbtn" type="button">العربية</button>
+</div></header>
+
+<main class="wrap">
+
+<!-- ENGLISH -->
+<article class="en" lang="en">
+  <h1>Privacy policy</h1>
+  <p class="updated">Last updated: 5 November 2026</p>
+
+  <section class="short" aria-labelledby="en-short">
+    <h2 id="en-short">The short version</h2>
+    <ul>
+      <li>Beauty centres, clinics and other appointment businesses use Loopdesk to answer you, book you and remind you on their own WhatsApp number. The business decides what it keeps about you, and we look after it on the business's behalf.</li>
+      <li>We never sell your data, and we never use it for advertising.</li>
+      <li>Replies are written with the help of AI.</li>
+      <li>Reply STOP at any time and the messages stop. Your appointments stay exactly as they are.</li>
+      <li>To see, correct or delete your data, email <a href="mailto:hello@getloopdesk.com">hello@getloopdesk.com</a>.</li>
+    </ul>
+  </section>
+
+  <h2>1. Who we are and our role</h2>
+  <p>Loopdesk ("we", "us") makes software for businesses that work by appointment, such as beauty centres, clinics and barbershops.</p>
+  <p>When you message one of these businesses through Loopdesk, that business is in charge of your data (under the law it is the "controller"). We process your data for the business and only on its instructions (we are its "processor").</p>
+  <p>For the owners and staff who sign in to Loopdesk, we are in charge of their account data.</p>
+
+  <h2>2. What we collect</h2>
+  <h3>If you are a client of a business</h3>
+  <ul>
+    <li>Your phone number, and your name as it shows on WhatsApp or as you tell us.</li>
+    <li>Your messages to the business and the replies you receive.</li>
+    <li>Your appointments: what you booked, when, with whom, and any change or cancellation.</li>
+    <li>Preferences you share, such as who you like to see or the times that suit you.</li>
+    <li>Your message choices: when you agreed to receive messages, and when you asked to stop.</li>
+  </ul>
+  <h3>If you own or work at a business</h3>
+  <ul>
+    <li>The phone number you sign in with. We send your one-time sign-in code to it on WhatsApp.</li>
+    <li>Business details: name, address, services, prices, opening hours, team names and working hours.</li>
+    <li>Your settings, such as how you would like Loopdesk to address you.</li>
+  </ul>
+  <h3>Technical data</h3>
+  <p>Message delivery status and the service logs we need to keep Loopdesk secure and working.</p>
+
+  <h2>3. How we use it</h2>
+  <ul>
+    <li>To reply to you, book, change and cancel appointments, and send reminders.</li>
+    <li>To invite you back at the right time. If you agreed to hear from the business, we use your past visits (for example, when you last had a treatment) to send a friendly note when your usual time comes round. You can turn these off at any time.</li>
+    <li>To send the owner a weekly summary of bookings and returning clients.</li>
+    <li>To sign owners and staff in and keep their accounts safe.</li>
+    <li>To keep the service secure, fix faults and improve the quality of replies.</li>
+  </ul>
+  <p>We do not sell personal data. We do not use it for advertising. We never use one business's client data for another business.</p>
+
+  <h2>4. AI</h2>
+  <p>Chat replies are written with the help of Claude, an AI model made by Anthropic. To write a reply, we send it the conversation and the booking details it needs. Anthropic handles this data under terms that do not allow it to train its models on it.</p>
+  <p>The AI writes replies and arranges appointments. It does not make decisions about you that have legal or similar serious effects.</p>
+
+  <h2>5. WhatsApp and Meta</h2>
+  <p>Messages between you and the business travel through the WhatsApp Business Platform, run by Meta. Your use of WhatsApp itself is covered by <a href="https://www.whatsapp.com/legal/privacy-policy" rel="noopener">WhatsApp's own privacy policy</a>.</p>
+
+  <h2>6. Messages and STOP</h2>
+  <ul>
+    <li>A business only sends you messages if you contacted it, booked with it, or agreed to hear from it.</li>
+    <li>Reply <b>STOP</b> (or <span lang="ar">إيقاف</span>) at any time and all messages stop at once. Stopping messages never cancels your appointment.</li>
+    <li>Reply <b>START</b> to turn them back on.</li>
+  </ul>
+
+  <h2>7. Who we share it with</h2>
+  <ul>
+    <li>The business you are dealing with.</li>
+    <li>Meta, to carry messages over WhatsApp.</li>
+    <li>Anthropic, to help write replies.</li>
+    <li>Our cloud hosting providers, to store data and run the service.</li>
+    <li>Government authorities, only where UAE law requires it.</li>
+  </ul>
+  <p>Each provider works under a contract and may use the data only to run the service.</p>
+
+  <h2>8. Data outside the UAE</h2>
+  <p>Some of these providers handle data outside the United Arab Emirates, for example in the United States. When they do, we rely on the contracts and safeguards that UAE data protection law accepts.</p>
+
+  <h2>9. How long we keep it</h2>
+  <ul>
+    <li><b>Chats, bookings and visit history:</b> while the business uses Loopdesk. We delete them within 90 days after the business stops, unless the law requires us to keep them longer.</li>
+    <li><b>If you ask us to delete your data:</b> we delete it within 30 days. We keep only a note that you asked us to stop messaging you, so we never contact you again by mistake.</li>
+    <li><b>Owner sign-in codes:</b> expire after 10 minutes, and we only store them in scrambled form. Signed-in sessions end after 30 days.</li>
+    <li><b>Service logs:</b> up to 90 days.</li>
+  </ul>
+
+  <h2>10. Your rights</h2>
+  <p>Under UAE law you can ask us to:</p>
+  <ul>
+    <li>show you the data we hold about you, or give you a copy;</li>
+    <li>correct it;</li>
+    <li>delete it;</li>
+    <li>stop using it, or stop messaging you;</li>
+    <li>withdraw any consent you gave.</li>
+  </ul>
+  <p>Email <a href="mailto:hello@getloopdesk.com">hello@getloopdesk.com</a> or ask the business directly. We reply within 30 days. To protect you, we may ask you to message us from the phone number your request is about. If you are not happy with our answer, you can complain to the UAE Data Office.</p>
+
+  <h2>11. Health information</h2>
+  <p>Booking an appointment never needs medical information. Please do not send medical records, test results or diagnoses in the chat. We ask clinics not to send them either.</p>
+
+  <h2>12. Security</h2>
+  <p>Data is encrypted in transit and at rest. Only the people who need it to run the service can reach it, and every business can only see its own clients.</p>
+
+  <h2>13. Children</h2>
+  <p>Loopdesk accounts are for adults. If you are under 18, please ask a parent or guardian to book for you.</p>
+
+  <h2>14. The law</h2>
+  <p>We follow the UAE Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data.</p>
+
+  <h2>15. Changes</h2>
+  <p>If we change this policy, we post the new version here and update the date at the top.</p>
+
+  <h2>16. Contact</h2>
+  <p><a href="mailto:hello@getloopdesk.com">hello@getloopdesk.com</a></p>
+</article>
+
+<!-- ARABIC -->
+<article class="ar" lang="ar">
+  <h1>سياسة الخصوصية</h1>
+  <p class="updated">آخر تحديث: 5 نوفمبر 2026</p>
+
+  <section class="short" aria-labelledby="ar-short">
+    <h2 id="ar-short">باختصار</h2>
+    <ul>
+      <li>تستخدم مراكز التجميل والعيادات وغيرها من الأعمال التي تعمل بالمواعيد Loopdesk للردّ عليكم وحجز مواعيدكم وتذكيركم بها، عبر رقم WhatsApp الخاص بها. مقدّم الخدمة هو من يقرّر ما يحتفظ به من بياناتكم، ونحن نرعاها نيابةً عنه.</li>
+      <li>لا نبيع بياناتكم أبدًا، ولا نستخدمها في الإعلانات.</li>
+      <li>تُكتب الردود بمساعدة الذكاء الاصطناعي.</li>
+      <li>أرسلوا «إيقاف» أو STOP في أي وقت فتتوقف الرسائل، وتبقى مواعيدكم كما هي تمامًا.</li>
+      <li>للاطلاع على بياناتكم أو تصحيحها أو حذفها، راسلونا على <a href="mailto:hello@getloopdesk.com" class="ltr">hello@getloopdesk.com</a>.</li>
+    </ul>
+  </section>
+
+  <h2>1. من نحن وما دورنا</h2>
+  <p>Loopdesk شركة تقنية تصنع برامج للأعمال التي تعمل بالمواعيد، مثل مراكز التجميل والعيادات وصالونات الحلاقة.</p>
+  <p>حين تراسلون أحد هذه الأعمال عبر Loopdesk، يكون مقدّم الخدمة هو صاحب القرار في بياناتكم (ويسمّيه القانون «المتحكّم»)، ونعالج نحن هذه البيانات لحسابه ووفق تعليماته فقط (فنكون «المعالج»).</p>
+  <p>أمّا أصحاب الأعمال وفرقهم الذين يدخلون إلى Loopdesk، فنحن المسؤولون عن بيانات حساباتهم.</p>
+
+  <h2>2. ما نجمعه</h2>
+  <h3>إن كنتم من عملاء مقدّم الخدمة</h3>
+  <ul>
+    <li>رقم هاتفكم، واسمكم كما يظهر في WhatsApp أو كما تكتبونه لنا.</li>
+    <li>رسائلكم إلى مقدّم الخدمة والردود التي تصلكم.</li>
+    <li>مواعيدكم: ما حجزتموه، ومتى، ومع من، وأيّ تعديل أو إلغاء.</li>
+    <li>ما تشاركونه من تفضيلات، مثل من تفضّلون أن يخدمكم أو الأوقات التي تناسبكم.</li>
+    <li>اختياراتكم بشأن الرسائل: متى وافقتم على تلقّيها، ومتى طلبتم إيقافها.</li>
+  </ul>
+  <h3>إن كنتم أصحاب عمل أو من فريقه</h3>
+  <ul>
+    <li>رقم الهاتف الذي تدخلون به، ونرسل إليه رمز الدخول المؤقّت عبر WhatsApp.</li>
+    <li>بيانات العمل: الاسم، والعنوان، والخدمات، والأسعار، وساعات العمل، وأسماء الفريق وأوقات دوامهم.</li>
+    <li>إعداداتكم، مثل الصيغة التي تفضّلون أن يخاطبكم بها Loopdesk.</li>
+  </ul>
+  <h3>بيانات تقنية</h3>
+  <p>حالة تسليم الرسائل، وسجلّات التشغيل التي نحتاجها لحماية Loopdesk وإبقائه يعمل كما ينبغي.</p>
+
+  <h2>3. كيف نستخدمها</h2>
+  <ul>
+    <li>للردّ عليكم، وحجز المواعيد وتعديلها وإلغائها، وتذكيركم بها.</li>
+    <li>لدعوتكم إلى العودة في الوقت المناسب: إن وافقتم على تلقّي رسائل مقدّم الخدمة، نستعين بزياراتكم السابقة (كتاريخ آخر جلسة) لنرسل إليكم تذكيرًا لطيفًا حين يحين موعدكم المعتاد. ويمكنكم إيقاف ذلك متى شئتم.</li>
+    <li>لإرسال ملخّص أسبوعي إلى صاحب العمل عن الحجوزات والعملاء العائدين.</li>
+    <li>لتسجيل دخول أصحاب الأعمال وفرقهم، وحماية حساباتهم.</li>
+    <li>لحماية الخدمة، وإصلاح أعطالها، والارتقاء بجودة الردود.</li>
+  </ul>
+  <p>لا نبيع البيانات الشخصية، ولا نستخدمها في الإعلانات، ولا نستعمل بيانات عملاء مقدّم خدمة لصالح مقدّم خدمة آخر أبدًا.</p>
+
+  <h2>4. الذكاء الاصطناعي</h2>
+  <p>تُكتب ردود المحادثة بمساعدة Claude، وهو نموذج ذكاء اصطناعي من شركة Anthropic. ولكي يكتب الردّ، نرسل إليه نصّ المحادثة وما يلزم من تفاصيل الحجز. وتتعامل Anthropic مع هذه البيانات وفق شروط لا تسمح لها باستخدامها في تدريب نماذجها.</p>
+  <p>يكتب الذكاء الاصطناعي الردود وينظّم المواعيد، ولا يتّخذ بشأنكم أيّ قرار له أثر قانوني أو أثر جسيم مماثل.</p>
+
+  <h2>5. WhatsApp وشركة Meta</h2>
+  <p>تمرّ الرسائل بينكم وبين مقدّم الخدمة عبر منصّة WhatsApp Business التي تديرها شركة Meta. أمّا استخدامكم لتطبيق WhatsApp نفسه فتحكمه <a href="https://www.whatsapp.com/legal/privacy-policy" rel="noopener">سياسة الخصوصية الخاصة بـ WhatsApp</a>.</p>
+
+  <h2>6. الرسائل وطلب الإيقاف</h2>
+  <ul>
+    <li>لا يراسلكم مقدّم الخدمة إلا إذا تواصلتم معه، أو حجزتم لديه، أو وافقتم على تلقّي رسائله.</li>
+    <li>أرسلوا <b>«إيقاف»</b> أو <b class="ltr">STOP</b> في أي وقت، فتتوقف الرسائل كلّها فورًا. ولا يُلغي إيقاف الرسائل موعدكم أبدًا.</li>
+    <li>وأرسلوا <b>«استئناف»</b> أو <b class="ltr">START</b> لإعادة تشغيلها.</li>
+  </ul>
+
+  <h2>7. مع من نشاركها</h2>
+  <ul>
+    <li>مقدّم الخدمة الذي تتعاملون معه.</li>
+    <li>شركة Meta، لنقل الرسائل عبر WhatsApp.</li>
+    <li>شركة Anthropic، للمساعدة في كتابة الردود.</li>
+    <li>مزوّدو الاستضافة السحابية، لتخزين البيانات وتشغيل الخدمة.</li>
+    <li>الجهات الحكومية، حين يُلزمنا القانون الإماراتي بذلك فقط.</li>
+  </ul>
+  <p>يعمل كلّ مزوّد بموجب عقد، ولا يحقّ له استخدام البيانات إلا لتشغيل الخدمة.</p>
+
+  <h2>8. البيانات خارج الدولة</h2>
+  <p>قد يعالج بعض هؤلاء المزوّدين البيانات خارج دولة الإمارات العربية المتحدة، في الولايات المتحدة مثلًا. وفي هذه الحال نعتمد على العقود والضمانات التي يقرّها قانون حماية البيانات في الدولة.</p>
+
+  <h2>9. مدّة الاحتفاظ</h2>
+  <ul>
+    <li><b>المحادثات والحجوزات وسجلّ الزيارات:</b> طوال مدّة استخدام مقدّم الخدمة لـ Loopdesk، ثم نحذفها خلال 90 يومًا من توقّفه، ما لم يُلزمنا القانون بالاحتفاظ بها مدّة أطول.</li>
+    <li><b>إن طلبتم حذف بياناتكم:</b> نحذفها خلال 30 يومًا، ولا نُبقي إلا على ملاحظة بأنكم طلبتم إيقاف الرسائل، كي لا نراسلكم مرّة أخرى عن طريق الخطأ.</li>
+    <li><b>رموز دخول أصحاب الأعمال:</b> تنتهي صلاحيتها بعد 10 دقائق، ولا نحفظها إلا بصيغة مشفّرة لا تُقرأ. وتنتهي جلسة الدخول بعد 30 يومًا.</li>
+    <li><b>سجلّات التشغيل:</b> حتى 90 يومًا.</li>
+  </ul>
+
+  <h2>10. حقوقكم</h2>
+  <p>يكفل لكم القانون الإماراتي أن تطلبوا منّا:</p>
+  <ul>
+    <li>الاطلاع على بياناتكم لدينا، أو الحصول على نسخة منها؛</li>
+    <li>تصحيحها؛</li>
+    <li>حذفها؛</li>
+    <li>التوقّف عن استخدامها، أو التوقّف عن مراسلتكم؛</li>
+    <li>سحب أيّ موافقة منحتموها.</li>
+  </ul>
+  <p>راسلونا على <a href="mailto:hello@getloopdesk.com" class="ltr">hello@getloopdesk.com</a> أو اطلبوا ذلك من مقدّم الخدمة مباشرةً، وسنردّ خلال 30 يومًا. وحرصًا على حمايتكم، قد نطلب أن تراسلونا من رقم الهاتف الذي يخصّه الطلب. وإن لم يُرضِكم ردّنا، يحقّ لكم تقديم شكوى إلى مكتب الإمارات للبيانات.</p>
+
+  <h2>11. المعلومات الصحية</h2>
+  <p>لا يحتاج حجز الموعد إلى أيّ معلومات طبية. نرجو ألّا ترسلوا في المحادثة سجلّات طبية أو نتائج فحوص أو تشخيصات، ونطلب من العيادات كذلك ألّا ترسلها.</p>
+
+  <h2>12. الأمان</h2>
+  <p>تُشفَّر البيانات أثناء نقلها وتخزينها، ولا يصل إليها إلا من يحتاجها لتشغيل الخدمة، ولا يرى كلّ مقدّم خدمة إلا عملاءه.</p>
+
+  <h2>13. من هم دون 18 عامًا</h2>
+  <p>حسابات Loopdesk مخصّصة للبالغين. وإن كان عمركم دون 18 عامًا، فاطلبوا من أحد الوالدين أو وليّ الأمر أن يحجز لكم.</p>
+
+  <h2>14. القانون</h2>
+  <p>نلتزم بالمرسوم بقانون اتحادي رقم 45 لسنة 2021 بشأن حماية البيانات الشخصية.</p>
+
+  <h2>15. التعديلات</h2>
+  <p>إن عدّلنا هذه السياسة، ننشر النسخة الجديدة هنا ونحدّث التاريخ في أعلى الصفحة.</p>
+
+  <h2>16. التواصل</h2>
+  <p><a href="mailto:hello@getloopdesk.com" class="ltr">hello@getloopdesk.com</a></p>
+</article>
+
+</main>
+
+<footer><div class="wrap">
+  <nav>
+    <a href="/"><span class="en">Home</span><span class="ar">الرئيسية</span></a>
+    <a href="/privacy"><span class="en">Privacy policy</span><span class="ar">سياسة الخصوصية</span></a>
+    <a href="/#terms"><span class="en">Terms of service</span><span class="ar">شروط الخدمة</span></a>
+  </nav>
+  <div><span class="en">© 2026 Loopdesk · United Arab Emirates · hello@getloopdesk.com</span><span class="ar">© 2026 Loopdesk · الإمارات العربية المتحدة · <span class="ltr">hello@getloopdesk.com</span></span></div>
+  <div class="tm"><span class="en">WhatsApp is a trademark of Meta Platforms, Inc. Loopdesk is an independent company and is not affiliated with or endorsed by Meta.</span><span class="ar">WhatsApp علامة تجارية مملوكة لشركة Meta Platforms, Inc. وLoopdesk شركة مستقلة لا ترتبط بشركة Meta ولا تحظى بتأييدها.</span></div>
+</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('langbtn');
+  function sync(){btn.textContent = root.classList.contains('lang-ar') ? 'English' : 'العربية'}
+  btn.addEventListener('click',function(){
+    var ar=!root.classList.contains('lang-ar');
+    root.classList.toggle('lang-ar',ar); root.lang=ar?'ar':'en'; root.dir=ar?'rtl':'ltr';
+    try{localStorage.setItem('ld-lang', ar?'ar':'en')}catch(e){}
+    sync(); window.scrollTo(0,0);
+  });
+  sync();
+})();
+</script>
+</body>
+</html>

@@ -10,3 +10,6 @@ Holding website for Loopdesk. Static site deployed on Vercel.
 - `img/`: photos
 
 Edit `index.html` and commit; Vercel publishes automatically.
+
+## Chat with Romy
+The "Chat with Romy" button (in Book a demo) and the floating "Ask Romy" button open WhatsApp with Loopdesk's own number and a first message ready. Both stay hidden until `ROMY_NUMBER` (top of the script in index.html) is set to the number, digits only with 971. Set it only once the number is live on the WhatsApp Business Platform and `npm run sales-line` (platform repo) is answering.

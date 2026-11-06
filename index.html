@@ -321,12 +321,6 @@ html.lang-ar .legal h1{letter-spacing:0;line-height:1.35}
 .updated{font-size:14px;color:var(--muted)}
 .back{display:inline-block;margin-bottom:26px;font-size:15px;color:var(--muted);text-decoration:none}
 
-footer{border-top:1px solid var(--line)}
-footer .wrap{padding-block:32px 48px;display:grid;gap:12px;font-size:14px;color:var(--muted)}
-footer nav{display:flex;flex-wrap:wrap;gap:22px}
-footer nav a{text-decoration:none;color:var(--ink-2)}
-footer nav a:hover{color:var(--ink)}
-.tm{font-size:12px;max-width:80ch}
 
 @media (prefers-reduced-motion:no-preference){
   .reveal{animation:up .9s cubic-bezier(.2,.7,.1,1) both}
@@ -335,6 +329,22 @@ footer nav a:hover{color:var(--ink)}
 }
 @keyframes up{from{transform:translateY(14px)}to{transform:none}}
 @keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.6);opacity:0}}
+footer{border-top:1px solid var(--line);background:var(--soft)}
+footer .wrap{padding-block:56px 36px;color:var(--muted);font-size:15px;line-height:1.55}
+.ft-top{display:grid;grid-template-columns:1.6fr 1fr 1.25fr 1fr;gap:40px 32px}
+footer .logo{color:var(--ink)}
+.ft-brand p{margin-top:14px;max-width:30ch;color:var(--ink-2)}
+.ft-cta{display:inline-flex;align-items:center;height:40px;margin-top:20px;padding:0 18px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:600;font-size:14px;text-decoration:none}
+.ft-cta:hover{opacity:.86}
+.ft-h{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:14px}
+.ft-col ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ft-col a{color:var(--ink-2);text-decoration:none}
+.ft-col a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.ft-col small{display:block;font-size:13px;color:var(--muted)}
+.ft-bottom{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:grid;gap:8px;font-size:13px}
+.tm{font-size:12px;max-width:90ch}
+@media (max-width:860px){.ft-top{grid-template-columns:1fr 1fr}.ft-brand{grid-column:1/-1}}
+@media (max-width:560px){footer .wrap{padding-block:44px 32px}.ft-top{gap:32px 20px}#contact{grid-column:1/-1;order:3}.ft-legal{order:2}}
 </style>
 
 </head>
@@ -717,17 +727,42 @@ footer nav a:hover{color:var(--ink)}
 </main>
 
 <footer><div class="wrap">
-  <nav>
-    <a href="#home"><span class="en">Home</span><span class="ar">الرئيسية</span></a>
-    <a href="#ease"><span class="en">How it works</span><span class="ar">كيف تعمل</span></a>
-    <a href="#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a>
-    <a href="#products"><span class="en">Products</span><span class="ar">المنتجات</span></a>
-    <a href="#contact"><span class="en">Contact</span><span class="ar">تواصلوا معنا</span></a>
-    <a href="/privacy"><span class="en">Privacy policy</span><span class="ar">سياسة الخصوصية</span></a>
-    <a href="/terms"><span class="en">Terms of service</span><span class="ar">شروط الخدمة</span></a>
-  </nav>
-  <div id="contact"><span class="en">© 2026 Loopdesk · United Arab Emirates · Contact us: hello@getloopdesk.com · Sales: sales@getloopdesk.com</span><span class="ar">© 2026 Loopdesk · الإمارات العربية المتحدة · تواصلوا معنا: <span class="ltr">hello@getloopdesk.com</span> · المبيعات: <span class="ltr">sales@getloopdesk.com</span></span></div>
-  <div class="tm"><span class="en">WhatsApp is a trademark of Meta Platforms, Inc. Loopdesk is an independent company and is not affiliated with or endorsed by Meta.</span><span class="ar">WhatsApp علامة تجارية مملوكة لشركة Meta Platforms, Inc. وLoopdesk شركة مستقلة لا ترتبط بشركة Meta ولا تحظى بتأييدها.</span></div>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a class="logo" href="#home" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
+      <p><span class="en">Your growth partner. Behavioural science that brings clients back and sells more.</span><span class="ar">فنّ العودة… وسرّ الزيادة.</span></p>
+      <a class="ft-cta" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
+    </div>
+    <nav class="ft-col" aria-label="Explore">
+      <p class="ft-h"><span class="en">Explore</span><span class="ar">تصفّحوا</span></p>
+      <ul>
+        <li><a href="#messages"><span class="en">Messages</span><span class="ar">الرسائل</span></a></li>
+        <li><a href="#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a></li>
+        <li><a href="#ease"><span class="en">How it works</span><span class="ar">كيف تعمل</span></a></li>
+        <li><a href="#products"><span class="en">Products</span><span class="ar">المنتجات</span></a></li>
+      </ul>
+    </nav>
+    <div class="ft-col" id="contact">
+      <p class="ft-h"><span class="en">Talk to us</span><span class="ar">تواصلوا معنا</span></p>
+      <ul>
+        <li><a href="#demo"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></a></li>
+        <li><small><span class="en">Sales</span><span class="ar">المبيعات</span></small><a class="ltr" href="mailto:sales@getloopdesk.com">sales@getloopdesk.com</a></li>
+        <li><small><span class="en">Everything else</span><span class="ar">لأيّ سؤال آخر</span></small><a class="ltr" href="mailto:hello@getloopdesk.com">hello@getloopdesk.com</a></li>
+      </ul>
+    </div>
+    <nav class="ft-col ft-legal" aria-label="Legal">
+      <p class="ft-h"><span class="en">Legal</span><span class="ar">الشؤون القانونية</span></p>
+      <ul>
+        <li><a href="/privacy"><span class="en">Privacy policy</span><span class="ar">سياسة الخصوصية</span></a></li>
+        <li><a href="/terms"><span class="en">Terms of service</span><span class="ar">شروط الخدمة</span></a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="ft-bottom">
+    <span><span class="en">© 2026 Loopdesk · United Arab Emirates</span><span class="ar"><span class="ltr">© 2026 Loopdesk</span> · الإمارات العربية المتحدة</span></span>
+    <!-- Legal name, licence no., address and phone go here at Meta verification (see PR #2). -->
+    <span class="tm"><span class="en">WhatsApp is a trademark of Meta Platforms, Inc. Loopdesk is an independent company and is not affiliated with or endorsed by Meta.</span><span class="ar"><span class="ltr">WhatsApp</span> علامة تجارية مملوكة لشركة <span class="ltr">Meta Platforms, Inc.</span>، و<span class="ltr">Loopdesk</span> شركة مستقلة لا ترتبط بشركة Meta ولا تحظى بتأييدها.</span></span>
+  </div>
 </div></footer>
 
 <script>

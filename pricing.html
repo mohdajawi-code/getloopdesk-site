@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pricing · Loopdesk</title>
-<meta name="description" content="Romy for beauty centres: one monthly price, 300 messages a month included, setup done for you.">
+<meta name="description" content="Romy for beauty centres: everything Romy does on every plan, messages included, setup done for you.">
 <link rel="canonical" href="https://getloopdesk.com/pricing">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Loopdesk">
 <meta property="og:url" content="https://getloopdesk.com/pricing">
 <meta property="og:title" content="Pricing · Loopdesk">
-<meta property="og:description" content="One monthly price, 300 messages a month included, setup done for you.">
+<meta property="og:description" content="Everything Romy does on every plan, messages included, setup done for you.">
 <meta property="og:image" content="https://getloopdesk.com/og-share2.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -121,12 +121,23 @@ html.lang-ar .price .talk{letter-spacing:0}
 .daily{font-size:14px;color:var(--muted);margin-top:-8px}
 .feat{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid var(--line);display:grid;gap:11px;flex:1;align-content:start}
 .feat li{font-size:15px;color:var(--ink-2);padding-inline-start:26px;position:relative;line-height:1.45}
-.feat li::before{content:"";position:absolute;inset-inline-start:2px;top:4px;width:12px;height:7px;border-inline-start:2px solid var(--rose);border-bottom:2px solid var(--rose);transform:rotate(-45deg)}
-html.lang-ar .feat li::before{transform:rotate(45deg) scaleX(-1)}
+.feat li::before{content:"";position:absolute;inset-inline-start:2px;top:4px;width:12px;height:7px;border-left:2px solid var(--rose);border-bottom:2px solid var(--rose);transform:rotate(-45deg)}
 .feat li.lead{padding-inline-start:0;font-weight:600;color:var(--ink)}
 .feat li.lead::before{display:none}
 .feat b{color:var(--ink);font-weight:600}
 .plan .btn{width:100%}
+.msgcount{font-size:17px;color:var(--ink-2);padding-top:16px;border-top:1px solid var(--line)}
+.msgcount b{display:block;font-size:30px;font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.2}
+.plan.rec .msgcount b{color:var(--rose)}
+.same{font-size:14px;color:var(--muted);flex:1}
+.allin{max-width:880px;margin:28px auto 0;background:var(--soft);border-radius:var(--r);padding:28px clamp(20px,4vw,40px)}
+.allin h2{font-size:20px;font-weight:600;margin-bottom:6px}
+.allin .feat{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;border-top:0;padding-top:12px}
+.allin .feat li:first-child{grid-column:1/-1}
+.branch{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:16px;color:var(--ink-2)}
+.branch b{color:var(--ink)}
+@media (max-width:640px){.allin .feat{grid-template-columns:minmax(0,1fr)}}
+
 @media (max-width:920px){.plans{grid-template-columns:minmax(0,1fr);max-width:560px;margin:0 auto}.plan.rec{order:-1}}
 
 /* every plan */
@@ -243,100 +254,98 @@ footer nav a:hover{color:var(--ink)}
   <div class="chip"><b><span class="en">Coming soon</span><span class="ar">قريبًا</span></b><span class="en">Romy, for beauty centres</span><span class="ar">رومي، لمراكز التجميل</span></div>
   <h1 class="h1 en">Priced to pay for itself.</h1>
   <h1 class="h1 ar">سعرٌ يستردّ نفسه.</h1>
-  <p class="sub en">One monthly price with 300 messages included. Our team sets everything up, and you just say yes. A few clients back in the chair and Romy has paid her way.</p>
-  <p class="sub ar">اشتراك شهري واحد، و300 رسالة ضمن الباقة. فريقنا يجهّز كلّ شيء، وما عليكم إلّا الموافقة. يكفي أن تعود بضع عميلات حتى تكون رومي قد غطّت تكلفتها.</p>
+  <p class="sub en">One monthly price with your messages included. Our team sets everything up, and you just say yes. A few clients back in the chair and Romy has paid her way.</p>
+  <p class="sub ar">اشتراك شهري واحد، ورسائلكم ضمن الباقة. فريقنا يجهّز كلّ شيء، وما عليكم إلّا الموافقة. يكفي أن تعود بضع عميلات حتى تكون رومي قد غطّت تكلفتها.</p>
 </section>
 
-<section class="wrap" aria-labelledby="plans-title">
-  <h2 id="plans-title" class="en" hidden>Plans</h2>
-  <div class="intro"><p class="en">Your first month on any plan: <b class="tbc">AED 299</b></p><p class="ar">الشهر الأوّل على أيّ باقة: <b class="tbc">299 درهمًا</b></p></div>
+<section class="wrap" aria-label="Plans">
+  <div class="intro"><p class="en">Your starter month on any plan: <b class="tbc">AED 300</b></p><p class="ar">شهر البداية على أيّ باقة: <b class="tbc">300 درهم</b></p></div>
 
   <div class="plans en">
     <article class="plan">
-      <span class="badge quiet">For one centre</span>
-      <div><h3 class="tbc">Front desk</h3><p class="for">Every chat answered and booked, day and night.</p></div>
-      <div class="price"><span class="cur">AED</span><span class="num tbc">599</span><span class="per">/ month</span></div>
-      <p class="daily">About AED 20 a day</p>
-      <ul class="feat">
-        <li>Clients book, move and cancel in a chat, at any hour, in English or Arabic</li>
-        <li>Reminders that cut no-shows</li>
-        <li>Your team logs walk-ins and phone bookings on WhatsApp</li>
-        <li><b>300 messages a month included</b></li>
-      </ul>
+      <span class="badge quiet">Quieter months</span>
+      <h3 class="tbc">Essential</h3>
+      <div class="price"><span class="cur">AED</span><span class="num tbc">699</span><span class="per">/ month</span></div>
+      <p class="daily">About AED 23 a day</p>
+      <p class="msgcount"><b class="tbc">300</b> messages a month included</p>
+      <p class="same">Everything Romy does, rhythm engine included</p>
       <a class="btn btn-light" href="#demo">Book a demo</a>
     </article>
     <article class="plan rec">
       <span class="badge">Our pick for most centres</span>
-      <div><h3 class="tbc">Growth</h3><p class="for">Everything in Front desk, plus the rhythm engine that brings clients back sooner.</p></div>
-      <div class="price"><span class="cur">AED</span><span class="num tbc">899</span><span class="per">/ month</span></div>
-      <p class="daily">About AED 30 a day</p>
-      <ul class="feat">
-        <li class="lead">Everything in Front desk, plus:</li>
-        <li><b>The rhythm engine:</b> invites each client back when her treatment is due</li>
-        <li>The right add-on at the right moment, so each visit is worth more</li>
-        <li>Wins back clients who have drifted away</li>
-        <li>Weekly results on WhatsApp: who came back and what they spent</li>
-        <li><b>300 messages a month included</b></li>
-      </ul>
+      <h3 class="tbc">Growth</h3>
+      <div class="price"><span class="cur">AED</span><span class="num tbc">744</span><span class="per">/ month</span></div>
+      <p class="daily">About AED 25 a day</p>
+      <p class="msgcount"><b class="tbc">550</b> messages a month included</p>
+      <p class="same">Everything Romy does, rhythm engine included</p>
       <a class="btn btn-rose" href="#demo">Book a demo</a>
     </article>
     <article class="plan">
-      <span class="badge quiet">Two branches or more</span>
-      <div><h3 class="tbc">Group</h3><p class="for">Your first branch at its plan price. Every extra branch, on any plan, 20% off.</p></div>
-      <div class="price"><span class="num">20%</span><span class="per">off each extra branch</span></div>
-      <p class="daily">Two Growth branches: AED <span class="tbc">899</span> + AED <span class="tbc">719</span> a month</p>
-      <ul class="feat">
-        <li class="lead">Each branch gets its plan, plus:</li>
-        <li>One view of every branch's results</li>
-        <li><b>300 messages a month per branch included</b></li>
-        <li>A named contact at Loopdesk</li>
-      </ul>
-      <a class="btn btn-light" href="#demo">Talk to sales</a>
+      <span class="badge quiet">Busy centres</span>
+      <h3 class="tbc">Pro</h3>
+      <div class="price"><span class="cur">AED</span><span class="num tbc">995</span><span class="per">/ month</span></div>
+      <p class="daily">About AED 33 a day</p>
+      <p class="msgcount"><b class="tbc">900</b> messages a month included</p>
+      <p class="same">Everything Romy does, rhythm engine included</p>
+      <a class="btn btn-light" href="#demo">Book a demo</a>
     </article>
   </div>
 
   <div class="plans ar">
     <article class="plan">
-      <span class="badge quiet">لمركز واحد</span>
-      <div><h3 class="tbc">مكتب الاستقبال</h3><p class="for">كلّ محادثة يُردّ عليها وكلّ موعد يُحجز، ليلًا ونهارًا.</p></div>
-      <div class="price"><span class="num tbc">599</span><span class="cur">درهمًا</span><span class="per">/ شهريًا</span></div>
-      <p class="daily">نحو 20 درهمًا في اليوم</p>
-      <ul class="feat">
-        <li>عملاؤكم يحجزون ويعدّلون ويلغون بمحادثة، في أيّ ساعة، بالعربية أو الإنجليزية</li>
-        <li>تذكيرات تقلّل المواعيد الفائتة</li>
-        <li>فريقكم يسجّل الحضور المباشر والحجوزات الهاتفية من واتساب</li>
-        <li><b>300 رسالة شهريًا ضمن الباقة</b></li>
-      </ul>
+      <span class="badge quiet">للأشهر الأهدأ</span>
+      <h3 class="tbc">الأساسية</h3>
+      <div class="price"><span class="num tbc">699</span><span class="cur">درهمًا</span><span class="per">/ شهريًا</span></div>
+      <p class="daily">نحو 23 درهمًا في اليوم</p>
+      <p class="msgcount"><b class="tbc">300</b> رسالة شهريًا ضمن الباقة</p>
+      <p class="same">كلّ ما تقدّمه رومي، ومعه محرّك الإيقاع</p>
       <a class="btn btn-light" href="#demo">احجزوا جولة تعريفية</a>
     </article>
     <article class="plan rec">
       <span class="badge">اختيارنا لمعظم المراكز</span>
-      <div><h3 class="tbc">النموّ</h3><p class="for">كلّ ما في مكتب الاستقبال، ومعه محرّك الإيقاع الذي يُعيد العميلات أسرع.</p></div>
-      <div class="price"><span class="num tbc">899</span><span class="cur">درهمًا</span><span class="per">/ شهريًا</span></div>
-      <p class="daily">نحو 30 درهمًا في اليوم</p>
-      <ul class="feat">
-        <li class="lead">كلّ ما في مكتب الاستقبال، وفوقه:</li>
-        <li><b>محرّك الإيقاع:</b> يدعو كلّ عميلة للعودة حين يحين موعد خدمتها</li>
-        <li>الخدمة الإضافية المناسبة في اللحظة المناسبة، فتزيد قيمة كلّ زيارة</li>
-        <li>يستعيد العميلات اللواتي غِبن</li>
-        <li>نتائج أسبوعية على واتساب: من عادت، وكم أنفقت</li>
-        <li><b>300 رسالة شهريًا ضمن الباقة</b></li>
-      </ul>
+      <h3 class="tbc">النموّ</h3>
+      <div class="price"><span class="num tbc">744</span><span class="cur">درهمًا</span><span class="per">/ شهريًا</span></div>
+      <p class="daily">نحو 25 درهمًا في اليوم</p>
+      <p class="msgcount"><b class="tbc">550</b> رسالة شهريًا ضمن الباقة</p>
+      <p class="same">كلّ ما تقدّمه رومي، ومعه محرّك الإيقاع</p>
       <a class="btn btn-rose" href="#demo">احجزوا جولة تعريفية</a>
     </article>
     <article class="plan">
-      <span class="badge quiet">لفرعين أو أكثر</span>
-      <div><h3 class="tbc">المجموعات</h3><p class="for">الفرع الأوّل بسعر باقته، وكلّ فرع إضافي، على أيّ باقة، بخصم 20%.</p></div>
-      <div class="price"><span class="num">20%</span><span class="per">خصم على كلّ فرع إضافي</span></div>
-      <p class="daily">فرعان على باقة النموّ: <span class="tbc">899</span> + <span class="tbc">719</span> درهمًا شهريًا</p>
-      <ul class="feat">
-        <li class="lead">لكلّ فرع باقته، وفوقها:</li>
-        <li>نتائج الفروع كلّها في مكان واحد</li>
-        <li><b>300 رسالة شهريًا لكلّ فرع ضمن الباقة</b></li>
-        <li>جهة تواصل مخصّصة لكم في Loopdesk</li>
-      </ul>
-      <a class="btn btn-light" href="#demo">تحدّثوا مع المبيعات</a>
+      <span class="badge quiet">للمراكز المزدحمة</span>
+      <h3 class="tbc">الاحترافية</h3>
+      <div class="price"><span class="num tbc">995</span><span class="cur">درهمًا</span><span class="per">/ شهريًا</span></div>
+      <p class="daily">نحو 33 درهمًا في اليوم</p>
+      <p class="msgcount"><b class="tbc">900</b> رسالة شهريًا ضمن الباقة</p>
+      <p class="same">كلّ ما تقدّمه رومي، ومعه محرّك الإيقاع</p>
+      <a class="btn btn-light" href="#demo">احجزوا جولة تعريفية</a>
     </article>
+  </div>
+
+  <div class="allin en">
+    <h2>Every plan does everything</h2>
+    <ul class="feat">
+      <li><b>The rhythm engine:</b> invites each client back when her treatment is due</li>
+      <li>The right add-on at the right moment, so each visit is worth more</li>
+      <li>Wins back clients who have drifted away</li>
+      <li>Clients book, move and cancel in a chat, at any hour, in English or Arabic</li>
+      <li>Reminders that cut no-shows</li>
+      <li>Your team logs walk-ins and phone bookings on WhatsApp</li>
+      <li>Weekly results on WhatsApp: who came back and what they spent</li>
+    </ul>
+    <p class="branch"><b>More than one branch?</b> Your first branch pays its plan price, and every extra branch is 20% off. Each branch gets its own messages.</p>
+  </div>
+  <div class="allin ar">
+    <h2>كلّ باقة تفعل كلّ شيء</h2>
+    <ul class="feat">
+      <li><b>محرّك الإيقاع:</b> يدعو كلّ عميلة للعودة حين يحين موعد خدمتها</li>
+      <li>الخدمة الإضافية المناسبة في اللحظة المناسبة، فتزيد قيمة كلّ زيارة</li>
+      <li>يستعيد العميلات اللواتي غِبن</li>
+      <li>عملاؤكم يحجزون ويعدّلون ويلغون بمحادثة، في أيّ ساعة، بالعربية أو الإنجليزية</li>
+      <li>تذكيرات تقلّل المواعيد الفائتة</li>
+      <li>فريقكم يسجّل الحضور المباشر والحجوزات الهاتفية من واتساب</li>
+      <li>نتائج أسبوعية على واتساب: من عادت، وكم أنفقت</li>
+    </ul>
+    <p class="branch"><b>لديكم أكثر من فرع؟</b> الفرع الأوّل بسعر باقته، وكلّ فرع إضافي بخصم 20%. ولكلّ فرع رسائله الخاصة.</p>
   </div>
 </section>
 
@@ -360,37 +369,37 @@ footer nav a:hover{color:var(--ink)}
   <div class="wrap msgs-grid">
     <div>
       <div class="kicker en">Messages</div><div class="kicker ar">الرسائل</div>
-      <h2 class="h2 en">300 messages a month, included.</h2>
-      <h2 class="h2 ar">300 رسالة كلّ شهر… ضمن الباقة.</h2>
-      <p class="sub en">Replies never count. When a client writes to you, the chat stays open for 24 hours and everything Romy sends in it is free. Your 300 are for the messages Romy starts herself: reminders, confirmations and rhythm notes.</p>
-      <p class="sub ar">الردود لا تُحتسب أبدًا. حين تراسلكم عميلة، تبقى المحادثة مفتوحة 24 ساعة، وكلّ ما ترسله رومي فيها مجاني. أمّا رسائلكم الـ300 فهي لما تبدؤه رومي بنفسها: التذكيرات وتأكيد الحجوزات ورسائل الإيقاع.</p>
+      <h2 class="h2 en">Your messages, included.</h2>
+      <h2 class="h2 ar">رسائلكم… ضمن الباقة.</h2>
+      <p class="sub en">Replies never count. When a client writes to you, the chat stays open for 24 hours and everything Romy sends in it is free. Your included messages (300, 550 or 900, by plan) are for the ones Romy starts herself: reminders, confirmations and rhythm notes.</p>
+      <p class="sub ar">الردود لا تُحتسب أبدًا. حين تراسلكم عميلة، تبقى المحادثة مفتوحة 24 ساعة، وكلّ ما ترسله رومي فيها مجاني. أمّا رسائل باقتكم (300 أو 550 أو 900) فهي لما تبدؤه رومي بنفسها: التذكيرات وتأكيد الحجوزات ورسائل الإيقاع.</p>
       <ul class="calm en">
         <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2"/></svg></span><div><b>You always know where you stand</b><span>We tell you at half way and at 80%. Ask Romy any time: "How many messages have I used?"</span></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"/><path d="M9 9h6M9 13h6"/></svg></span><div><b>Nothing paid without your yes</b><span>When the 300 run out, no paid message goes out until you tap Keep going. Replies keep working either way.</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"/><path d="M9 9h6M9 13h6"/></svg></span><div><b>Nothing paid without your yes</b><span>When your included messages run out, no paid message goes out until you tap Keep going. Replies keep working either way.</span></div></li>
         <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 6h16M4 18h10"/></svg></span><div><b>A short daily note</b><span>On days with paid messages, one line with the count and the cost.</span></div></li>
         <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M6 9l6-6 6 6"/></svg></span><div><b>14 days' notice on any rise</b><span>If Meta raises its prices, you hear from us by email and WhatsApp two weeks before, with one tap to turn paid messages off. If prices drop, you pay less straight away.</span></div></li>
       </ul>
       <ul class="calm ar">
         <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2"/></svg></span><div><b>تعرفون دائمًا أين أنتم</b><span>ننبّهكم عند منتصف الرسائل، ثمّ عند 80%. واسألوا رومي متى شئتم: «كم رسالة استخدمنا؟»</span></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"/><path d="M9 9h6M9 13h6"/></svg></span><div><b>لا شيء مدفوع دون موافقتكم</b><span>حين تنفد الـ300، لا تُرسَل أيّ رسالة مدفوعة حتى تضغطوا «استمرار». والردود تعمل في كلّ الأحوال.</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"/><path d="M9 9h6M9 13h6"/></svg></span><div><b>لا شيء مدفوع دون موافقتكم</b><span>حين تنفد رسائل باقتكم، لا تُرسَل أيّ رسالة مدفوعة حتى تضغطوا «استمرار». والردود تعمل في كلّ الأحوال.</span></div></li>
         <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 6h16M4 18h10"/></svg></span><div><b>ملخّص يومي قصير</b><span>في الأيام التي فيها رسائل مدفوعة، سطر واحد بعددها وكلفتها.</span></div></li>
         <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M6 9l6-6 6 6"/></svg></span><div><b>إشعار قبل 14 يومًا من أيّ زيادة</b><span>إن رفعت Meta أسعارها، نخبركم بالبريد وعلى واتساب قبل أسبوعين، ويمكنكم إيقاف الرسائل المدفوعة بضغطة. وإن خفّضتها، تدفعون أقلّ فورًا.</span></div></li>
       </ul>
     </div>
     <div>
       <div class="rates en">
-        <h3>After your 300, you pay only for what's sent</h3>
+        <h3>After your included messages, you pay only for what's sent</h3>
         <div class="rate"><div><b>Replies in an open chat</b><small>Anything within 24 hours of her last message</small></div><span class="v free">Free, always</span></div>
         <div class="rate"><div><b>Reminders and confirmations</b><small>"See you tomorrow at 4 with Joy"</small></div><span class="v"><span class="tbc">AED 0.06</span> each</span></div>
         <div class="rate"><div><b>Rhythm notes and offers</b><small>"Your nails have been so loyal for 16 days…"</small></div><span class="v"><span class="tbc">AED 0.21</span> each</span></div>
-        <p class="fine">These are Meta's own message prices for the UAE, passed on at cost. Your 300 included messages reset on the 1st of each month.</p>
+        <p class="fine">These are Meta's own message prices for the UAE, passed on at cost. Your included messages reset on the 1st of each month.</p>
       </div>
       <div class="rates ar">
-        <h3>بعد الـ300، تدفعون فقط ثمن ما يُرسَل</h3>
+        <h3>بعد رسائل الباقة، تدفعون فقط ثمن ما يُرسَل</h3>
         <div class="rate"><div><b>الردود في محادثة مفتوحة</b><small>كلّ ما يُرسَل خلال 24 ساعة من آخر رسالة منها</small></div><span class="v free">مجانًا، دائمًا</span></div>
         <div class="rate"><div><b>التذكيرات وتأكيد الحجوزات</b><small>«نراكِ غدًا الساعة 4 مع جوي»</small></div><span class="v"><span class="tbc">0.06 درهم</span> للرسالة</span></div>
         <div class="rate"><div><b>رسائل الإيقاع والعروض</b><small>«أظافركِ وفيّة لكِ منذ 16 يومًا…»</small></div><span class="v"><span class="tbc">0.21 درهم</span> للرسالة</span></div>
-        <p class="fine">هذه أسعار Meta نفسها لرسائل الإمارات، ننقلها إليكم بسعر الكلفة. وتتجدّد رسائلكم الـ300 في أوّل كلّ شهر.</p>
+        <p class="fine">هذه أسعار Meta نفسها لرسائل الإمارات، ننقلها إليكم بسعر الكلفة. وتتجدّد رسائل باقتكم في أوّل كلّ شهر.</p>
       </div>
     </div>
   </div>
@@ -407,8 +416,9 @@ footer nav a:hover{color:var(--ink)}
     </div>
     <div class="calc">
       <div class="seg" role="group" aria-label="Plan">
-        <button type="button" data-price="599" aria-pressed="false" id="pick-fd"><span class="en">Front desk</span><span class="ar">مكتب الاستقبال</span></button>
-        <button type="button" data-price="899" aria-pressed="true" id="pick-gr"><span class="en">Growth</span><span class="ar">النموّ</span></button>
+        <button type="button" data-price="699" data-en="Essential" data-ar="الأساسية" aria-pressed="false" id="pick-es"><span class="en">Essential</span><span class="ar">الأساسية</span></button>
+        <button type="button" data-price="744" data-en="Growth" data-ar="النموّ" aria-pressed="true" id="pick-gr"><span class="en">Growth</span><span class="ar">النموّ</span></button>
+        <button type="button" data-price="995" data-en="Pro" data-ar="الاحترافية" aria-pressed="false" id="pick-pr"><span class="en">Pro</span><span class="ar">الاحترافية</span></button>
       </div>
       <div>
         <label for="visit"><span class="en">Average visit</span><span class="ar">متوسّط قيمة الزيارة</span><output id="visitOut" class="ltr">AED 250</output></label>
@@ -430,16 +440,16 @@ footer nav a:hover{color:var(--ink)}
   <div class="faq-list en">
     <details><summary>Do I have to approve every message?</summary><p>No. You set the rules once, like how soon after a manicure to invite her back, and Romy runs on her own. You see the results every week.</p></details>
     <details><summary>Who sets it all up?</summary><p>Our team does. We add your services, prices, team and opening hours, then send it to you to check. You change anything you like and say yes. Nothing reaches a client before that.</p></details>
-    <details><summary>What happens when my 300 messages run out?</summary><p>Romy asks you first. Tap Keep going and extra messages are charged at the prices above, billed with your monthly plan. Tap Pause and only the free replies go out until the 1st.</p></details>
-    <details><summary>I have more than one branch. How does that work?</summary><p>Each branch picks its own plan and gets its own 300 messages. Your first branch pays the plan price and every extra branch is 20% off. You see all branches' results in one place.</p></details>
+    <details><summary>What happens when my included messages run out?</summary><p>Romy asks you first. Tap Keep going and extra messages are charged at the prices above, billed with your monthly plan. Tap Pause and only the free replies go out until the 1st.</p></details>
+    <details><summary>I have more than one branch. How does that work?</summary><p>Each branch picks its own plan and gets its own messages. Your first branch pays the plan price and every extra branch is 20% off. You see all branches' results in one place.</p></details>
     <details><summary>Do my clients see "Loopdesk"?</summary><p>No. They chat with your centre, on your number, and see your stylists' names.</p></details>
     <details><summary>Can I stop?</summary><p>Yes, with 30 days' notice. Your data stays yours, and we delete it as our <a href="/privacy">privacy policy</a> describes.</p></details>
   </div>
   <div class="faq-list ar">
     <details><summary>هل عليّ أن أوافق على كلّ رسالة؟</summary><p>لا. تضعون القواعد مرّة واحدة، مثل متى تُدعى العميلة للعودة بعد المانيكير، ورومي تتولّى الباقي. وتصلكم النتائج كلّ أسبوع.</p></details>
     <details><summary>من يجهّز كلّ شيء؟</summary><p>فريقنا. نُدخل خدماتكم وأسعاركم وفريقكم وساعات عملكم، ثمّ نرسلها إليكم لتراجعوها. تعدّلون ما تشاؤون وتوافقون، ولا يصل شيء إلى أيّ عميلة قبل ذلك.</p></details>
-    <details><summary>ماذا يحدث حين تنفد الـ300 رسالة؟</summary><p>تسألكم رومي أوّلًا. اضغطوا «استمرار» فتُحتسب الرسائل الإضافية بالأسعار أعلاه، مع فاتورة الاشتراك الشهري. أو اضغطوا «إيقاف مؤقّت» فلا يُرسَل إلّا الردود المجانية حتى أوّل الشهر.</p></details>
-    <details><summary>لديّ أكثر من فرع. كيف يُحتسب ذلك؟</summary><p>لكلّ فرع باقته الخاصة و300 رسالة خاصة به. الفرع الأوّل بسعر باقته، وكلّ فرع إضافي بخصم 20%. وتجدون نتائج الفروع كلّها في مكان واحد.</p></details>
+    <details><summary>ماذا يحدث حين تنفد رسائل الباقة؟</summary><p>تسألكم رومي أوّلًا. اضغطوا «استمرار» فتُحتسب الرسائل الإضافية بالأسعار أعلاه، مع فاتورة الاشتراك الشهري. أو اضغطوا «إيقاف مؤقّت» فلا يُرسَل إلّا الردود المجانية حتى أوّل الشهر.</p></details>
+    <details><summary>لديّ أكثر من فرع. كيف يُحتسب ذلك؟</summary><p>لكلّ فرع باقته الخاصة ورسائله الخاصة. الفرع الأوّل بسعر باقته، وكلّ فرع إضافي بخصم 20%. وتجدون نتائج الفروع كلّها في مكان واحد.</p></details>
     <details><summary>هل يرى عملائي اسم Loopdesk؟</summary><p>لا. يتحدّثون مع مركزكم، على رقمكم، ويرون أسماء خبيراتكم.</p></details>
     <details><summary>هل يمكنني الإيقاف؟</summary><p>نعم، بإشعار قبل 30 يومًا. بياناتكم ملككم، ونحذفها كما توضّح <a href="/privacy">سياسة الخصوصية</a>.</p></details>
   </div>
@@ -492,23 +502,23 @@ footer nav a:hover{color:var(--ink)}
   /* break-even: clients a month whose visit value covers the plan */
   var slider=document.getElementById('visit'), out=document.getElementById('visitOut'),
       need=document.getElementById('need'), txt=document.getElementById('needText'),
-      picks=document.querySelectorAll('.seg button'), price=899;
+      picks=document.querySelectorAll('.seg button'), price=744, pname=document.getElementById('pick-gr');
   function arClients(n){ if(n===1)return 'عميلة واحدة'; if(n===2)return 'عميلتان'; if(n<=10)return n+' عميلات'; return n+' عميلة'; }
   function calc(){
-    var v=+slider.value, n=Math.ceil(price/v), plan=price===899;
+    var v=+slider.value, n=Math.ceil(price/v);
     if(isAr()){
       out.textContent=v+' درهم';
       need.textContent=arClients(n);
-      txt.textContent='إن أعادت رومي '+arClients(n)+' في الشهر، بمتوسّط '+v+' درهم للزيارة، تكون باقة '+(plan?'النموّ':'مكتب الاستقبال')+' قد غطّت تكلفتها. وكلّ زيارة بعد ذلك ربحٌ لكم.';
+      txt.textContent='إن أعادت رومي '+arClients(n)+' في الشهر، بمتوسّط '+v+' درهم للزيارة، تكون باقة '+pname.dataset.ar+' قد غطّت تكلفتها. وكلّ زيارة بعد ذلك ربحٌ لكم.';
     }else{
       out.textContent='AED '+v;
       need.textContent=n+(n===1?' client':' clients');
-      txt.textContent='Bring back '+n+(n===1?' client':' clients')+' a month at AED '+v+' a visit and '+(plan?'Growth':'Front desk')+' has paid for itself. Every visit after that is yours.';
+      txt.textContent='Bring back '+n+(n===1?' client':' clients')+' a month at AED '+v+' a visit and '+pname.dataset.en+' has paid for itself. Every visit after that is yours.';
     }
   }
   slider.addEventListener('input',calc);
   picks.forEach(function(b){b.addEventListener('click',function(){
-    price=+b.dataset.price; picks.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')}); calc();
+    price=+b.dataset.price; pname=b; picks.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')}); calc();
   })});
 
   document.querySelectorAll('[data-copy]').forEach(function(b){

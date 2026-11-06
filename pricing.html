@@ -102,7 +102,7 @@ html.lang-ar #langbtn{font-family:var(--font)}
 .intro b{color:var(--rose)}
 
 /* plans */
-.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
 .plan{min-width:0;background:var(--soft);border-radius:var(--r);padding:30px 28px;display:flex;flex-direction:column;gap:18px}
 .plan.rec{background:var(--bg);box-shadow:0 0 0 2px var(--rose),0 30px 80px -40px rgba(11,11,15,.35);position:relative}
 .badge{align-self:flex-start;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:var(--rose);color:#fff}
@@ -138,7 +138,8 @@ html.lang-ar .price .talk{letter-spacing:0}
 .branch b{color:var(--ink)}
 @media (max-width:640px){.allin .feat{grid-template-columns:minmax(0,1fr)}}
 
-@media (max-width:920px){.plans{grid-template-columns:minmax(0,1fr);max-width:560px;margin:0 auto}.plan.rec{order:-1}}
+@media (max-width:1100px){.plans{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.plans{grid-template-columns:minmax(0,1fr);max-width:560px;margin:0 auto}.plan.rec{order:-1}}
 
 /* every plan */
 .every{padding-block:clamp(40px,5vw,64px) 0}
@@ -289,6 +290,15 @@ footer nav a:hover{color:var(--ink)}
       <p class="same">Everything Romy does, rhythm engine included</p>
       <a class="btn btn-light" href="#demo">Book a demo</a>
     </article>
+    <article class="plan">
+      <span class="badge quiet">Two branches or more</span>
+      <h3>Group</h3>
+      <div class="price"><span class="num">20%</span><span class="per">off each extra branch</span></div>
+      <p class="daily">Two Growth branches: AED 825 + AED 660 a month</p>
+      <p class="msgcount"><b>Any plan</b> per branch, with its own messages</p>
+      <p class="same">One view of every branch's results, and a named contact at Loopdesk</p>
+      <a class="btn btn-light" href="#demo">Talk to sales</a>
+    </article>
   </div>
 
   <div class="plans ar">
@@ -319,6 +329,15 @@ footer nav a:hover{color:var(--ink)}
       <p class="same">كلّ ما تقدّمه رومي، ومعه محرّك الإيقاع</p>
       <a class="btn btn-light" href="#demo">احجزوا جولة تعريفية</a>
     </article>
+    <article class="plan">
+      <span class="badge quiet">لفرعين أو أكثر</span>
+      <h3>المجموعات</h3>
+      <div class="price"><span class="num">20%</span><span class="per">خصم على كلّ فرع إضافي</span></div>
+      <p class="daily">فرعان على باقة النموّ: 825 + 660 درهمًا شهريًا</p>
+      <p class="msgcount"><b>أيّ باقة</b> لكلّ فرع، برسائله الخاصة</p>
+      <p class="same">نتائج الفروع كلّها في مكان واحد، وجهة تواصل مخصّصة لكم في Loopdesk</p>
+      <a class="btn btn-light" href="#demo">تحدّثوا مع المبيعات</a>
+    </article>
   </div>
 
   <div class="allin en">
@@ -333,7 +352,6 @@ footer nav a:hover{color:var(--ink)}
       <li><b>A daily performance note</b> on WhatsApp and by email: bookings, who came back and what they spent</li>
       <li><b>Your own dashboard</b> to track the business: bookings, returning clients, revenue and messages</li>
     </ul>
-    <p class="branch"><b>More than one branch?</b> Your first branch pays its plan price, and every extra branch is 20% off. Each branch gets its own messages.</p>
   </div>
   <div class="allin ar">
     <h2>كلّ باقة تفعل كلّ شيء</h2>
@@ -347,7 +365,6 @@ footer nav a:hover{color:var(--ink)}
       <li><b>ملخّص أداء يومي</b> على واتساب وبالبريد الإلكتروني: الحجوزات، ومن عادت، وكم أنفقت</li>
       <li><b>لوحة متابعة خاصة بكم</b> لتتبّع عملكم: الحجوزات، والعميلات العائدات، والإيرادات، والرسائل</li>
     </ul>
-    <p class="branch"><b>لديكم أكثر من فرع؟</b> الفرع الأوّل بسعر باقته، وكلّ فرع إضافي بخصم 20%. ولكلّ فرع رسائله الخاصة.</p>
   </div>
 </section>
 

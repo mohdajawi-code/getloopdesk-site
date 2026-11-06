@@ -5,6 +5,9 @@
 //   RESEND_API_KEY   required. Until it is set, the form offers "send by email instead".
 //   CALLBACK_TO      optional, default sales@getloopdesk.com
 //   CALLBACK_FROM    optional, default "Loopdesk website <website@getloopdesk.com>"
+//   LEAD_INTAKE_URL  optional, e.g. https://staff.getloopdesk.com/leads/intake (platform PR #22)
+//   LEAD_INTAKE_SECRET  optional, same value as on the platform (24+ characters)
+//   With both set, each request also lands in the sales team's open pool, unassigned.
 //
 // Field values match the platform's lead model (src/sales/leads.ts), so a request
 // can later go straight into the sales team's open pool as a "website" lead.
@@ -157,7 +160,7 @@ function buildEmail(f, now) {
     '',
     'lead-json: ' + JSON.stringify(lead),
   ].join('\n');
-  return { subject, html, text };
+  return { subject, html, text, lead };
 }
 
 async function readBody(req) {
@@ -195,6 +198,7 @@ module.exports = async function handler(req, res) {
 
   const mail = buildEmail(f, now);
   const idem = clean(b.requestId, 64).replace(/[^a-zA-Z0-9-]/g, '');
+  const pooled = toPool(mail.lead); // runs alongside the email; never fails the form
   try {
     const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -202,18 +206,115 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({ from: FROM, to: [TO], reply_to: f.email, subject: mail.subject, html: mail.html, text: mail.text, tags: [{ name: 'type', value: 'callback' }] }),
       signal: AbortSignal.timeout(8000),
     });
+    await pooled;
     if (!r.ok) {
       console.error('callback: email provider said', r.status, (await r.text()).slice(0, 300));
       return send(502, { ok: false, error: 'send' });
     }
+    await confirmToOwner(f, key, idem); // only after sales@ has it, so she is never told "booked" when it wasn't
     return send(200, { ok: true });
   } catch (e) {
+    await pooled;
     console.error('callback: email provider unreachable', e && e.name);
     return send(502, { ok: false, error: 'send' });
   }
 };
 
+// ---------- confirmation email to the person who asked for the call ----------
+// A service email (she asked for the call), so it needs no marketing tick.
+// Arabic: feminine by default, masculine for dental and barber (project rule).
+const CONFIRM_FROM = process.env.CONFIRM_FROM || 'Loopdesk <sales@getloopdesk.com>';
+const WHEN = {
+  en: { morning: 'in the morning, between 10am and 12pm', afternoon: 'in the afternoon, between 12pm and 4pm', evening: 'in the evening, between 4pm and 8pm', any: 'between 10am and 8pm' },
+  ar: { morning: 'صباحًا بين 10 و12', afternoon: 'ظهرًا بين 12 و4', evening: 'مساءً بين 4 و8', any: 'بين 10 صباحًا و8 مساءً' },
+};
+/** +971501234567 -> +971 50 123 4567 (other countries unchanged) */
+const showPhone = (p) => (/^\+9715\d{8}$/.test(p) ? `+971 ${p.slice(4, 6)} ${p.slice(6, 9)} ${p.slice(9)}` : p);
+
+function confirmCopy(f) {
+  const first = f.name.split(' ')[0];
+  const phone = showPhone(f.phone);
+  if (f.lang !== 'ar') {
+    return {
+      subject: 'Your call with Loopdesk is booked',
+      lines: [
+        `Hi ${first},`,
+        "Thank you for asking us to call. It's in our diary.",
+        `We'll call you on ${phone} ${WHEN.en[f.time]} (UAE time), within one working day.`,
+        "One small favour: keep your price list nearby. We'll show you Loopdesk with your own services and prices, so you see your clients coming back, not someone else's.",
+        'Need a different time? Just reply to this email.',
+        'Speak soon,\nThe Loopdesk team',
+        'P.S. Your clients have a rhythm. So do we: we call when we say we will.',
+      ],
+      dir: 'ltr',
+    };
+  }
+  const m = f.vertical === 'dental' || f.vertical === 'barber';
+  const k = m ? 'كَ' : 'كِ';
+  return {
+    subject: 'موعد اتصالنا مع Loopdesk مسجَّل',
+    lines: [
+      `مرحبًا ${first}،`,
+      `شكرًا لطلب${k}. اتصال${k} مسجَّل في جدولنا.`,
+      `سنتصل ب${k} على الرقم \u2066${phone}\u2069 ${WHEN.ar[f.time]} بتوقيت الإمارات، خلال يوم عمل واحد.`,
+      m ? 'طلب صغير: اجعل قائمة أسعارك قريبة منك، فسنريك Loopdesk بخدماتك وأسعارك أنت.' : 'طلب صغير: اجعلي قائمة أسعاركِ قريبة منكِ، فسنريكِ Loopdesk بخدماتكِ وأسعاركِ أنتِ.',
+      m ? 'يناسبك وقت آخر؟ ردّ على هذه الرسالة فقط.' : 'يناسبكِ وقت آخر؟ ردّي على هذه الرسالة فقط.',
+      'إلى اللقاء قريبًا،\nفريق Loopdesk',
+      `ملاحظة: لعملائ${k} إيقاع، ولنا إيقاعنا أيضًا: نتصل حين نَعِد.`,
+    ],
+    dir: 'rtl',
+  };
+}
+
+function buildConfirm(f) {
+  const c = confirmCopy(f);
+  const font = c.dir === 'rtl' ? 'Tahoma,Arial,sans-serif' : '-apple-system,Segoe UI,Arial,sans-serif';
+  const para = (t, i) => {
+    const last = i === c.lines.length - 1;
+    return `<p style="margin:0 0 14px;${last ? 'color:#6E6E78;font-size:14px;' : ''}">${esc(t).replace(/\n/g, '<br>')}</p>`;
+  };
+  const html = `<div dir="${c.dir}" style="font-family:${font};font-size:16px;line-height:1.6;color:#0B0B0F;max-width:560px;text-align:${c.dir === 'rtl' ? 'right' : 'left'}">${c.lines.map(para).join('')}</div>`;
+  return { subject: c.subject, html, text: c.lines.join('\n\n') };
+}
+
+async function confirmToOwner(f, key, idem) {
+  try {
+    const m = buildConfirm(f);
+    const r = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...(idem ? { 'Idempotency-Key': 'confirm-' + idem } : {}) },
+      body: JSON.stringify({ from: CONFIRM_FROM, to: [f.email], reply_to: TO, subject: m.subject, html: m.html, text: m.text, tags: [{ name: 'type', value: 'callback_confirm' }] }),
+      signal: AbortSignal.timeout(6000),
+    });
+    if (!r.ok) console.error('callback: confirmation email said', r.status, (await r.text()).slice(0, 200));
+  } catch (e) {
+    console.error('callback: confirmation email failed', e && e.name);
+  }
+}
+
+/** Adds the request to the platform's open pool. 201 new, 200 already a lead or centre. Errors are logged, never shown. */
+async function toPool(lead) {
+  const url = process.env.LEAD_INTAKE_URL;
+  const secret = process.env.LEAD_INTAKE_SECRET;
+  if (!url || !secret) return 'off';
+  try {
+    const r = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-loopdesk-intake-key': secret },
+      body: JSON.stringify(lead),
+      signal: AbortSignal.timeout(5000),
+    });
+    if (r.status !== 201 && r.status !== 200) console.error('callback: lead intake said', r.status, (await r.text()).slice(0, 200));
+    return r.status;
+  } catch (e) {
+    console.error('callback: lead intake unreachable', e && e.name);
+    return 'error';
+  }
+}
+
 module.exports.validate = validate;
+module.exports.toPool = toPool;
+module.exports.buildConfirm = buildConfirm;
 module.exports.buildEmail = buildEmail;
 module.exports.normalisePhone = normalisePhone;
 module.exports.CONSENT_WORDS = CONSENT_WORDS;

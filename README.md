@@ -7,7 +7,7 @@ Holding website for Loopdesk. Static site deployed on Vercel.
 - `terms.html`: terms of service, served at /terms (EN/AR)
 - `vercel.json`: clean URLs, so /privacy and /terms work without .html
 - The footer is copied into privacy.html and terms.html (links prefixed with /): change all three together.
-- `api/callback.js`: the call-back form's server side (Vercel function). Emails each request to sales@ through Resend. Needs `RESEND_API_KEY` in Vercel's environment variables; until then the form offers "send by email instead".
+- `api/callback.js`: the call-back form's server side (Vercel function). Emails each request to sales@ through Resend. Needs `RESEND_API_KEY` in Vercel's environment variables; until then the form offers "send by email instead". With `LEAD_INTAKE_URL` and `LEAD_INTAKE_SECRET` also set, each request is added to the platform's sales open pool (unassigned); an intake error never fails the form.
 - The tick-box wording in the form is copied in `api/callback.js` (`CONSENT_WORDS`) so the email records it word for word: change both together.
 - `img/`: photos
 

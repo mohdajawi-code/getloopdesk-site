@@ -250,6 +250,60 @@ html.lang-ar .card .w{letter-spacing:0;line-height:1.3;font-weight:700}
 .mailrow span{font-size:20px;font-weight:600;overflow-wrap:anywhere}
 .copy{font:600 14px var(--font);background:var(--on-night);color:#0B0B0F;border:0;border-radius:999px;height:36px;padding:0 16px;cursor:pointer}
 html.lang-ar .copy{font-family:var(--ar)}
+.pilot-card{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:start;gap:clamp(28px,5vw,64px)}
+.pilot-copy{display:grid;gap:0}
+.pilot-copy .mailbox{margin-top:28px}
+.next{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:14px;counter-reset:n}
+.next li{display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:12px;counter-increment:n}
+.next li::before{content:counter(n);grid-row:span 2;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:14px;font-weight:600}
+.next b{font-weight:600}
+.next span{color:var(--on-night-dim);font-size:15px}
+/* call-back form */
+.cb{position:relative;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,3vw,32px)}
+.cb form{display:grid;gap:16px}
+.cb-title{font-size:22px;font-weight:650;letter-spacing:-.015em;line-height:1.25}
+html.lang-ar .cb-title{letter-spacing:0}
+.f2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+@media (max-width:520px){.f2{grid-template-columns:minmax(0,1fr)}}
+.fld{display:grid;gap:6px;min-width:0;border:0;padding:0;margin:0}
+.lbl{font-size:14px;font-weight:600;color:var(--ink-2);padding:0}
+.opt{font-weight:400;color:var(--muted)}
+.cb input:not([type=radio]):not([type=checkbox]),.cb select{width:100%;min-width:0;height:48px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:16px var(--font);padding:0 14px}
+html.lang-ar .cb input,html.lang-ar .cb select{font-family:var(--ar)}
+.cb input[dir=ltr]{text-align:start}
+html.lang-ar .cb input[dir=ltr]{text-align:right}
+.cb input::placeholder{color:var(--muted);opacity:.7}
+.cb input:focus,.cb select:focus{outline:2px solid var(--rose);outline-offset:1px;border-color:transparent}
+.cb select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat;padding-inline-end:36px}
+html.lang-ar .cb select{background-position:15px 21px,20px 21px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chips label>span{display:inline-flex;align-items:baseline;gap:6px;min-height:44px;min-width:48px;justify-content:center;align-items:center;padding:0 14px;border:1px solid var(--line);border-radius:999px;font-size:15px;font-weight:500;cursor:pointer;white-space:nowrap}
+.chips small{color:var(--muted);font-size:12px;direction:ltr;unicode-bidi:isolate}
+.chips input:checked+span{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chips input:checked+span small{color:inherit;opacity:.75}
+.chips input:focus-visible+span{outline:2px solid var(--rose);outline-offset:2px}
+.err{display:none;font-size:13px;color:#C0284F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .err{color:var(--rose)}}
+:root[data-theme="dark"] .err{color:var(--rose)}
+.fld.bad .err{display:block}
+.fld.bad input,.fld.bad select,.fld.bad .chips label>span{border-color:#C0284F}
+.trap{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.consent{display:grid;gap:10px;background:var(--soft);border-radius:16px;padding:14px 16px}
+.tick{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start;font-size:14.5px;line-height:1.45;color:var(--ink-2);cursor:pointer}
+.tick input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--ink)}
+.cb-send{width:100%;height:52px;font-size:17px}
+.cb-send[disabled]{opacity:.6;cursor:progress}
+.fine{font-size:13px;color:var(--muted)}
+.fine a{color:var(--ink-2)}
+.cb-fail{display:grid;gap:12px;border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-size:15px}
+.cb form[hidden],.cb-fail[hidden],.cb-done[hidden]{display:none}
+.cb-done{display:grid;gap:12px;justify-items:start;padding-block:8px}
+.cb-done:focus{outline:none}
+.cb-done svg{width:40px;height:40px;color:var(--ink)}
+.cb-done p{font-size:16px}
+.cb-done .cb-title{font-size:26px}
 @media (max-width:860px){.pilot-card{grid-template-columns:minmax(0,1fr)}}
 
 /* legal */
@@ -553,15 +607,105 @@ footer nav a:hover{color:var(--ink)}
 
 <section class="wrap pilot" id="demo">
   <div class="pilot-card">
-    <div>
+    <div class="pilot-copy">
       <h2 class="h2 en">See Loopdesk with your own services.</h2>
       <h2 class="h2 ar">شاهدوا Loopdesk بخدماتكم أنتم.</h2>
-      <p class="sub en">Tell us about your business and we'll set up a live demo with your services, prices and team. Beauty centres come first. Cosmetic clinics, dental practices and barbershops can reserve a place now.</p>
-      <p class="sub ar">حدّثونا عن عملكم، ونجهّز لكم جولة حيّة بخدماتكم وأسعاركم وفريقكم. البداية مع مراكز التجميل، ويمكن لعيادات التجميل والأسنان وصالونات الحلاقة حجز مكانها من الآن.</p>
+      <p class="sub en">Tell us when suits you and we'll call. Then we set up a live demo with your services, prices and team. Beauty centres come first. Cosmetic clinics, dental practices and barbershops can reserve a place now.</p>
+      <p class="sub ar">أخبرونا بالوقت الذي يناسبكم ونتصل بكم، ثم نجهّز لكم جولة حيّة بخدماتكم وأسعاركم وفريقكم. البداية مع مراكز التجميل، ويمكن لعيادات التجميل والأسنان وصالونات الحلاقة حجز مكانها من الآن.</p>
+      <ol class="next">
+        <li><b class="en">We call you</b><b class="ar">نتصل بكم</b><span class="en">At the time you pick, within one working day.</span><span class="ar">في الوقت الذي تختارونه، خلال يوم عمل واحد.</span></li>
+        <li><b class="en">You see it with your services</b><b class="ar">ترونها بخدماتكم</b><span class="en">A 20-minute demo with your own treatments and prices.</span><span class="ar">جولة من 20 دقيقة بخدماتكم وأسعاركم أنتم.</span></li>
+        <li><b class="en">You decide</b><b class="ar">والقرار لكم</b><span class="en">No commitment, no card, no pressure.</span><span class="ar">بلا التزام، وبلا بطاقة، وبلا إلحاح.</span></li>
+      </ol>
+      <div class="mailbox">
+        <small class="en">Prefer email? We reply within one working day.</small><small class="ar">تفضّلون البريد الإلكتروني؟ نردّ خلال يوم عمل واحد.</small>
+        <div class="mailrow"><span class="ltr" id="mailaddr">sales@getloopdesk.com</span><button class="copy" type="button" data-copy="sales@getloopdesk.com"><span class="en">Copy</span><span class="ar">نسخ</span></button></div>
+      </div>
     </div>
-    <div class="mailbox">
-      <small class="en">Sales · we reply within one working day</small><small class="ar">المبيعات · نردّ خلال يوم عمل واحد</small>
-      <div class="mailrow"><span class="ltr" id="mailaddr">sales@getloopdesk.com</span><button class="copy" type="button" data-copy="sales@getloopdesk.com"><span class="en">Copy</span><span class="ar">نسخ</span></button></div>
+
+    <div class="cb" id="callback">
+      <form id="cbform" novalidate>
+        <p class="cb-title"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></p>
+        <div class="f2">
+          <label class="fld"><span class="lbl"><span class="en">Your name</span><span class="ar">الاسم</span></span>
+            <input name="name" autocomplete="name" maxlength="80" required data-ph-en="Sara" data-ph-ar="سارة">
+            <span class="err"><span class="en">Please add your name.</span><span class="ar">أضيفوا الاسم من فضلكم.</span></span></label>
+          <label class="fld"><span class="lbl"><span class="en">Business name</span><span class="ar">اسم العمل</span></span>
+            <input name="business" autocomplete="organization" maxlength="120" required data-ph-en="Glow Beauty Centre" data-ph-ar="مركز غلو للتجميل">
+            <span class="err"><span class="en">Please add your business name.</span><span class="ar">أضيفوا اسم العمل من فضلكم.</span></span></label>
+        </div>
+        <div class="f2">
+          <label class="fld"><span class="lbl"><span class="en">Mobile</span><span class="ar">رقم الجوال</span></span>
+            <input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required dir="ltr" placeholder="05X XXX XXXX">
+            <span class="err"><span class="en">Please check the number, for example 050 123 4567.</span><span class="ar">تأكّدوا من الرقم، مثل 050 123 4567.</span></span></label>
+          <label class="fld"><span class="lbl"><span class="en">Email</span><span class="ar">البريد الإلكتروني</span></span>
+            <input name="email" type="email" inputmode="email" autocomplete="email" maxlength="160" required dir="ltr" placeholder="name@business.com">
+            <span class="err"><span class="en">Please check the email.</span><span class="ar">تأكّدوا من البريد الإلكتروني.</span></span></label>
+        </div>
+        <div class="f2">
+          <label class="fld"><span class="lbl"><span class="en">Type of business</span><span class="ar">نوع العمل</span></span>
+            <select name="vertical" required>
+              <option value="" data-en="Choose" data-ar="اختاروا">Choose</option>
+              <option value="beauty" data-en="Beauty centre" data-ar="مركز تجميل">Beauty centre</option>
+              <option value="cosmetic" data-en="Cosmetic clinic" data-ar="عيادة تجميل">Cosmetic clinic</option>
+              <option value="dental" data-en="Dental clinic" data-ar="عيادة أسنان">Dental clinic</option>
+              <option value="barber" data-en="Barbershop" data-ar="صالون حلاقة">Barbershop</option>
+              <option value="other" data-en="Something else" data-ar="نشاط آخر">Something else</option>
+            </select>
+            <span class="err"><span class="en">Please choose one.</span><span class="ar">اختاروا نوع العمل من فضلكم.</span></span></label>
+          <label class="fld"><span class="lbl"><span class="en">Emirate</span><span class="ar">الإمارة</span></span>
+            <select name="emirate" required>
+              <option value="" data-en="Choose" data-ar="اختاروا">Choose</option>
+              <option value="dubai" data-en="Dubai" data-ar="دبي">Dubai</option>
+              <option value="abu_dhabi" data-en="Abu Dhabi" data-ar="أبوظبي">Abu Dhabi</option>
+              <option value="sharjah" data-en="Sharjah" data-ar="الشارقة">Sharjah</option>
+              <option value="ajman" data-en="Ajman" data-ar="عجمان">Ajman</option>
+              <option value="rak" data-en="Ras Al Khaimah" data-ar="رأس الخيمة">Ras Al Khaimah</option>
+              <option value="fujairah" data-en="Fujairah" data-ar="الفجيرة">Fujairah</option>
+              <option value="uaq" data-en="Umm Al Quwain" data-ar="أم القيوين">Umm Al Quwain</option>
+            </select>
+            <span class="err"><span class="en">Please choose your emirate.</span><span class="ar">اختاروا الإمارة من فضلكم.</span></span></label>
+        </div>
+        <fieldset class="fld">
+          <legend class="lbl"><span class="en">How many branches?</span><span class="ar">كم فرعًا لديكم؟</span> <span class="opt"><span class="en">optional</span><span class="ar">اختياري</span></span></legend>
+          <div class="chips">
+            <label><input type="radio" name="branches" value="1"><span>1</span></label>
+            <label><input type="radio" name="branches" value="2"><span>2</span></label>
+            <label><input type="radio" name="branches" value="3"><span>3</span></label>
+            <label><input type="radio" name="branches" value="4"><span><bdi dir="ltr">4+</bdi></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="fld" data-req="time">
+          <legend class="lbl"><span class="en">Best time to call</span><span class="ar">أنسب وقت للاتصال</span></legend>
+          <div class="chips">
+            <label><input type="radio" name="time" value="morning" required><span><span class="en">Morning</span><span class="ar">صباحًا</span><small>10–12</small></span></label>
+            <label><input type="radio" name="time" value="afternoon"><span><span class="en">Afternoon</span><span class="ar">ظهرًا</span><small>12–4</small></span></label>
+            <label><input type="radio" name="time" value="evening"><span><span class="en">Evening</span><span class="ar">مساءً</span><small>4–8</small></span></label>
+            <label><input type="radio" name="time" value="any"><span><span class="en">Any time</span><span class="ar">أيّ وقت</span><small>10–8</small></span></label>
+          </div>
+          <span class="err"><span class="en">Pick the time that suits you.</span><span class="ar">اختاروا الوقت الذي يناسبكم.</span></span>
+        </fieldset>
+        <div class="trap" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="consent">
+          <p class="lbl"><span class="en">Want our ideas too?</span><span class="ar">تودّون أن تصلكم أفكارنا أيضًا؟</span> <span class="opt"><span class="en">optional, not needed for the call</span><span class="ar">اختياري، ولا يلزم للاتصال</span></span></p>
+          <label class="tick"><input type="checkbox" name="consentEmail"><span class="en">Email me ideas, tips and offers from Loopdesk. I can stop any time.</span><span class="ar">أرسلوا إليّ أفكارًا ونصائح وعروضًا من Loopdesk بالبريد الإلكتروني، ويمكنني الإيقاف متى شئت.</span></label>
+          <label class="tick"><input type="checkbox" name="consentWhatsapp"><span class="en">Send me ideas, tips and offers from Loopdesk on WhatsApp. I can reply STOP any time.</span><span class="ar">أرسلوا إليّ أفكارًا ونصائح وعروضًا من Loopdesk عبر WhatsApp، ويمكنني إرسال «إيقاف» متى شئت.</span></label>
+        </div>
+        <button class="btn btn-dark cb-send" type="submit" id="cbsend"><span class="en">Call me back</span><span class="ar">اتصلوا بي</span></button>
+        <p class="fine"><span class="en">We use your details to call you back, and to keep in touch only if you ticked a box above. <a href="/privacy">Privacy policy</a></span><span class="ar">نستخدم بياناتكم للاتصال بكم، ولا نراسلكم بعد ذلك إلا إن اخترتم أحد المربّعين أعلاه. <a href="/privacy">سياسة الخصوصية</a></span></p>
+        <div class="cb-fail" id="cbfail" hidden>
+          <p><span class="en">Sorry, that didn't go through on our side. Nothing you typed is lost: send it to us by email in one tap.</span><span class="ar">عذرًا، لم يصل طلبكم بسبب خلل من جهتنا. لم يضع شيء ممّا كتبتموه: أرسلوه إلينا بالبريد الإلكتروني بنقرة واحدة.</span></p>
+          <a class="btn btn-light" id="cbmail" href="mailto:sales@getloopdesk.com"><span class="en">Send by email</span><span class="ar">أرسلوه بالبريد الإلكتروني</span></a>
+        </div>
+      </form>
+
+      <div class="cb-done" id="cbdone" hidden tabindex="-1">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mark"/></svg>
+        <p class="cb-title"><span class="en">Thank you, <bdi data-out="name"></bdi>. Your call is in our diary.</span><span class="ar">شكرًا، <bdi data-out="name"></bdi>. اتصالكم مسجَّل في جدولنا.</span></p>
+        <p><span class="en">We'll call <bdi dir="ltr" data-out="phone"></bdi> <span data-out="time-en"></span>, within one working day.</span><span class="ar">سنتصل بكم على الرقم <bdi dir="ltr" data-out="phone"></bdi> <span data-out="time-ar"></span>، خلال يوم عمل واحد.</span></p>
+        <p class="muted"><span class="en">Have a price list handy? Bring it to the call and we'll show Loopdesk with your own services.</span><span class="ar">لديكم قائمة أسعار؟ اجعلوها قريبة منكم أثناء الاتصال، وسنريكم Loopdesk بخدماتكم أنتم.</span></p>
+        <a class="btn btn-light" href="#rhythm"><span class="en">Meanwhile, see the rhythm engine</span><span class="ar">وإلى ذلك الحين، شاهدوا محرّك الإيقاع</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -672,6 +816,92 @@ footer nav a:hover{color:var(--ink)}
       function sel(){var s=document.getElementById('mailaddr'),r=document.createRange();r.selectNodeContents(s);var w=getSelection();w.removeAllRanges();w.addRange(r)}
       try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
     });
+  });
+})();
+</script>
+
+<script>
+/* call-back form: posts to /api/callback, which emails sales@ */
+(function(){
+  var root=document.documentElement, form=document.getElementById('cbform');
+  if(!form) return;
+  var t0=Date.now(), sendBtn=document.getElementById('cbsend'), fail=document.getElementById('cbfail'), done=document.getElementById('cbdone');
+  var rid=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+Math.random().toString(16).slice(2);
+  function ar(){return root.classList.contains('lang-ar')}
+  function localise(){
+    var l=ar()?'ar':'en';
+    form.querySelectorAll('[data-ph-en]').forEach(function(i){i.placeholder=i.getAttribute('data-ph-'+l)});
+    form.querySelectorAll('option[data-en]').forEach(function(o){o.textContent=o.getAttribute('data-'+l)});
+  }
+  localise();
+  new MutationObserver(localise).observe(root,{attributes:true,attributeFilter:['class']});
+
+  var TIME={morning:['in the morning, between 10am and 12pm','صباحًا بين 10 و12'],afternoon:['in the afternoon, between 12pm and 4pm','ظهرًا بين 12 و4'],evening:['in the evening, between 4pm and 8pm','مساءً بين 4 و8'],any:['between 10am and 8pm','بين 10 صباحًا و8 مساءً']};
+  function phoneOk(v){
+    var d=String(v||'').replace(/[\s\-().]/g,'');
+    if(d.indexOf('00')===0)d='+'+d.slice(2);
+    if(/^0?5\d{8}$/.test(d)||/^\+9715\d{8}$/.test(d))return true;
+    if(/^\+971/.test(d))return false;
+    return /^\+[1-9]\d{7,14}$/.test(d);
+  }
+  function val(n){var e=form.elements[n];return e?String(e.value||'').trim():''}
+  function checks(){
+    return {
+      name:val('name').length>=2,
+      business:val('business').length>=2,
+      phone:phoneOk(val('phone')),
+      email:/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val('email')),
+      vertical:!!val('vertical'),
+      emirate:!!val('emirate'),
+      time:!!val('time')
+    };
+  }
+  function fieldOf(n){var e=form.elements[n];if(!e)return null;if(e.length&&!e.tagName)e=e[0];return e.closest('.fld')}
+  function mark(n,ok){var f=fieldOf(n);if(f)f.classList.toggle('bad',!ok)}
+  /* Errors appear only after she leaves a field or presses send, and clear as soon as it is right. */
+  Object.keys(checks()).forEach(function(n){
+    var e=form.elements[n], list=(e&&e.length&&!e.tagName)?Array.prototype.slice.call(e):[e];
+    list.forEach(function(x){if(!x)return;
+      x.addEventListener('blur',function(){if(x.type!=='radio'&&val(n))mark(n,checks()[n])});
+      x.addEventListener('input',function(){var f=fieldOf(n);if(f&&f.classList.contains('bad'))mark(n,checks()[n])});
+      x.addEventListener('change',function(){var f=fieldOf(n);if(f&&f.classList.contains('bad'))mark(n,checks()[n])});
+    });
+  });
+
+  function mailtoBody(){
+    var lines=['Please call me back.','','Name: '+val('name'),'Business: '+val('business'),'Mobile: '+val('phone'),'Email: '+val('email'),
+      'Type: '+(form.elements.vertical.selectedOptions[0]||{}).textContent,'Emirate: '+(form.elements.emirate.selectedOptions[0]||{}).textContent,
+      'Branches: '+(val('branches')||'-'),'Best time: '+(val('time')||'-')];
+    return 'mailto:sales@getloopdesk.com?subject='+encodeURIComponent('Call back: '+val('business'))+'&body='+encodeURIComponent(lines.join('\n'));
+  }
+  function showFail(){document.getElementById('cbmail').href=mailtoBody();fail.hidden=false}
+
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault(); fail.hidden=true;
+    var c=checks(), first=null;
+    Object.keys(c).forEach(function(n){mark(n,c[n]);if(!c[n]&&!first)first=n});
+    if(first){var e=form.elements[first];if(e&&e.length&&!e.tagName)e=e[0];e.focus();return}
+    var body={name:val('name'),business:val('business'),phone:val('phone'),email:val('email'),vertical:val('vertical'),emirate:val('emirate'),
+      branches:val('branches'),time:val('time'),lang:ar()?'ar':'en',consentEmail:form.elements.consentEmail.checked,consentWhatsapp:form.elements.consentWhatsapp.checked,
+      website:val('website'),elapsedMs:Date.now()-t0,requestId:rid};
+    sendBtn.disabled=true; var label=sendBtn.innerHTML;
+    sendBtn.innerHTML='<span class="en">Sending…</span><span class="ar">جارٍ الإرسال…</span>';
+    fetch('/api/callback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(function(r){return r.json().catch(function(){return {ok:false}}).then(function(j){return {status:r.status,j:j}})})
+      .then(function(x){
+        if(x.j&&x.j.ok){
+          done.querySelectorAll('[data-out="name"]').forEach(function(e){e.textContent=body.name.split(' ')[0]});
+          done.querySelectorAll('[data-out="phone"]').forEach(function(e){e.textContent=body.phone});
+          done.querySelector('[data-out="time-en"]').textContent=TIME[body.time][0];
+          done.querySelector('[data-out="time-ar"]').textContent=TIME[body.time][1];
+          form.hidden=true; done.hidden=false; done.focus();
+          return;
+        }
+        if(x.status===422&&x.j.fields){x.j.fields.forEach(function(n){mark(n,false)});return}
+        showFail();
+      })
+      .catch(showFail)
+      .then(function(){sendBtn.disabled=false;sendBtn.innerHTML=label});
   });
 })();
 </script>

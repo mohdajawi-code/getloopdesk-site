@@ -108,7 +108,7 @@ const dubai = (d) => d.toLocaleString('en-GB', { timeZone: 'Asia/Dubai', weekday
 function buildEmail(f, now) {
   const at = new Date(now);
   const consentLine = (ch, yes) => (yes
-    ? `YES, ticked ${at.toISOString()} on the ${f.lang === 'ar' ? 'Arabic' : 'English'} page. Words: "${CONSENT_WORDS[ch][f.lang]}"`
+    ? `Yes. Ticked ${dubai(at)} UAE time, on the ${f.lang === 'ar' ? 'Arabic' : 'English'} page: "${CONSENT_WORDS[ch][f.lang]}"`
     : 'No (box not ticked). Do not add them to marketing on this channel.');
   const rows = [
     ['Name', f.name],
@@ -116,7 +116,7 @@ function buildEmail(f, now) {
     ['Type', VERTICALS[f.vertical][0]],
     ['Emirate', EMIRATES[f.emirate]],
     ['Branches', f.branches ? BRANCHES[f.branches] : 'Not given'],
-    ['Mobile', f.phone],
+    ['Mobile', showPhone(f.phone)],
     ['Email', f.email],
     ['Best time to call', TIMES[f.time] + ' (UAE time)'],
     ['Language', f.lang === 'ar' ? 'Arabic: call and write in Arabic' : 'English'],
@@ -140,16 +140,15 @@ function buildEmail(f, now) {
   const tr = (r) => `<tr><td style="padding:8px 16px 8px 0;color:#6E6E78;vertical-align:top;white-space:nowrap">${esc(r[0])}</td><td style="padding:8px 0;color:#0B0B0F">${esc(r[1])}</td></tr>`;
   const html = `<div style="font-family:-apple-system,Segoe UI,Arial,sans-serif;font-size:15px;line-height:1.5;max-width:620px">
 <p style="font-size:18px;font-weight:600;margin:0 0 4px">${esc(f.name)} from ${esc(f.business)} would like a call.</p>
-<p style="margin:0 0 16px;color:#3A3A42">Call <a href="tel:${esc(f.phone)}">${esc(f.phone)}</a>, ${esc(TIMES[f.time].toLowerCase())}, within one working day. That is what the website promised.</p>
+<p style="margin:0 0 16px;color:#3A3A42">Call <a href="tel:${esc(f.phone)}">${esc(showPhone(f.phone))}</a>, ${esc(TIMES[f.time].toLowerCase())}, within one working day. That is what the website promised.</p>
 <table style="border-collapse:collapse">${rows.map(tr).join('')}</table>
 <p style="font-weight:600;margin:20px 0 4px">Marketing consent</p>
 <table style="border-collapse:collapse">${consent.map(tr).join('')}</table>
 <p style="margin:20px 0 4px;color:#6E6E78;font-size:13px">Log this as a lead (source: website) before you call. Reply to this email to write to them directly.</p>
-<pre style="font-size:11px;color:#6E6E78;white-space:pre-wrap">lead-json: ${esc(JSON.stringify(lead))}</pre>
 </div>`;
   const text = [
     `${f.name} from ${f.business} would like a call.`,
-    `Call ${f.phone}, ${TIMES[f.time].toLowerCase()}, within one working day.`,
+    `Call ${showPhone(f.phone)}, ${TIMES[f.time].toLowerCase()}, within one working day.`,
     '',
     ...rows.map((r) => `${r[0]}: ${r[1]}`),
     '',
@@ -157,8 +156,6 @@ function buildEmail(f, now) {
     ...consent.map((r) => `${r[0]}: ${r[1]}`),
     '',
     'Log this as a lead (source: website) before you call.',
-    '',
-    'lead-json: ' + JSON.stringify(lead),
   ].join('\n');
   return { subject, html, text, lead };
 }

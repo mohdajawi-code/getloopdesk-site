@@ -1,0 +1,75 @@
+name: AI review
+
+# Two independent AI reviewers read every pull request to the website: GPT
+# (OpenAI) and Gemini (Google). They check the code and the copy (English and
+# Arabic) against Loopdesk's rules. Each posts its findings as a PR comment and fails if it
+# finds a blocking problem. Both must pass before a change is merged.
+#
+# Keys live in repo secrets OPENAI_API_KEY and GEMINI_API_KEY.
+# Optional repo variables OPENAI_MODEL and GEMINI_MODEL pin a model; without
+# them the script picks the newest flagship model the key can use.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    # Image-only changes need no review (saves Actions minutes).
+    paths-ignore: ["img/**", "**/*.png", "**/*.jpg", "**/*.jpeg"]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "pr = review one pull request, design = review the whole site"
+        type: choice
+        options: [pr, design]
+        default: pr
+      pr:
+        description: "Pull request number (mode pr only)"
+        required: false
+      reviewers:
+        description: "Which reviewers to run"
+        type: choice
+        options: [both, gpt, gemini]
+        default: both
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ai-review-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    name: ${{ matrix.reviewer }} review
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        reviewer: [gpt, gemini]
+    steps:
+      - name: Skip if not selected
+        id: pick
+        run: |
+          want="${{ github.event.inputs.reviewers || 'both' }}"
+          if [ "$want" = "both" ] || [ "$want" = "${{ matrix.reviewer }}" ]; then echo "run=yes" >> "$GITHUB_OUTPUT"; else echo "run=no" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.pick.outputs.run == 'yes'
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        if: steps.pick.outputs.run == 'yes'
+        with:
+          node-version: 22
+      - name: Review
+        if: steps.pick.outputs.run == 'yes'
+        env:
+          REVIEWER: ${{ matrix.reviewer }}
+          MODE: ${{ github.event.inputs.mode || 'pr' }}
+          PR_NUMBER: ${{ github.event.pull_request.number || github.event.inputs.pr }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: node .github/ai-review/review.mjs

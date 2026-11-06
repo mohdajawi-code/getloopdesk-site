@@ -522,11 +522,11 @@ footer nav a:hover{color:var(--ink)}
     if(isAr()){
       out.textContent=v+' درهم';
       need.textContent=arClients(n);
-      txt.textContent=arClients(n)+' بمتوسّط '+v+' درهم للزيارة تعني '+fmt(n*v)+' درهم، وهي تغطّي باقة '+pname.dataset.ar+' ('+price+' درهمًا)'+(n*v-price>0?' ويبقى لكم '+fmt(n*v-price)+' درهم.':'.')+' وكلّ زيارة بعد ذلك ربحٌ لكم.';
+      txt.textContent=arClients(n)+' بمتوسّط '+v+' درهم للزيارة تعني '+fmt(n*v)+' درهم، وهي تغطّي باقة '+pname.dataset.ar+' ('+fmt(price)+' درهمًا)'+(n*v-price>0?' ويبقى لكم '+fmt(n*v-price)+' درهم.':'.')+' وكلّ زيارة بعد ذلك ربحٌ لكم.';
     }else{
       out.textContent='AED '+v;
       need.textContent=n+(n===1?' client':' clients');
-      txt.textContent=n+(n===1?' client':' clients')+' at AED '+v+' a visit bring in AED '+fmt(n*v)+'. That covers '+pname.dataset.en+' (AED '+price+')'+(n*v-price>0?' with AED '+fmt(n*v-price)+' to spare':'')+'. Every visit after that is yours.';
+      txt.textContent=n+(n===1?' client':' clients')+' at AED '+v+' a visit bring in AED '+fmt(n*v)+'. That covers '+pname.dataset.en+' (AED '+fmt(price)+')'+(n*v-price>0?' with AED '+fmt(n*v-price)+' to spare':'')+'. Every visit after that is yours.';
     }
   }
   slider.addEventListener('input',calc);

@@ -231,50 +231,115 @@ const WHEN = {
 /** +971501234567 -> +971 50 123 4567 (other countries unchanged) */
 const showPhone = (p) => (/^\+9715\d{8}$/.test(p) ? `+971 ${p.slice(4, 6)} ${p.slice(6, 9)} ${p.slice(9)}` : p);
 
+const SITE = 'https://getloopdesk.com';
+const WHEN_SHORT = {
+  en: { morning: 'Morning · 10am to 12pm', afternoon: 'Afternoon · 12pm to 4pm', evening: 'Evening · 4pm to 8pm', any: 'Any time · 10am to 8pm' },
+  ar: { morning: 'صباحًا · من 10 إلى 12', afternoon: 'ظهرًا · من 12 إلى 4', evening: 'مساءً · من 4 إلى 8', any: 'أيّ وقت · من 10 صباحًا إلى 8 مساءً' },
+};
+
+/** Words for the confirmation. Arabic: feminine by default, masculine for dental and barber. */
 function confirmCopy(f) {
   const first = f.name.split(' ')[0];
   const phone = showPhone(f.phone);
   if (f.lang !== 'ar') {
     return {
-      subject: 'Your call with Loopdesk is booked',
-      lines: [
-        `Hi ${first},`,
-        "Thank you for asking us to call. It's in our diary.",
-        `We'll call you on ${phone} ${WHEN.en[f.time]} (UAE time), within one working day.`,
-        "One small favour: keep your price list nearby. We'll show you Loopdesk with your own services and prices, so you see your clients coming back, not someone else's.",
-        'Need a different time? Just reply to this email.',
-        'Speak soon,\nThe Loopdesk team',
-        'P.S. Your clients have a rhythm. So do we: we call when we say we will.',
-      ],
-      dir: 'ltr',
+      dir: 'ltr', lang: 'en', first, phone,
+      subject: `${first}, your call is in our diary`,
+      preheader: `We'll call ${phone}, ${WHEN.en[f.time]}. Keep your price list handy.`,
+      kicker: 'CALL BOOKED', ticket: 'YOUR CALL WITH LOOPDESK',
+      title: `It's a date, ${first}.`,
+      intro: "Thank you for asking us to call. Here's your little ticket.",
+      tWhen: 'When', when: WHEN_SHORT.en[f.time] + ' (UAE)', whenNote: 'Within one working day',
+      tPhone: "We'll call", tWho: 'Who calls', who: 'The Loopdesk team',
+      bringT: 'Bring one thing to the call',
+      bring: "Your price list. We'll show you Loopdesk with your own services and prices, so you see your clients coming back, not someone else's.",
+      stepsT: 'What happens next',
+      steps: [['We call you', 'At the time you picked. About 20 minutes.'], ['You see it with your services', 'Your treatments, your prices, your team.'], ['You decide', 'No commitment, no card, no pressure.']],
+      cta: 'Need another time? Reply here', ctaSubject: 'Another time for my call',
+      ps: 'P.S. Your clients have a rhythm. So do we: we call when we say we will.',
+      sign: 'Speak soon,', team: 'The Loopdesk team',
+      foot: 'You are getting this because you asked us to call you on getloopdesk.com. Just this one email, unless you ticked a box for more.',
+      privacy: 'Privacy policy',
     };
   }
   const m = f.vertical === 'dental' || f.vertical === 'barber';
-  const k = m ? 'كَ' : 'كِ';
+  const k = m ? 'ك' : 'كِ';
   return {
-    subject: 'موعد اتصالنا مع Loopdesk مسجَّل',
-    lines: [
-      `مرحبًا ${first}،`,
-      `شكرًا لطلب${k}. اتصال${k} مسجَّل في جدولنا.`,
-      `سنتصل ب${k} على الرقم \u2066${phone}\u2069 ${WHEN.ar[f.time]} بتوقيت الإمارات، خلال يوم عمل واحد.`,
-      m ? 'طلب صغير: اجعل قائمة أسعارك قريبة منك، فسنريك Loopdesk بخدماتك وأسعارك أنت.' : 'طلب صغير: اجعلي قائمة أسعاركِ قريبة منكِ، فسنريكِ Loopdesk بخدماتكِ وأسعاركِ أنتِ.',
-      m ? 'يناسبك وقت آخر؟ ردّ على هذه الرسالة فقط.' : 'يناسبكِ وقت آخر؟ ردّي على هذه الرسالة فقط.',
-      'إلى اللقاء قريبًا،\nفريق Loopdesk',
-      `ملاحظة: لعملائ${k} إيقاع، ولنا إيقاعنا أيضًا: نتصل حين نَعِد.`,
-    ],
-    dir: 'rtl',
+    dir: 'rtl', lang: 'ar', first, phone,
+    subject: `${first}، اتصالنا مسجَّل في جدولنا`,
+    preheader: `سنتصل على الرقم ⁦${phone}⁩ ${WHEN.ar[f.time]}. ${m ? 'اجعل' : 'اجعلي'} قائمة الأسعار قريبة.`,
+    kicker: 'تمّ الحجز', ticket: 'موعد الاتصال مع Loopdesk',
+    title: `موعدنا ثابت يا ${first}.`,
+    intro: m ? 'شكرًا لطلبك. هذه تذكرتك الصغيرة.' : 'شكرًا لطلبكِ. هذه تذكرتكِ الصغيرة.',
+    tWhen: 'متى', when: WHEN_SHORT.ar[f.time] + ' (بتوقيت الإمارات)', whenNote: 'خلال يوم عمل واحد',
+    tPhone: 'سنتصل على', tWho: 'من يتصل', who: 'فريق Loopdesk',
+    bringT: m ? 'أحضر معك شيئًا واحدًا' : 'أحضري معكِ شيئًا واحدًا',
+    bring: m ? 'قائمة أسعارك. سنريك Loopdesk بخدماتك وأسعارك أنت، لترى عملاءك يعودون إليك، لا عملاء غيرك.' : 'قائمة أسعاركِ. سنريكِ Loopdesk بخدماتكِ وأسعاركِ أنتِ، لتري عملاءكِ يعودون إليكِ، لا عملاء غيركِ.',
+    stepsT: 'ماذا بعد؟',
+    steps: m
+      ? [['نتصل بك', 'في الوقت الذي اخترته. نحو 20 دقيقة.'], ['تراها بخدماتك', 'خدماتك وأسعارك وفريقك.'], ['والقرار لك', 'بلا التزام، وبلا بطاقة، وبلا إلحاح.']]
+      : [['نتصل بكِ', 'في الوقت الذي اخترتِه. نحو 20 دقيقة.'], ['ترينها بخدماتكِ', 'خدماتكِ وأسعاركِ وفريقكِ.'], ['والقرار لكِ', 'بلا التزام، وبلا بطاقة، وبلا إلحاح.']],
+    cta: m ? 'يناسبك وقت آخر؟ ردّ هنا' : 'يناسبكِ وقت آخر؟ ردّي هنا', ctaSubject: 'وقت آخر لاتصالي',
+    ps: `ملاحظة: لعملائ${k} إيقاع، ولنا إيقاعنا أيضًا: نتصل حين نَعِد.`,
+    sign: 'إلى اللقاء قريبًا،', team: 'فريق Loopdesk',
+    foot: m ? 'وصلتك هذه الرسالة لأنك طلبت أن نتصل بك عبر getloopdesk.com. هذه رسالة واحدة فقط، إلا إن اخترت أن تصلك رسائل أخرى.' : 'وصلتكِ هذه الرسالة لأنكِ طلبتِ أن نتصل بكِ عبر getloopdesk.com. هذه رسالة واحدة فقط، إلا إن اخترتِ أن تصلكِ رسائل أخرى.',
+    privacy: 'سياسة الخصوصية',
   };
 }
 
+/** A premium, table-based email (works in Gmail, Outlook and Apple Mail), plus a plain-text twin. */
 function buildConfirm(f) {
   const c = confirmCopy(f);
-  const font = c.dir === 'rtl' ? 'Tahoma,Arial,sans-serif' : '-apple-system,Segoe UI,Arial,sans-serif';
-  const para = (t, i) => {
-    const last = i === c.lines.length - 1;
-    return `<p style="margin:0 0 14px;${last ? 'color:#6E6E78;font-size:14px;' : ''}">${esc(t).replace(/\n/g, '<br>')}</p>`;
-  };
-  const html = `<div dir="${c.dir}" style="font-family:${font};font-size:16px;line-height:1.6;color:#0B0B0F;max-width:560px;text-align:${c.dir === 'rtl' ? 'right' : 'left'}">${c.lines.map(para).join('')}</div>`;
-  return { subject: c.subject, html, text: c.lines.join('\n\n') };
+  const rtl = c.dir === 'rtl';
+  const start = rtl ? 'right' : 'left';
+  const end = rtl ? 'left' : 'right';
+  const font = rtl ? "Tahoma,'Geeza Pro','Segoe UI',Arial,sans-serif" : "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif";
+  const ink = '#0B0B0F', muted = '#6E6E78', line = '#E6E6EA', soft = '#F5F5F7', rose = '#D9466E', roseSoft = '#FBE8EE';
+  const e = esc;
+  const ltr = (t) => `<span dir="ltr" style="unicode-bidi:isolate">${e(t)}</span>`;
+  const name = (t) => `<span dir="auto" style="unicode-bidi:isolate">${e(t)}</span>`;
+  const title = rtl ? e(c.title).replace(e(c.first), name(c.first)) : e(c.title);
+  const mailto = `mailto:${TO}?subject=${encodeURIComponent(c.ctaSubject)}`;
+  const row = (label, value, note) => `<tr><td style="padding:14px 0;border-top:1px solid #26262D;color:#A1A1AA;font-size:13px;width:34%;vertical-align:top;text-align:${start}">${e(label)}</td><td style="padding:14px 0;border-top:1px solid #26262D;color:#F5F5F7;font-size:16px;font-weight:600;text-align:${start}">${value}${note ? `<div style="font-size:13px;font-weight:400;color:#A1A1AA;margin-top:2px">${e(note)}</div>` : ''}</td></tr>`;
+  const step = (s, i) => `<tr><td style="width:40px;vertical-align:top;padding:0 0 16px"><div style="width:28px;height:28px;line-height:28px;border-radius:14px;background:${soft};color:${ink};font-size:13px;font-weight:700;text-align:center">${i + 1}</div></td><td style="vertical-align:top;padding:3px 0 16px;text-align:${start}"><div style="font-size:15px;font-weight:600;color:${ink}">${e(s[0])}</div><div style="font-size:14px;color:${muted};margin-top:2px">${e(s[1])}</div></td></tr>`;
+  const html = `<!doctype html><html lang="${c.lang}" dir="${c.dir}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"><title>${e(c.subject)}</title></head>
+<body style="margin:0;padding:0;background:${soft};-webkit-text-size-adjust:100%">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0">${e(c.preheader)}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${soft}"><tr><td align="center" style="padding:32px 12px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" dir="${c.dir}" style="max-width:560px;font-family:${font};color:${ink}">
+<tr><td style="padding:0 8px 20px;text-align:${start}"><a href="${SITE}" style="text-decoration:none"><img src="${SITE}/img/email-logo.png" width="141" height="32" alt="Loopdesk" style="display:inline-block;border:0;width:141px;height:32px"></a></td></tr>
+<tr><td style="background:#FFFFFF;border-radius:24px;padding:36px 28px 28px;text-align:${start}">
+  <div style="display:inline-block;background:${roseSoft};color:${rose};font-size:12px;font-weight:700;letter-spacing:${rtl ? '0' : '.08em'};border-radius:999px;padding:5px 12px">● ${e(c.kicker)}</div>
+  <h1 style="margin:18px 0 8px;font-size:32px;line-height:1.15;font-weight:700;letter-spacing:${rtl ? '0' : '-.02em'};color:${ink}">${title}</h1>
+  <p style="margin:0 0 24px;font-size:17px;line-height:1.5;color:#3A3A42">${e(c.intro)}</p>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${ink};border-radius:18px"><tr><td style="padding:8px 22px 8px">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" dir="${c.dir}">
+      <tr><td colspan="2" style="padding:0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" dir="${c.dir}"><tr><td style="padding:14px 0 12px;text-align:${start};color:#F5F5F7;font-size:13px;font-weight:700;letter-spacing:${rtl ? '0' : '.08em'}">${e(c.ticket)}</td><td style="padding:14px 0 12px;text-align:${end}"><span style="display:inline-block;width:10px;height:10px;border-radius:5px;background:${rose}"></span></td></tr></table></td></tr>
+      ${row(c.tWhen, e(c.when), c.whenNote)}
+      ${row(c.tPhone, ltr(c.phone))}
+      ${row(c.tWho, e(c.who))}
+    </table>
+  </td></tr></table>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;border:1px solid ${line};border-radius:16px"><tr><td style="padding:18px 20px;text-align:${start}">
+    <div style="font-size:15px;font-weight:700;color:${ink}">${e(c.bringT)}</div>
+    <div style="font-size:15px;line-height:1.55;color:#3A3A42;margin-top:4px">${e(c.bring)}</div>
+  </td></tr></table>
+  <div style="font-size:13px;font-weight:700;color:${muted};margin:28px 0 14px;letter-spacing:${rtl ? '0' : '.06em'}">${e(rtl ? c.stepsT : c.stepsT.toUpperCase())}</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" dir="${c.dir}">${c.steps.map(step).join('')}</table>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 4px"><tr><td style="background:${ink};border-radius:999px"><a href="${mailto}" style="display:inline-block;padding:14px 24px;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;font-family:${font}">${e(c.cta)}</a></td></tr></table>
+  <p style="margin:28px 0 0;font-size:15px;line-height:1.5;color:${ink}">${e(c.sign)}<br><b>${e(c.team)}</b></p>
+  <p style="margin:18px 0 0;padding:14px 16px;background:${roseSoft};border-radius:14px;font-size:14px;line-height:1.5;color:#7A2440">${e(c.ps)}</p>
+</td></tr>
+<tr><td style="padding:22px 12px 0;text-align:center;font-size:12px;line-height:1.6;color:${muted}">${e(c.foot)}<br><a href="${SITE}" style="color:${muted}">getloopdesk.com</a> · <a href="${SITE}/privacy" style="color:${muted}">${e(c.privacy)}</a></td></tr>
+</table></td></tr></table></body></html>`;
+  const text = [
+    c.title, '', c.intro, '',
+    `${c.tWhen}: ${c.when} (${c.whenNote})`, `${c.tPhone}: ${c.phone}`, `${c.tWho}: ${c.who}`, '',
+    `${c.bringT}: ${c.bring}`, '',
+    c.stepsT, ...c.steps.map((s, i) => `${i + 1}. ${s[0]}: ${s[1]}`), '',
+    `${c.cta}: ${TO}`, '', c.sign, c.team, '', c.ps, '', c.foot,
+  ].join('\n');
+  return { subject: c.subject, html, text };
 }
 
 async function confirmToOwner(f, key, idem) {

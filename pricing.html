@@ -192,6 +192,11 @@ html.lang-ar .answer .big{letter-spacing:0;line-height:1.3}
 .answer p{font-size:16px;color:var(--ink-2);margin-top:8px}
 .answer .example{font-size:12px;color:var(--muted);margin-top:12px;text-transform:uppercase;letter-spacing:.06em}
 html.lang-ar .answer .example{text-transform:none;letter-spacing:0}
+.answer .per-month{font-size:16px;color:var(--ink-2);margin-top:2px}
+.answer-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.answer-row div{background:var(--soft);border-radius:14px;padding:12px 14px;min-width:0}
+.answer-row b{display:block;text-align:start;font-size:24px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.2}
+.answer-row span{font-size:14px;color:var(--muted)}
 @media (max-width:900px){.maths-card{grid-template-columns:minmax(0,1fr)}}
 
 /* questions */
@@ -422,10 +427,10 @@ footer nav a:hover{color:var(--ink)}
   <div class="maths-card">
     <div>
       <div class="kicker en">The maths</div><div class="kicker ar">الحساب</div>
-      <h2 class="h2 en">How many clients does Romy need to bring back?</h2>
-      <h2 class="h2 ar">كم عميلة يجب أن تعود لتغطّي رومي تكلفتها؟</h2>
-      <p class="sub en">Fewer than you'd think. Move the slider to your average visit and see.</p>
-      <p class="sub ar">أقلّ ممّا تظنّون. حرّكوا المؤشّر إلى متوسّط قيمة الزيارة عندكم، وانظروا.</p>
+      <h2 class="h2 en">What could Romy bring back to your centre?</h2>
+      <h2 class="h2 ar">ماذا يمكن أن تُعيد رومي إلى مركزكم؟</h2>
+      <p class="sub en">Two numbers from your centre. Move the sliders and watch the month add up.</p>
+      <p class="sub ar">رقمان من مركزكم. حرّكوا المؤشّرين، وشاهدوا الشهر يكبر.</p>
     </div>
     <div class="calc">
       <div class="seg" role="group" aria-label="Plan">
@@ -434,14 +439,23 @@ footer nav a:hover{color:var(--ink)}
         <button type="button" data-price="995" data-en="Pro" data-ar="الاحترافية" aria-pressed="false" id="pick-pr"><span class="en">Pro</span><span class="ar">الاحترافية</span></button>
       </div>
       <div>
-        <label for="visit"><span class="en">Average visit</span><span class="ar">متوسّط قيمة الزيارة</span><output id="visitOut" class="ltr">AED 250</output></label>
-        <input type="range" id="visit" min="100" max="1000" step="25" value="250">
+        <label for="visit"><span class="en">Average visit</span><span class="ar">متوسّط قيمة الزيارة</span><output id="visitOut" class="ltr">AED 300</output></label>
+        <input type="range" id="visit" min="100" max="1000" step="25" value="300">
+      </div>
+      <div>
+        <label for="back"><span class="en">Clients Romy brings back a month</span><span class="ar">عميلات تُعيدهنّ رومي كلّ شهر</span><output id="backOut" class="ltr">12</output></label>
+        <input type="range" id="back" min="1" max="60" step="1" value="12">
       </div>
       <div class="answer" aria-live="polite">
-        <span class="big" id="need">4</span>
-        <p id="needText"></p>
-        <p class="example en">Simple maths with your own numbers, not a promise</p>
-        <p class="example ar">حساب بسيط بأرقامكم أنتم، لا وعدٌ بنتيجة</p>
+        <span class="big" id="need">AED 3,600</span>
+        <p class="per-month en">back in your centre every month</p>
+        <p class="per-month ar">تعود إلى مركزكم كلّ شهر</p>
+        <div class="answer-row">
+          <div><b id="times" class="ltr">4.4×</b><span class="en">what the plan costs</span><span class="ar">من كلفة الباقة</span></div>
+          <div><b id="even">3</b><span id="evenText"></span></div>
+        </div>
+        <p class="example en">Example with your own numbers, not a promise</p>
+        <p class="example ar">مثال بأرقامكم أنتم، لا وعدٌ بنتيجة</p>
       </div>
     </div>
   </div>
@@ -512,24 +526,28 @@ footer nav a:hover{color:var(--ink)}
     sync(); window.scrollTo(0,0);
   });
 
-  /* break-even: clients a month whose visit value covers the plan */
+  /* what returning clients bring in, against the plan price */
   var slider=document.getElementById('visit'), out=document.getElementById('visitOut'),
-      need=document.getElementById('need'), txt=document.getElementById('needText'),
+      back=document.getElementById('back'), backOut=document.getElementById('backOut'),
+      need=document.getElementById('need'), times=document.getElementById('times'),
+      even=document.getElementById('even'), evenTxt=document.getElementById('evenText'),
       picks=document.querySelectorAll('.seg button'), price=825, pname=document.getElementById('pick-gr');
-  function arClients(n){ if(n===1)return 'عميلة واحدة'; if(n===2)return 'عميلتان'; if(n<=10)return n+' عميلات'; return n+' عميلة'; }
+  function fmt(x){return Math.round(x).toLocaleString('en-US')}
   function calc(){
-    var v=+slider.value, n=Math.ceil(price/v), fmt=function(x){return x.toLocaleString('en-US')};
+    var v=+slider.value, c=+back.value, total=v*c, x=total/price, n=Math.ceil(price/v);
+    var xs=(x>=10?Math.round(x):Math.round(x*10)/10)+'×';
+    backOut.textContent=c; times.textContent=xs; even.textContent=n;
     if(isAr()){
       out.textContent=v+' درهم';
-      need.textContent=arClients(n);
-      txt.textContent=arClients(n)+' بمتوسّط '+v+' درهم للزيارة تعني '+fmt(n*v)+' درهم، وهي تغطّي باقة '+pname.dataset.ar+' ('+price+' درهمًا)'+(n*v-price>0?' ويبقى لكم '+fmt(n*v-price)+' درهم.':'.')+' وكلّ زيارة بعد ذلك ربحٌ لكم.';
+      need.textContent=fmt(total)+' درهم';
+      evenTxt.textContent=(n<=2?(n===1?'عميلة واحدة':'عميلتان'):'عميلات')+' تكفي لتغطية باقة '+pname.dataset.ar;
     }else{
       out.textContent='AED '+v;
-      need.textContent=n+(n===1?' client':' clients');
-      txt.textContent=n+(n===1?' client':' clients')+' at AED '+v+' a visit bring in AED '+fmt(n*v)+'. That covers '+pname.dataset.en+' (AED '+price+')'+(n*v-price>0?' with AED '+fmt(n*v-price)+' to spare':'')+'. Every visit after that is yours.';
+      need.textContent='AED '+fmt(total);
+      evenTxt.textContent=(n===1?'returning client covers ':'returning clients cover ')+pname.dataset.en;
     }
   }
-  slider.addEventListener('input',calc);
+  slider.addEventListener('input',calc); back.addEventListener('input',calc);
   picks.forEach(function(b){b.addEventListener('click',function(){
     price=+b.dataset.price; pname=b; picks.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')}); calc();
   })});

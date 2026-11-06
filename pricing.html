@@ -274,7 +274,7 @@ footer nav a:hover{color:var(--ink)}
     <article class="plan rec">
       <span class="badge">Our pick for most centres</span>
       <h3>Growth</h3>
-      <div class="price"><span class="cur">AED</span><span class="num">825</span><span class="per">/ month</span></div>
+      <div class="price"><span class="cur">AED</span><span class="num">899</span><span class="per">/ month</span></div>
       <p class="daily">Paid for by 4 customer visits at AED 225</p>
       <p class="msgcount"><b>550</b> messages a month included</p>
       <a class="btn btn-rose" href="#demo">Book a demo</a>
@@ -291,7 +291,7 @@ footer nav a:hover{color:var(--ink)}
       <span class="badge quiet">Two branches or more</span>
       <h3>Group</h3>
       <div class="price"><span class="num">20%</span><span class="per">off each extra branch</span></div>
-      <p class="daily">Two Growth branches: AED 825 + AED 660 a month</p>
+      <p class="daily">Two Growth branches: AED 899 + AED 719 a month</p>
       <p class="msgcount">Any plan per branch, each with its own messages. <b>One view</b> of all branches.</p>
       <a class="btn btn-light" href="#demo">Talk to sales</a>
     </article>
@@ -309,7 +309,7 @@ footer nav a:hover{color:var(--ink)}
     <article class="plan rec">
       <span class="badge">اختيارنا لمعظم المراكز</span>
       <h3>النموّ</h3>
-      <div class="price"><span class="num">825</span><span class="cur">درهمًا</span><span class="per">/ شهريًا</span></div>
+      <div class="price"><span class="num">899</span><span class="cur">درهمًا</span><span class="per">/ شهريًا</span></div>
       <p class="daily">تغطّيها 4 زيارات من عميلاتكم بقيمة 225 درهمًا</p>
       <p class="msgcount"><b>550</b> رسالة شهريًا ضمن الباقة</p>
       <a class="btn btn-rose" href="#demo">احجزوا جولة تعريفية</a>
@@ -326,7 +326,7 @@ footer nav a:hover{color:var(--ink)}
       <span class="badge quiet">لفرعين أو أكثر</span>
       <h3>المجموعات</h3>
       <div class="price"><span class="num">20%</span><span class="per">خصم على كلّ فرع إضافي</span></div>
-      <p class="daily">فرعان على باقة النموّ: 825 + 660 درهمًا شهريًا</p>
+      <p class="daily">فرعان على باقة النموّ: 899 + 719 درهمًا شهريًا</p>
       <p class="msgcount">أيّ باقة لكلّ فرع، ولكلّ فرع رسائله. <b>نظرة واحدة</b> على الفروع كلّها.</p>
       <a class="btn btn-light" href="#demo">تحدّثوا مع المبيعات</a>
     </article>
@@ -430,7 +430,7 @@ footer nav a:hover{color:var(--ink)}
     <div class="calc">
       <div class="seg" role="group" aria-label="Plan">
         <button type="button" data-price="699" data-en="Essential" data-ar="الأساسية" aria-pressed="false" id="pick-es"><span class="en">Essential</span><span class="ar">الأساسية</span></button>
-        <button type="button" data-price="825" data-en="Growth" data-ar="النموّ" aria-pressed="true" id="pick-gr"><span class="en">Growth</span><span class="ar">النموّ</span></button>
+        <button type="button" data-price="899" data-en="Growth" data-ar="النموّ" aria-pressed="true" id="pick-gr"><span class="en">Growth</span><span class="ar">النموّ</span></button>
         <button type="button" data-price="1099" data-en="Pro" data-ar="الاحترافية" aria-pressed="false" id="pick-pr"><span class="en">Pro</span><span class="ar">الاحترافية</span></button>
       </div>
       <div>
@@ -515,7 +515,7 @@ footer nav a:hover{color:var(--ink)}
   /* break-even: clients a month whose visit value covers the plan */
   var slider=document.getElementById('visit'), out=document.getElementById('visitOut'),
       need=document.getElementById('need'), txt=document.getElementById('needText'),
-      picks=document.querySelectorAll('.seg button'), price=825, pname=document.getElementById('pick-gr');
+      picks=document.querySelectorAll('.seg button'), price=899, pname=document.getElementById('pick-gr');
   function arClients(n){ if(n===1)return 'عميلة واحدة'; if(n===2)return 'عميلتان'; if(n<=10)return n+' عميلات'; return n+' عميلة'; }
   function calc(){
     var v=+slider.value, n=Math.ceil(price/v), fmt=function(x){return x.toLocaleString('en-US')};

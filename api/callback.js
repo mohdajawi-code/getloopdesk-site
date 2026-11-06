@@ -5,6 +5,9 @@
 //   RESEND_API_KEY   required. Until it is set, the form offers "send by email instead".
 //   CALLBACK_TO      optional, default sales@getloopdesk.com
 //   CALLBACK_FROM    optional, default "Loopdesk website <website@getloopdesk.com>"
+//   LEAD_INTAKE_URL  optional, e.g. https://staff.getloopdesk.com/leads/intake (platform PR #22)
+//   LEAD_INTAKE_SECRET  optional, same value as on the platform (24+ characters)
+//   With both set, each request also lands in the sales team's open pool, unassigned.
 //
 // Field values match the platform's lead model (src/sales/leads.ts), so a request
 // can later go straight into the sales team's open pool as a "website" lead.
@@ -157,7 +160,7 @@ function buildEmail(f, now) {
     '',
     'lead-json: ' + JSON.stringify(lead),
   ].join('\n');
-  return { subject, html, text };
+  return { subject, html, text, lead };
 }
 
 async function readBody(req) {
@@ -195,6 +198,7 @@ module.exports = async function handler(req, res) {
 
   const mail = buildEmail(f, now);
   const idem = clean(b.requestId, 64).replace(/[^a-zA-Z0-9-]/g, '');
+  const pooled = toPool(mail.lead); // runs alongside the email; never fails the form
   try {
     const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -202,18 +206,41 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({ from: FROM, to: [TO], reply_to: f.email, subject: mail.subject, html: mail.html, text: mail.text, tags: [{ name: 'type', value: 'callback' }] }),
       signal: AbortSignal.timeout(8000),
     });
+    await pooled;
     if (!r.ok) {
       console.error('callback: email provider said', r.status, (await r.text()).slice(0, 300));
       return send(502, { ok: false, error: 'send' });
     }
     return send(200, { ok: true });
   } catch (e) {
+    await pooled;
     console.error('callback: email provider unreachable', e && e.name);
     return send(502, { ok: false, error: 'send' });
   }
 };
 
+/** Adds the request to the platform's open pool. 201 new, 200 already a lead or centre. Errors are logged, never shown. */
+async function toPool(lead) {
+  const url = process.env.LEAD_INTAKE_URL;
+  const secret = process.env.LEAD_INTAKE_SECRET;
+  if (!url || !secret) return 'off';
+  try {
+    const r = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-loopdesk-intake-key': secret },
+      body: JSON.stringify(lead),
+      signal: AbortSignal.timeout(5000),
+    });
+    if (r.status !== 201 && r.status !== 200) console.error('callback: lead intake said', r.status, (await r.text()).slice(0, 200));
+    return r.status;
+  } catch (e) {
+    console.error('callback: lead intake unreachable', e && e.name);
+    return 'error';
+  }
+}
+
 module.exports.validate = validate;
+module.exports.toPool = toPool;
 module.exports.buildEmail = buildEmail;
 module.exports.normalisePhone = normalisePhone;
 module.exports.CONSENT_WORDS = CONSENT_WORDS;

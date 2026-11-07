@@ -271,7 +271,7 @@ footer nav a:hover{color:var(--ink)}
       <span class="badge quiet">Smaller centres</span>
       <h3>Essential</h3>
       <div class="price"><span class="cur">AED</span><span class="num">699</span><span class="per">/ month</span></div>
-      <p class="daily">Covered by 4 customer visits a month, at an average bill of AED 200</p>
+      <p class="daily">Covered by 3 customer visits a month, at an average bill of AED 300</p>
       <p class="msgcount"><b>300</b> messages a month included</p>
       <a class="btn btn-light" href="#demo">Book a demo</a>
     </article>
@@ -279,7 +279,7 @@ footer nav a:hover{color:var(--ink)}
       <span class="badge">Our pick for most centres</span>
       <h3>Growth</h3>
       <div class="price"><span class="cur">AED</span><span class="num">899</span><span class="per">/ month</span></div>
-      <p class="daily">Covered by 5 customer visits a month, at an average bill of AED 200</p>
+      <p class="daily">Covered by 3 customer visits a month, at an average bill of AED 300</p>
       <p class="msgcount"><b>550</b> messages a month included</p>
       <a class="btn btn-rose" href="#demo">Book a demo</a>
     </article>
@@ -287,7 +287,7 @@ footer nav a:hover{color:var(--ink)}
       <span class="badge quiet">Busy centres</span>
       <h3>Pro</h3>
       <div class="price"><span class="cur">AED</span><span class="num">1,099</span><span class="per">/ month</span></div>
-      <p class="daily">Covered by 6 customer visits a month, at an average bill of AED 200</p>
+      <p class="daily">Covered by 4 customer visits a month, at an average bill of AED 300</p>
       <p class="msgcount"><b>900</b> messages a month included</p>
       <a class="btn btn-light" href="#demo">Book a demo</a>
     </article>
@@ -298,7 +298,7 @@ footer nav a:hover{color:var(--ink)}
       <span class="badge quiet">للمراكز الصغيرة</span>
       <h3>الأساسية</h3>
       <div class="price"><span class="num">699</span><span class="cur">درهمًا</span><span class="per">/ شهريًا</span></div>
-      <p class="daily">تغطّيها 4 زيارات شهريًا من عميلاتكم، بمتوسّط فاتورة 200 درهم</p>
+      <p class="daily">تغطّيها 3 زيارات شهريًا من عميلاتكم، بمتوسّط فاتورة 300 درهم</p>
       <p class="msgcount"><b>300</b> رسالة شهريًا ضمن الباقة</p>
       <a class="btn btn-light" href="#demo">احجزوا جولة تعريفية</a>
     </article>
@@ -306,7 +306,7 @@ footer nav a:hover{color:var(--ink)}
       <span class="badge">اختيارنا لمعظم المراكز</span>
       <h3>النموّ</h3>
       <div class="price"><span class="num">899</span><span class="cur">درهمًا</span><span class="per">/ شهريًا</span></div>
-      <p class="daily">تغطّيها 5 زيارات شهريًا من عميلاتكم، بمتوسّط فاتورة 200 درهم</p>
+      <p class="daily">تغطّيها 3 زيارات شهريًا من عميلاتكم، بمتوسّط فاتورة 300 درهم</p>
       <p class="msgcount"><b>550</b> رسالة شهريًا ضمن الباقة</p>
       <a class="btn btn-rose" href="#demo">احجزوا جولة تعريفية</a>
     </article>
@@ -314,7 +314,7 @@ footer nav a:hover{color:var(--ink)}
       <span class="badge quiet">للمراكز المزدحمة</span>
       <h3>الاحترافية</h3>
       <div class="price"><span class="num">1,099</span><span class="cur">درهمًا</span><span class="per">/ شهريًا</span></div>
-      <p class="daily">تغطّيها 6 زيارات شهريًا من عميلاتكم، بمتوسّط فاتورة 200 درهم</p>
+      <p class="daily">تغطّيها 4 زيارات شهريًا من عميلاتكم، بمتوسّط فاتورة 300 درهم</p>
       <p class="msgcount"><b>900</b> رسالة شهريًا ضمن الباقة</p>
       <a class="btn btn-light" href="#demo">احجزوا جولة تعريفية</a>
     </article>
@@ -432,11 +432,11 @@ footer nav a:hover{color:var(--ink)}
         <button type="button" data-price="1099" data-en="Pro" data-ar="الاحترافية" aria-pressed="false" id="pick-pr"><span class="en">Pro</span><span class="ar">الاحترافية</span></button>
       </div>
       <div>
-        <label for="visit"><span class="en">Average visit</span><span class="ar">متوسّط قيمة الزيارة</span><output id="visitOut" class="ltr">AED 200</output></label>
-        <input type="range" id="visit" min="100" max="1000" step="25" value="200">
+        <label for="visit"><span class="en">Average visit</span><span class="ar">متوسّط قيمة الزيارة</span><output id="visitOut" class="ltr">AED 300</output></label>
+        <input type="range" id="visit" min="100" max="1000" step="25" value="300">
       </div>
       <div class="answer" aria-live="polite">
-        <span class="big" id="need">4</span>
+        <span class="big" id="need">3</span>
         <p id="needText"></p>
         <p class="example en">Simple maths with your own numbers, not a promise</p>
         <p class="example ar">حساب بسيط بأرقامكم أنتم، لا وعدٌ بنتيجة</p>
@@ -520,11 +520,11 @@ footer nav a:hover{color:var(--ink)}
     if(isAr()){
       out.textContent=v+' درهم';
       need.textContent=arClients(n);
-      txt.textContent=arClients(n)+' بمتوسّط '+v+' درهم للزيارة تعني '+fmt(n*v)+' درهم، وهي تغطّي باقة '+pname.dataset.ar+' ('+fmt(price)+' درهمًا)'+(n*v-price>0?' ويبقى لكم '+fmt(n*v-price)+' درهم.':'.')+' وكلّ زيارة بعد ذلك ربحٌ لكم.';
+      txt.textContent=arClients(n)+' بمتوسّط '+v+' درهم للزيارة تعني '+fmt(n*v)+' درهم، وهي تغطّي باقة '+pname.dataset.ar+' ('+fmt(price)+' درهمًا)'+(n*v-price>=10?' ويبقى لكم '+fmt(n*v-price)+' درهم.':'.')+' وكلّ زيارة بعد ذلك ربحٌ لكم.';
     }else{
       out.textContent='AED '+v;
       need.textContent=n+(n===1?' client':' clients');
-      txt.textContent=n+(n===1?' client':' clients')+' at AED '+v+' a visit bring in AED '+fmt(n*v)+'. That covers '+pname.dataset.en+' (AED '+fmt(price)+')'+(n*v-price>0?' with AED '+fmt(n*v-price)+' to spare':'')+'. Every visit after that is yours.';
+      txt.textContent=n+(n===1?' client':' clients')+' at AED '+v+' a visit bring in AED '+fmt(n*v)+'. That covers '+pname.dataset.en+' (AED '+fmt(price)+')'+(n*v-price>=10?' with AED '+fmt(n*v-price)+' to spare':'')+'. Every visit after that is yours.';
     }
   }
   slider.addEventListener('input',calc);

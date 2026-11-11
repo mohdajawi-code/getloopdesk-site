@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Loopdesk · When clients feel cared for, they come back</title>
-<meta name="description" content="Loopdesk reads what each client needs before they say it, and reaches out with personal care at the right moment. Clients feel loved, come back sooner and book more.">
+<meta name="description" content="Loopdesk builds AI products for appointment businesses, rooted in behavioural science. Romy for beauty centres, Sinan for dental clinics. Clients feel cared for, come back sooner and spend more.">
 <meta name="facebook-domain-verification" content="hznkutrjk6smpnx2udtf84h1cq6rx5" />
 <link rel="canonical" href="https://getloopdesk.com/">
 <meta property="og:type" content="website">
@@ -22,334 +22,12 @@
 <meta name="twitter:title" content="Loopdesk · Clients come back sooner. And spend more.">
 <meta name="twitter:description" content="Your growth partner for beauty centres, clinics and every appointment business. Behavioural science that makes every client feel cared for, so they come back sooner.">
 <meta name="twitter:image" content="https://getloopdesk.com/og-share2.png">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<style>
-/* Direction: calm premium tech. White space, one modern sans, large photography, very little decoration.
-   One quiet accent (rose) used only where the rhythm lives. */
-:root{
-  --bg:#FFFFFF; --soft:#F5F5F7; --ink:#0B0B0F; --ink-2:#3A3A42; --muted:#6E6E78; --line:#E6E6EA;
-  --rose:#D9466E; --rose-soft:#FBE8EE; --night:#0B0B0F; --on-night:#F5F5F7; --on-night-dim:#A1A1AA;
-  --font:"Geist", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --ar:"IBM Plex Sans Arabic", "Geist", "Geeza Pro", Tahoma, sans-serif;
-  --r:24px;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0B0B0F; --soft:#16161B; --ink:#F5F5F7; --ink-2:#D4D4DA; --muted:#A1A1AA; --line:#26262D;
-  --rose:#F0739A; --rose-soft:#2A1820; --night:#16161B; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0B0B0F; --soft:#16161B; --ink:#F5F5F7; --ink-2:#D4D4DA; --muted:#A1A1AA; --line:#26262D;
-  --rose:#F0739A; --rose-soft:#2A1820; --night:#16161B; color-scheme:dark}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
-.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
-.narrow{max-width:760px}
-a{color:inherit}
-a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:8px}
-p{margin:0} h1,h2,h3{margin:0}
-
-html.lang-ar .en, html:not(.lang-ar) .ar{display:none!important}
-html.lang-ar body{direction:rtl;font-family:var(--ar);letter-spacing:0}
-.ltr{direction:ltr;unicode-bidi:isolate}
-
-/* type scale 14 / 17 / 20 / 28 / 44 / 72 */
-.kicker{font-size:15px;font-weight:600;color:var(--rose);margin-bottom:14px}
-.h1{font-size:clamp(44px,7vw,80px);line-height:1.02;font-weight:650;letter-spacing:-.035em;text-wrap:balance}
-.h2{font-size:clamp(34px,4.6vw,56px);line-height:1.06;font-weight:650;letter-spacing:-.03em;text-wrap:balance}
-html.lang-ar .h1,html.lang-ar .h2{letter-spacing:0;line-height:1.3;font-weight:700}
-.sub{font-size:clamp(18px,1.7vw,21px);color:var(--muted);line-height:1.5;max-width:36em}
-.muted{color:var(--muted)}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;font:600 16px var(--font);text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap}
-html.lang-ar .btn{font-family:var(--ar)}
-.btn-dark{background:var(--ink);color:var(--bg)}
-.btn-dark:hover{opacity:.86}
-.btn-light{background:transparent;color:var(--ink);border-color:var(--line)}
-.btn-light:hover{border-color:var(--ink)}
-.btn-sm{height:38px;padding:0 16px;font-size:14px}
-
-/* nav */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb, var(--bg) 82%, transparent);backdrop-filter:saturate(1.6) blur(16px);-webkit-backdrop-filter:saturate(1.6) blur(16px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:650;font-size:19px;letter-spacing:-.02em}
-.logo svg{width:24px;height:24px}
-.nav-links{display:flex;gap:28px;font-size:15px;color:var(--ink-2)}
-.nav-links a{text-decoration:none}
-.nav-links a:hover{color:var(--ink)}
-.nav-right{display:flex;gap:8px;align-items:center}
-#langbtn{font-family:var(--ar)}
-html.lang-ar #langbtn{font-family:var(--font)}
-@media (max-width:860px){.nav-links{display:none}}
-@media (max-width:420px){.nav-right .btn-dark{display:none}}
-
-/* hero */
-.hero{text-align:center;padding-block:clamp(56px,9vw,120px) clamp(36px,5vw,56px)}
-.hero .h1{max-width:13em;margin:0 auto}
-.hero .sub{margin:22px auto 0}
-.hero .ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:32px}
-.hero .tiny{margin-top:18px;font-size:14px;color:var(--muted)}
-.chip{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink-2);background:var(--soft);border-radius:999px;padding:6px 14px 6px 8px;margin-bottom:26px}
-.chip b{background:var(--rose);color:#fff;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:600}
-
-.showcase{position:relative;margin-bottom:clamp(40px,6vw,80px)}
-.photo{position:relative;overflow:hidden;border-radius:var(--r);background:var(--soft)}
-.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.showcase .photo{aspect-ratio:16/8.4;max-width:100%}
-.showcase .photo img{object-position:60% center}
-.wa{position:absolute;inset-inline-start:clamp(16px,4vw,48px);bottom:clamp(16px,4vw,48px);width:min(340px,80%);background:rgba(255,255,255,.92);color:#0B0B0F;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:20px;padding:14px;box-shadow:0 24px 60px -20px rgba(0,0,0,.35);font-size:15px;line-height:1.45}
-html.lang-ar .wa{inset-inline-start:auto;left:clamp(16px,4vw,48px)}
-.wa-head{display:flex;gap:10px;align-items:center;margin-bottom:10px}
-.av{width:32px;height:32px;border-radius:50%;background:#0B0B0F;color:#fff;display:grid;place-items:center;font-weight:600;font-size:14px;flex:none}
-.wa-head b{display:block;font-size:14px}
-.wa-head span{font-size:12px;color:#6E6E78}
-.bubble{background:#F1F1F4;border-radius:14px;border-start-start-radius:4px;padding:10px 12px}
-.bubble .t{display:block;text-align:end;font-size:11px;color:#8A8A94;margin-top:3px}
-.qr{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
-.qr span{background:#fff;border:1px solid #E6E6EA;border-radius:10px;padding:8px;text-align:center;font-weight:600;font-size:14px;color:#D9466E}
-.example{font-size:11px;color:#8A8A94;margin-top:8px;text-transform:uppercase;letter-spacing:.06em}
-html.lang-ar .example{letter-spacing:0;font-size:12px}
-@media (max-width:700px){
-  .showcase .photo{aspect-ratio:4/5}
-  .showcase .photo img{object-position:72% center}
-  .wa{position:relative;inset:auto;left:auto;margin:-70px auto 0;width:min(360px,92%)}
-}
-
-/* statement */
-.statement{padding-block:clamp(48px,7vw,96px);border-top:1px solid var(--line)}
-.statement p{font-size:clamp(26px,3.3vw,40px);line-height:1.25;font-weight:550;letter-spacing:-.02em;max-width:24em;text-wrap:pretty}
-html.lang-ar .statement p{letter-spacing:0;line-height:1.6;font-weight:600}
-.statement p span{color:var(--muted)}
-.research{padding-block:clamp(48px,7vw,96px);border-top:1px solid var(--line)}
-.research .h2{max-width:20em;margin-top:10px}
-.research .sub{max-width:40em;margin-top:18px}
-
-
-/* messages */
-.words{padding-block:clamp(72px,9vw,128px)}
-.words-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:44px}
-.words-head > *{min-width:0}
-.msg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.mcard{min-width:0;background:var(--soft);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:16px}
-.moment{font-size:13px;font-weight:600;color:var(--rose);text-transform:uppercase;letter-spacing:.06em}
-html.lang-ar .moment{letter-spacing:0;text-transform:none;font-size:14px}
-.mcard .bubble{background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5;padding:14px 16px;border-radius:16px;border-start-start-radius:4px;box-shadow:0 1px 0 var(--line)}
-.why{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.why li{font-size:15px;color:var(--muted);padding-inline-start:16px;position:relative}
-.why li::before{content:"";position:absolute;inset-inline-start:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--rose)}
-.why b{display:block;color:var(--ink);font-weight:600}
-.fine{margin-top:20px;font-size:14px;color:var(--muted)}
-@media (max-width:860px){.words-head,.msg-grid{grid-template-columns:minmax(0,1fr)}}
-/* rhythm */
-.rhythm{background:var(--soft);padding-block:clamp(72px,9vw,128px)}
-.rhythm-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
-.rhythm-grid > *{min-width:0}
-.rhythm .sub{margin-top:18px}
-.steps{list-style:none;padding:0;margin:36px 0 0;display:grid;gap:22px}
-.steps li{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start}
-.steps .ic{width:36px;height:36px;border-radius:12px;background:var(--bg);display:grid;place-items:center;box-shadow:0 1px 0 var(--line)}
-.steps .ic svg{width:18px;height:18px;stroke:var(--rose);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.steps h3{font-size:17px;font-weight:600;margin-bottom:2px}
-.steps p{font-size:15px;color:var(--muted)}
-.dial-card{background:var(--bg);border-radius:28px;padding:clamp(18px,3vw,32px);box-shadow:0 30px 80px -40px rgba(11,11,15,.25);display:grid;grid-template-columns:minmax(0,1fr);gap:16px;justify-items:center}
-.dial-card > *{min-width:0;max-width:100%}
-.seg.compact .lg{display:none}
-.seg.compact{gap:2px}.seg.compact button{padding-inline:11px}
-.seg{display:flex;flex-wrap:nowrap;gap:4px;background:var(--soft);border-radius:999px;padding:4px;width:max-content;max-width:100%;margin-inline:auto;overflow-x:auto;scrollbar-width:none}.seg::-webkit-scrollbar{display:none}
-.seg button{flex:0 0 auto;white-space:nowrap;font:500 14px var(--font);background:transparent;color:var(--ink-2);border:0;border-radius:999px;padding:7px 16px;cursor:pointer}
-@media (max-width:520px){.seg{gap:2px}.seg button{font-size:13px;padding:7px 11px}.seg .lg{display:none}}
-@media (max-width:520px){html.lang-ar .seg{gap:0}html.lang-ar .seg button{font-size:12.5px;padding:7px 7px}}
-@media (max-width:370px){html.lang-ar .seg button{font-size:11.5px;padding:7px 5px}.seg button{font-size:12px;padding:7px 8px}}
-html.lang-ar .seg button{font-family:var(--ar)}
-.seg button[aria-pressed="true"]{background:var(--bg);color:var(--ink);box-shadow:0 1px 3px rgba(11,11,15,.12)}
-#dial{width:min(100%,440px);height:auto;max-width:100%;display:block}
-.legend{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;font-size:13px;color:var(--muted)}
-.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-inline-end:6px;vertical-align:middle}
-.due{width:100%;background:var(--rose-soft);color:var(--ink);border-radius:14px;padding:12px 14px;font-size:15px;display:flex;gap:10px;align-items:flex-start}
-.due i{width:8px;height:8px;border-radius:50%;background:var(--rose);margin-top:8px;flex:none}
-
-.cmp{width:100%;display:grid;gap:18px}
-.who-line{font-size:15px;font-weight:600;text-align:center;color:var(--ink)}
-.track-block{display:grid;gap:8px}
-.tl-head{display:flex;justify-content:space-between;align-items:baseline;gap:4px 12px;flex-wrap:wrap;font-size:15px}
-.tl-head span{color:var(--muted);font-size:14px}
-.track{position:relative;height:30px;margin-inline:8px}
-.track::before{content:"";position:absolute;inset-inline:-8px;top:50%;height:2px;margin-top:-1px;background:var(--line);border-radius:2px}
-.on .track::before{background:var(--rose-soft)}
-.track i{position:absolute;top:50%;width:14px;height:14px;margin-top:-7px;margin-inline-start:-7px;border-radius:50%}
-.off .track i{background:var(--muted);opacity:.45}
-.on .track i{background:var(--rose);box-shadow:0 0 0 4px var(--rose-soft)}
-.tl-foot{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
-.tl-foot strong{color:var(--ink);font-weight:600}
-.on .tl-foot strong{color:var(--rose)}
-.months{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px;margin-inline:8px}
-.gain{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.gain > div{background:var(--rose-soft);border-radius:16px;padding:16px 18px;min-width:0}
-.gain .big{display:block;font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-.03em;line-height:1.1;color:var(--rose);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
-html.lang-ar .gain .big{letter-spacing:0}
-.gain small{font-size:14px;color:var(--ink-2)}
-.scale{font-size:17px;font-weight:600;text-align:center;line-height:1.45;text-wrap:balance}
-.cmp .example{text-align:center;color:var(--muted)}
-@media (prefers-reduced-motion:no-preference){.track i{animation:pop .45s cubic-bezier(.2,.8,.2,1.2) both}}
-@keyframes pop{from{transform:scale(0)}to{transform:none}}
-@media (max-width:900px){.rhythm-grid{grid-template-columns:minmax(0,1fr)}}
-
-/* outcomes */
-.outcomes{padding-block:clamp(72px,9vw,128px)}
-.outcomes-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:44px}
-.outcomes-head > *{min-width:0}
-.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:var(--soft);border-radius:var(--r);padding:28px;min-width:0;display:flex;flex-direction:column;gap:10px}
-.card .w{font-size:clamp(40px,4.4vw,56px);font-weight:650;letter-spacing:-.04em;line-height:1}
-html.lang-ar .card .w{letter-spacing:0;line-height:1.3;font-weight:700}
-.card:nth-child(2) .w{color:var(--rose)}
-.card h3{font-size:18px;font-weight:600;margin-top:28px}
-.card p{font-size:15px;color:var(--muted)}
-.note-line{margin-top:18px;font-size:14px;color:var(--muted)}
-@media (max-width:860px){.outcomes-head,.cards3{grid-template-columns:minmax(0,1fr)}.card{min-height:0}}
-
-/* ease */
-.ease{padding-block:0 clamp(72px,9vw,128px)}
-.ease-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
-.ease-grid > *{min-width:0}
-.ease .photo{aspect-ratio:4/5;max-width:100%}
-.ease .photo .wa{inset-inline-start:auto;right:clamp(14px,3vw,28px);left:auto;bottom:clamp(14px,3vw,28px);width:min(310px,84%)}
-.rows{margin-top:30px;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
-.rows div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
-.rows b{font-weight:600}
-.rows span{color:var(--muted)}
-@media (max-width:860px){.ease-grid{grid-template-columns:minmax(0,1fr)}.ease .photo .wa{position:absolute}}
-@media (max-width:480px){.rows div{grid-template-columns:minmax(0,1fr);gap:2px}}
-
-/* products */
-.products{background:var(--soft);padding-block:clamp(72px,9vw,128px)}
-.products .sub{margin-top:18px}
-.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
-.pcard{min-width:0;background:var(--bg);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
-.pcard .photo{border-radius:0;aspect-ratio:4/5;max-width:100%}
-.pcard .body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
-.pcard .st{align-self:flex-start;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:var(--soft);color:var(--ink-2)}
-.pcard.now .st{background:var(--rose);color:#fff}
-.pcard h3{font-size:20px;font-weight:600;letter-spacing:-.01em}
-.pcard h3 small{display:block;font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}
-.pcard p{font-size:15px;color:var(--muted)}
-.more{margin-top:24px;font-size:15px;color:var(--muted)}
-.more a{color:var(--ink);font-weight:600}
-@media (max-width:1000px){.pgrid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.pgrid{grid-template-columns:minmax(0,1fr)}}
-
-/* pilot */
-.pilot{padding-block:clamp(72px,9vw,128px)}
-.pilot-card{background:var(--night);color:var(--on-night);border-radius:32px;padding:clamp(32px,6vw,80px);display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:end}
-.pilot-card > *{min-width:0}
-.pilot-card .sub{color:var(--on-night-dim);margin-top:18px}
-.mailbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;display:grid;gap:12px}
-.mailbox small{color:var(--on-night-dim);font-size:13px}
-.mailrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.mailrow span{font-size:20px;font-weight:600;overflow-wrap:anywhere}
-.copy{font:600 14px var(--font);background:var(--on-night);color:#0B0B0F;border:0;border-radius:999px;height:36px;padding:0 16px;cursor:pointer}
-html.lang-ar .copy{font-family:var(--ar)}
-.pilot-card{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:start;gap:clamp(28px,5vw,64px)}
-.pilot-copy{display:grid;gap:0}
-.pilot-copy .mailbox{margin-top:28px}
-.next{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:14px;counter-reset:n}
-.next li{display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:12px;counter-increment:n}
-.next li::before{content:counter(n);grid-row:span 2;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:14px;font-weight:600}
-.next b{font-weight:600}
-.next span{color:var(--on-night-dim);font-size:15px}
-/* call-back form */
-.cb{position:relative;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,3vw,32px)}
-.cb form{display:grid;gap:16px}
-.cb-title{font-size:22px;font-weight:650;letter-spacing:-.015em;line-height:1.25}
-html.lang-ar .cb-title{letter-spacing:0}
-.f2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
-@media (max-width:520px){.f2{grid-template-columns:minmax(0,1fr)}}
-.fld{display:grid;gap:6px;min-width:0;border:0;padding:0;margin:0}
-.lbl{font-size:14px;font-weight:600;color:var(--ink-2);padding:0}
-.opt{font-weight:400;color:var(--muted)}
-.cb input:not([type=radio]):not([type=checkbox]),.cb select{width:100%;min-width:0;height:48px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:16px var(--font);padding:0 14px}
-html.lang-ar .cb input,html.lang-ar .cb select{font-family:var(--ar)}
-.cb input[dir=ltr]{text-align:start}
-html.lang-ar .cb input[dir=ltr]{text-align:right}
-.cb input::placeholder{color:var(--muted);opacity:.7}
-.cb input:focus,.cb select:focus{outline:2px solid var(--rose);outline-offset:1px;border-color:transparent}
-.cb select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat;padding-inline-end:36px}
-html.lang-ar .cb select{background-position:15px 21px,20px 21px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{position:relative}
-.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.chips label>span{display:inline-flex;align-items:baseline;gap:6px;min-height:44px;min-width:48px;justify-content:center;align-items:center;padding:0 14px;border:1px solid var(--line);border-radius:999px;font-size:15px;font-weight:500;cursor:pointer;white-space:nowrap}
-.chips small{color:var(--muted);font-size:12px;direction:ltr;unicode-bidi:isolate}
-.chips input:checked+span{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.chips input:checked+span small{color:inherit;opacity:.75}
-.chips input:focus-visible+span{outline:2px solid var(--rose);outline-offset:2px}
-.err{display:none;font-size:13px;color:#C0284F}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .err{color:var(--rose)}}
-:root[data-theme="dark"] .err{color:var(--rose)}
-.fld.bad .err{display:block}
-.fld.bad input,.fld.bad select,.fld.bad .chips label>span{border-color:#C0284F}
-.trap{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.consent{display:grid;gap:10px;background:var(--soft);border-radius:16px;padding:14px 16px}
-.tick{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start;font-size:14.5px;line-height:1.45;color:var(--ink-2);cursor:pointer}
-.tick input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--ink)}
-.cb-send{width:100%;height:52px;font-size:17px}
-.cb-send[disabled]{opacity:.6;cursor:progress}
-.fine{font-size:13px;color:var(--muted)}
-.fine a{color:var(--ink-2)}
-.cb-fail{display:grid;gap:12px;border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-size:15px}
-.cb form[hidden],.cb-fail[hidden],.cb-done[hidden]{display:none}
-.cb-done{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;justify-items:start;padding-block:8px}
-.cb-done .btn{white-space:normal;height:auto;min-height:48px;padding:12px 22px;text-align:center;max-width:100%}
-.cb-done:focus{outline:none}
-.cb-done svg{width:40px;height:40px;color:var(--ink)}
-.cb-done p{font-size:16px}
-.cb-done .cb-title{font-size:26px}
-@media (max-width:860px){.pilot-card{grid-template-columns:minmax(0,1fr)}}
-
-/* legal */
-.legal-wrap{padding-block:56px 40px}
-.legal h1{font-size:clamp(36px,5vw,52px);font-weight:650;letter-spacing:-.03em;line-height:1.1;margin:0 0 10px}
-html.lang-ar .legal h1{letter-spacing:0;line-height:1.35}
-.legal h3{margin:30px 0 6px;font-size:18px;font-weight:600}
-.legal p,.legal li{max-width:64ch;color:var(--ink-2)}
-.legal p{margin-bottom:10px}
-.legal ul{padding-inline-start:20px;margin:0 0 12px}
-.legal li{margin-bottom:4px}
-.legal a{color:var(--rose)}
-.updated{font-size:14px;color:var(--muted)}
-.back{display:inline-block;margin-bottom:26px;font-size:15px;color:var(--muted);text-decoration:none}
-
-
-@media (prefers-reduced-motion:no-preference){
-  .reveal{animation:up .9s cubic-bezier(.2,.7,.1,1) both}
-  .reveal.d1{animation-delay:.08s}.reveal.d2{animation-delay:.16s}.reveal.d3{animation-delay:.24s}
-  #dial .pulse{animation:pulse 2.2s ease-out infinite;transform-box:fill-box;transform-origin:center}
-}
-@keyframes up{from{transform:translateY(14px)}to{transform:none}}
-@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.6);opacity:0}}
-footer{border-top:1px solid var(--line);background:var(--soft)}
-footer .wrap{padding-block:56px 36px;color:var(--muted);font-size:15px;line-height:1.55}
-.ft-top{display:grid;grid-template-columns:1.6fr 1fr 1.25fr 1fr;gap:40px 32px}
-footer .logo{color:var(--ink)}
-.ft-brand p{margin-top:14px;max-width:30ch;color:var(--ink-2)}
-.ft-cta{display:inline-flex;align-items:center;height:40px;margin-top:20px;padding:0 18px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:600;font-size:14px;text-decoration:none}
-.ft-cta:hover{opacity:.86}
-.ft-h{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:14px}
-.ft-col ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.ft-col a{color:var(--ink-2);text-decoration:none}
-.ft-col a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-.ft-col small{display:block;font-size:13px;color:var(--muted)}
-.ft-bottom{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:grid;gap:8px;font-size:13px}
-.tm{font-size:12px;max-width:90ch}
-@media (max-width:860px){.ft-top{grid-template-columns:1fr 1fr}.ft-brand{grid-column:1/-1}}
-@media (max-width:560px){footer .wrap{padding-block:44px 32px}.ft-top{gap:32px 20px}#contact{grid-column:1/-1;order:3}.ft-legal{order:2}}
-</style>
-
+<link rel="stylesheet" href="/site.css">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -357,12 +35,12 @@ footer .logo{color:var(--ink)}
 </svg>
 
 <header class="nav"><div class="wrap">
-  <a class="logo" href="#home" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
+  <a class="logo" href="/" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
   <nav class="nav-links">
-    <a href="#messages"><span class="en">Messages</span><span class="ar">الرسائل</span></a>
-    <a href="#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a>
-    <a href="#ease"><span class="en">How it works</span><span class="ar">كيف تعمل</span></a>
-    <a href="#products"><span class="en">Products</span><span class="ar">المنتجات</span></a>
+    <a href="/#science"><span class="en">Our science</span><span class="ar">علم السلوك</span></a>
+    <a href="/#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a>
+    <a href="/romy" data-nav="romy"><span class="en">Romy</span><span class="ar">رومي</span></a>
+    <a href="/sinan" data-nav="sinan"><span class="en">Sinan</span><span class="ar">سنان</span></a>
   </nav>
   <div class="nav-right">
     <button class="btn btn-light btn-sm" id="langbtn" type="button">العربية</button>
@@ -377,27 +55,44 @@ footer .logo{color:var(--ink)}
   <div class="chip reveal"><b class="en">New</b><b class="ar">جديد</b><span class="en">Your growth partner. Behavioural science that brings clients back and sells more.</span><span class="ar">فنّ العودة… وسرّ الزيادة.</span></div>
   <h1 class="h1 reveal d1 en">Make every client feel like your only client.</h1>
   <h1 class="h1 reveal d1 ar">اجعلوا كلّ عميل يشعر بأنّه عميلكم الوحيد.</h1>
-  <p class="sub reveal d2 en">Loopdesk knows when each client is due, what they'd love next and the words that make them smile. Then it reaches out in the name of the person they always book with, with the kind of care that feels made just for them. The bond with your business grows, and so do their visits.</p>
-  <p class="sub reveal d2 ar">تعرف Loopdesk متى يحين موعد كلّ عميل، والخدمة التي تناسبه، والكلمة التي ترسم على وجهه ابتسامة. ثمّ تكتب له باسم من اعتاد أن يحجز عنده، فيشعر بأنّكم تعرفونه وتهتمّون به. فتقوى العلاقة بينه وبينكم، وتزيد زياراته.</p>
+  <p class="sub reveal d2 en">Loopdesk builds AI products for appointment businesses, rooted in behavioural science. Each one knows when a client is due, what they'd love next and the words that make them smile. Then it reaches out in the name of the person they trust. Clients feel looked after, come back sooner and spend more when they do.</p>
+  <p class="sub reveal d2 ar">تبني Loopdesk منتجات ذكاء اصطناعي للأعمال التي تقوم على المواعيد، وأساسها علم السلوك. يعرف كلّ منتج متى يحين موعد كلّ عميل، وما الذي سيسعده بعد ذلك، والكلمة التي ترسم على وجهه ابتسامة، ثمّ يكتب له باسم من يثق به. فيشعر بالاهتمام، ويعود أسرع، وينفق أكثر حين يعود.</p>
   <div class="ctas reveal d3">
     <a class="btn btn-dark" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
-    <a class="btn btn-light" href="#rhythm"><span class="en">See how it works</span><span class="ar">كيف تعمل؟</span></a>
+    <a class="btn btn-light" href="#products"><span class="en">Meet Romy and Sinan</span><span class="ar">تعرّفوا على رومي وسنان</span></a>
   </div>
   <p class="tiny en">Answers and books on WhatsApp, day and night · English and Arabic · Nothing to install</p>
   <p class="tiny ar">تردّ وتحجز على واتساب ليلًا ونهارًا · بالعربية والإنجليزية · لا تطبيق تحمّلونه</p>
 </section>
 
-<section class="wrap showcase">
-  <div class="photo"><img src="img/hero.jpg" alt="A stylist and her client laughing together in a beauty centre" onerror="this.remove()"></div>
-  <div class="wa en" aria-label="Example rhythm note from a beauty centre">
+<section class="wrap duo">
+  <div class="duo-item">
+    <div class="photo"><img src="/img/hero.jpg" alt="A stylist and her client laughing together in a beauty centre" onerror="this.remove()" style="object-position:70% center"></div>
+    <div class="wa en" aria-label="Example rhythm note from a beauty centre">
     <div class="wa-head"><div class="av">L</div><div><b>Layali Beauty Lounge</b><span>Example message</span></div></div>
     <div class="bubble">Your nails have been so loyal for 16 days… but they're dreaming of a fresh new look 💅 Joy is free Thursday at 6pm. Shall we?<span class="t">10:12</span></div>
     <div class="qr"><span>Book Thursday 6pm</span><span>Another time</span></div>
   </div>
-  <div class="wa ar" aria-label="مثال على رسالة من مركز تجميل">
+    <div class="wa ar" aria-label="مثال على رسالة من مركز تجميل">
     <div class="wa-head"><div class="av">ل</div><div><b>ليالي بيوتي لاونج</b><span>مثال لرسالة</span></div></div>
     <div class="bubble">صبرت أظافركِ 16 يومًا بكلّ وفاء، والآن بدأت تحلم بلون جديد 💅 جوي متفرّغة الخميس 6 مساءً. نحجزه لكِ؟<span class="t">10:12</span></div>
     <div class="qr"><span>الخميس 6 مساءً</span><span>وقت آخر</span></div>
+  </div>
+    <a class="duo-link" href="/romy"><span class="en">Romy</span><span class="ar">رومي</span> <small class="en">for beauty centres</small><small class="ar">لمراكز التجميل</small> <span class="arr en">→</span><span class="arr ar">←</span></a>
+  </div>
+  <div class="duo-item">
+    <div class="photo"><img src="/img/dental.jpg" alt="A dentist showing a smiling patient his results on a tablet" onerror="this.remove()"></div>
+    <div class="wa en" aria-label="Example recall note from a dental clinic">
+    <div class="wa-head"><div class="av">J</div><div><b>Juniper Dental</b><span>Example message</span></div></div>
+    <div class="bubble">Six months already, Omar 😁 Your check-up has been patiently waiting its turn. Dr. Sara has Tuesday at 4pm for your check-up and clean. Shall we?<span class="t">09:40</span></div>
+    <div class="qr"><span>Book Tuesday 4pm</span><span>Another time</span></div>
+  </div>
+    <div class="wa ar" aria-label="مثال على رسالة من عيادة أسنان">
+    <div class="wa-head"><div class="av">ج</div><div><b>عيادة جونيبر للأسنان</b><span>مثال لرسالة</span></div></div>
+    <div class="bubble">مرّت 6 أشهر يا عمر 😁 وفحصك الدوري ينتظر دوره بصبر. د. سارة متاحة الثلاثاء 4 عصرًا للفحص والتنظيف. نحجزه لك؟<span class="t">09:40</span></div>
+    <div class="qr"><span>الثلاثاء 4 عصرًا</span><span>وقت آخر</span></div>
+  </div>
+    <a class="duo-link" href="/sinan"><span class="en">Sinan</span><span class="ar">سنان</span> <small class="en">for dental clinics</small><small class="ar">لعيادات الأسنان</small> <span class="arr en">→</span><span class="arr ar">←</span></a>
   </div>
 </section>
 
@@ -406,99 +101,32 @@ footer .logo{color:var(--ink)}
   <p class="ar">معظم أنظمة الحجز تنتظر أن يتذكّر العميل. <span>أمّا Loopdesk فتلتقط ما يحتاجه كلّ عميل قبل أن يطلبه: متى يحين موعده، والخدمة التي تناسبه، والكلمة التي تسرّه. فلا يشعر بأنّه تلقّى تذكيرًا، بل بأنّ هناك من يهتمّ به.</span></p>
 </section>
 
-<!-- Research band: real findings from the founder's own group interviews with beauty centre clients in several emirates (2026), supplied by Mohammed Ajawi on 7 Nov 2026 and approved by him for the site. Not invented. Add the number of participants when known. -->
-<section class="wrap research">
-  <div class="kicker en">What clients told us</div><div class="kicker ar">ما قالته العميلات</div>
-  <h2 class="h2 en">More than 8 in 10 said a personal note would make them feel loved.</h2>
-  <h2 class="h2 ar">أكثر من 8 من كلّ 10 عميلات قلن إنّ الرسالة الشخصية تُشعرهنّ بالاهتمام والتقدير.</h2>
-  <p class="sub en">We sat down with women who visit beauty centres across the Emirates. Most said a note like that would nudge them to book. Matching suggestions were "a great idea", and some said they'd always wanted this. Mass salon offers? Mostly ignored.</p>
-  <p class="sub ar">جلسنا مع عميلات مراكز التجميل في عدّة إمارات. قالت معظمهنّ إنّ رسالة كهذه تدفعهنّ إلى الحجز، ووصفن اقتراح الخدمات التي تكمّل بعضها بأنّه «فكرة رائعة»، وقالت بعضهنّ إنّهنّ انتظرن شيئًا كهذا طويلًا. أمّا العروض الجماعية التي تصلهنّ، فأغلبها يمرّ دون أن يُقرأ.</p>
-  <p class="fine en">Group interviews with beauty centre clients in the UAE, 2026.</p>
-  <p class="fine ar">مقابلات جماعية مع عميلات مراكز تجميل في الإمارات، 2026.</p>
-</section>
-
-<section class="wrap words" id="messages">
-  <div class="words-head">
+<section class="wrap science" id="science">
+  <div class="outcomes-head">
     <div>
-      <div class="kicker en">The messages</div><div class="kicker ar">الرسائل</div>
-      <h2 class="h2 en">Not reminders. Little love notes.</h2>
-      <h2 class="h2 ar">ليست تذكيرات، بل لفتات اهتمام.</h2>
+      <div class="kicker en">Our science</div><div class="kicker ar">علم السلوك</div>
+      <h2 class="h2 en">Built on how people really decide.</h2>
+      <h2 class="h2 ar">نفهم كيف يقرّر عملاؤكم.</h2>
     </div>
-    <p class="sub en">Every note is built on behavioural science and signed by the person your client already trusts. It remembers her treatment, her stylist and her shade, so she feels known, not marketed to. Here are four of them, and why they work.</p>
-    <p class="sub ar">كلّ رسالة مبنيّة على علم السلوك، وتصل باسم من تثق به عميلتكم. وتحمل كلّ رسالة تفاصيل تخصّها وحدها: خدمتها، وخبيرتها، ولونها المفضّل، فتشعر بأنّكم تعرفونها، لا بأنّها تتلقّى إعلانًا. هذه أربع منها، ومع كلّ واحدة سرّها.</p>
+    <p class="sub en">Behavioural science is our edge. Every Loopdesk product uses the same six principles to make people feel cared for, so coming back feels natural, never pushed.</p>
+    <p class="sub ar">علم السلوك هو ما يميّزنا. كلّ منتج من Loopdesk يقوم على المبادئ الستّة نفسها، ليشعر الناس بالاهتمام، فتصبح العودة أمرًا طبيعيًّا، دون إلحاح.</p>
   </div>
-  <div class="msg-grid en">
-    <article class="mcard">
-      <div class="moment">Day 16 · just before she notices</div>
-      <div class="bubble">Your nails have been so loyal for 16 days… but they're dreaming of a fresh new look 💅 Joy is free Thursday at 6pm. Shall we?</div>
-      <ul class="why">
-        <li><b>Perfect timing</b>It lands the day her gel starts to lift, not a week after it chips.</li>
-        <li><b>Playful, never pushy</b>The nails do the asking, so it reads like a smile, not an ad.</li>
-        <li><b>Her own stylist, a real slot</b>One tap and it's booked.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">On her way out</div>
-      <div class="bubble">You look beautiful, Sophie 💛 Your gel usually lasts about 3 weeks. Shall we save the same time with Joy on Monday 23 Nov? You're 3 of 8 visits to a free spa pedicure.</div>
-      <ul class="why">
-        <li><b>Asked at her best moment</b>A plan made when she feels great is the easiest yes.</li>
-        <li><b>Progress she can see</b>Three visits down, five to go. Hard to walk away from that.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">Day 26 · two treatments, one visit</div>
-      <div class="bubble">It's been almost a month since Dana worked her magic, and your brows are whispering "same again, please" 😄 Dana has Monday at 5pm, and Joy is free right after for your nails. Both in one visit?</div>
-      <ul class="why">
-        <li><b>What's due, plus what's nearly due</b>One trip for her, a bigger bill for you.</li>
-        <li><b>Humour that disarms</b>A smile gets read. A reminder gets ignored.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">Week 7 · if she goes quiet</div>
-      <div class="bubble">We've missed you, Sophie 🌸 No pressure at all. Joy still keeps your shade on her shelf. Whenever you're ready, one tap brings you back.</div>
-      <ul class="why">
-        <li><b>No discount, no guilt</b>Warmth works better than a coupon and keeps your prices whole.</li>
-        <li><b>She's remembered</b>Her shade, her stylist. That feeling brings people back.</li>
-      </ul>
-    </article>
+  <div class="cards3 en">
+    <div class="card"><span class="w">01</span><h3>The right moment</h3><p>People act when the need is fresh. So we reach out the day a visit is due, not a week later.</p></div>
+    <div class="card"><span class="w">02</span><h3>A name they trust</h3><p>A note from someone you know gets read. So it comes in the name of their own stylist or dentist.</p></div>
+    <div class="card"><span class="w">03</span><h3>One easy choice</h3><p>One real slot, one tap. Less thinking, an easier yes. And “another time” is always there.</p></div>
+    <div class="card"><span class="w">04</span><h3>The finish line</h3><p>Nearly done is a strong pull. So we show how close they are to a loyalty reward or the end of a treatment plan.</p></div>
+    <div class="card"><span class="w">05</span><h3>A smile, not a push</h3><p>Warmth and humour get read. Dry reminders get ignored. The treatment does the talking. Never a word about anyone’s body.</p></div>
+    <div class="card"><span class="w">06</span><h3>Honest, always</h3><p>No fake urgency, no guilt, no automatic discounts. Trust is what brings them back next time.</p></div>
   </div>
-  <div class="msg-grid ar">
-    <article class="mcard">
-      <div class="moment">اليوم 16 · قبل أن تلاحظ</div>
-      <div class="bubble">صبرت أظافركِ 16 يومًا بكلّ وفاء، والآن بدأت تحلم بلون جديد 💅 جوي متفرّغة الخميس 6 مساءً. نحجزه لكِ؟</div>
-      <ul class="why">
-        <li><b>في وقتها تمامًا</b>تصلها يوم يبدأ الجل يرتفع عن الظفر، لا بعد أسبوع من تقشّره.</li>
-        <li><b>خفيفة الظلّ، بلا إلحاح</b>الطلب جاء من أظافرها، فتقرؤها كابتسامة لا كإعلان.</li>
-        <li><b>خبيرتها، وموعد متاح فعلًا</b>ضغطة واحدة ويُحجز.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">وهي تغادر المركز</div>
-      <div class="bubble">إطلالتكِ اليوم تحفة يا صوفي 💛 الجل يصمد عادةً قرابة 3 أسابيع، فما رأيكِ أن نحفظ لكِ الوقت نفسه مع جوي يوم الاثنين 23 نوفمبر؟ وهذه زيارتكِ 3 من 8، والباديكير السبا المجاني يقترب.</div>
-      <ul class="why">
-        <li><b>تسألها وهي في أحلى حالاتها</b>حين تكون سعيدة بالنتيجة، تخرج «نعم» بلا تفكير.</li>
-        <li><b>تقدّم تراه بعينها</b>3 من 8، والهدية تشدّها للعودة.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">اليوم 26 · خدمتان في زيارة واحدة</div>
-      <div class="bubble">مرّ قرابة شهر على لمسة دانة السحرية، وحاجباكِ يهمسان: «مرّةً أخرى، رجاءً» 😄 دانة متفرّغة الاثنين 5 مساءً، وجوي بعدها مباشرةً لأظافركِ. نجمعهما في زيارة واحدة؟</div>
-      <ul class="why">
-        <li><b>المستحقّ، ومعه ما اقترب موعده</b>مشوار واحد لها، وفاتورة أكبر لكم.</li>
-        <li><b>الضحكة أقوى من التذكير</b>رسالة تُضحكها تُقرأ، وتذكير جافّ يُمسح.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">الأسبوع 7 · إذا غابت</div>
-      <div class="bubble">اشتقنا لكِ يا صوفي 🌸 ولا عجلة أبدًا. جوي ما زالت تحتفظ بلونكِ على رفّها، ومتى شئتِ، ضغطة واحدة وتعودين إلينا.</div>
-      <ul class="why">
-        <li><b>لا خصم ولا عتاب</b>الودّ يعيدها أكثر من أيّ كوبون، وأسعاركم تبقى كما هي.</li>
-        <li><b>تشعر أنها لم تُنسَ</b>لونها محفوظ وخبيرتها تذكرها، وهذا الشعور وحده يعيد الناس.</li>
-      </ul>
-    </article>
+  <div class="cards3 ar">
+    <div class="card"><span class="w">01</span><h3>اللحظة المناسبة</h3><p>يتحرّك الناس حين تكون الحاجة حاضرة. لذلك نكتب يوم يحين الموعد، لا بعده بأسبوع.</p></div>
+    <div class="card"><span class="w">02</span><h3>اسم يثقون به</h3><p>الرسالة التي تأتي من شخص مألوف تُقرأ. لذلك تصل باسم الخبيرة أو الطبيب الذي يثق به العميل.</p></div>
+    <div class="card"><span class="w">03</span><h3>خيار واحد سهل</h3><p>موعد متاح فعلًا وزرّ واحد للحجز، فيسهل القرار. وإن لم يناسب الوقت، فزرّ «وقت آخر» موجود دائمًا.</p></div>
+    <div class="card"><span class="w">04</span><h3>خطّ النهاية</h3><p>حين يقترب الشيء من الاكتمال نرغب في إكماله. لذلك نُظهر كم بقي على هدية الولاء أو على نهاية خطّة العلاج.</p></div>
+    <div class="card"><span class="w">05</span><h3>ابتسامة، لا إلحاح</h3><p>الرسالة الخفيفة الدافئة تُقرأ، والتذكير الجافّ يُتجاهل. الخدمة هي التي تتكلّم، ولا كلمة أبدًا عن جسد أحد.</p></div>
+    <div class="card"><span class="w">06</span><h3>صدق دائمًا</h3><p>لا استعجال مصطنع، ولا لوم، ولا خصومات تلقائية. فالثقة هي ما يعيد العميل في المرّة القادمة.</p></div>
   </div>
-  <p class="fine en">Every slot is real and every offer is yours. Loopdesk never fakes urgency.</p>
-  <p class="fine ar">كلّ موعد في الرسائل متاح فعلًا، وكلّ عرض تضعونه أنتم. ولا تختلق Loopdesk أيّ استعجال.</p>
 </section>
 
 <section class="rhythm" id="rhythm">
@@ -550,7 +178,6 @@ footer .logo{color:var(--ink)}
         <div class="example en">Example figures</div><div class="example ar">أرقام توضيحية</div>
       </div>
     </div>
-    </div>
   </div>
 </section>
 
@@ -576,10 +203,34 @@ footer .logo{color:var(--ink)}
   </div>
 </section>
 
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="kicker en">Products</div><div class="kicker ar">المنتجات</div>
+    <h2 class="h2 en">One engine. A product for every trade.</h2>
+    <h2 class="h2 ar">محرّك واحد، ولكلّ مهنة منتجها.</h2>
+    <p class="sub en">A blow-dry every three weeks is nothing like a check-up every six months. So each trade gets its own product, launched one at a time.</p>
+    <p class="sub ar">تصفيف الشعر كلّ 3 أسابيع غير فحص الأسنان كلّ 6 أشهر. لذلك صمّمنا لكلّ مهنة منتجها الخاص، ونطلقها واحدًا تلو الآخر.</p>
+    <div class="pgrid en">
+      <a class="pcard now" href="/romy"><div class="photo"><img src="/img/hero.jpg" alt="" onerror="this.remove()" style="object-position:70% center"></div><div class="body"><span class="st">Coming soon</span><h3><small>For beauty centres</small>Romy</h3><p>She knows beauty. She knows business. Above all, Romy knows when to say what: when to sell, when to be funny and when to be serious.</p><span class="go">Meet Romy →</span></div></a>
+      <a class="pcard now" href="/sinan"><div class="photo"><img src="/img/dental.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Coming soon</span><h3><small>For dental clinics</small>Sinan</h3><p>He knows dentistry. He knows patients. Above all, Sinan turns what each patient truly needs into something they want: the check-up they put off, the cleaning that's due, the treatment their dentist recommended.</p><span class="go">Meet Sinan →</span></div></a>
+      <article class="pcard"><div class="photo"><img src="/img/cosmetic.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Later</span><h3>Cosmetic clinics</h3><p>Treatment courses and top-ups, timed to each client.</p></div></article>
+      <article class="pcard"><div class="photo"><img src="/img/barber.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Later</span><h3>Barbershops</h3><p>Regular cuts and beard trims, with the barber each client prefers.</p></div></article>
+    </div>
+    <div class="pgrid ar">
+      <a class="pcard now" href="/romy"><div class="photo"><img src="/img/hero.jpg" alt="" onerror="this.remove()" style="object-position:70% center"></div><div class="body"><span class="st">قريبًا</span><h3><small>لمراكز التجميل</small>رومي</h3><p>تفهم الجمال، وتفهم البيع. والأهمّ أنّ رومي تعرف أنّ لكلّ مقامٍ مقالًا: متى تبيع، ومتى تمزح، ومتى تتكلّم بجدّ.</p><span class="go">تعرّفوا على رومي ←</span></div></a>
+      <a class="pcard now" href="/sinan"><div class="photo"><img src="/img/dental.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">قريبًا</span><h3><small>لعيادات الأسنان</small>سنان</h3><p>يفهم طبّ الأسنان، ويفهم المرضى. والأهمّ أنّ سنان يحوّل ما يحتاجه كلّ مريض فعلًا إلى شيء يريده: الفحص الذي أجّله، والتنظيف الذي حان وقته، والعلاج الذي أوصى به طبيبه.</p><span class="go">تعرّفوا على سنان ←</span></div></a>
+      <article class="pcard"><div class="photo"><img src="/img/cosmetic.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">لاحقًا</span><h3>عيادات التجميل</h3><p>برامج الجلسات ومواعيد التجديد، في وقتها لكلّ عميلة.</p></div></article>
+      <article class="pcard"><div class="photo"><img src="/img/barber.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">لاحقًا</span><h3>صالونات الحلاقة</h3><p>القصّة المعتادة وتهذيب اللحية، مع الحلّاق الذي يرتاح إليه كلّ زبون.</p></div></article>
+    </div>
+    <p class="more en">More appointment businesses will follow. <a href="#demo">Tell us how you book today →</a></p>
+    <p class="more ar">وبعدها كلّ عمل يقوم على المواعيد. <a href="#demo">أخبرونا كيف تحجزون اليوم ←</a></p>
+  </div>
+</section>
+
 <section class="wrap ease" id="ease">
   <div class="ease-grid">
     <div class="photo">
-      <img src="img/owner.jpg" alt="A beauty centre owner checking last week's results on her phone" onerror="this.remove()">
+      <img src="/img/owner.jpg" alt="A beauty centre owner checking last week's results on her phone" onerror="this.remove()">
       <div class="wa en"><div class="wa-head"><div class="av">L</div><div><b>Loopdesk</b><span>Monday 09:00</span></div></div>
         <div class="bubble">Good morning! Last week we invited 86 of your clients back. 61 rebooked, and 24 added an extra service.</div>
         <div class="qr"><span>See details</span><span>Change rules</span></div><div class="example">Example</div></div>
@@ -607,37 +258,13 @@ footer .logo{color:var(--ink)}
   </div>
 </section>
 
-<section class="products" id="products">
-  <div class="wrap">
-    <div class="kicker en">Products</div><div class="kicker ar">المنتجات</div>
-    <h2 class="h2 en">One engine. A product for every trade.</h2>
-    <h2 class="h2 ar">محرّك واحد، ولكلّ مهنة منتجها.</h2>
-    <p class="sub en">A blow-dry every three weeks is nothing like a check-up every six months. So each trade gets its own product, launched one at a time.</p>
-    <p class="sub ar">تصفيف الشعر كلّ 3 أسابيع غير فحص الأسنان كلّ 6 أشهر. لذلك صمّمنا لكلّ مهنة منتجها الخاص، ونطلقها واحدًا تلو الآخر.</p>
-    <div class="pgrid en">
-      <article class="pcard now"><div class="photo"><img src="img/hero.jpg" alt="" onerror="this.remove()" style="object-position:70% center"></div><div class="body"><span class="st">Coming soon</span><h3><small>For beauty centres</small>Romy</h3><p>She knows beauty. She knows business. Above all, Romy knows when to say what: when to sell, when to be funny and when to be serious.</p></div></article>
-      <article class="pcard now"><div class="photo"><img src="img/dental.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Coming soon</span><h3><small>For dental clinics</small>Sinan</h3><p>He knows dentistry. He knows patients. Above all, Sinan turns what each patient truly needs into something they want: the check-up they put off, the cleaning that's due, the treatment their dentist recommended.</p></div></article>
-      <article class="pcard"><div class="photo"><img src="img/cosmetic.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Later</span><h3>Cosmetic clinics</h3><p>Treatment courses and top-ups, timed to each client.</p></div></article>
-      <article class="pcard"><div class="photo"><img src="img/barber.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Later</span><h3>Barbershops</h3><p>Regular cuts and beard trims, with the barber each client prefers.</p></div></article>
-    </div>
-    <div class="pgrid ar">
-      <article class="pcard now"><div class="photo"><img src="img/hero.jpg" alt="" onerror="this.remove()" style="object-position:70% center"></div><div class="body"><span class="st">قريبًا</span><h3><small>لمراكز التجميل</small>رومي</h3><p>تفهم الجمال، وتفهم البيع. والأهمّ أنّ رومي تعرف أنّ لكلّ مقامٍ مقالًا: متى تبيع، ومتى تمزح، ومتى تتكلّم بجدّ.</p></div></article>
-      <article class="pcard now"><div class="photo"><img src="img/dental.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">قريبًا</span><h3><small>لعيادات الأسنان</small>سنان</h3><p>يفهم طبّ الأسنان، ويفهم المرضى. والأهمّ أنّ سنان يحوّل ما يحتاجه كلّ مريض فعلًا إلى شيء يريده: الفحص الذي أجّله، والتنظيف الذي حان وقته، والعلاج الذي أوصى به طبيبه.</p></div></article>
-      <article class="pcard"><div class="photo"><img src="img/cosmetic.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">لاحقًا</span><h3>عيادات التجميل</h3><p>برامج الجلسات ومواعيد التجديد، في وقتها لكلّ عميلة.</p></div></article>
-      <article class="pcard"><div class="photo"><img src="img/barber.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">لاحقًا</span><h3>صالونات الحلاقة</h3><p>القصّة المعتادة وتهذيب اللحية، مع الحلّاق الذي يرتاح إليه كلّ زبون.</p></div></article>
-    </div>
-    <p class="more en">More appointment businesses will follow. <a href="#demo">Tell us how you book today →</a></p>
-    <p class="more ar">وبعدها كلّ عمل يقوم على المواعيد. <a href="#demo">أخبرونا كيف تحجزون اليوم ←</a></p>
-  </div>
-</section>
-
 <section class="wrap pilot" id="demo">
   <div class="pilot-card">
     <div class="pilot-copy">
       <h2 class="h2 en">See Loopdesk with your own services.</h2>
       <h2 class="h2 ar">جرّبوا Loopdesk على خدماتكم أنتم.</h2>
       <p class="sub en">Tell us when suits you and we'll call. Then we set up a live demo with your services, prices and team. Beauty centres and dental clinics come first. Cosmetic clinics and barbershops can reserve a place now.</p>
-      <p class="sub ar">اختاروا الوقت المناسب ونتصل بكم، ثمّ نجهّز لكم جولة حيّة بخدماتكم وأسعاركم وفريقكم. نبدأ بمراكز التجميل وعيادات الأسنان، وتستطيع عيادات التجميل وصالونات الحلاقة حجز مكانها من الآن.</p>
+      <p class="sub ar">اختاروا الوقت المناسب ونتصل بكم، ثمّ نعرض لكم مباشرةً كيف تعمل Loopdesk بخدماتكم وأسعاركم وفريقكم. نبدأ بمراكز التجميل وعيادات الأسنان، وتستطيع عيادات التجميل وصالونات الحلاقة حجز مكانها من الآن.</p>
       <ol class="next">
         <li><b class="en">We call you</b><b class="ar">نتصل بكم</b><span class="en">At the time you pick, within one working day.</span><span class="ar">في الوقت الذي تختارونه، خلال يوم عمل واحد.</span></li>
         <li><b class="en">You see it with your services</b><b class="ar">ترونها على خدماتكم</b><span class="en">A 20-minute demo with your own treatments and prices.</span><span class="ar">جولة من 20 دقيقة بخدماتكم وأسعاركم أنتم.</span></li>
@@ -650,7 +277,7 @@ footer .logo{color:var(--ink)}
     </div>
 
     <div class="cb" id="callback">
-      <form id="cbform" novalidate>
+      <form id="cbform" method="post" novalidate>
         <p class="cb-title"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></p>
         <div class="f2">
           <label class="fld"><span class="lbl"><span class="en">Your name</span><span class="ar">الاسم</span></span>
@@ -743,17 +370,17 @@ footer .logo{color:var(--ink)}
 <footer><div class="wrap">
   <div class="ft-top">
     <div class="ft-brand">
-      <a class="logo" href="#home" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
+      <a class="logo" href="/" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
       <p><span class="en">Your growth partner. Behavioural science that brings clients back and sells more.</span><span class="ar">فنّ العودة… وسرّ الزيادة.</span></p>
       <a class="ft-cta" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
     </div>
     <nav class="ft-col" aria-label="Explore">
       <p class="ft-h"><span class="en">Explore</span><span class="ar">تصفّحوا</span></p>
       <ul>
-        <li><a href="#messages"><span class="en">Messages</span><span class="ar">الرسائل</span></a></li>
-        <li><a href="#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a></li>
-        <li><a href="#ease"><span class="en">How it works</span><span class="ar">كيف تعمل</span></a></li>
-        <li><a href="#products"><span class="en">Products</span><span class="ar">المنتجات</span></a></li>
+        <li><a href="/#science"><span class="en">Our science</span><span class="ar">علم السلوك</span></a></li>
+        <li><a href="/#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a></li>
+        <li><a href="/romy"><span class="en">Romy, for beauty centres</span><span class="ar">رومي لمراكز التجميل</span></a></li>
+        <li><a href="/sinan"><span class="en">Sinan, for dental clinics</span><span class="ar">سنان لعيادات الأسنان</span></a></li>
       </ul>
     </nav>
     <div class="ft-col" id="contact">
@@ -779,183 +406,6 @@ footer .logo{color:var(--ink)}
   </div>
 </div></footer>
 
-<script>
-(function(){
-  var root=document.documentElement, btn=document.getElementById('langbtn');
-  function isAr(){return root.classList.contains('lang-ar')}
-  function setLang(l){
-    root.classList.toggle('lang-ar', l==='ar');
-    root.lang = l==='ar' ? 'ar' : 'en';
-    root.dir = l==='ar' ? 'rtl' : 'ltr';
-    btn.textContent = l==='ar' ? 'English' : 'العربية';
-    try{localStorage.setItem('ld-lang', l)}catch(e){}
-    draw();
-  }
-
-  /* ---------- rhythm comparison ---------- */
-  var DATA={
-    salon:{off:8,on:5,price:350,n:100,
-      en:{who:'Sophie · colour and blow-dry · AED 350 a visit',off:'Every 8 weeks, when she remembers',on:'Every 5 weeks, invited on her rhythm',scale:'If just 100 of your regulars come back like Sophie, that\'s AED {T} more a year.'},
-      ar:{who:'صوفي · صبغة وتصفيف الشعر · 350 درهمًا للزيارة',off:'كلّ 8 أسابيع، حين تتذكّر',on:'كلّ 5 أسابيع، تصلها الدعوة في وقتها',scale:'يكفي أن تعود 100 من عميلاتكم الدائمات مثل صوفي، لتزيد إيراداتكم {T} درهم في السنة.'}},
-    cosmetic:{off:8,on:4,price:450,n:50,
-      en:{who:'Priya · skin treatment · AED 450 a visit',off:'Every 8 weeks, when she finds time',on:'Every 4 weeks, as her course needs',scale:'If just 50 of your clients come back like Priya, that\'s AED {T} more a year.'},
-      ar:{who:'بريا · جلسة عناية بالبشرة · 450 درهمًا للزيارة',off:'كلّ 8 أسابيع، حين تجد وقتًا',on:'كلّ 4 أسابيع، كما يحتاج برنامجها',scale:'يكفي أن تعود 50 من عميلاتكم مثل بريا، لتزيد إيراداتكم {T} درهم في السنة.'}},
-    dental:{off:52,on:26,price:400,n:300,
-      en:{who:'Daniel · check-up and clean · AED 400 a visit',off:'Once a year, when something hurts',on:'Every 6 months, invited on time',scale:'If just 300 of your patients come back like Daniel, that\'s AED {T} more a year.'},
-      ar:{who:'دانيال · فحص وتنظيف · 400 درهم للزيارة',off:'مرّة في السنة، حين يوجعه ضرسه',on:'كلّ 6 أشهر، تصله الدعوة في وقتها',scale:'يكفي أن يعود 300 من مرضاكم مثل دانيال، لتزيد إيراداتكم {T} درهم في السنة.'}},
-    barber:{off:5,on:3,price:120,n:150,
-      en:{who:'Omar · cut and beard · AED 120 a visit',off:'Every 5 weeks, when he walks past',on:'Every 3 weeks, his chair kept for him',scale:'If just 150 of your regulars come back like Omar, that\'s AED {T} more a year.'},
-      ar:{who:'عمر · قصّة شعر ولحية · 120 درهمًا للزيارة',off:'كلّ 5 أسابيع، حين يمرّ بالمحل',on:'كلّ 3 أسابيع، وكرسيّه محجوز له',scale:'يكفي أن يعود 150 من زبائنكم مثل عمر، لتزيد إيراداتكم {T} درهم في السنة.'}}
-  };
-  var current='salon';
-  var COPY={"salon": {"en": {"h2": "Same client. More visits.", "sub": "Every service has a natural cycle. Loopdesk starts from it and, after two or three visits, knows each client's own rhythm the way her favourite stylist would.", "s1": "Each client's real return cycle, for every service.", "s2": "A warm note in her usual stylist's name, always with \"another time\".", "s3": "One extra that suits her, at the moment she books. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "العميلة نفسها، وزيارات أكثر.", "sub": "لكلّ خدمة دورة طبيعية تبدأ منها Loopdesk، ثمّ بعد زيارتين أو ثلاث تحفظ إيقاع كلّ عميلة كما تحفظه أقرب موظفة إليها.", "s1": "متى تعود كلّ عميلة فعلًا، خدمةً خدمة.", "s2": "برسالة لطيفة باسم خبيرتها المعتادة، وفيها دائمًا زرّ «وقت آخر».", "s3": "خدمة إضافية واحدة تناسبها، وهي تحجز. لا قوائم ولا إلحاح.", "s4": "بإذنها أولًا. رسالتان في الشهر على الأكثر، بين 10 صباحًا و9 مساءً. وكلمة «توقّف» توقف كلّ شيء فورًا."}}, "cosmetic": {"en": {"h2": "Same client. Every session on time.", "sub": "Every treatment has its course. Loopdesk follows it, and learns each client's own pace after two or three sessions.", "s1": "When each client is really due, for every treatment.", "s2": "A warm note in her usual specialist's name, always with \"another time\".", "s3": "One add-on that completes her treatment, at the moment she books. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "كلّ جلسة في موعدها.", "sub": "لكلّ برنامج جلسات مساره، وLoopdesk تمشي معه. وبعد جلستين أو ثلاث، تعرف وتيرة كلّ عميلة كما تعرفها أخصائيّتها.", "s1": "متى يحين موعد جلستها التالية، خدمةً خدمة.", "s2": "برسالة لطيفة باسم أخصائيّتها، وفيها دائمًا زرّ «وقت آخر».", "s3": "خدمة واحدة تكمّل نتيجتها، وهي تحجز. لا قوائم ولا إلحاح.", "s4": "بإذنها أولًا. رسالتان في الشهر على الأكثر، بين 10 صباحًا و9 مساءً. وكلمة «توقّف» توقف كلّ شيء فورًا."}}, "dental": {"en": {"h2": "Same patient. Never overdue.", "sub": "Every check-up has its interval. Loopdesk follows it, and learns each patient's pattern after a couple of visits.", "s1": "When each patient is really due: check-ups, cleanings, follow-ups.", "s2": "A friendly note in their dentist's name, always with \"another time\".", "s3": "The cleaning or whitening that fits, at the moment they book. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "كلّ فحص في موعده.", "sub": "لكلّ فحص دوري موعده، وLoopdesk لا تنساه. وبعد زيارتين، تعرف كلّ مريض كما يعرفه طبيبه.", "s1": "موعد كلّ مريض القادم: فحصًا كان أو تنظيفًا أو متابعة.", "s2": "برسالة لطيفة باسم طبيبه، وفيها دائمًا زرّ «وقت آخر».", "s3": "تنظيف أو تبييض يناسبه، وهو يحجز. لا قوائم ولا إلحاح.", "s4": "بإذنه أولًا. رسالتان في الشهر على الأكثر، بين 10 صباحًا و9 مساءً. وكلمة «توقّف» توقف كلّ شيء فورًا."}}, "barber": {"en": {"h2": "Same client. Sharp, more often.", "sub": "Every cut has its cycle. Loopdesk learns each client's rhythm after two or three visits.", "s1": "When each client really needs a cut or a trim.", "s2": "A friendly note from his usual barber, always with \"another time\".", "s3": "The beard trim or hot towel that suits him, at the moment he books. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "الزبون نفسه، وكرسيّه بانتظاره.", "sub": "لكلّ قصّة شعر دورتها. وبعد زيارتين أو ثلاث، تعرف Loopdesk إيقاع كلّ زبون كما يعرفه حلّاقه.", "s1": "متى يحتاج كلّ زبون قصّته أو تهذيب لحيته فعلًا.", "s2": "برسالة لطيفة باسم حلّاقه المعتاد، وفيها دائمًا زرّ «وقت آخر».", "s3": "تهذيب لحية أو منشفة ساخنة تناسبه، وهو يحجز. لا قوائم ولا إلحاح.", "s4": "بإذنه أولًا. رسالتان في الشهر على الأكثر، بين 10 صباحًا و9 مساءً. وكلمة «توقّف» توقف كلّ شيء فورًا."}}};
-  function copyFor(){var c=COPY[current];['en','ar'].forEach(function(l){document.querySelectorAll('#rhythm .'+l+'[data-c], #rhythm .'+l+' [data-c]').forEach(function(el){var t=c[l][el.dataset.c];if(t)el.textContent=t})})}
-
-  var AR_DIG='0123456789';
-  function fmt(n){var t=n.toLocaleString('en-US');return t}
-  function visitsWord(v){if(!isAr())return fmt(v)+(v===1?' visit':' visits');return fmt(v)+(v===1?' زيارة':v===2?' زيارتان':v<=10?' زيارات':' زيارة')}
-  function aed(n){return isAr()?fmt(n)+' درهم':'AED '+fmt(n)}
-  function fill(id,c){var t=document.getElementById(id);if(!t)return;t.innerHTML='';
-    for(var w=1,i=0;w<=52;w+=c,i++){var d=document.createElement('i');d.style.insetInlineStart=((w-1)/51*100)+'%';d.style.animationDelay=(i*40)+'ms';t.appendChild(d)}}
-  function fitTabs(){var nw=document.querySelector('.nav .wrap'),bd=nw&&nw.querySelector('.btn-dark');if(bd){bd.style.display='';if(nw.scrollWidth>nw.clientWidth+1)bd.style.display='none';}var sg=document.querySelector('.seg.tabs');if(!sg)return;sg.classList.remove('compact');if(sg.scrollWidth>sg.clientWidth+1)sg.classList.add('compact');}
-  window.addEventListener('resize',fitTabs);
-  function draw(){setTimeout(fitTabs,0);
-    copyFor();
-    var G={salon:['more from one client','دخل إضافي من عميلة واحدة'],cosmetic:['more from one client','دخل إضافي من عميلة واحدة'],dental:['more from one patient','دخل إضافي من مريض واحد'],barber:['more from one client','دخل إضافي من زبون واحد']}[current];
-    document.getElementById('gainlbl-en').textContent=G[0];document.getElementById('gainlbl-ar').textContent=G[1];
-    var d=DATA[current], L=isAr()?d.ar:d.en;
-    var vo=Math.floor(51/d.off)+1, vn=Math.floor(51/d.on)+1, ro=vo*d.price, rn=vn*d.price;
-    document.getElementById('who').textContent=L.who;
-    document.getElementById('offnote').textContent=L.off;
-    document.getElementById('onnote').textContent=L.on;
-    fill('trackOff',d.off); fill('trackOn',d.on);
-    document.getElementById('offv').textContent=visitsWord(vo);
-    document.getElementById('onv').textContent=visitsWord(vn);
-    document.getElementById('offr').textContent=aed(ro);
-    document.getElementById('onr').textContent=aed(rn);
-    document.getElementById('gainv').textContent='+'+fmt(vn-vo);
-    document.getElementById('gainr').textContent='+'+aed(rn-ro);
-    document.getElementById('scale').textContent=L.scale.replace('{T}',fmt((rn-ro)*d.n));
-    var m=document.getElementById('months'); m.innerHTML='';
-    (isAr()?['يناير','أبريل','يوليو','أكتوبر','ديسمبر']:['Jan','Apr','Jul','Oct','Dec']).forEach(function(x){var s=document.createElement('span');s.textContent=x;m.appendChild(s)});
-  }
-  document.querySelectorAll('.tabs button').forEach(function(b){
-    b.addEventListener('click',function(){current=b.dataset.k;
-      document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});draw();});
-  });
-
-  var saved='en'; try{saved=localStorage.getItem('ld-lang')||'en'}catch(e){}
-  setLang(saved);
-  btn.addEventListener('click',function(){setLang(isAr()?'en':'ar')});
-
-  function route(){
-    var h=(location.hash||'#home').slice(1);
-    if(h==='privacy'||h==='terms'){location.replace('/'+h);return}
-    var view='home';
-    document.querySelectorAll('[data-view]').forEach(function(v){v.hidden = v.dataset.view!==view});
-    if(view!=='home'||h==='home'){window.scrollTo(0,0)}
-    else {var e=document.getElementById(h); if(e) e.scrollIntoView()}
-  }
-  window.addEventListener('hashchange',route); route();
-  try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw)}catch(e){}
-  new MutationObserver(draw).observe(root,{attributes:true,attributeFilter:['data-theme']});
-
-  document.querySelectorAll('[data-copy]').forEach(function(b){
-    b.addEventListener('click',function(){
-      var t=b.dataset.copy, label=b.innerHTML;
-      function done(){b.textContent = isAr()?'تم النسخ':'Copied'; setTimeout(function(){b.innerHTML=label},1500)}
-      function sel(){var s=document.getElementById('mailaddr'),r=document.createRange();r.selectNodeContents(s);var w=getSelection();w.removeAllRanges();w.addRange(r)}
-      try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
-    });
-  });
-})();
-</script>
-
-<script>
-/* call-back form: posts to /api/callback, which emails sales@ */
-(function(){
-  var root=document.documentElement, form=document.getElementById('cbform');
-  if(!form) return;
-  var t0=Date.now(), sendBtn=document.getElementById('cbsend'), fail=document.getElementById('cbfail'), done=document.getElementById('cbdone');
-  var rid=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+Math.random().toString(16).slice(2);
-  function ar(){return root.classList.contains('lang-ar')}
-  function localise(){
-    var l=ar()?'ar':'en';
-    form.querySelectorAll('[data-ph-en]').forEach(function(i){i.placeholder=i.getAttribute('data-ph-'+l)});
-    form.querySelectorAll('option[data-en]').forEach(function(o){o.textContent=o.getAttribute('data-'+l)});
-  }
-  localise();
-  new MutationObserver(localise).observe(root,{attributes:true,attributeFilter:['class']});
-
-  var TIME={morning:['in the morning, between 10am and 12pm','صباحًا بين 10 و12'],afternoon:['in the afternoon, between 12pm and 4pm','ظهرًا بين 12 و4'],evening:['in the evening, between 4pm and 8pm','مساءً بين 4 و8'],any:['between 10am and 8pm','بين 10 صباحًا و8 مساءً']};
-  function phoneOk(v){
-    var d=String(v||'').replace(/[\s\-().]/g,'');
-    if(d.indexOf('00')===0)d='+'+d.slice(2);
-    if(/^0?5\d{8}$/.test(d)||/^\+9715\d{8}$/.test(d))return true;
-    if(/^\+971/.test(d))return false;
-    return /^\+[1-9]\d{7,14}$/.test(d);
-  }
-  function val(n){var e=form.elements[n];return e?String(e.value||'').trim():''}
-  function checks(){
-    return {
-      name:val('name').length>=2,
-      business:val('business').length>=2,
-      phone:phoneOk(val('phone')),
-      email:/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val('email')),
-      vertical:!!val('vertical'),
-      emirate:!!val('emirate'),
-      time:!!val('time')
-    };
-  }
-  function fieldOf(n){var e=form.elements[n];if(!e)return null;if(e.length&&!e.tagName)e=e[0];return e.closest('.fld')}
-  function mark(n,ok){var f=fieldOf(n);if(f)f.classList.toggle('bad',!ok)}
-  /* Errors appear only after she leaves a field or presses send, and clear as soon as it is right. */
-  Object.keys(checks()).forEach(function(n){
-    var e=form.elements[n], list=(e&&e.length&&!e.tagName)?Array.prototype.slice.call(e):[e];
-    list.forEach(function(x){if(!x)return;
-      x.addEventListener('blur',function(){if(x.type!=='radio'&&val(n))mark(n,checks()[n])});
-      x.addEventListener('input',function(){var f=fieldOf(n);if(f&&f.classList.contains('bad'))mark(n,checks()[n])});
-      x.addEventListener('change',function(){var f=fieldOf(n);if(f&&f.classList.contains('bad'))mark(n,checks()[n])});
-    });
-  });
-
-  function mailtoBody(){
-    var lines=['Please call me back.','','Name: '+val('name'),'Business: '+val('business'),'Mobile: '+val('phone'),'Email: '+val('email'),
-      'Type: '+(form.elements.vertical.selectedOptions[0]||{}).textContent,'Emirate: '+(form.elements.emirate.selectedOptions[0]||{}).textContent,
-      'Branches: '+(val('branches')||'-'),'Best time: '+(val('time')||'-')];
-    return 'mailto:sales@getloopdesk.com?subject='+encodeURIComponent('Call back: '+val('business'))+'&body='+encodeURIComponent(lines.join('\n'));
-  }
-  function showFail(){document.getElementById('cbmail').href=mailtoBody();fail.hidden=false}
-
-  form.addEventListener('submit',function(ev){
-    ev.preventDefault(); fail.hidden=true;
-    var c=checks(), first=null;
-    Object.keys(c).forEach(function(n){mark(n,c[n]);if(!c[n]&&!first)first=n});
-    if(first){var e=form.elements[first];if(e&&e.length&&!e.tagName)e=e[0];e.focus();return}
-    var body={name:val('name'),business:val('business'),phone:val('phone'),email:val('email'),vertical:val('vertical'),emirate:val('emirate'),
-      branches:val('branches'),time:val('time'),lang:ar()?'ar':'en',consentEmail:form.elements.consentEmail.checked,consentWhatsapp:form.elements.consentWhatsapp.checked,
-      website:val('website'),elapsedMs:Date.now()-t0,requestId:rid};
-    sendBtn.disabled=true; var label=sendBtn.innerHTML;
-    sendBtn.innerHTML='<span class="en">Sending…</span><span class="ar">جارٍ الإرسال…</span>';
-    fetch('/api/callback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
-      .then(function(r){return r.json().catch(function(){return {ok:false}}).then(function(j){return {status:r.status,j:j}})})
-      .then(function(x){
-        if(x.j&&x.j.ok){
-          done.querySelectorAll('[data-out="name"]').forEach(function(e){e.textContent=body.name.split(' ')[0]});
-          done.querySelectorAll('[data-out="phone"]').forEach(function(e){e.textContent=body.phone});
-          done.querySelector('[data-out="time-en"]').textContent=TIME[body.time][0];
-          done.querySelector('[data-out="time-ar"]').textContent=TIME[body.time][1];
-          form.hidden=true; done.hidden=false; done.focus();
-          return;
-        }
-        if(x.status===422&&x.j.fields){x.j.fields.forEach(function(n){mark(n,false)});return}
-        showFail();
-      })
-      .catch(showFail)
-      .then(function(){sendBtn.disabled=false;sendBtn.innerHTML=label});
-  });
-})();
-</script>
-
+<script src="/site.js"></script>
 </body>
 </html>

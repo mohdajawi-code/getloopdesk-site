@@ -327,7 +327,7 @@ footer .logo{color:var(--ink)}
 .duo-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:17px;text-decoration:none;color:var(--ink);height:26px}
 .duo-link small{font-weight:500;color:var(--muted);font-size:15px}
 .duo-link .arr{color:var(--rose)}
-html.lang-ar .duo .wa{left:auto}
+html.lang-ar .duo .wa{left:auto;inset-inline-start:clamp(14px,3vw,32px)}
 @media (max-width:700px){.duo{grid-template-columns:minmax(0,1fr);gap:40px}.duo .wa,html.lang-ar .duo .wa{bottom:auto;inset-inline-start:auto;left:auto;right:auto}.duo-item{gap:0}.duo-link{margin-top:14px}}
 .science{padding-block:clamp(72px,9vw,128px);border-top:1px solid var(--line)}
 .science .cards3{margin-top:44px}

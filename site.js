@@ -32,7 +32,7 @@
 
   var AR_DIG='0123456789';
   function fmt(n){var t=n.toLocaleString('en-US');return t}
-  function visitsWord(v){if(!isAr())return fmt(v)+(v===1?' visit':' visits');return fmt(v)+(v===1?' زيارة':v===2?' زيارتان':v<=10?' زيارات':' زيارة')}
+  function visitsWord(v){if(!isAr())return fmt(v)+(v===1?' visit':' visits');return v===1?'زيارة واحدة':v===2?'زيارتان':fmt(v)+(v<=10?' زيارات':' زيارة')}
   function aed(n){return isAr()?fmt(n)+' درهم':'AED '+fmt(n)}
   function fill(id,c){var t=document.getElementById(id);if(!t)return;t.innerHTML='';
     for(var w=1,i=0;w<=52;w+=c,i++){var d=document.createElement('i');d.style.insetInlineStart=((w-1)/51*100)+'%';d.style.animationDelay=(i*40)+'ms';t.appendChild(d)}}

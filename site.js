@@ -183,9 +183,9 @@
   if(!CHAT_LIVE||!/^971\d{8,9}$/.test(CHAT_NUMBER))return;
   var root=document.documentElement, v=document.body.getAttribute('data-vertical');
   var HELLO={
-    salon:{en:"Hi Loopdesk 👋 I'd like to know more about Romy for my beauty centre.",ar:'مرحبًا Loopdesk 👋 أودّ أن أعرف المزيد عن رومي لمركز التجميل.'},
-    dental:{en:"Hi Loopdesk 👋 I'd like to know more about Sinan for my dental clinic.",ar:'مرحبًا Loopdesk 👋 أودّ أن أعرف المزيد عن سنان لعيادة الأسنان.'},
-    any:{en:"Hi Loopdesk 👋 I'd like to know more.",ar:'مرحبًا Loopdesk 👋 أودّ أن أعرف المزيد.'}
+    salon:{en:"Hi Loopdesk 👋 I'd like to know more about Romy for my beauty centre.",ar:'مرحبًا لوب ديسك 👋 أودّ أن أعرف المزيد عن رومي لمركز التجميل.'},
+    dental:{en:"Hi Loopdesk 👋 I'd like to know more about Sinan for my dental clinic.",ar:'مرحبًا لوب ديسك 👋 أودّ أن أعرف المزيد عن سنان لعيادة الأسنان.'},
+    any:{en:"Hi Loopdesk 👋 I'd like to know more.",ar:'مرحبًا لوب ديسك 👋 أودّ أن أعرف المزيد.'}
   };
   function links(){
     var ar=root.classList.contains('lang-ar'), h=HELLO[v]||HELLO.any;

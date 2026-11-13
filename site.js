@@ -192,7 +192,7 @@
     var href='https://wa.me/'+CHAT_NUMBER+'?text='+encodeURIComponent(ar?h.ar:h.en);
     document.querySelectorAll('[data-chat]').forEach(function(el){
       el.hidden=false;
-      if(el.tagName==='A'){el.href=href;el.setAttribute('aria-label',ar?'تحدّثوا مع Loopdesk على واتساب':'Chat with Loopdesk on WhatsApp');}
+      if(el.tagName==='A')el.href=href;
     });
   }
   links();

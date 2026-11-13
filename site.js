@@ -180,7 +180,7 @@
 (function(){
   /* The sales number lives only here (digits, with 971): a new SIM is a one-line change. */
   var CHAT_NUMBER='971501472513'; /* the chat buttons' number (the footer's phone line is in each page's footer: change both for a new SIM) */
-  var CHAT_LIVE=false;
+  var CHAT_LIVE=true;
   if(!CHAT_LIVE||!/^971\d{8,9}$/.test(CHAT_NUMBER))return;
   var root=document.documentElement, v=document.body.getAttribute('data-vertical');
   var HELLO={

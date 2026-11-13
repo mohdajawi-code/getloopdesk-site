@@ -178,7 +178,8 @@
    The buttons stay hidden until CHAT_LIVE is true: flip it only once the number is
    registered on the WhatsApp Business Platform and the sales line is answering. */
 (function(){
-  var CHAT_NUMBER='971501132840';
+  /* The sales number lives only here (digits, with 971): a new SIM is a one-line change. */
+  var CHAT_NUMBER='971501132840'; /* the only place the sales number is set: a new SIM is a one-line change */
   var CHAT_LIVE=false;
   if(!CHAT_LIVE||!/^971\d{8,9}$/.test(CHAT_NUMBER))return;
   var root=document.documentElement, v=document.body.getAttribute('data-vertical');

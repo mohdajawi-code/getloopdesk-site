@@ -12,3 +12,6 @@ Holding website for Loopdesk. Static site deployed on Vercel.
 - `img/`: photos
 
 Edit `index.html` and commit; Vercel publishes automatically.
+
+## Chat with Loopdesk on WhatsApp
+"Chat with us on WhatsApp" (in the Book a demo card on /, /romy and /sinan) and the floating "Ask Loopdesk" button open WhatsApp with Loopdesk's sales number (+971 50 113 2840) and a first message that fits the page (Romy on /romy, Sinan on /sinan). Both stay hidden until `CHAT_LIVE` (bottom of `site.js`) is `true`. Flip it only once the number is registered on the WhatsApp Business Platform and the platform's `npm run sales-line` is answering, or owners would write to a number nobody reads.

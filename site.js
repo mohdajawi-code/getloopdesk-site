@@ -173,3 +173,31 @@
       .then(function(){sendBtn.disabled=false;sendBtn.innerHTML=label});
   });
 })();
+
+/* Chat with Loopdesk on WhatsApp (the sales line, +971 50 113 2840).
+   The buttons stay hidden until CHAT_LIVE is true: flip it only once the number is
+   registered on the WhatsApp Business Platform and the sales line is answering. */
+(function(){
+  var CHAT_NUMBER='971501132840';
+  var CHAT_LIVE=false;
+  if(!CHAT_LIVE||!/^971\d{8,9}$/.test(CHAT_NUMBER))return;
+  var root=document.documentElement, v=document.body.getAttribute('data-vertical');
+  var HELLO={
+    salon:{en:"Hi Loopdesk 👋 I'd like to know more about Romy for my beauty centre.",ar:'مرحبًا Loopdesk 👋 أودّ أن أعرف المزيد عن رومي لمركز التجميل.'},
+    dental:{en:"Hi Loopdesk 👋 I'd like to know more about Sinan for my dental clinic.",ar:'مرحبًا Loopdesk 👋 أودّ أن أعرف المزيد عن سنان لعيادة الأسنان.'},
+    any:{en:"Hi Loopdesk 👋 I'd like to know more.",ar:'مرحبًا Loopdesk 👋 أودّ أن أعرف المزيد.'}
+  };
+  function links(){
+    var ar=root.classList.contains('lang-ar'), h=HELLO[v]||HELLO.any;
+    var href='https://wa.me/'+CHAT_NUMBER+'?text='+encodeURIComponent(ar?h.ar:h.en);
+    document.querySelectorAll('[data-chat]').forEach(function(el){
+      el.hidden=false;
+      if(el.tagName==='A'){el.href=href;el.setAttribute('aria-label',ar?'تحدّثوا مع Loopdesk على واتساب':'Chat with Loopdesk on WhatsApp');}
+    });
+  }
+  links();
+  /* The floating button steps aside while the Book a demo card is on screen (it has its own chat button). */
+  var fl=document.querySelector('.ld-float'), card=document.querySelector('.pilot-card');
+  if(fl&&card&&'IntersectionObserver' in window)new IntersectionObserver(function(e){fl.classList.toggle('away',e[0].isIntersecting)}).observe(card);
+  new MutationObserver(links).observe(root,{attributes:true,attributeFilter:['class']});
+})();

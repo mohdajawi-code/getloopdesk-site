@@ -174,12 +174,12 @@
   });
 })();
 
-/* Chat with Loopdesk on WhatsApp (the sales line, +971 50 113 2840).
+/* Chat with Loopdesk on WhatsApp (the sales line, +971 50 147 2513).
    The buttons stay hidden until CHAT_LIVE is true: flip it only once the number is
    registered on the WhatsApp Business Platform and the sales line is answering. */
 (function(){
   /* The sales number lives only here (digits, with 971): a new SIM is a one-line change. */
-  var CHAT_NUMBER='971501132840'; /* the chat buttons' number (the footer's phone line is in each page's footer: change both for a new SIM) */
+  var CHAT_NUMBER='971501472513'; /* the chat buttons' number (the footer's phone line is in each page's footer: change both for a new SIM) */
   var CHAT_LIVE=false;
   if(!CHAT_LIVE||!/^971\d{8,9}$/.test(CHAT_NUMBER))return;
   var root=document.documentElement, v=document.body.getAttribute('data-vertical');

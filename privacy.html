@@ -56,6 +56,8 @@ h1{font-size:clamp(36px,6vw,52px);font-weight:650;letter-spacing:-.03em;line-hei
 html.lang-ar h1{letter-spacing:0;line-height:1.35}
 h2{margin:36px 0 8px;font-size:20px;font-weight:600;letter-spacing:-.01em}
 html.lang-ar h2{letter-spacing:0}
+/* Linked headings land below the sticky header. */
+h2[id^="delete-your-data"]{scroll-margin-top:80px;outline:none}
 h3{margin:20px 0 4px;font-size:17px;font-weight:600}
 p,li{color:var(--ink-2);overflow-wrap:anywhere}
 p{margin:0 0 12px}
@@ -101,12 +103,12 @@ footer .logo{color:var(--ink)}
 <!-- ENGLISH -->
 <article class="en" lang="en">
   <h1>Privacy policy</h1>
-  <p class="updated">Last updated: 8 November 2026</p>
+  <p class="updated">Last updated: 15 November 2026</p>
 
   <section class="short" aria-labelledby="en-short">
     <h2 id="en-short">The short version</h2>
     <ul>
-      <li>Beauty centres, clinics and other appointment businesses use Loopdesk to answer you, book you and remind you on their own WhatsApp number. The business decides what it keeps about you, and we look after it on the business's behalf.</li>
+      <li>Beauty centres, clinics and other appointment businesses use Loopdesk to answer you, book you and remind you on their own WhatsApp number, and on their Instagram account and Facebook Page. The business decides what it keeps about you, and we look after it on the business's behalf.</li>
       <li>We never sell your data, and we never use it for advertising.</li>
       <li>Replies are written with the help of AI.</li>
       <li>Reply STOP at any time and the messages stop. Your appointments stay exactly as they are.</li>
@@ -123,6 +125,7 @@ footer .logo{color:var(--ink)}
   <h3>If you are a client of a business</h3>
   <ul>
     <li>Your phone number, and your name as it shows on WhatsApp or as you tell us.</li>
+    <li>If you message a business on Instagram or Facebook Messenger: the ID Meta gives your account for that business, your name as Meta shares it, and what you type to book (such as your mobile, name and date of birth). We don't read your profile, posts, photos or followers.</li>
     <li>Your messages to the business and the replies you receive.</li>
     <li>Your appointments: what you booked, when, with whom, and any change or cancellation.</li>
     <li>Preferences you share, such as who you like to see or the times that suit you.</li>
@@ -163,8 +166,9 @@ footer .logo{color:var(--ink)}
   <p>The business's own front-desk team can log a booking by sending a voice note, which may include your name, number and the appointment you want. To turn it into text, we send that voice note to Gemini, an AI model made by Google. Google works for us as a service provider and may not use it to train its models. We do not keep the recording. Your own voice notes to the business are never sent to Google.</p>
   <p>The AI writes replies and arranges appointments. It does not make decisions about you that have legal or similar serious effects.</p>
 
-  <h2>5. WhatsApp and Meta</h2>
+  <h2>5. WhatsApp, Instagram, Facebook and Meta</h2>
   <p>Messages between you and the business travel through the WhatsApp Business Platform, run by Meta. Your use of WhatsApp itself is covered by <a href="https://www.whatsapp.com/legal/privacy-policy" rel="noopener">WhatsApp's own privacy policy</a>.</p>
+  <p>A business can also connect its Instagram account and Facebook Page, so that Loopdesk answers the messages people send it there. Business owners give Loopdesk this permission through Facebook, and can take it back at any time from Loopdesk or from their Facebook settings. We use it only to read and answer messages sent to that business, never to post or to read anything else. Your use of Instagram and Facebook is covered by <a href="https://www.facebook.com/privacy/policy" rel="noopener">Meta's privacy policy</a>.</p>
 
   <h2>6. Messages and STOP</h2>
   <ul>
@@ -176,7 +180,7 @@ footer .logo{color:var(--ink)}
   <h2>7. Who we share it with</h2>
   <ul>
     <li>The business you are dealing with.</li>
-    <li>Meta, to carry messages over WhatsApp.</li>
+    <li>Meta, to carry messages over WhatsApp, Instagram and Messenger.</li>
     <li>Anthropic, to help write replies.</li>
     <li>Google, to turn the front-desk team's voice notes into text.</li>
     <li>Our cloud hosting providers, to store data and run the service.</li>
@@ -198,7 +202,7 @@ footer .logo{color:var(--ink)}
     <li><b>Service logs:</b> up to 90 days.</li>
   </ul>
 
-  <h2>10. Your rights</h2>
+  <h2 id="delete-your-data" tabindex="-1">10. Your rights, and deleting your data</h2>
   <p>Under UAE law you can ask us to:</p>
   <ul>
     <li>show you the data we hold about you, or give you a copy;</li>
@@ -207,7 +211,8 @@ footer .logo{color:var(--ink)}
     <li>stop using it, or stop messaging you;</li>
     <li>withdraw any consent you gave.</li>
   </ul>
-  <p>Email <a href="mailto:hello@getloopdesk.com">hello@getloopdesk.com</a> or ask the business directly. We reply within 30 days. To protect you, we may ask you to message us from the phone number your request is about. If you are not happy with our answer, you can complain to the UAE Data Office.</p>
+  <p><b>To delete your data</b>, email <a href="mailto:hello@getloopdesk.com?subject=Delete%20my%20data">hello@getloopdesk.com</a> with the subject "Delete my data". Tell us which business you messaged and how: your WhatsApp number, or your Instagram or Facebook name. We delete your messages, bookings we hold and the IDs Meta gave us within 30 days, and confirm by email. Appointments already in the business's own diary stay with the business: ask it directly to remove them.</p>
+  <p>For anything else, email <a href="mailto:hello@getloopdesk.com">hello@getloopdesk.com</a> or ask the business directly. We reply within 30 days. To protect you, we may ask you to message us from the phone number your request is about. If you are not happy with our answer, you can complain to the UAE Data Office.</p>
 
   <h2>11. Health information</h2>
   <p>Booking an appointment never needs medical information. Please do not send medical records, test results or diagnoses in the chat. We ask clinics not to send them either.</p>
@@ -231,12 +236,12 @@ footer .logo{color:var(--ink)}
 <!-- ARABIC -->
 <article class="ar" lang="ar">
   <h1>سياسة الخصوصية</h1>
-  <p class="updated">آخر تحديث: 8 نوفمبر 2026</p>
+  <p class="updated">آخر تحديث: 15 نوفمبر 2026</p>
 
   <section class="short" aria-labelledby="ar-short">
     <h2 id="ar-short">باختصار</h2>
     <ul>
-      <li>تستخدم مراكز التجميل والعيادات وغيرها من الأعمال التي تعمل بالمواعيد Loopdesk للردّ عليكم وحجز مواعيدكم وتذكيركم بها، عبر رقم WhatsApp الخاص بها. مقدّم الخدمة هو من يقرّر ما يحتفظ به من بياناتكم، ونحن نرعاها نيابةً عنه.</li>
+      <li>تستخدم مراكز التجميل والعيادات وغيرها من الأعمال التي تعمل بالمواعيد Loopdesk للردّ عليكم وحجز مواعيدكم وتذكيركم بها، عبر رقم WhatsApp الخاص بها، وحسابها على Instagram وصفحتها على Facebook. مقدّم الخدمة هو من يقرّر ما يحتفظ به من بياناتكم، ونحن نرعاها نيابةً عنه.</li>
       <li>لا نبيع بياناتكم أبدًا، ولا نستخدمها في الإعلانات.</li>
       <li>تُكتب الردود بمساعدة الذكاء الاصطناعي.</li>
       <li>أرسلوا «إيقاف» أو STOP في أي وقت فتتوقف الرسائل، وتبقى مواعيدكم كما هي تمامًا.</li>
@@ -253,6 +258,7 @@ footer .logo{color:var(--ink)}
   <h3>إن كنتم من عملاء مقدّم الخدمة</h3>
   <ul>
     <li>رقم هاتفكم، واسمكم كما يظهر في WhatsApp أو كما تكتبونه لنا.</li>
+    <li>إن راسلتم مقدّم الخدمة عبر Instagram أو Facebook Messenger: المعرّف الذي تمنحه Meta لحسابكم لدى مقدّم الخدمة، واسمكم كما تشاركه Meta، وما تكتبونه للحجز (مثل رقم الهاتف والاسم وتاريخ الميلاد). ولا نطّلع على ملفّكم الشخصي أو منشوراتكم أو صوركم أو متابعيكم.</li>
     <li>رسائلكم إلى مقدّم الخدمة والردود التي تصلكم.</li>
     <li>مواعيدكم: ما حجزتموه، ومتى، ومع من، وأيّ تعديل أو إلغاء.</li>
     <li>ما تشاركونه من تفضيلات، مثل من تفضّلون أن يخدمكم أو الأوقات التي تناسبكم.</li>
@@ -293,8 +299,9 @@ footer .logo{color:var(--ink)}
   <p>يمكن لفريق الاستقبال لدى مقدّم الخدمة تسجيل الحجز برسالة صوتية، قد تتضمّن اسمكم ورقمكم والموعد الذي تطلبونه. ولتحويلها إلى نصّ، نرسل تلك الرسالة الصوتية إلى Gemini، وهو نموذج ذكاء اصطناعي من شركة Google. وتعمل Google لصالحنا بصفتها مزوّد خدمة، ولا يحقّ لها استخدامها في تدريب نماذجها. ولا نحتفظ بالتسجيل. أمّا رسائلكم الصوتية أنتم إلى مقدّم الخدمة فلا تُرسل إلى Google أبدًا.</p>
   <p>يكتب الذكاء الاصطناعي الردود وينظّم المواعيد، ولا يتّخذ بشأنكم أيّ قرار له أثر قانوني أو أثر جسيم مماثل.</p>
 
-  <h2>5. WhatsApp وشركة Meta</h2>
+  <h2>5. WhatsApp وInstagram وFacebook وشركة Meta</h2>
   <p>تمرّ الرسائل بينكم وبين مقدّم الخدمة عبر منصّة WhatsApp Business التي تديرها شركة Meta. أمّا استخدامكم لتطبيق WhatsApp نفسه فتحكمه <a href="https://www.whatsapp.com/legal/privacy-policy" rel="noopener">سياسة الخصوصية الخاصة بـ WhatsApp</a>.</p>
+  <p>ويمكن للأعمال أيضًا ربط حساباتها على Instagram وصفحاتها على Facebook، ليردّ Loopdesk على الرسائل التي تصلها هناك. ويمنح أصحابها Loopdesk هذا الإذن عبر Facebook، ويمكنهم سحبه في أيّ وقت من Loopdesk أو من إعدادات Facebook. ولا نستخدم هذا الإذن إلا لقراءة الرسائل المرسلة إلى هذه الأعمال والردّ عليها، فلا ننشر شيئًا ولا نطّلع على أيّ شيء آخر. أمّا استخدامكم لـ Instagram وFacebook فتحكمه <a href="https://www.facebook.com/privacy/policy" rel="noopener">سياسة الخصوصية الخاصة بشركة Meta</a>.</p>
 
   <h2>6. الرسائل وطلب الإيقاف</h2>
   <ul>
@@ -306,7 +313,7 @@ footer .logo{color:var(--ink)}
   <h2>7. مع من نشاركها</h2>
   <ul>
     <li>مقدّم الخدمة الذي تتعاملون معه.</li>
-    <li>شركة Meta، لنقل الرسائل عبر WhatsApp.</li>
+    <li>شركة Meta، لنقل الرسائل عبر WhatsApp وInstagram وMessenger.</li>
     <li>شركة Anthropic، للمساعدة في كتابة الردود.</li>
     <li>شركة Google، لتحويل الرسائل الصوتية من فريق الاستقبال إلى نصّ.</li>
     <li>مزوّدو الاستضافة السحابية، لتخزين البيانات وتشغيل الخدمة.</li>
@@ -328,7 +335,7 @@ footer .logo{color:var(--ink)}
     <li><b>سجلّات التشغيل:</b> حتى 90 يومًا.</li>
   </ul>
 
-  <h2>10. حقوقكم</h2>
+  <h2 id="delete-your-data-ar" tabindex="-1">10. حقوقكم، وحذف بياناتكم</h2>
   <p>يكفل لكم القانون الإماراتي أن تطلبوا منّا:</p>
   <ul>
     <li>الاطلاع على بياناتكم لدينا، أو الحصول على نسخة منها؛</li>
@@ -337,7 +344,8 @@ footer .logo{color:var(--ink)}
     <li>التوقّف عن استخدامها، أو التوقّف عن مراسلتكم؛</li>
     <li>سحب أيّ موافقة منحتموها.</li>
   </ul>
-  <p>راسلونا على <a href="mailto:hello@getloopdesk.com" class="ltr">hello@getloopdesk.com</a> أو اطلبوا ذلك من مقدّم الخدمة مباشرةً، وسنردّ خلال 30 يومًا. وحرصًا على حمايتكم، قد نطلب أن تراسلونا من رقم الهاتف الذي يخصّه الطلب. وإن لم يُرضِكم ردّنا، يحقّ لكم تقديم شكوى إلى مكتب الإمارات للبيانات.</p>
+  <p><b>لحذف بياناتكم</b>، راسلونا على <a href="mailto:hello@getloopdesk.com?subject=Delete%20my%20data" class="ltr">hello@getloopdesk.com</a> بعنوان <span class="ltr">"Delete my data"</span>، واذكروا مقدّم الخدمة الذي راسلتموه وطريقة المراسلة: رقم WhatsApp، أو اسمكم على Instagram أو Facebook. نحذف رسائلكم والحجوزات المحفوظة لدينا والمعرّفات التي منحتنا إيّاها Meta خلال 30 يومًا، ونؤكّد ذلك بالبريد الإلكتروني. أمّا المواعيد المسجّلة في جدول مواعيد مقدّم الخدمة نفسه فتبقى لديه، ويمكنكم أن تطلبوا منه حذفها مباشرةً.</p>
+  <p>ولأيّ طلب آخر، راسلونا على <a href="mailto:hello@getloopdesk.com" class="ltr">hello@getloopdesk.com</a> أو اطلبوا ذلك من مقدّم الخدمة مباشرةً، وسنردّ خلال 30 يومًا. وحرصًا على حمايتكم، قد نطلب أن تراسلونا من رقم الهاتف الذي يخصّه الطلب. وإن لم يُرضِكم ردّنا، يحقّ لكم تقديم شكوى إلى مكتب الإمارات للبيانات.</p>
 
   <h2>11. المعلومات الصحية</h2>
   <p>لا يحتاج حجز الموعد إلى أيّ معلومات طبية. نرجو ألّا ترسلوا في المحادثة سجلّات طبية أو نتائج فحوص أو تشخيصات، ونطلب من العيادات كذلك ألّا ترسلها.</p>
@@ -407,9 +415,18 @@ footer .logo{color:var(--ink)}
     var ar=!root.classList.contains('lang-ar');
     root.classList.toggle('lang-ar',ar); root.lang=ar?'ar':'en'; root.dir=ar?'rtl':'ltr';
     try{localStorage.setItem('ld-lang', ar?'ar':'en')}catch(e){}
-    sync(); window.scrollTo(0,0);
+    sync(); if(!toDeletion()) window.scrollTo(0,0);
   });
   sync();
+  /* The deletion link (#delete-your-data) names the English heading: in Arabic, the Arabic one. */
+  function toDeletion(){
+    if(location.hash!=='#delete-your-data'&&location.hash!=='#delete-your-data-ar') return false;
+    var h=document.getElementById(root.classList.contains('lang-ar')?'delete-your-data-ar':'delete-your-data');
+    if(h){ h.scrollIntoView(); h.focus({preventScroll:true}); }
+    return Boolean(h);
+  }
+  toDeletion();
+  window.addEventListener('hashchange',toDeletion);
 })();
 </script>
 </body>

@@ -56,6 +56,8 @@ h1{font-size:clamp(36px,6vw,52px);font-weight:650;letter-spacing:-.03em;line-hei
 html.lang-ar h1{letter-spacing:0;line-height:1.35}
 h2{margin:36px 0 8px;font-size:20px;font-weight:600;letter-spacing:-.01em}
 html.lang-ar h2{letter-spacing:0}
+/* Linked headings land below the sticky header. */
+h2[id^="delete-your-data"]{scroll-margin-top:80px}
 h3{margin:20px 0 4px;font-size:17px;font-weight:600}
 p,li{color:var(--ink-2);overflow-wrap:anywhere}
 p{margin:0 0 12px}
@@ -166,7 +168,7 @@ footer .logo{color:var(--ink)}
 
   <h2>5. WhatsApp, Instagram, Facebook and Meta</h2>
   <p>Messages between you and the business travel through the WhatsApp Business Platform, run by Meta. Your use of WhatsApp itself is covered by <a href="https://www.whatsapp.com/legal/privacy-policy" rel="noopener">WhatsApp's own privacy policy</a>.</p>
-  <p>A business can also connect its Instagram account and Facebook Page, so that Loopdesk answers the messages people send it there. The business's owner gives Loopdesk this permission through Facebook, and can take it back at any time from Loopdesk or from their Facebook settings. We use it only to read and answer messages sent to that business, never to post or to read anything else. Your use of Instagram and Facebook is covered by <a href="https://www.facebook.com/privacy/policy" rel="noopener">Meta's privacy policy</a>.</p>
+  <p>A business can also connect its Instagram account and Facebook Page, so that Loopdesk answers the messages people send it there. Business owners give Loopdesk this permission through Facebook, and can take it back at any time from Loopdesk or from their Facebook settings. We use it only to read and answer messages sent to that business, never to post or to read anything else. Your use of Instagram and Facebook is covered by <a href="https://www.facebook.com/privacy/policy" rel="noopener">Meta's privacy policy</a>.</p>
 
   <h2>6. Messages and STOP</h2>
   <ul>
@@ -299,7 +301,7 @@ footer .logo{color:var(--ink)}
 
   <h2>5. WhatsApp وInstagram وFacebook وشركة Meta</h2>
   <p>تمرّ الرسائل بينكم وبين مقدّم الخدمة عبر منصّة WhatsApp Business التي تديرها شركة Meta. أمّا استخدامكم لتطبيق WhatsApp نفسه فتحكمه <a href="https://www.whatsapp.com/legal/privacy-policy" rel="noopener">سياسة الخصوصية الخاصة بـ WhatsApp</a>.</p>
-  <p>ويمكن لمقدّم الخدمة أيضًا ربط حسابه على Instagram وصفحته على Facebook، ليردّ Loopdesk على الرسائل التي تصله هناك. ويمنح صاحب العمل Loopdesk هذا الإذن عبر Facebook، ويمكنه سحبه في أيّ وقت من Loopdesk أو من إعدادات Facebook. ولا نستخدم هذا الإذن إلا لقراءة الرسائل المرسلة إلى مقدّم الخدمة والردّ عليها، فلا ننشر شيئًا ولا نطّلع على أيّ شيء آخر. أمّا استخدامكم لـ Instagram وFacebook فتحكمه <a href="https://www.facebook.com/privacy/policy" rel="noopener">سياسة الخصوصية الخاصة بشركة Meta</a>.</p>
+  <p>ويمكن لمقدّم الخدمة أيضًا ربط حسابه على Instagram وصفحته على Facebook، ليردّ Loopdesk على الرسائل التي تصله هناك. ويمنح أصحاب الأعمال Loopdesk هذا الإذن عبر Facebook، ويمكنهم سحبه في أيّ وقت من Loopdesk أو من إعدادات Facebook. ولا نستخدم هذا الإذن إلا لقراءة الرسائل المرسلة إلى مقدّم الخدمة والردّ عليها، فلا ننشر شيئًا ولا نطّلع على أيّ شيء آخر. أمّا استخدامكم لـ Instagram وFacebook فتحكمه <a href="https://www.facebook.com/privacy/policy" rel="noopener">سياسة الخصوصية الخاصة بشركة Meta</a>.</p>
 
   <h2>6. الرسائل وطلب الإيقاف</h2>
   <ul>
@@ -342,7 +344,7 @@ footer .logo{color:var(--ink)}
     <li>التوقّف عن استخدامها، أو التوقّف عن مراسلتكم؛</li>
     <li>سحب أيّ موافقة منحتموها.</li>
   </ul>
-  <p><b>لحذف بياناتكم</b>، راسلونا على <a href="mailto:hello@getloopdesk.com?subject=Delete%20my%20data" class="ltr">hello@getloopdesk.com</a> بعنوان «احذفوا بياناتي»، واذكروا مقدّم الخدمة الذي راسلتموه وطريقة المراسلة: رقم WhatsApp، أو اسمكم على Instagram أو Facebook. نحذف رسائلكم والحجوزات المحفوظة لدينا والمعرّفات التي منحتنا إيّاها Meta خلال 30 يومًا، ونؤكّد ذلك بالبريد الإلكتروني. أمّا المواعيد المسجّلة في مفكرة مقدّم الخدمة نفسه فتبقى لديه، ويمكنكم أن تطلبوا منه حذفها مباشرةً.</p>
+  <p><b>لحذف بياناتكم</b>، راسلونا على <a href="mailto:hello@getloopdesk.com?subject=Delete%20my%20data" class="ltr">hello@getloopdesk.com</a> بعنوان <span class="ltr">"Delete my data"</span>، واذكروا مقدّم الخدمة الذي راسلتموه وطريقة المراسلة: رقم WhatsApp، أو اسمكم على Instagram أو Facebook. نحذف رسائلكم والحجوزات المحفوظة لدينا والمعرّفات التي منحتنا إيّاها Meta خلال 30 يومًا، ونؤكّد ذلك بالبريد الإلكتروني. أمّا المواعيد المسجّلة في مفكرة مقدّم الخدمة نفسه فتبقى لديه، ويمكنكم أن تطلبوا منه حذفها مباشرةً.</p>
   <p>ولأيّ طلب آخر، راسلونا على <a href="mailto:hello@getloopdesk.com" class="ltr">hello@getloopdesk.com</a> أو اطلبوا ذلك من مقدّم الخدمة مباشرةً، وسنردّ خلال 30 يومًا. وحرصًا على حمايتكم، قد نطلب أن تراسلونا من رقم الهاتف الذي يخصّه الطلب. وإن لم يُرضِكم ردّنا، يحقّ لكم تقديم شكوى إلى مكتب الإمارات للبيانات.</p>
 
   <h2>11. المعلومات الصحية</h2>
@@ -413,12 +415,18 @@ footer .logo{color:var(--ink)}
     var ar=!root.classList.contains('lang-ar');
     root.classList.toggle('lang-ar',ar); root.lang=ar?'ar':'en'; root.dir=ar?'rtl':'ltr';
     try{localStorage.setItem('ld-lang', ar?'ar':'en')}catch(e){}
-    sync(); window.scrollTo(0,0);
+    sync(); if(!toDeletion()) window.scrollTo(0,0);
   });
   sync();
+  /* The deletion link (#delete-your-data) names the English heading: in Arabic, the Arabic one. */
+  function toDeletion(){
+    if(location.hash!=='#delete-your-data'&&location.hash!=='#delete-your-data-ar') return false;
+    var h=document.getElementById(root.classList.contains('lang-ar')?'delete-your-data-ar':'delete-your-data');
+    if(h) h.scrollIntoView();
+    return Boolean(h);
+  }
+  toDeletion();
 })();
 </script>
-<script>/* The deletion link names the English heading; in Arabic, go to the Arabic one. */
-if(location.hash==='#delete-your-data'&&document.documentElement.classList.contains('lang-ar')){var h=document.getElementById('delete-your-data-ar');if(h)h.scrollIntoView();}</script>
 </body>
 </html>

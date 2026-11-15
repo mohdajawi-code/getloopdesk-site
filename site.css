@@ -260,3 +260,4 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:44px;padding
 html.lang-ar .hero h1{max-width:620px}html.lang-ar .hero .lead{max-width:520px}}
 @media (max-width:900px){.hero:after,.sinan .hero:after,.romy .hero:after{background:linear-gradient(0deg,rgba(10,30,26,.9),rgba(10,30,26,.55) 55%,rgba(10,30,26,.25))}}
 @media print{.ld-float,.mcta{display:none}}
+.eg{margin-top:14px;font-size:14px;color:var(--muted)}.notes p.eg{margin-top:18px}

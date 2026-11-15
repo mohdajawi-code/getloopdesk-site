@@ -17,9 +17,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "pr = review one pull request, design = review the whole site, redesign = propose a redesign from .github/ai-review/redesign/"
+        description: "pr = review one pull request, design = review the whole site, redesign = propose a redesign from .github/ai-review/redesign/, film = critique and storyboard the product videos in .github/ai-review/film/"
         type: choice
-        options: [pr, design, redesign]
+        options: [pr, design, redesign, film]
         default: pr
       pr:
         description: "Pull request number (mode pr only)"

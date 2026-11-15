@@ -302,3 +302,29 @@ html.lang-ar .cycle:before{background:linear-gradient(270deg,var(--ink) 0 75%,va
  .science .cards{grid-template-columns:1fr}
 }
 footer .legal a{display:inline;margin:0}
+/* product cards (home) */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding-bottom:70px}
+.pcard{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:28px;overflow:hidden;color:var(--ink);text-decoration:none;transition:transform .35s,box-shadow .35s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(23,59,53,.12)}
+.pc-sinan{--acc:var(--teal);--accbg:#E3F4F3}.pc-romy{--acc:var(--rose);--accbg:#FBE7ED}
+.pimg{position:relative;aspect-ratio:16/9;overflow:hidden;max-width:100%}
+.pimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.pcard:hover .pimg img{transform:scale(1.04)}
+.pimg .soon{position:absolute;top:18px;inset-inline-start:18px;background:#fff;color:var(--ink);font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px}
+.pbody{display:flex;flex-direction:column;flex:1;padding:34px 38px 38px}
+.pbody .tag{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.pbody h3{font-size:56px;line-height:1;letter-spacing:-.045em;margin:10px 0 14px}
+.pbody p{color:var(--ink2);margin:0;max-width:520px}
+.prh-l{margin-top:26px;font-size:13px;font-weight:700;color:var(--muted)}
+.prh{list-style:none;margin:10px 0 0;padding:0;border-top:1px solid var(--line)}
+.prh li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-weight:600}
+.prh li>span{display:flex;align-items:center;gap:10px}
+.prh li>span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);flex:none}
+.prh li b{background:var(--accbg);color:var(--acc);font-size:13px;padding:4px 11px;border-radius:999px;white-space:nowrap}
+.pbody .go{margin-top:auto;padding-top:28px;display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--ink)}
+.pbody .go i{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;transition:transform .3s}
+.pcard:hover .go i{transform:translateX(4px)}
+html.lang-ar .pbody .go i{transform:scaleX(-1)}html.lang-ar .pcard:hover .go i{transform:scaleX(-1) translateX(4px)}
+html.lang-ar .pbody .tag{letter-spacing:0}html.lang-ar .pbody h3{line-height:1.25;margin:2px 0 8px}
+section[id]{scroll-margin-top:80px}
+@media (max-width:860px){.pgrid{grid-template-columns:1fr;gap:20px}.pbody{padding:24px 22px 26px}.pbody h3{font-size:44px}}

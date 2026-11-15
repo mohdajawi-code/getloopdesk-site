@@ -96,6 +96,15 @@
     });
   });
 
+  /* rhythm engine: pick a treatment to see its cycle */
+  $$('.rpick').forEach(function(g){
+    var bs=$$('button',g);
+    bs.forEach(function(b){b.addEventListener('click',function(){
+      bs.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+      $$('.rpanel').forEach(function(p){p.hidden=p.id!==b.getAttribute('data-r')});
+    })});
+  });
+
   /* copy buttons */
   $$('[data-copy]').forEach(function(b){
     b.addEventListener('click',function(){

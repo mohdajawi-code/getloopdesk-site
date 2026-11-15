@@ -71,7 +71,7 @@ html.lang-ar .stop{transform:translateX(50%)}
 .story{padding-block:90px;background:var(--paper);border-block:1px solid var(--line)}
 .story .grid{display:grid;grid-template-columns:1fr 400px;gap:80px;align-items:start}
 .steps{display:flex;flex-direction:column}
-.step{min-height:72vh;display:flex;flex-direction:column;justify-content:center;gap:14px;opacity:.35;transition:opacity .35s}
+.step{min-height:36vh;display:flex;flex-direction:column;justify-content:center;gap:14px;opacity:.35;transition:opacity .35s}
 .step.on{opacity:1}
 .step .n{font-size:14px;font-weight:700;color:var(--acc)}
 .step h3{font-size:clamp(28px,3vw,40px);letter-spacing:-.035em;line-height:1.08}

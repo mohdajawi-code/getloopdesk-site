@@ -1,93 +1,124 @@
-/* Loopdesk site script: language, rhythm card, routing, copy buttons */
+/* Loopdesk site script: language, hero films, the scrolled story, call-back form, WhatsApp chat */
 (function(){
   var root=document.documentElement, btn=document.getElementById('langbtn');
+  function $(s,r){return (r||document).querySelector(s)}
+  function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
   function isAr(){return root.classList.contains('lang-ar')}
   function setLang(l){
     root.classList.toggle('lang-ar', l==='ar');
     root.lang = l==='ar' ? 'ar' : 'en';
     root.dir = l==='ar' ? 'rtl' : 'ltr';
-    btn.textContent = l==='ar' ? 'English' : 'العربية';
+    if(btn) btn.textContent = l==='ar' ? 'English' : 'العربية';
     try{localStorage.setItem('ld-lang', l)}catch(e){}
-    draw();
+    renderAll();
   }
 
-  /* ---------- rhythm comparison ---------- */
-  var DATA={
-    salon:{off:8,on:5,price:350,n:100,
-      en:{who:'Sophie · colour and blow-dry · AED 350 a visit',off:'Every 8 weeks, when she remembers',on:'Every 5 weeks, invited on her rhythm',scale:'If just 100 of your regulars come back like Sophie, that\'s AED {T} more a year.'},
-      ar:{who:'صوفي · صبغة وتصفيف الشعر · 350 درهمًا للزيارة',off:'كلّ 8 أسابيع، حين تتذكّر',on:'كلّ 5 أسابيع، تصلها الدعوة في وقتها',scale:'يكفي أن تعود 100 من عميلاتكم الدائمات مثل صوفي، لتزيد إيراداتكم {T} درهم في السنة.'}},
-    cosmetic:{off:8,on:4,price:450,n:50,
-      en:{who:'Priya · skin treatment · AED 450 a visit',off:'Every 8 weeks, when she finds time',on:'Every 4 weeks, as her course needs',scale:'If just 50 of your clients come back like Priya, that\'s AED {T} more a year.'},
-      ar:{who:'بريا · جلسة عناية بالبشرة · 450 درهمًا للزيارة',off:'كلّ 8 أسابيع، حين تجد وقتًا',on:'كلّ 4 أسابيع، كما يحتاج برنامجها',scale:'يكفي أن تعود 50 من عميلاتكم مثل بريا، لتزيد إيراداتكم {T} درهم في السنة.'}},
-    dental:{off:52,on:26,price:400,n:300,
-      en:{who:'Daniel · check-up and clean · AED 400 a visit',off:'Once a year, when something hurts',on:'Every 6 months, invited on time',scale:'If just 300 of your patients come back like Daniel, that\'s AED {T} more a year.'},
-      ar:{who:'دانيال · فحص وتنظيف · 400 درهم للزيارة',off:'مرّة في السنة، حين يوجعه ضرسه',on:'كلّ 6 أشهر، تصله الدعوة في وقتها',scale:'يكفي أن يعود 300 من مرضاكم مثل دانيال، لتزيد إيراداتكم {T} درهم في السنة.'}},
-    barber:{off:5,on:3,price:120,n:150,
-      en:{who:'Omar · cut and beard · AED 120 a visit',off:'Every 5 weeks, when he walks past',on:'Every 3 weeks, his chair kept for him',scale:'If just 150 of your regulars come back like Omar, that\'s AED {T} more a year.'},
-      ar:{who:'عمر · قصّة شعر ولحية · 120 درهمًا للزيارة',off:'كلّ 5 أسابيع، حين يمرّ بالمحل',on:'كلّ 3 أسابيع، وكرسيّه محجوز له',scale:'يكفي أن يعود 150 من زبائنكم مثل عمر، لتزيد إيراداتكم {T} درهم في السنة.'}}
-  };
-  var current=document.body.getAttribute('data-vertical')||'salon';
-  var COPY={"salon": {"en": {"h2": "Same client. More visits.", "sub": "Every service has a natural cycle. Loopdesk starts from it and, after two or three visits, knows each client's own rhythm the way her favourite stylist would.", "s1": "Each client's real return cycle, for every service.", "s2": "A warm note in her usual stylist's name, always with \"another time\".", "s3": "One extra that suits her, at the moment she books. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "العميلة نفسها، وزيارات أكثر.", "sub": "لكلّ خدمة دورة طبيعية تبدأ منها Loopdesk، ثمّ بعد زيارتين أو ثلاث تحفظ إيقاع كلّ عميلة كما تحفظه أقرب موظفة إليها.", "s1": "متى تعود كلّ عميلة فعلًا، خدمةً خدمة.", "s2": "برسالة لطيفة باسم خبيرتها المعتادة، وفيها دائمًا زرّ «وقت آخر».", "s3": "خدمة إضافية واحدة تناسبها، وهي تحجز. لا قوائم ولا إلحاح.", "s4": "بإذنها أولًا. رسالتان في الشهر على الأكثر، بين 10 صباحًا و9 مساءً. وكلمة «توقّف» توقف كلّ شيء فورًا."}}, "cosmetic": {"en": {"h2": "Same client. Every session on time.", "sub": "Every treatment has its course. Loopdesk follows it, and learns each client's own pace after two or three sessions.", "s1": "When each client is really due, for every treatment.", "s2": "A warm note in her usual specialist's name, always with \"another time\".", "s3": "One add-on that completes her treatment, at the moment she books. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "كلّ جلسة في موعدها.", "sub": "لكلّ برنامج جلسات مساره، وLoopdesk تمشي معه. وبعد جلستين أو ثلاث، تعرف وتيرة كلّ عميلة كما تعرفها أخصائيّتها.", "s1": "متى يحين موعد جلستها التالية، خدمةً خدمة.", "s2": "برسالة لطيفة باسم أخصائيّتها، وفيها دائمًا زرّ «وقت آخر».", "s3": "خدمة واحدة تكمّل نتيجتها، وهي تحجز. لا قوائم ولا إلحاح.", "s4": "بإذنها أولًا. رسالتان في الشهر على الأكثر، بين 10 صباحًا و9 مساءً. وكلمة «توقّف» توقف كلّ شيء فورًا."}}, "dental": {"en": {"h2": "Same patient. Never overdue.", "sub": "Every check-up has its interval. Loopdesk follows it, and learns each patient's pattern after a couple of visits.", "s1": "When each patient is really due: check-ups, cleanings, follow-ups.", "s2": "A friendly note in their dentist's name, always with \"another time\".", "s3": "The cleaning or whitening that fits, at the moment they book. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "كلّ فحص في موعده.", "sub": "لكلّ فحص دوري موعده، وLoopdesk لا تنساه. وبعد زيارتين، تعرف كلّ مريض كما يعرفه طبيبه.", "s1": "موعد كلّ مريض القادم: فحصًا كان أو تنظيفًا أو متابعة.", "s2": "برسالة لطيفة باسم طبيبه، وفيها دائمًا زرّ «وقت آخر».", "s3": "تنظيف أو تبييض يناسبه، وهو يحجز. لا قوائم ولا إلحاح.", "s4": "بإذنه أولًا. رسالتان في الشهر على الأكثر، بين 10 صباحًا و9 مساءً. وكلمة «توقّف» توقف كلّ شيء فورًا."}}, "barber": {"en": {"h2": "Same client. Sharp, more often.", "sub": "Every cut has its cycle. Loopdesk learns each client's rhythm after two or three visits.", "s1": "When each client really needs a cut or a trim.", "s2": "A friendly note from his usual barber, always with \"another time\".", "s3": "The beard trim or hot towel that suits him, at the moment he books. Never a sales list.", "s4": "Consent first. At most two notes a month, 10am to 9pm. STOP works instantly."}, "ar": {"h2": "الزبون نفسه، وكرسيّه بانتظاره.", "sub": "لكلّ قصّة شعر دورتها. وبعد زيارتين أو ثلاث، تعرف Loopdesk إيقاع كلّ زبون كما يعرفه حلّاقه.", "s1": "متى يحتاج كلّ زبون قصّته أو تهذيب لحيته فعلًا.", "s2": "برسالة لطيفة باسم حلّاقه المعتاد، وفيها دائمًا زرّ «وقت آخر».", "s3": "تهذيب لحية أو منشفة ساخنة تناسبه، وهو يحجز. لا قوائم ولا إلحاح.", "s4": "بإذنه أولًا. رسالتان في الشهر على الأكثر، بين 10 صباحًا و9 مساءً. وكلمة «توقّف» توقف كلّ شيء فورًا."}}};
-  function copyFor(){var c=COPY[current];['en','ar'].forEach(function(l){document.querySelectorAll('#rhythm .'+l+'[data-c], #rhythm .'+l+' [data-c]').forEach(function(el){var t=c[l][el.dataset.c];if(t)el.textContent=t})})}
+  /* old links such as /#privacy still work */
+  var h=(location.hash||'').slice(1);
+  if(h==='privacy'||h==='terms'){location.replace('/'+h);return}
 
-  var AR_DIG='0123456789';
-  function fmt(n){var t=n.toLocaleString('en-US');return t}
-  function visitsWord(v){if(!isAr())return fmt(v)+(v===1?' visit':' visits');return v===1?'زيارة واحدة':v===2?'زيارتان':fmt(v)+(v<=10?' زيارات':' زيارة')}
-  function aed(n){return isAr()?fmt(n)+' درهم':'AED '+fmt(n)}
-  function fill(id,c){var t=document.getElementById(id);if(!t)return;t.innerHTML='';
-    for(var w=1,i=0;w<=52;w+=c,i++){var d=document.createElement('i');d.style.insetInlineStart=((w-1)/51*100)+'%';d.style.animationDelay=(i*40)+'ms';t.appendChild(d)}}
-  function fitTabs(){var nw=document.querySelector('.nav .wrap'),bd=nw&&nw.querySelector('.btn-dark');if(bd){bd.style.display='';if(nw.scrollWidth>nw.clientWidth+1)bd.style.display='none';}var sg=document.querySelector('.seg.tabs');if(!sg)return;sg.classList.remove('compact');if(sg.scrollWidth>sg.clientWidth+1)sg.classList.add('compact');}
-  window.addEventListener('resize',fitTabs);
-  function draw(){setTimeout(fitTabs,0);
-    if(!document.getElementById('rhythm'))return;
-    copyFor();
-    var G={salon:['more from one client','دخل إضافي من عميلة واحدة'],cosmetic:['more from one client','دخل إضافي من عميلة واحدة'],dental:['more from one patient','دخل إضافي من مريض واحد'],barber:['more from one client','دخل إضافي من زبون واحد']}[current];
-    document.getElementById('gainlbl-en').textContent=G[0];document.getElementById('gainlbl-ar').textContent=G[1];
-    var d=DATA[current], L=isAr()?d.ar:d.en;
-    var vo=Math.floor(51/d.off)+1, vn=Math.floor(51/d.on)+1, ro=vo*d.price, rn=vn*d.price;
-    document.getElementById('who').textContent=L.who;
-    document.getElementById('offnote').textContent=L.off;
-    document.getElementById('onnote').textContent=L.on;
-    fill('trackOff',d.off); fill('trackOn',d.on);
-    document.getElementById('offv').textContent=visitsWord(vo);
-    document.getElementById('onv').textContent=visitsWord(vn);
-    document.getElementById('offr').textContent=aed(ro);
-    document.getElementById('onr').textContent=aed(rn);
-    document.getElementById('gainv').textContent='+'+fmt(vn-vo);
-    document.getElementById('gainr').textContent='+'+aed(rn-ro);
-    document.getElementById('scale').textContent=L.scale.replace('{T}',fmt((rn-ro)*d.n));
-    var m=document.getElementById('months'); m.innerHTML='';
-    (isAr()?['يناير','أبريل','يوليو','أكتوبر','ديسمبر']:['Jan','Apr','Jul','Oct','Dec']).forEach(function(x){var s=document.createElement('span');s.textContent=x;m.appendChild(s)});
-  }
-  document.querySelectorAll('.tabs button').forEach(function(b){
-    b.addEventListener('click',function(){current=b.dataset.k;
-      document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});draw();});
+  /* hero films: calm loops, paused for people who prefer less motion */
+  var reduce=false; try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+  $$('.hero video').forEach(function(v){
+    if(reduce){v.removeAttribute('autoplay');v.pause();return}
+    var p=v.play&&v.play(); if(p&&p.catch)p.catch(function(){});
   });
 
-  var saved='en'; try{saved=localStorage.getItem('ld-lang')||'en'}catch(e){}
-  setLang(saved);
-  btn.addEventListener('click',function(){setLang(isAr()?'en':'ar')});
-
-  function route(){
-    var h=(location.hash||'#home').slice(1);
-    if(h==='privacy'||h==='terms'){location.replace('/'+h);return}
-    var view='home';
-    document.querySelectorAll('[data-view]').forEach(function(v){v.hidden = v.dataset.view!==view});
-    if(view!=='home'||h==='home'){window.scrollTo(0,0)}
-    else {var e=document.getElementById(h); if(e) e.scrollIntoView()}
+  /* nav turns solid after the hero */
+  var nav=$('.nav'), hero=$('.hero');
+  function onScroll(){
+    if(nav) nav.classList.toggle('solid',!hero||window.scrollY>hero.offsetHeight-90);
+    drift();
   }
-  window.addEventListener('hashchange',route); route();
-  try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw)}catch(e){}
-  new MutationObserver(draw).observe(root,{attributes:true,attributeFilter:['data-theme']});
+  window.addEventListener('scroll',onScroll,{passive:true});
 
-  document.querySelectorAll('[data-copy]').forEach(function(b){
+  /* trade switch on the home page: dental or beauty personalises the story */
+  var trade=document.body.getAttribute('data-trade')||'dental';
+  $$('.seg button').forEach(function(b){b.addEventListener('click',function(){
+    trade=b.getAttribute('data-t');
+    $$('.seg button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    renderAll();
+  })});
+
+  /* the phone that follows the story */
+  var S=window.STORY||{};
+  function list(){var l=S[isAr()?'ar':'en']||{};return l[trade]||l.all||[]}
+  function screen(d){
+    if(!d)return '';
+    return '<div class="screen"><div class="bar"><i></i><div>'+d.who+'<small>'+(d.sub||'WhatsApp')+'</small></div></div><div class="chat">'+d.html+'</div></div>';
+  }
+  var cur=0;
+  function setPhone(i){
+    cur=i; var p=document.getElementById('phone');
+    if(p) p.innerHTML=screen(list()[i]);
+    $$('.step').forEach(function(s,k){s.classList.toggle('on',k===i)});
+  }
+  function renderAll(){
+    document.body.classList.toggle('t-beauty',trade==='beauty');
+    setPhone(cur);
+    $$('.step').forEach(function(s,k){var m=$('.mobile',s);if(m)m.innerHTML='<div class="phone">'+screen(list()[k])+'</div>'});
+  }
+  if('IntersectionObserver' in window && $('.step')){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setPhone(+e.target.getAttribute('data-i'))})},{rootMargin:'-45% 0px -45% 0px'});
+    $$('.step').forEach(function(s,i){s.setAttribute('data-i',i);io.observe(s)});
+  }
+
+  /* the drift timeline fills as it scrolls into view */
+  function drift(){
+    var t=$('.track'); if(!t)return;
+    var r=t.getBoundingClientRect(), k=Math.max(0,Math.min(1,(innerHeight*.85-r.top)/(innerHeight*.6)));
+    var f=$('.fill',t); if(f) f.style.width=(k*100)+'%';
+    $$('.stop',t).forEach(function(s){s.classList.toggle('on',k*100>=parseFloat(s.getAttribute('data-x'))-2)});
+  }
+
+  /* sample messages strip */
+  $$('.arrows button').forEach(function(b){b.addEventListener('click',function(){
+    var s=$('.strip'); if(!s)return;
+    var d=+b.getAttribute('data-d')*(isAr()?-1:1);
+    s.scrollBy({left:d*350,behavior:reduce?'auto':'smooth'});
+  })});
+
+  /* message tabs on the product pages (arrow keys move between them) */
+  $$('.tablist').forEach(function(tl){
+    var bs=$$('button',tl);
+    function pick(b,focus){
+      bs.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',String(on));x.tabIndex=on?0:-1});
+      $$('.panel').forEach(function(p){p.hidden=p.id!==b.getAttribute('data-p')});
+      if(focus)b.focus();
+    }
+    bs.forEach(function(b,i){
+      b.addEventListener('click',function(){pick(b)});
+      b.addEventListener('keydown',function(e){
+        var n=null, fwd=isAr()?'ArrowLeft':'ArrowRight', back=isAr()?'ArrowRight':'ArrowLeft';
+        if(e.key===fwd)n=bs[(i+1)%bs.length]; else if(e.key===back)n=bs[(i-1+bs.length)%bs.length];
+        if(n){e.preventDefault();pick(n,true)}
+      });
+    });
+  });
+
+  /* rhythm engine: pick a treatment to see its cycle */
+  $$('.rpick').forEach(function(g){
+    var bs=$$('button',g);
+    bs.forEach(function(b){b.addEventListener('click',function(){
+      bs.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+      $$('.rpanel').forEach(function(p){p.hidden=p.id!==b.getAttribute('data-r')});
+    })});
+  });
+
+  /* copy buttons */
+  $$('[data-copy]').forEach(function(b){
     b.addEventListener('click',function(){
-      var t=b.dataset.copy, label=b.innerHTML;
+      var t=b.getAttribute('data-copy'), label=b.innerHTML;
       function done(){b.textContent = isAr()?'تم النسخ':'Copied'; setTimeout(function(){b.innerHTML=label},1500)}
       function sel(){var s=document.getElementById('mailaddr'),r=document.createRange();r.selectNodeContents(s);var w=getSelection();w.removeAllRanges();w.addRange(r)}
       try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
     });
   });
+
+  var saved='en'; try{saved=localStorage.getItem('ld-lang')||'en'}catch(e){}
+  setLang(saved);
+  if(btn) btn.addEventListener('click',function(){setLang(isAr()?'en':'ar')});
+  onScroll();
 })();
 
 /* call-back form: posts to /api/callback, which emails sales@ */
@@ -197,8 +228,13 @@
     });
   }
   links();
-  /* The floating button steps aside while the Book a demo card is on screen (it has its own chat button). */
-  var fl=document.querySelector('.ld-float'), card=document.querySelector('.pilot-card');
-  if(fl&&card&&'IntersectionObserver' in window)new IntersectionObserver(function(e){fl.classList.toggle('away',e[0].isIntersecting)}).observe(card);
+  /* The floating WhatsApp button stays with the visitor and gives a small bounce whenever they scroll, up or down. */
+  var fl=document.querySelector('.ld-float'), last=window.scrollY, quiet=0;
+  var still=false; try{still=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+  if(fl&&!still)window.addEventListener('scroll',function(){
+    if(Math.abs(window.scrollY-last)<120)return; last=window.scrollY;
+    if(Date.now()-quiet<1500)return; quiet=Date.now();
+    fl.classList.remove('bob'); void fl.offsetWidth; fl.classList.add('bob');
+  },{passive:true});
   new MutationObserver(links).observe(root,{attributes:true,attributeFilter:['class']});
 })();

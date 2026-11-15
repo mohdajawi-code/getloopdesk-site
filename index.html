@@ -27,258 +27,49 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/site.css">
+<link rel="preload" as="image" href="/video/hero-home.jpg">
+<link rel="stylesheet" href="/site.css?v=2">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="18.6" cy="6.6" r="2.4" fill="#D9466E"/></symbol>
 </svg>
-
-<header class="nav"><div class="wrap">
-  <a class="logo" href="/" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
-  <nav class="nav-links">
-    <a href="/#science"><span class="en">Our science</span><span class="ar">علم السلوك</span></a>
-    <a href="/#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a>
-    <a href="/romy" data-nav="romy"><span class="en">Romy</span><span class="ar">رومي</span></a>
-    <a href="/sinan" data-nav="sinan"><span class="en">Sinan</span><span class="ar">سنان</span></a>
-  </nav>
-  <div class="nav-right">
-    <button class="btn btn-light btn-sm" id="langbtn" type="button">العربية</button>
-    <a class="btn btn-dark btn-sm" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
-  </div>
-</div></header>
-
+<header class="nav"><div class="w"><a class="logo" href="/" aria-label="Loopdesk home"><span class="mark" aria-hidden="true"></span>Loopdesk</a>
+<nav class="links" aria-label="Main"><a href="/#how"><span class="en">How it works</span><span class="ar">كيف تعمل</span></a><a href="/#science"><span class="en">Behavioural science</span><span class="ar">علم السلوك</span></a><a href="/sinan"><span class="en">Sinan</span><span class="ar">سنان</span></a><a href="/romy"><span class="en">Romy</span><span class="ar">رومي</span></a></nav>
+<button class="lang" id="langbtn" type="button">العربية</button><a class="btn" href="#talk"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></a></div></header>
 <main>
-<div data-view="home">
-
-<section class="wrap hero">
-  <div class="chip reveal"><b class="en">New</b><b class="ar">جديد</b><span class="en">Your growth partner. Behavioural science that brings clients back and sells more.</span><span class="ar">فنّ العودة… وسرّ الزيادة.</span></div>
-  <h1 class="h1 reveal d1 en">Make every client feel like your only client.</h1>
-  <h1 class="h1 reveal d1 ar">اجعلوا كلّ عميل يشعر بأنّه عميلكم الوحيد.</h1>
-  <p class="sub reveal d2 en">Loopdesk builds AI products for appointment businesses, rooted in behavioural science. Each one knows when a client is due, what they'd love next and the words that make them smile. Then it reaches out in the name of the person they trust. Clients feel looked after, come back sooner and spend more when they do.</p>
-  <p class="sub reveal d2 ar">تبني Loopdesk منتجات ذكاء اصطناعي للأعمال التي تقوم على المواعيد، وأساسها علم السلوك. يعرف كلّ منتج متى يحين موعد كلّ عميل، وما الذي سيسعده بعد ذلك، والكلمة التي ترسم على وجهه ابتسامة، ثمّ يكتب له باسم من يثق به. فيشعر بالاهتمام، ويعود أسرع، وينفق أكثر حين يعود.</p>
-  <div class="ctas reveal d3">
-    <a class="btn btn-dark" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
-    <a class="btn btn-light" href="#products"><span class="en">Meet Romy and Sinan</span><span class="ar">تعرّفوا على رومي وسنان</span></a>
-  </div>
-  <p class="tiny en">Answers and books on WhatsApp, day and night · English and Arabic · Nothing to install</p>
-  <p class="tiny ar">تردّ وتحجز على واتساب ليلًا ونهارًا · بالعربية والإنجليزية · لا تطبيق تحمّلونه</p>
-</section>
-
-<section class="wrap duo">
-  <div class="duo-item">
-    <div class="photo"><img src="/img/hero.jpg" alt="A stylist and her client laughing together in a beauty centre" onerror="this.remove()" style="object-position:70% center"></div>
-    <div class="wa en" aria-label="Example rhythm note from a beauty centre">
-    <div class="wa-head"><div class="av">L</div><div><b>Layali Beauty Lounge</b><span>Example message</span></div></div>
-    <div class="bubble">Your nails have been so loyal for 16 days… but they're dreaming of a fresh new look 💅 Joy is free Thursday at 6pm. Shall we?<span class="t">10:12</span></div>
-    <div class="qr"><span>Book Thursday 6pm</span><span>Another time</span></div>
-  </div>
-    <div class="wa ar" aria-label="مثال على رسالة من مركز تجميل">
-    <div class="wa-head"><div class="av">ل</div><div><b>ليالي بيوتي لاونج</b><span>مثال لرسالة</span></div></div>
-    <div class="bubble">صبرت أظافركِ 16 يومًا بكلّ وفاء، والآن بدأت تحلم بلون جديد 💅 جوي متفرّغة الخميس 6 مساءً. نحجزه لكِ؟<span class="t">10:12</span></div>
-    <div class="qr"><span>الخميس 6 مساءً</span><span>وقت آخر</span></div>
-  </div>
-    <a class="duo-link" href="/romy"><span class="en">Romy</span><span class="ar">رومي</span> <small class="en">for beauty centres</small><small class="ar">لمراكز التجميل</small> <span class="arr en">→</span><span class="arr ar">←</span></a>
-  </div>
-  <div class="duo-item">
-    <div class="photo"><img src="/img/dental.jpg" alt="A dentist showing a smiling patient his results on a tablet" onerror="this.remove()"></div>
-    <div class="wa en" aria-label="Example recall note from a dental clinic">
-    <div class="wa-head"><div class="av">J</div><div><b>Juniper Dental</b><span>Example message</span></div></div>
-    <div class="bubble">Six months already, Omar 😁 Your check-up has been patiently waiting its turn. Dr. Sara has Tuesday at 4pm for your check-up and clean. Shall we?<span class="t">09:40</span></div>
-    <div class="qr"><span>Book Tuesday 4pm</span><span>Another time</span></div>
-  </div>
-    <div class="wa ar" aria-label="مثال على رسالة من عيادة أسنان">
-    <div class="wa-head"><div class="av">ج</div><div><b>عيادة جونيبر للأسنان</b><span>مثال لرسالة</span></div></div>
-    <div class="bubble">مرّت 6 أشهر يا عمر 😁 وفحصك الدوري ينتظر دوره بصبر. د. سارة متاحة الثلاثاء 4 عصرًا للفحص والتنظيف. نحجزه لك؟<span class="t">09:40</span></div>
-    <div class="qr"><span>الثلاثاء 4 عصرًا</span><span>وقت آخر</span></div>
-  </div>
-    <a class="duo-link" href="/sinan"><span class="en">Sinan</span><span class="ar">سنان</span> <small class="en">for dental clinics</small><small class="ar">لعيادات الأسنان</small> <span class="arr en">→</span><span class="arr ar">←</span></a>
-  </div>
-</section>
-
-<section class="wrap statement">
-  <p class="en">Most booking tools wait for the client to remember. <span>Loopdesk notices what each client needs before they say it: when they're due, the extra that suits them, the words that make them smile. So they don't feel reminded. They feel looked after.</span></p>
-  <p class="ar">معظم أنظمة الحجز تنتظر أن يتذكّر العميل. <span>أمّا Loopdesk فتلتقط ما يحتاجه كلّ عميل قبل أن يطلبه: متى يحين موعده، والخدمة التي تناسبه، والكلمة التي تسرّه. فلا يشعر بأنّه تلقّى تذكيرًا، بل بأنّ هناك من يهتمّ به.</span></p>
-</section>
-
-<section class="wrap science" id="science">
-  <div class="outcomes-head">
-    <div>
-      <div class="kicker en">Our science</div><div class="kicker ar">علم السلوك</div>
-      <h2 class="h2 en">Built on how people really decide.</h2>
-      <h2 class="h2 ar">نفهم كيف يقرّر عملاؤكم.</h2>
-    </div>
-    <p class="sub en">Behavioural science is our edge. Every Loopdesk product uses the same six principles to make people feel cared for, so coming back feels natural, never pushed.</p>
-    <p class="sub ar">علم السلوك هو ما يميّزنا. كلّ منتج من Loopdesk يقوم على المبادئ الستّة نفسها، ليشعر الناس بالاهتمام، فتصبح العودة أمرًا طبيعيًّا، دون إلحاح.</p>
-  </div>
-  <div class="cards3 en">
-    <div class="card"><span class="w">01</span><h3>The right moment</h3><p>People act when the need is fresh. So we reach out the day a visit is due, not a week later.</p></div>
-    <div class="card"><span class="w">02</span><h3>A name they trust</h3><p>A note from someone you know gets read. So it comes in the name of their own stylist or dentist.</p></div>
-    <div class="card"><span class="w">03</span><h3>One easy choice</h3><p>One real slot, one tap. Less thinking, an easier yes. And “another time” is always there.</p></div>
-    <div class="card"><span class="w">04</span><h3>The finish line</h3><p>Nearly done is a strong pull. So we show how close they are to a loyalty reward or the end of a treatment plan.</p></div>
-    <div class="card"><span class="w">05</span><h3>A smile, not a push</h3><p>Warmth and humour get read. Dry reminders get ignored. The treatment does the talking. Never a word about anyone’s body.</p></div>
-    <div class="card"><span class="w">06</span><h3>Honest, always</h3><p>No fake urgency, no guilt, no automatic discounts. Trust is what brings them back next time.</p></div>
-  </div>
-  <div class="cards3 ar">
-    <div class="card"><span class="w">01</span><h3>اللحظة المناسبة</h3><p>يتحرّك الناس حين تكون الحاجة حاضرة. لذلك نكتب يوم يحين الموعد، لا بعده بأسبوع.</p></div>
-    <div class="card"><span class="w">02</span><h3>اسم يثقون به</h3><p>الرسالة التي تأتي من شخص مألوف تُقرأ. لذلك تصل باسم الخبيرة أو الطبيب الذي يثق به العميل.</p></div>
-    <div class="card"><span class="w">03</span><h3>خيار واحد سهل</h3><p>موعد متاح فعلًا وزرّ واحد للحجز، فيسهل القرار. وإن لم يناسب الوقت، فزرّ «وقت آخر» موجود دائمًا.</p></div>
-    <div class="card"><span class="w">04</span><h3>خطّ النهاية</h3><p>حين يقترب الشيء من الاكتمال نرغب في إكماله. لذلك نُظهر كم بقي على هدية الولاء أو على نهاية خطّة العلاج.</p></div>
-    <div class="card"><span class="w">05</span><h3>ابتسامة، لا إلحاح</h3><p>الرسالة الخفيفة الدافئة تُقرأ، والتذكير الجافّ يُتجاهل. الخدمة هي التي تتكلّم، ولا كلمة أبدًا عن جسد أحد.</p></div>
-    <div class="card"><span class="w">06</span><h3>صدق دائمًا</h3><p>لا استعجال مصطنع، ولا لوم، ولا خصومات تلقائية. فالثقة هي ما يعيد العميل في المرّة القادمة.</p></div>
-  </div>
-</section>
-
-<section class="rhythm" id="rhythm">
-  <div class="wrap rhythm-grid">
-    <div>
-      <div class="kicker en">The rhythm engine</div><div class="kicker ar">محرّك الإيقاع</div>
-      <h2 class="h2 en" data-c="h2">Same client. More visits.</h2>
-      <h2 class="h2 ar" data-c="h2">العميلة نفسها، وزيارات أكثر.</h2>
-      <p class="sub en" data-c="sub">Every service has a natural cycle. Loopdesk starts from it and, after two or three visits, knows each client's own rhythm the way her favourite stylist would.</p>
-      <p class="sub ar" data-c="sub">لكلّ خدمة دورة طبيعية تبدأ منها Loopdesk، ثمّ بعد زيارتين أو ثلاث تحفظ إيقاع كلّ عميلة كما تحفظه أقرب موظفة إليها.</p>
-      <ul class="steps en">
-        <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><div><h3>Learns</h3><p data-c="s1">Each client's real return cycle, for every service.</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v10H8l-4 4z"/></svg></span><div><h3>Invites</h3><p data-c="s2">A warm note in their usual stylist's name, always with "another time".</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><h3>Suggests</h3><p data-c="s3">One extra that suits them, at the moment they book. Never a sales list.</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span><div><h3>Respects</h3><p data-c="s4">Consent first. At most two notes a month, 10am to 9pm. STOP works instantly.</p></div></li>
-      </ul>
-      <ul class="steps ar">
-        <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><div><h3>تتعلّم</h3><p data-c="s1">متى تعود كلّ عميلة فعلًا، خدمةً خدمة.</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v10H8l-4 4z"/></svg></span><div><h3>تدعو</h3><p data-c="s2">برسالة لطيفة باسم خبيرتها المعتادة، وفيها دائمًا زرّ «وقت آخر».</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><h3>تقترح</h3><p data-c="s3">خدمة إضافية واحدة تناسبها، وهي تحجز. لا قوائم ولا إلحاح.</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span><div><h3>تحترم</h3><p data-c="s4">بإذنها أولًا. رسالتان في الشهر على الأكثر، بين 10 صباحًا و9 مساءً. وكلمة «توقّف» توقف كلّ شيء فورًا.</p></div></li>
-      </ul>
-    </div>
-    <div class="dial-card">
-      <div class="seg tabs" role="group" aria-label="Choose a business">
-        <button type="button" data-k="salon" aria-pressed="true"><span class="en">Beauty<span class="lg"> centre</span></span><span class="ar">مركز تجميل</span></button>
-        <button type="button" data-k="cosmetic" aria-pressed="false"><span class="en">Cosmetic<span class="lg"> clinic</span></span><span class="ar">عيادة تجميل</span></button>
-        <button type="button" data-k="dental" aria-pressed="false"><span class="en">Dental</span><span class="ar">عيادة أسنان</span></button>
-        <button type="button" data-k="barber" aria-pressed="false"><span class="en">Barber</span><span class="ar">صالون حلاقة</span></button>
-      </div>
-      <div class="cmp">
-        <div class="who-line" id="who"></div>
-        <div class="track-block off">
-          <div class="tl-head"><b><span class="en">Without Loopdesk</span><span class="ar">بدون Loopdesk</span></b><span id="offnote"></span></div>
-          <div class="track" id="trackOff"></div>
-          <div class="tl-foot"><span id="offv"></span><strong id="offr"></strong></div>
-        </div>
-        <div class="track-block on">
-          <div class="tl-head"><b><span class="en">With Loopdesk</span><span class="ar">مع Loopdesk</span></b><span id="onnote"></span></div>
-          <div class="track" id="trackOn"></div>
-          <div class="tl-foot"><span id="onv"></span><strong id="onr"></strong></div>
-        </div>
-        <div class="months" id="months"></div>
-        <div class="gain">
-          <div><span class="big" id="gainv"></span><small class="en">more visits a year</small><small class="ar">زيارات إضافية في السنة</small></div>
-          <div><span class="big" id="gainr"></span><small class="en" id="gainlbl-en">more from one client</small><small class="ar" id="gainlbl-ar">دخل إضافي من عميلة واحدة</small></div>
-        </div>
-        <p class="scale" id="scale"></p>
-        <div class="example en">Example figures</div><div class="example ar">أرقام توضيحية</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap outcomes">
-  <div class="outcomes-head">
-    <div>
-      <div class="kicker en">What it changes</div><div class="kicker ar">الفرق</div>
-      <h2 class="h2 en">When clients feel cared for, they come back.</h2>
-      <h2 class="h2 ar">حين يشعر العميل بالاهتمام، يعود.</h2>
-    </div>
-    <p class="sub en">Winning a new client costs far more than keeping one. Loopdesk strengthens the bond with the clients already in your diary, so they stay loyal, visit more often and spend more each time.</p>
-    <p class="sub ar">كسب عميل جديد يكلّف أضعاف ما يكلّفه الحفاظ على عميل حالي. لذلك تقوّي Loopdesk الرابط بينكم وبين من في دفتر مواعيدكم أصلًا، فيبقون أوفياء، ويزورونكم أكثر، وينفقون أكثر في كلّ زيارة.</p>
-  </div>
-  <div class="cards3 en">
-    <div class="card"><span class="w">Sooner</span><h3>Shorter gaps between visits</h3><p>Clients come back on their rhythm, not whenever they happen to remember.</p></div>
-    <div class="card"><span class="w">More</span><h3>More services per visit</h3><p>One well-timed suggestion, made while they're already booking.</p></div>
-    <div class="card"><span class="w">At risk</span><h3>Reached before they drift away</h3><p>When a regular goes quiet, Loopdesk notices and sends a warm "we've missed you" before they settle in somewhere else.</p></div>
-  </div>
-  <div class="cards3 ar">
-    <div class="card"><span class="w">عودة أسرع</span><h3>فترات أقصر بين الزيارات</h3><p>يعود عملاؤكم على إيقاعهم، لا حين تسعفهم الذاكرة.</p></div>
-    <div class="card"><span class="w">زيارة أغنى</span><h3>خدمات أكثر في الزيارة الواحدة</h3><p>اقتراح واحد في وقته، وهم يحجزون أصلًا.</p></div>
-    <div class="card"><span class="w">اشتقنا لكم</span><h3>نتواصل معهم حين يطول الغياب</h3><p>حين يغيب عميل دائم، تنتبه Loopdesk وتكتب له «اشتقنا لك» بدفء، قبل أن يعتاد على مكان آخر.</p></div>
-  </div>
-</section>
-
-<section class="products" id="products">
-  <div class="wrap">
-    <div class="kicker en">Products</div><div class="kicker ar">المنتجات</div>
-    <h2 class="h2 en">One engine. A product for every trade.</h2>
-    <h2 class="h2 ar">محرّك واحد، ولكلّ مهنة منتجها.</h2>
-    <p class="sub en">A blow-dry every three weeks is nothing like a check-up every six months. So each trade gets its own product, launched one at a time.</p>
-    <p class="sub ar">تصفيف الشعر كلّ 3 أسابيع غير فحص الأسنان كلّ 6 أشهر. لذلك صمّمنا لكلّ مهنة منتجها الخاص، ونطلقها واحدًا تلو الآخر.</p>
-    <div class="pgrid en">
-      <a class="pcard now" href="/romy"><div class="photo"><img src="/img/hero.jpg" alt="" onerror="this.remove()" style="object-position:70% center"></div><div class="body"><span class="st">Coming soon</span><h3><small>For beauty centres</small>Romy</h3><p>She knows beauty. She knows business. Above all, Romy knows when to say what: when to sell, when to be funny and when to be serious.</p><span class="go">Meet Romy →</span></div></a>
-      <a class="pcard now" href="/sinan"><div class="photo"><img src="/img/dental.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Coming soon</span><h3><small>For dental clinics</small>Sinan</h3><p>He knows dentistry. He knows patients. Above all, Sinan turns what each patient truly needs into something they want: the check-up they put off, the cleaning that's due, the treatment their dentist recommended.</p><span class="go">Meet Sinan →</span></div></a>
-      <article class="pcard"><div class="photo"><img src="/img/cosmetic.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Later</span><h3>Cosmetic clinics</h3><p>Treatment courses and top-ups, timed to each client.</p></div></article>
-      <article class="pcard"><div class="photo"><img src="/img/barber.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">Later</span><h3>Barbershops</h3><p>Regular cuts and beard trims, with the barber each client prefers.</p></div></article>
-    </div>
-    <div class="pgrid ar">
-      <a class="pcard now" href="/romy"><div class="photo"><img src="/img/hero.jpg" alt="" onerror="this.remove()" style="object-position:70% center"></div><div class="body"><span class="st">قريبًا</span><h3><small>لمراكز التجميل</small>رومي</h3><p>تفهم الجمال، وتفهم البيع. والأهمّ أنّ رومي تعرف أنّ لكلّ مقامٍ مقالًا: متى تبيع، ومتى تمزح، ومتى تتكلّم بجدّ.</p><span class="go">تعرّفوا على رومي ←</span></div></a>
-      <a class="pcard now" href="/sinan"><div class="photo"><img src="/img/dental.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">قريبًا</span><h3><small>لعيادات الأسنان</small>سنان</h3><p>يفهم طبّ الأسنان، ويفهم المرضى. والأهمّ أنّ سنان يحوّل ما يحتاجه كلّ مريض فعلًا إلى شيء يريده: الفحص الذي أجّله، والتنظيف الذي حان وقته، والعلاج الذي أوصى به طبيبه.</p><span class="go">تعرّفوا على سنان ←</span></div></a>
-      <article class="pcard"><div class="photo"><img src="/img/cosmetic.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">لاحقًا</span><h3>عيادات التجميل</h3><p>برامج الجلسات ومواعيد التجديد، في وقتها لكلّ عميلة.</p></div></article>
-      <article class="pcard"><div class="photo"><img src="/img/barber.jpg" alt="" onerror="this.remove()"></div><div class="body"><span class="st">لاحقًا</span><h3>صالونات الحلاقة</h3><p>القصّة المعتادة وتهذيب اللحية، مع الحلّاق الذي يرتاح إليه كلّ زبون.</p></div></article>
-    </div>
-    <p class="more en">More appointment businesses will follow. <a href="#demo">Tell us how you book today →</a></p>
-    <p class="more ar">وبعدها كلّ عمل يقوم على المواعيد. <a href="#demo">أخبرونا كيف تحجزون اليوم ←</a></p>
-  </div>
-</section>
-
-<section class="wrap ease" id="ease">
-  <div class="ease-grid">
-    <div class="photo">
-      <img src="/img/owner.jpg" alt="A beauty centre owner checking last week's results on her phone" onerror="this.remove()">
-      <div class="wa en"><div class="wa-head"><div class="av">L</div><div><b>Loopdesk</b><span>Monday 09:00</span></div></div>
-        <div class="bubble">Good morning! Last week we invited 86 of your clients back. 61 rebooked, and 24 added an extra service.</div>
-        <div class="qr"><span>See details</span><span>Change rules</span></div><div class="example">Example</div></div>
-      <div class="wa ar"><div class="wa-head"><div class="av">L</div><div><b>Loopdesk</b><span>الإثنين 09:00</span></div></div>
-        <div class="bubble">صباح الخير! دعونا الأسبوع الماضي 86 من عميلاتكِ للعودة، فحجزت 61 منهنّ، وأضافت 24 منهنّ خدمةً أخرى.</div>
-        <div class="qr"><span>التفاصيل</span><span>تعديل القواعد</span></div><div class="example">مثال</div></div>
-    </div>
-    <div>
-      <div class="kicker en">Easy for everyone</div><div class="kicker ar">سهلة على الجميع</div>
-      <h2 class="h2 en">Nothing to install. Nothing to learn.</h2>
-      <h2 class="h2 ar">لا تحميل، ولا تدريب.</h2>
-      <p class="sub en" style="margin-top:18px">Everything happens on WhatsApp, the app your clients and team already open dozens of times a day.</p>
-      <p class="sub ar" style="margin-top:18px">كلّ شيء يحدث على واتساب، التطبيق الذي يفتحه عملاؤكم وفريقكم عشرات المرّات في اليوم.</p>
-      <div class="rows en">
-        <div><b>Clients</b><span>Book, move and cancel in a chat, in English or Arabic, at any hour.</span></div>
-        <div><b>Your team</b><span>Log walk-ins and phone bookings on their own WhatsApp line.</span></div>
-        <div><b>You</b><span>Set the rules once. Loopdesk takes it from there, and your results land on WhatsApp every week.</span></div>
-      </div>
-      <div class="rows ar">
-        <div><b>عملاؤكم</b><span>يحجزون ويغيّرون مواعيدهم ويلغونها في محادثة، بالعربية أو الإنجليزية، وفي أيّ ساعة.</span></div>
-        <div><b>فريقكم</b><span>يسجّل حجوزات الهاتف ومن يدخل بلا موعد، من رقم واتساب خاص به.</span></div>
-        <div><b>أنتم</b><span>تضعون القواعد مرّة واحدة، وتتولّى Loopdesk الباقي. والنتائج تصلكم على واتساب كلّ أسبوع.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap pilot" id="demo">
-  <div class="pilot-card">
-    <div class="pilot-copy">
-      <h2 class="h2 en">See Loopdesk with your own services.</h2>
-      <h2 class="h2 ar">جرّبوا Loopdesk على خدماتكم أنتم.</h2>
-      <p class="sub en">Tell us when suits you and we'll call. Then we set up a live demo with your services, prices and team. Beauty centres and dental clinics come first. Cosmetic clinics and barbershops can reserve a place now.</p>
-      <p class="sub ar">اختاروا الوقت المناسب ونتصل بكم، ثمّ نعرض لكم مباشرةً كيف تعمل Loopdesk بخدماتكم وأسعاركم وفريقكم. نبدأ بمراكز التجميل وعيادات الأسنان، وتستطيع عيادات التجميل وصالونات الحلاقة حجز مكانها من الآن.</p>
-      <ol class="next">
-        <li><b class="en">We call you</b><b class="ar">نتصل بكم</b><span class="en">At the time you pick, within one working day.</span><span class="ar">في الوقت الذي تختارونه، خلال يوم عمل واحد.</span></li>
-        <li><b class="en">You see it with your services</b><b class="ar">ترونها على خدماتكم</b><span class="en">A 20-minute demo with your own treatments and prices.</span><span class="ar">جولة من 20 دقيقة بخدماتكم وأسعاركم أنتم.</span></li>
-        <li><b class="en">You decide</b><b class="ar">والقرار لكم</b><span class="en">No commitment, no card, no pressure.</span><span class="ar">لا التزام، ولا بطاقة، ولا ضغط.</span></li>
-      </ol>
-      <div class="mailbox">
-      <a class="ld-chat" data-chat hidden href="#" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span class="en">Chat with us on WhatsApp</span><span class="ar">تحدّثوا معنا على واتساب</span></a>
-      <small class="en ld-chat-note" data-chat hidden>Ask Loopdesk anything, day or night. When you'd like a demo, we'll set it up with our team.</small><small class="ar ld-chat-note" data-chat hidden>اسألوا Loopdesk ما شئتم، في أيّ ساعة. ومتى أردتم جولة تعريفية، يرتّبها لكم فريقنا.</small>
-        <small class="en">Prefer email? We reply within one working day.</small><small class="ar">تفضّلون البريد الإلكتروني؟ نردّ خلال يوم عمل واحد.</small>
-        <div class="mailrow"><span class="ltr" id="mailaddr">sales@getloopdesk.com</span><button class="copy" type="button" data-copy="sales@getloopdesk.com"><span class="en">Copy</span><span class="ar">نسخ</span></button></div>
-      </div>
-    </div>
-
-    <div class="cb" id="callback">
+<section class="hero"><video autoplay muted loop playsinline preload="metadata" poster="/video/hero-home.jpg" aria-hidden="true"><source src="/video/hero-home.mp4" type="video/mp4"></video><div class="w"><span class="pill"><span class="en">Behavioural science for appointment businesses</span><span class="ar">علم السلوك للأعمال التي تعتمد على المواعيد</span></span>
+<h1><span class="en">Make every client feel like your only client.</span><span class="ar">اجعلوا كلّ عميل يشعر بأنّه عميلكم الوحيد.</span></h1>
+<p class="lead"><span class="en">Loopdesk sends warm, perfectly timed WhatsApp messages in the name of the person your clients trust. They come back sooner and book more.</span><span class="ar">ترسل Loopdesk رسائل WhatsApp دافئة في توقيتها المثالي، باسم الشخص الذي يثق به عملاؤكم. فيعودون أسرع، ويحجزون أكثر.</span></p>
+<div class="ctas"><a class="btn b-ivory" href="#talk"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></a><a class="btn b-line" href="#how"><span class="en">See how it works</span><span class="ar">شاهدوا كيف تعمل</span></a></div>
+<div class="trade"><span><span class="en">I run a</span><span class="ar">لديّ</span></span><div class="seg" role="group" aria-label="Your business"><button type="button" data-t="dental" aria-pressed="true"><span class="en">Dental clinic</span><span class="ar">عيادة أسنان</span></button><button type="button" data-t="beauty" aria-pressed="false"><span class="en">Beauty centre</span><span class="ar">مركز تجميل</span></button></div></div></div></section>
+<section class="drift"><div class="w"><div class="top"><div><div class="lab"><span class="en">The quiet problem</span><span class="ar">المشكلة الصامتة</span></div><h2 style="margin-top:12px"><span class="en">Most clients don’t leave. They drift.</span><span class="ar">معظم العملاء لا يرحلون، بل يبتعدون شيئًا فشيئًا.</span></h2></div>
+<p><span class="en">They were happy last time. Then life got busy, nothing hurt, and the next visit slipped. Loopdesk reaches them in the week they are due, while saying yes is still easy.</span><span class="ar">كانوا راضين في زيارتهم الأخيرة، ثمّ انشغلوا بالحياة، ولم يشعروا بما يستعجلهم، فتأجّلت الزيارة التالية. تصلهم Loopdesk في الأسبوع الذي يحين فيه موعدهم، حين يكون قبول الموعد ما زال سهلًا.</span></p></div>
+<div class="track"><div class="rail"></div><div class="fill"></div><div class="stop" style="--x:0%" data-x="0"><span class="when"><span class="en">Today</span><span class="ar">اليوم</span></span><i></i><b><span class="d-only"><span class="en">Last visit</span><span class="ar">آخر زيارة</span></span><span class="b-only"><span class="en">Last visit</span><span class="ar">آخر زيارة</span></span></b></div><div class="stop" style="--x:25%" data-x="25"><span class="when"><span class="en">Month 3</span><span class="ar">الشهر 3</span></span><i></i><b><span class="d-only"><span class="en">Feels fine</span><span class="ar">يشعر أنّه بخير</span></span><span class="b-only"><span class="en">Still looks good</span><span class="ar">ما زالت راضية عن إطلالتها</span></span></b></div><div class="stop save" style="--x:50%" data-x="50"><span class="when"><span class="en">Month 6</span><span class="ar">الشهر 6</span></span><i></i><b><span class="d-only"><span class="en">Due again</span><span class="ar">حان الموعد</span></span><span class="b-only"><span class="en">Due again</span><span class="ar">حان الموعد</span></span></b><span class="here"><span class="en">Loopdesk steps in here</span><span class="ar">هنا تتدخّل Loopdesk</span></span></div><div class="stop" style="--x:75%" data-x="75"><span class="when"><span class="en">Month 9</span><span class="ar">الشهر 9</span></span><i></i><b><span class="d-only"><span class="en">Forgot</span><span class="ar">نسي</span></span><span class="b-only"><span class="en">Forgot</span><span class="ar">نسيت</span></span></b></div><div class="stop" style="--x:100%" data-x="100"><span class="when"><span class="en">Month 12</span><span class="ar">الشهر 12</span></span><i></i><b><span class="d-only"><span class="en">Gone quiet</span><span class="ar">انقطع</span></span><span class="b-only"><span class="en">Gone quiet</span><span class="ar">انقطعت</span></span></b></div></div></div></section>
+<section class="story" id="how"><div class="w"><div class="lab"><span class="en">How it works</span><span class="ar">كيف تعمل</span></div><h2 style="margin-top:12px;max-width:760px"><span class="en">Science in, bookings out. All on WhatsApp.</span><span class="ar">علم السلوك يكتب، والمواعيد تمتلئ. وكلّ ذلك على WhatsApp.</span></h2>
+<p class="eg"><span class="en">Sample business, names and conversations, shown for illustration.</span><span class="ar">نشاط وأسماء ومحادثات نموذجية، للتوضيح فقط.</span></p>
+<div class="grid"><div class="steps"><div class="step"><div class="n"><span class="en">Step 1 of 4</span><span class="ar">الخطوة 1 من 4</span></div><h3><span class="en">It spots who is ready for a visit.</span><span class="ar">تكتشف مَن حان موعد زيارته.</span></h3><p><span class="en">Every morning Loopdesk reads your diary and finds the clients who are due: the check-up, the next set of nails, the plan that stopped halfway.</span><span class="ar">كلّ صباح تقرأ Loopdesk جدول مواعيدكم، وتجد العملاء الذين حان موعدهم: الفحص الدوري، وجلسة الأظافر التالية، والخطة التي توقّفت في منتصفها.</span></p><div class="sci"><b><span class="en">Why it works</span><span class="ar">لماذا تنجح</span></b><span><span class="en">People act when a need is fresh. Reaching out the day a visit is due beats a mass reminder on day one.</span><span class="ar">يتحرّك الناس حين تكون الحاجة حاضرة. رسالة تصل حين يحين موعد الزيارة أنجح من تذكير جماعي يصل الجميع في اليوم نفسه.</span></span></div><div class="mobile"></div></div><div class="step"><div class="n"><span class="en">Step 2 of 4</span><span class="ar">الخطوة 2 من 4</span></div><h3><span class="en">It writes a warm note, in a name they trust.</span><span class="ar">تكتب رسالة دافئة، باسمٍ يثقون به.</span></h3><p><span class="en">A short, playful message from their own dentist or stylist, on your WhatsApp. Never from a faceless system.</span><span class="ar">رسالة قصيرة ومرحة من طبيب أسنانهم أو خبيرة التجميل التي يعرفونها، على رقم WhatsApp الخاص بكم. لا تذكيرًا آليًا عامًا.</span></p><div class="sci"><b><span class="en">Why it works</span><span class="ar">لماذا تنجح</span></b><span><span class="en">We listen to the people we know. A familiar name turns a reminder into a personal invitation.</span><span class="ar">نصغي إلى مَن نعرفهم. والاسم المألوف يحوّل التذكير إلى دعوة شخصية.</span></span></div><div class="mobile"></div></div><div class="step"><div class="n"><span class="en">Step 3 of 4</span><span class="ar">الخطوة 3 من 4</span></div><h3><span class="en">They say yes in one tap.</span><span class="ar">يحجزون بلمسة واحدة.</span></h3><p><span class="en">One real free slot, one tap to book. “Another time” is always there, so nobody feels pushed.</span><span class="ar">موعد متاح فعلًا، وحجز بلمسة واحدة. وزرّ «وقت آخر» موجود دائمًا، فلا يشعر أحد بالضغط.</span></p><div class="sci"><b><span class="en">Why it works</span><span class="ar">لماذا تنجح</span></b><span><span class="en">Every extra step loses people. One clear choice makes yes the easy option.</span><span class="ar">كلما طالت خطوات الحجز، زاد احتمال أن يتراجع العميل. والخيار الواحد الواضح يجعل الموافقة هي الأسهل.</span></span></div><div class="mobile"></div></div><div class="step"><div class="n"><span class="en">Step 4 of 4</span><span class="ar">الخطوة 4 من 4</span></div><h3><span class="en">You see what came back.</span><span class="ar">وتتابعون الحجوزات والدخل.</span></h3><p><span class="en">Every evening you get a short note on WhatsApp, and your dashboard shows the visits, the new clients and the money they brought in.</span><span class="ar">كلّ مساء تصلكم رسالة قصيرة على WhatsApp، وتعرض لوحة المتابعة الزيارات والعملاء الجدد والدخل الذي جاؤوا به.</span></p><div class="sci"><b><span class="en">Why it works</span><span class="ar">لماذا تنجح</span></b><span><span class="en">What gets seen gets managed. Owners decide better with one clear number.</span><span class="ar">حين ترون النتائج بوضوح، تسهل عليكم متابعة العمل واتخاذ القرار.</span></span></div><div class="mobile"></div></div></div><div class="phonewrap" aria-hidden="true"><div class="phone" id="phone"></div></div></div></div></section>
+<section class="notes" id="science"><div class="w head"><div><div class="lab"><span class="en">Behavioural science, in plain words</span><span class="ar">علم السلوك، بكلمات بسيطة</span></div><h2 style="margin-top:12px;max-width:640px"><span class="en">Not reminders. Little notes people want to answer.</span><span class="ar">ليست تذكيرات، بل رسائل صغيرة يحبّ الناس الردّ عليها.</span></h2></div>
+<div class="side"><p><span class="en">Every message is built on how people really decide. Here are a few, and why they work.</span><span class="ar">كلّ رسالة مبنية على الطريقة التي يتّخذ بها الناس قراراتهم فعلًا. إليكم بعضها، ولماذا تنجح.</span></p><div class="arrows"><button type="button" data-d="-1" aria-label="Previous">←</button><button type="button" data-d="1" aria-label="Next">→</button></div></div></div>
+<p class="w eg"><span class="en">Sample businesses and names, shown for illustration.</span><span class="ar">أنشطة وأسماء نموذجية، للتوضيح فقط.</span></p>
+<div class="strip" tabindex="0" aria-label="Sample messages"><div class="note"><div class="m"><small><span class="en">Marina Smile Dental · Dr. Sara</span><span class="ar">مارينا سمايل للأسنان · د. سارة</span></small><span class="en">Six months already, Khalid 😁 Your check-up has been patiently waiting its turn. Tuesday at 4pm?</span><span class="ar">مرّت 6 أشهر يا خالد 😁 وفحصك الدوري ينتظر دوره بصبر. ما رأيك بالثلاثاء الساعة 4 عصرًا؟</span></div><div class="why"><b><span class="en">The right moment</span><span class="ar">اللحظة المناسبة</span></b><span class="en">Sent the week it is due, not a month early.</span><span class="ar">تُرسل في الأسبوع الذي يحين فيه الموعد، لا قبله بشهر.</span></div></div><div class="note"><div class="m"><small><span class="en">Layali Beauty Lounge · Joy</span><span class="ar">ليالي للتجميل · جوي</span></small><span class="en">Your nails have been so loyal for 18 days 💅 Joy is free Thursday at 6pm. Shall we?</span><span class="ar">أظافرك وفيّة لكِ منذ 18 يومًا 💅 جوي متاحة الخميس الساعة 6 مساءً. نحجز لكِ؟</span></div><div class="why"><b><span class="en">A name they trust</span><span class="ar">اسم يثقون به</span></b><span class="en">From Joy, the person she already knows.</span><span class="ar">من جوي، التي تعرفها العميلة أصلًا.</span></div></div><div class="note"><div class="m"><small><span class="en">Marina Smile Dental · Dr. Daniel</span><span class="ar">مارينا سمايل للأسنان · د. دانيال</span></small><span class="en">You’re one visit away from finishing the plan Dr. Daniel made for you 🙌 Thursday at 5pm?</span><span class="ar">بقيت زيارة واحدة فقط لتكتمل الخطة التي وضعها لك د. دانيال 🙌 ما رأيك بالخميس الساعة 5 مساءً؟</span></div><div class="why"><b><span class="en">Finish what you started</span><span class="ar">إكمال ما بدأناه</span></b><span class="en">Progress already made pulls people to the end.</span><span class="ar">التقدّم الذي تحقّق يشدّ الناس نحو خطّ النهاية.</span></div></div><div class="note"><div class="m"><small><span class="en">Marina Smile Dental</span><span class="ar">مارينا سمايل للأسنان</span></small><span class="en">Two smiles, one trip ✨ Layla and Adam, how about back-to-back check-ups on Saturday at 10am?</span><span class="ar">ابتسامتان ومشوار واحد ✨ ليلى وآدم، ما رأيكما بفحصين متتاليين يوم السبت الساعة 10 صباحًا؟</span></div><div class="why"><b><span class="en">One trip, not two</span><span class="ar">مشوار واحد بدل اثنين</span></b><span class="en">Making life easier is the best reason to say yes.</span><span class="ar">تسهيل الحياة أفضل سبب للموافقة.</span></div></div><div class="note"><div class="m"><small><span class="en">Layali Beauty Lounge · Dana</span><span class="ar">ليالي للتجميل · دانة</span></small><span class="en">Booked 🎉 While you’re with us, a 15-minute brow tidy with Dana?</span><span class="ar">تمّ الحجز 🎉 وبما أنّكِ عندنا، ما رأيك بتهذيب الحواجب مع دانة في 15 دقيقة؟</span></div><div class="why"><b><span class="en">At the happy moment</span><span class="ar">في لحظة الفرح</span></b><span class="en">One extra, offered right after a yes, never before.</span><span class="ar">إضافة واحدة تُعرض بعد الحجز مباشرةً، لا قبله أبدًا.</span></div></div><div class="note"><div class="m"><small><span class="en">Layali Beauty Lounge · Joy</span><span class="ar">ليالي للتجميل · جوي</span></small><span class="en">Fancy some time for you, Sophie? 💛 Joy has Saturday at 11am.</span><span class="ar">ما رأيك بوقت لنفسك يا صوفي؟ 💛 جوي متاحة السبت الساعة 11 صباحًا.</span></div><div class="why"><b><span class="en">No guilt</span><span class="ar">بلا لوم</span></b><span class="en">A warm invitation brings people back. Blame keeps them away.</span><span class="ar">الدعوة الدافئة تعيد الناس، واللوم يُبعدهم.</span></div></div></div></section>
+<section class="ours"><div class="w" style="padding-block:90px 30px"><div class="lab"><span class="en">Our products</span><span class="ar">منتجاتنا</span></div><h2 style="margin-top:12px"><span class="en">One science. A product for every trade.</span><span class="ar">علم واحد، ومنتج لكلّ مهنة.</span></h2></div>
+<div class="prods">
+<a class="prod" href="/sinan"><div class="ph" style="background-image:url(/img/dental.jpg)"></div><span class="soon"><span class="en">Coming soon</span><span class="ar">قريبًا</span></span><div class="in"><div class="tag"><span class="en">For dental clinics</span><span class="ar">لعيادات الأسنان</span></div><h3><span class="en">Sinan</span><span class="ar">سنان</span></h3><p><span class="en">He turns what each patient truly needs into something they want: the check-up they put off, the cleaning that’s due, the treatment their dentist recommended.</span><span class="ar">يحوّل ما يحتاجه كلّ مريض فعلًا إلى شيء يرغب فيه: الفحص الذي أجّله، والتنظيف الذي حان موعده، والعلاج الذي أوصى به طبيبه.</span></p><div class="rh"><span><span class="en">Check-up every 6 months</span><span class="ar">فحص كلّ 6 أشهر</span></span><span><span class="en">Gum care every 3</span><span class="ar">اللثة كلّ 3 أشهر</span></span><span><span class="en">Aligners every 6 weeks</span><span class="ar">التقويم كلّ 6 أسابيع</span></span></div><span class="go"><span class="en">Meet Sinan →</span><span class="ar">تعرّفوا على سنان ←</span></span></div></a>
+<a class="prod" href="/romy"><div class="ph" style="background-image:url(/img/owner.jpg);background-position:center 25%"></div><span class="soon"><span class="en">Coming soon</span><span class="ar">قريبًا</span></span><div class="in"><div class="tag"><span class="en">For beauty centres</span><span class="ar">لمراكز التجميل</span></div><h3><span class="en">Romy</span><span class="ar">رومي</span></h3><p><span class="en">She knows beauty. She knows business. Above all, Romy knows when to say what.</span><span class="ar">تفهم الجمال، وتفهم البيع. والأهمّ أنّ رومي تعرف ماذا تقول، ومتى.</span></p><div class="rh"><span><span class="en">Nails every 3 weeks</span><span class="ar">الأظافر كلّ 3 أسابيع</span></span><span><span class="en">Colour every 6</span><span class="ar">الصبغة كلّ 6 أسابيع</span></span><span><span class="en">Brows every 4</span><span class="ar">الحواجب كلّ 4 أسابيع</span></span></div><span class="go"><span class="en">Meet Romy →</span><span class="ar">تعرّفوا على رومي ←</span></span></div></a>
+</div><div class="later"><span class="en">Cosmetic clinics and barbershops are next. You can already ask for a call.</span><span class="ar">عيادات التجميل وصالونات الحلاقة هي التالية، ويمكنكم طلب اتصال من الآن.</span></div></section>
+<section class="start"><div class="w"><div class="lab"><span class="en">Getting started</span><span class="ar">كيف نبدأ</span></div><h2 style="margin-top:12px;max-width:720px"><span class="en">Nothing to install. Nothing for your team to learn.</span><span class="ar">لا شيء لتثبيته، ولا شيء يتعلّمه فريقكم.</span></h2>
+<div class="row"><div><b>1</b><h3><span class="en">A short call</span><span class="ar">اتصال قصير</span></h3><p><span class="en">You tell us how your bookings and follow-ups work today.</span><span class="ar">تخبروننا كيف تديرون المواعيد والمتابعة اليوم.</span></p></div>
+<div><b>2</b><h3><span class="en">We set it up</span><span class="ar">نتولّى الإعداد</span></h3><p><span class="en">We connect your WhatsApp and set everything up for you.</span><span class="ar">نربط رقم WhatsApp الخاص بكم ونجهّز كلّ شيء بأنفسنا.</span></p></div>
+<div><b>3</b><h3><span class="en">Clients start coming back</span><span class="ar">ويبدأ العملاء بالعودة</span></h3><p><span class="en">You approve the messages, and the evening note shows you what came back.</span><span class="ar">توافقون على الرسائل، وتريكم الرسالة المسائية الحجوزات التي تمّت.</span></p></div></div></div></section>
+<section class="talk" id="talk"><span id="demo" class="anchor"></span><div class="w grid">
+<div><div class="lab"><span class="en">Before we talk</span><span class="ar">قبل أن نتحدّث</span></div><h2 style="margin-top:12px"><span class="en">Questions owners ask us first.</span><span class="ar">أسئلة يطرحها علينا أصحاب الأعمال أولًا.</span></h2><div class="faq"><details><summary><span class="en">Can we use it today?</span><span class="ar">هل يمكننا استخدامها اليوم؟</span></summary><p><span class="en">Sinan and Romy are coming soon. A call now is a chat about your business and what we are preparing for you.</span><span class="ar">سنان ورومي قريبًا. والاتصال الآن حديث عن عملكم وعمّا نجهّزه لكم.</span></p></details><details><summary><span class="en">Whose name do my clients see?</span><span class="ar">باسم مَن تصل الرسائل إلى عملائنا؟</span></summary><p><span class="en">Yours. Messages come from your business’s WhatsApp, in the name of your dentists or stylists.</span><span class="ar">باسمكم. تصل الرسائل من رقم WhatsApp الخاص بعملكم، باسم أطبائكم أو خبيرات التجميل لديكم.</span></p></details><details><summary><span class="en">Do we need new software?</span><span class="ar">هل نحتاج إلى برنامج جديد؟</span></summary><p><span class="en">No. It works with your WhatsApp, alongside the booking system you use today. Nothing for your team to install.</span><span class="ar">لا. تعمل مع رقم WhatsApp الخاص بكم، وإلى جانب نظام المواعيد الذي تستخدمونه اليوم. لا شيء يثبّته فريقكم.</span></p></details><details><summary><span class="en">Which languages?</span><span class="ar">بأيّ لغات؟</span></summary><p><span class="en">Arabic and English. Russian is coming soon.</span><span class="ar">العربية والإنجليزية، والروسية قريبًا.</span></p></details><details><summary><span class="en">Can clients stop the messages?</span><span class="ar">هل يستطيع العملاء إيقاف الرسائل؟</span></summary><p><span class="en">Always. Every client can reply STOP, and “Another time” is on every invitation.</span><span class="ar">دائمًا. يستطيع أيّ عميل الردّ بكلمة «إيقاف»، وزرّ «وقت آخر» موجود في كلّ دعوة.</span></p></details></div>
+<div class="reach">
+<a class="ld-chat" data-chat hidden href="#" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span class="en">Chat with us on WhatsApp</span><span class="ar">تحدّثوا معنا على WhatsApp</span></a>
+<p><span class="en">Prefer email? We reply within one working day.</span><span class="ar">تفضّلون البريد الإلكتروني؟ نردّ خلال يوم عمل واحد.</span></p>
+<div class="mailrow"><span class="ltr" id="mailaddr">sales@getloopdesk.com</span><button class="copy" type="button" data-copy="sales@getloopdesk.com"><span class="en">Copy</span><span class="ar">نسخ</span></button></div>
+</div></div>
+<div class="cb" id="callback">
       <form id="cbform" method="post" novalidate>
         <p class="cb-title"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></p>
         <div class="f2">
@@ -292,7 +83,7 @@
         <div class="f2">
           <label class="fld"><span class="lbl"><span class="en">Mobile</span><span class="ar">رقم الجوال</span></span>
             <input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required dir="ltr" placeholder="05X XXX XXXX">
-            <span class="err"><span class="en">Please check the number, for example 050 123 4567.</span><span class="ar">تأكّدوا من الرقم، مثل 050 123 4567.</span></span></label>
+            <span class="err"><span class="en">Please check the number, for example 050 123 4567.</span><span class="ar">تأكّدوا من الرقم، مثل <bdi dir="ltr">050 123 4567</bdi>.</span></span></label>
           <label class="fld"><span class="lbl"><span class="en">Email</span><span class="ar">البريد الإلكتروني</span></span>
             <input name="email" type="email" inputmode="email" autocomplete="email" maxlength="160" required dir="ltr" placeholder="name@business.com">
             <span class="err"><span class="en">Please check the email.</span><span class="ar">تأكّدوا من البريد الإلكتروني.</span></span></label>
@@ -333,17 +124,17 @@
         <fieldset class="fld" data-req="time">
           <legend class="lbl"><span class="en">Best time to call</span><span class="ar">أنسب وقت للاتصال</span></legend>
           <div class="chips">
-            <label><input type="radio" name="time" value="morning" required><span><span class="en">Morning</span><span class="ar">صباحًا</span><small>10–12</small></span></label>
-            <label><input type="radio" name="time" value="afternoon"><span><span class="en">Afternoon</span><span class="ar">ظهرًا</span><small>12–4</small></span></label>
-            <label><input type="radio" name="time" value="evening"><span><span class="en">Evening</span><span class="ar">مساءً</span><small>4–8</small></span></label>
-            <label><input type="radio" name="time" value="any"><span><span class="en">Any time</span><span class="ar">أيّ وقت</span><small>10–8</small></span></label>
+            <label><input type="radio" name="time" value="morning" required><span><span class="en">Morning</span><span class="ar">صباحًا</span><small><bdi dir="ltr">10–12</bdi></small></span></label>
+            <label><input type="radio" name="time" value="afternoon"><span><span class="en">Afternoon</span><span class="ar">ظهرًا</span><small><bdi dir="ltr">12–4</bdi></small></span></label>
+            <label><input type="radio" name="time" value="evening"><span><span class="en">Evening</span><span class="ar">مساءً</span><small><bdi dir="ltr">4–8</bdi></small></span></label>
+            <label><input type="radio" name="time" value="any"><span><span class="en">Any time</span><span class="ar">أيّ وقت</span><small><bdi dir="ltr">10–8</bdi></small></span></label>
           </div>
           <span class="err"><span class="en">Pick the time that suits you.</span><span class="ar">اختاروا الوقت الذي يناسبكم.</span></span>
         </fieldset>
         <div class="trap" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
         <div class="consent">
           <p class="lbl"><span class="en">Want our ideas too?</span><span class="ar">تودّون أن تصلكم أفكارنا أيضًا؟</span> <span class="opt"><span class="en">optional, not needed for the call</span><span class="ar">اختياري، ولا يلزم للاتصال</span></span></p>
-          <label class="tick"><input type="checkbox" name="consentEmail"><span class="en">Email me ideas, tips and offers from Loopdesk. I can stop any time.</span><span class="ar">أرسلوا إليّ أفكارًا ونصائح وعروضًا من Loopdesk بالبريد الإلكتروني، ويمكنني إلغاء الاشتراك متى شئت.</span></label>
+          <label class="tick"><input type="checkbox" name="consentEmail"><span class="en">Email me ideas, tips and offers from Loopdesk. I can stop any time.</span><span class="ar">أرسلوا إليّ أفكارًا ونصائح وعروضًا من Loopdesk بالبريد الإلكتروني، ويمكنني الإيقاف متى شئت.</span></label>
           <label class="tick"><input type="checkbox" name="consentWhatsapp"><span class="en">Send me ideas, tips and offers from Loopdesk on WhatsApp. I can reply STOP any time.</span><span class="ar">أرسلوا إليّ أفكارًا ونصائح وعروضًا من Loopdesk عبر WhatsApp، ويمكنني إرسال «إيقاف» متى شئت.</span></label>
         </div>
         <button class="btn btn-dark cb-send" type="submit" id="cbsend"><span class="en">Call me back</span><span class="ar">اتصلوا بي</span></button>
@@ -359,57 +150,23 @@
         <p class="cb-title"><span class="en">Thank you, <bdi data-out="name"></bdi>. Your call is in our diary.</span><span class="ar">شكرًا يا <bdi data-out="name"></bdi>، سجّلنا موعد الاتصال.</span></p>
         <p><span class="en">We'll call <bdi dir="ltr" data-out="phone"></bdi> <span data-out="time-en"></span>, within one working day.</span><span class="ar">سنتصل بكم على الرقم <bdi dir="ltr" data-out="phone"></bdi> <span data-out="time-ar"></span>، خلال يوم عمل واحد.</span></p>
         <p class="muted"><span class="en">Have a price list handy? Bring it to the call and we'll show Loopdesk with your own services.</span><span class="ar">إن كانت لديكم قائمة أسعار، فأبقوها قريبة أثناء الاتصال لنريكم Loopdesk على خدماتكم.</span></p>
-        <a class="btn btn-light" href="#rhythm"><span class="en">Meanwhile, see the rhythm engine</span><span class="ar">وحتى ذلك الحين، ألقوا نظرة على محرّك الإيقاع</span></a>
+        <a class="btn btn-light" href="#how"><span class="en">Meanwhile, see how it works</span><span class="ar">وحتى ذلك الحين، شاهدوا كيف تعمل</span></a>
       </div>
-    </div>
-  </div>
-</section>
-
-</div>
-
+    </div></div></section>
 </main>
-
-<a class="ld-float" data-chat hidden href="#" target="_blank" rel="noopener"><span class="face" aria-hidden="true">L</span><span class="en">Ask Loopdesk</span><span class="ar">اسألوا Loopdesk</span></a>
-
-<footer><div class="wrap">
-  <div class="ft-top">
-    <div class="ft-brand">
-      <a class="logo" href="/" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
-      <p><span class="en">Your growth partner. Behavioural science that brings clients back and sells more.</span><span class="ar">فنّ العودة… وسرّ الزيادة.</span></p>
-      <a class="ft-cta" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
-    </div>
-    <nav class="ft-col" aria-label="Explore">
-      <p class="ft-h"><span class="en">Explore</span><span class="ar">تصفّحوا</span></p>
-      <ul>
-        <li><a href="/#science"><span class="en">Our science</span><span class="ar">علم السلوك</span></a></li>
-        <li><a href="/#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a></li>
-        <li><a href="/romy"><span class="en">Romy, for beauty centres</span><span class="ar">رومي لمراكز التجميل</span></a></li>
-        <li><a href="/sinan"><span class="en">Sinan, for dental clinics</span><span class="ar">سنان لعيادات الأسنان</span></a></li>
-      </ul>
-    </nav>
-    <div class="ft-col" id="contact">
-      <p class="ft-h"><span class="en">Talk to us</span><span class="ar">تواصلوا معنا</span></p>
-      <ul>
-        <li><a href="#demo"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></a></li>
-        <li><small><span class="en">Sales</span><span class="ar">المبيعات</span></small><a class="ltr" href="mailto:sales@getloopdesk.com">sales@getloopdesk.com</a></li>
-        <li><small><span class="en">Everything else</span><span class="ar">لأيّ سؤال آخر</span></small><a class="ltr" href="mailto:hello@getloopdesk.com">hello@getloopdesk.com</a></li>
-      </ul>
-    </div>
-    <nav class="ft-col ft-legal" aria-label="Legal">
-      <p class="ft-h"><span class="en">Legal</span><span class="ar">معلومات قانونية</span></p>
-      <ul>
-        <li><a href="/privacy"><span class="en">Privacy policy</span><span class="ar">سياسة الخصوصية</span></a></li>
-        <li><a href="/terms"><span class="en">Terms of service</span><span class="ar">شروط الخدمة</span></a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="ft-bottom">
-    <span><span class="en">© 2026 Loopdesk · United Arab Emirates</span><span class="ar"><span class="ltr">© 2026 Loopdesk</span> · الإمارات العربية المتحدة</span></span>
-    <span class="tm"><span class="en">Loopdesk is operated by <span class="ltr">LOOP DESK SOLUTIONS - FZCO</span>, Service Licence no. <span class="ltr">94491</span> issued by the Dubai Integrated Economic Zones Authority · Registered address: <span class="ltr">DSO-THUB-G-D-FLEX-G039E, THUB, Dubai Silicon Oasis, Dubai, United Arab Emirates</span> · Phone: <a class="ltr" href="tel:+971501472513">+971 50 147 2513</a></span><span class="ar">تشغّل <span class="ltr">Loopdesk</span> شركة لوب ديسك سولوشنز - ش م ح، رخصة مهنية رقم <span class="ltr">94491</span> صادرة عن سلطة دبي للمناطق الاقتصادية المتكاملة · العنوان المسجّل: <span class="ltr">DSO-THUB-G-D-FLEX-G039E</span>، مبنى <span class="ltr">THUB</span>، واحة دبي للسيليكون، دبي، الإمارات العربية المتحدة · الهاتف: <a class="ltr" href="tel:+971501472513">+971 50 147 2513</a></span></span>
-    <span class="tm"><span class="en">WhatsApp is a trademark of Meta Platforms, Inc. Loopdesk is an independent company and is not affiliated with or endorsed by Meta.</span><span class="ar"><span class="ltr">WhatsApp</span> علامة تجارية مملوكة لشركة <span class="ltr">Meta Platforms, Inc.</span>، و<span class="ltr">Loopdesk</span> شركة مستقلة لا ترتبط بشركة Meta ولا تحظى بتأييدها.</span></span>
-  </div>
-</div></footer>
-
-<script src="/site.js"></script>
+<footer><div class="w"><div class="grid">
+<div><a class="logo" href="/" aria-label="Loopdesk home"><span class="mark" aria-hidden="true"></span>Loopdesk</a><p class="tag"><span class="en">Your growth partner. Behavioural science that brings clients back and sells more.</span><span class="ar">فنّ العودة… وسرّ الزيادة.</span></p></div>
+<nav aria-label="Products"><b><span class="en">Products</span><span class="ar">منتجاتنا</span></b><a href="/sinan"><span class="en">Sinan for dental clinics</span><span class="ar">سنان لعيادات الأسنان</span></a><a href="/romy"><span class="en">Romy for beauty centres</span><span class="ar">رومي لمراكز التجميل</span></a><a href="/#science"><span class="en">Our science</span><span class="ar">علم السلوك</span></a></nav>
+<div><b><span class="en">Talk to us</span><span class="ar">تواصلوا معنا</span></b><a href="#talk"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></a><small><span class="en">Sales</span><span class="ar">المبيعات</span></small><a class="ltr" href="mailto:sales@getloopdesk.com">sales@getloopdesk.com</a><small><span class="en">Everything else</span><span class="ar">لأيّ سؤال آخر</span></small><a class="ltr" href="mailto:hello@getloopdesk.com">hello@getloopdesk.com</a></div>
+<nav aria-label="Legal"><b><span class="en">Legal</span><span class="ar">معلومات قانونية</span></b><a href="/privacy"><span class="en">Privacy policy</span><span class="ar">سياسة الخصوصية</span></a><a href="/terms"><span class="en">Terms of service</span><span class="ar">شروط الخدمة</span></a></nav></div>
+<div class="legal">
+<p><span class="en">© 2026 Loopdesk · United Arab Emirates</span><span class="ar"><span class="ltr">© 2026 Loopdesk</span> · الإمارات العربية المتحدة</span></p>
+<p><span class="en">Loopdesk is operated by <span class="ltr">LOOP DESK SOLUTIONS - FZCO</span>, Service Licence no. <span class="ltr">94491</span> issued by the Dubai Integrated Economic Zones Authority · Registered address: <span class="ltr">DSO-THUB-G-D-FLEX-G039E, THUB, Dubai Silicon Oasis, Dubai, United Arab Emirates</span> · Phone: <a class="ltr" href="tel:+971501472513">+971 50 147 2513</a></span><span class="ar">تشغّل <span class="ltr">Loopdesk</span> شركة لوب ديسك سولوشنز - ش م ح، رخصة مهنية رقم <span class="ltr">94491</span> صادرة عن سلطة دبي للمناطق الاقتصادية المتكاملة · العنوان المسجّل: <span class="ltr">DSO-THUB-G-D-FLEX-G039E</span>، مبنى <span class="ltr">THUB</span>، واحة دبي للسيليكون، دبي، الإمارات العربية المتحدة · الهاتف: <a class="ltr" href="tel:+971501472513">+971 50 147 2513</a></span></p>
+<p><span class="en">WhatsApp, Instagram and Facebook are trademarks of Meta Platforms, Inc. Loopdesk is an independent company and is not affiliated with or endorsed by Meta.</span><span class="ar"><span class="ltr">WhatsApp</span> و<span class="ltr">Instagram</span> و<span class="ltr">Facebook</span> علامات تجارية مملوكة لشركة <span class="ltr">Meta Platforms, Inc.</span>، و<span class="ltr">Loopdesk</span> شركة مستقلة لا ترتبط بشركة Meta ولا تحظى بتأييدها.</span></p>
+</div></div></footer>
+<a class="ld-float" data-chat hidden href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3.2 29l6.5-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.9 1 1-3.7-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5.2 9.9 10 5.2 16 5.2s10.8 4.7 10.8 10.6S22 26.6 16 26.6zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.8 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span class="lbl"><span class="en">Chat with us</span><span class="ar">تحدّثوا معنا</span></span></a>
+<div class="mcta"><a class="btn b-ink" href="#talk"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></a></div>
+<script>window.STORY={"en": {"dental": [{"who": "Marina Smile Dental", "sub": "Today’s diary", "html": "<div class=\"diary\"><div class=\"r\"><span>Khalid · last check-up 6 months ago<\/span><span class=\"due\">Due now<\/span><\/div><div class=\"r\"><span>Layla and Adam · both due<\/span><span class=\"due\">Due now<\/span><\/div><div class=\"r\"><span>Omar · plan, 1 visit left<\/span><span class=\"due\">Due now<\/span><\/div><div class=\"r\"><span>Sara · cleaning<\/span><span class=\"\">Booked ✓<\/span><\/div><\/div><div class=\"sys\">Loopdesk found 4 patients ready for a visit<\/div>"}, {"who": "Marina Smile Dental", "html": "<div class=\"m\"><small>Dr. Sara<\/small>Six months already, Khalid 😁 Your check-up has been patiently waiting its turn. Tuesday at 4pm?<span class=\"ch\">Book Tuesday 4pm<\/span><span class=\"ch\">Another time<\/span><\/div>"}, {"who": "Marina Smile Dental", "html": "<div class=\"m\">Six months already, Khalid 😁 Your check-up has been patiently waiting its turn. Tuesday at 4pm?<span class=\"ch\">Book Tuesday 4pm<\/span><span class=\"ch\">Another time<\/span><\/div><div class=\"m me\">Book Tuesday 4pm<\/div><div class=\"m\">It’s a date, Khalid 🎉 Tuesday at 4pm with Dr. Sara.<\/div><div class=\"sys\">Added to your diary<\/div>"}, {"who": "Loopdesk for owners", "sub": "Your evening note", "html": "<div class=\"m\">Today: Khalid booked his check-up, Layla booked for her and Adam, Omar finished his plan’s last visit 🙌<\/div><div class=\"dashm\"><b>This month at Marina Smile Dental<\/b><br><span class=\"s\">Sample clinic · illustrative figures<\/span><div class=\"big\"><b>AED 36,850<\/b>in visits brought in<\/div><div class=\"t\"><div><b>38<\/b>came back<\/div><div><b>21<\/b>new<\/div><div><b>9<\/b>plans done<\/div><\/div><\/div>"}], "beauty": [{"who": "Layali Beauty Lounge", "sub": "Today’s diary", "html": "<div class=\"diary\"><div class=\"r\"><span>Priya · gel nails 18 days ago<\/span><span class=\"due\">Due now<\/span><\/div><div class=\"r\"><span>Sophie · colour 6 weeks ago<\/span><span class=\"due\">Due now<\/span><\/div><div class=\"r\"><span>Maya · no visit in 3 months<\/span><span class=\"due\">Welcome back<\/span><\/div><div class=\"r\"><span>Dana · blow-dry<\/span><span class=\"\">Booked ✓<\/span><\/div><\/div><div class=\"sys\">Loopdesk found 3 clients ready for a visit<\/div>"}, {"who": "Layali Beauty Lounge", "html": "<div class=\"m\"><small>Joy<\/small>Your nails have been so loyal for 18 days 💅 Joy is free Thursday at 6pm. Shall we?<span class=\"ch\">Book Thursday 6pm<\/span><span class=\"ch\">Another time<\/span><\/div>"}, {"who": "Layali Beauty Lounge", "html": "<div class=\"m\">Your nails have been so loyal for 18 days 💅 Joy is free Thursday at 6pm. Shall we?<span class=\"ch\">Book Thursday 6pm<\/span><span class=\"ch\">Another time<\/span><\/div><div class=\"m me\">Book Thursday 6pm<\/div><div class=\"m\">It’s a date, Priya 🎉 Thursday at 6pm with Joy.<\/div><div class=\"sys\">Added to your diary<\/div>"}, {"who": "Loopdesk for owners", "sub": "Your evening note", "html": "<div class=\"m\">Today: Priya booked her nails, Sophie added brows to Saturday, Maya is back after 3 months 💛<\/div><div class=\"dashm\"><b>This month at Layali Beauty Lounge<\/b><br><span class=\"s\">Sample centre · illustrative figures<\/span><div class=\"big\"><b>AED 28,400<\/b>in visits brought in<\/div><div class=\"t\"><div><b>46<\/b>came back<\/div><div><b>31<\/b>extras<\/div><div><b>12<\/b>welcomed<\/div><\/div><\/div>"}]}, "ar": {"dental": [{"who": "مارينا سمايل للأسنان", "sub": "جدول اليوم", "html": "<div class=\"diary\"><div class=\"r\"><span>خالد · آخر فحص قبل 6 أشهر<\/span><span class=\"due\">حان الموعد<\/span><\/div><div class=\"r\"><span>ليلى وآدم · كلاهما<\/span><span class=\"due\">حان الموعد<\/span><\/div><div class=\"r\"><span>عمر · بقيت زيارة من خطته<\/span><span class=\"due\">حان الموعد<\/span><\/div><div class=\"r\"><span>سارة · تنظيف<\/span><span class=\"\">محجوز ✓<\/span><\/div><\/div><div class=\"sys\">وجدت Loopdesk أربعة مرضى حان موعد زيارتهم<\/div>"}, {"who": "مارينا سمايل للأسنان", "html": "<div class=\"m\"><small>د. سارة<\/small>مرّت 6 أشهر يا خالد 😁 وفحصك الدوري ينتظر دوره بصبر. ما رأيك بالثلاثاء الساعة 4 عصرًا؟<span class=\"ch\">احجز الثلاثاء 4 عصرًا<\/span><span class=\"ch\">وقت آخر<\/span><\/div>"}, {"who": "مارينا سمايل للأسنان", "html": "<div class=\"m\">مرّت 6 أشهر يا خالد 😁 وفحصك الدوري ينتظر دوره بصبر. ما رأيك بالثلاثاء الساعة 4 عصرًا؟<span class=\"ch\">احجز الثلاثاء 4 عصرًا<\/span><span class=\"ch\">وقت آخر<\/span><\/div><div class=\"m me\">احجز الثلاثاء 4 عصرًا<\/div><div class=\"m\">تمّ يا خالد 🎉 موعدك الثلاثاء الساعة 4 عصرًا مع د. سارة.<\/div><div class=\"sys\">أُضيف إلى جدول المواعيد<\/div>"}, {"who": "Loopdesk لأصحاب الأعمال", "sub": "رسالتكم المسائية", "html": "<div class=\"m\">اليوم: حجز خالد فحصه الدوري، وحجزت ليلى لها ولآدم، وأنهى عمر آخر زيارة في خطته 🙌<\/div><div class=\"dashm\"><b>هذا الشهر في مارينا سمايل للأسنان<\/b><br><span class=\"s\">عيادة نموذجية · أرقام توضيحية<\/span><div class=\"big\"><b>36,850 درهم<\/b>قيمة الزيارات التي عادت<\/div><div class=\"t\"><div><b>38<\/b>عادوا<\/div><div><b>21<\/b>جدد<\/div><div><b>9<\/b>خطط اكتملت<\/div><\/div><\/div>"}], "beauty": [{"who": "ليالي للتجميل", "sub": "جدول اليوم", "html": "<div class=\"diary\"><div class=\"r\"><span>بريا · أظافر جل قبل 18 يومًا<\/span><span class=\"due\">حان الموعد<\/span><\/div><div class=\"r\"><span>صوفي · صبغة قبل 6 أسابيع<\/span><span class=\"due\">حان الموعد<\/span><\/div><div class=\"r\"><span>مايا · لا زيارة منذ 3 أشهر<\/span><span class=\"due\">أهلًا بعودتها<\/span><\/div><div class=\"r\"><span>دانة · تصفيف<\/span><span class=\"\">محجوز ✓<\/span><\/div><\/div><div class=\"sys\">وجدت Loopdesk ثلاث عميلات حان موعد زيارتهنّ<\/div>"}, {"who": "ليالي للتجميل", "html": "<div class=\"m\"><small>جوي<\/small>أظافرك وفيّة لكِ منذ 18 يومًا 💅 جوي متاحة الخميس الساعة 6 مساءً. نحجز لكِ؟<span class=\"ch\">احجزي الخميس 6 مساءً<\/span><span class=\"ch\">وقت آخر<\/span><\/div>"}, {"who": "ليالي للتجميل", "html": "<div class=\"m\">أظافرك وفيّة لكِ منذ 18 يومًا 💅 جوي متاحة الخميس الساعة 6 مساءً. نحجز لكِ؟<span class=\"ch\">احجزي الخميس 6 مساءً<\/span><span class=\"ch\">وقت آخر<\/span><\/div><div class=\"m me\">احجزي الخميس 6 مساءً<\/div><div class=\"m\">تمّ يا بريا 🎉 موعدك الخميس الساعة 6 مساءً مع جوي.<\/div><div class=\"sys\">أُضيف إلى جدول المواعيد<\/div>"}, {"who": "Loopdesk لأصحاب الأعمال", "sub": "رسالتكم المسائية", "html": "<div class=\"m\">اليوم: حجزت بريا موعد أظافرها، وأضافت صوفي الحواجب إلى موعد السبت، وعادت مايا بعد 3 أشهر 💛<\/div><div class=\"dashm\"><b>هذا الشهر في ليالي للتجميل<\/b><br><span class=\"s\">مركز نموذجي · أرقام توضيحية<\/span><div class=\"big\"><b>28,400 درهم<\/b>قيمة الزيارات التي عادت<\/div><div class=\"t\"><div><b>46<\/b>عادت<\/div><div><b>31<\/b>إضافات<\/div><div><b>12<\/b>رجعت بعد غياب<\/div><\/div><\/div>"}]}};</script>
+<script src="/site.js?v=2"></script>
 </body>
 </html>

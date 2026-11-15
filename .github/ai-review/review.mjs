@@ -423,7 +423,12 @@ async function main() {
     const raw = REVIEWER === "gpt"
       ? await askOpenAI(model, FILM_SYSTEM, user, true, imgs.map((m) => m.data))
       : await askGemini(model, FILM_SYSTEM, user, [...vids.map((m) => ({ mimeType: "video/mp4", data: m.data })), ...imgs.map((m) => m.data)]);
-    const md = genericMarkdown(`${NAME} film proposal (${model})`, parseJson(raw));
+    let md;
+    try {
+      md = genericMarkdown(`${NAME} film proposal (${model})`, parseJson(raw));
+    } catch {
+      md = `## ${NAME} film proposal (${model}, raw)\n\n${raw}`; // keep the content even if the JSON is malformed
+    }
     console.log("=====REDESIGN-START=====");
     console.log(md);
     console.log("=====REDESIGN-END=====");

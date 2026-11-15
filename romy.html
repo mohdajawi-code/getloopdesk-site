@@ -27,275 +27,38 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/site.css">
+<link rel="preload" as="image" href="/video/hero-romy.jpg">
+<link rel="stylesheet" href="/site.css?v=2">
 </head>
-<body data-vertical="salon">
+<body class="romy" data-vertical="salon">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="18.6" cy="6.6" r="2.4" fill="#D9466E"/></symbol>
 </svg>
-
-<header class="nav"><div class="wrap">
-  <a class="logo" href="/" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
-  <nav class="nav-links">
-    <a href="/#science"><span class="en">Our science</span><span class="ar">علم السلوك</span></a>
-    <a href="/#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a>
-    <a href="/romy" data-nav="romy"><span class="en">Romy</span><span class="ar">رومي</span></a>
-    <a href="/sinan" data-nav="sinan"><span class="en">Sinan</span><span class="ar">سنان</span></a>
-  </nav>
-  <div class="nav-right">
-    <button class="btn btn-light btn-sm" id="langbtn" type="button">العربية</button>
-    <a class="btn btn-dark btn-sm" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
-  </div>
-</div></header>
-
+<header class="nav"><div class="w"><a class="logo" href="/" aria-label="Loopdesk home"><span class="mark" aria-hidden="true"></span>Loopdesk</a>
+<nav class="links" aria-label="Main"><a href="/#how"><span class="en">How it works</span><span class="ar">كيف تعمل</span></a><a href="/#science"><span class="en">Behavioural science</span><span class="ar">علم السلوك</span></a><a href="/sinan"><span class="en">Sinan</span><span class="ar">سنان</span></a><a href="/romy" class="on" aria-current="page"><span class="en">Romy</span><span class="ar">رومي</span></a></nav>
+<button class="lang" id="langbtn" type="button">العربية</button><a class="btn" href="#talk"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></a></div></header>
 <main>
-<div data-view="home">
-
-<section class="wrap hero ptop">
-  <div class="chip reveal"><b class="en">Coming soon</b><b class="ar">قريبًا</b><span class="en">Romy by Loopdesk · for beauty centres</span><span class="ar">رومي من Loopdesk · لمراكز التجميل</span></div>
-  <h1 class="h1 reveal d1 en">She knows beauty. She knows business.</h1>
-  <h1 class="h1 reveal d1 ar">تفهم الجمال، وتفهم البيع.</h1>
-  <p class="sub reveal d2 en">Above all, Romy knows when to say what: when to sell, when to be funny and when to be serious. She brings your clients back on their own rhythm, with little love notes signed by the stylist they trust.</p>
-  <p class="sub reveal d2 ar">والأهمّ أنّ رومي تعرف أنّ لكلّ مقامٍ مقالًا: متى تبيع، ومتى تمزح، ومتى تتكلّم بجدّ. تدعو عميلاتكم للعودة حين يحين موعد خدمتهنّ، برسائل لطيفة تحمل اسم الخبيرة التي يثقن بها.</p>
-  <div class="ctas reveal d3">
-    <a class="btn btn-dark" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
-    <a class="btn btn-light" href="#messages"><span class="en">See her messages</span><span class="ar">اقرؤوا رسائلها</span></a>
-  </div>
-  <p class="tiny en">Answers and books on WhatsApp, day and night · English and Arabic · Nothing to install</p>
-  <p class="tiny ar">تردّ وتحجز على واتساب ليلًا ونهارًا · بالعربية والإنجليزية · لا تطبيق تحمّلونه</p>
-</section>
-
-<section class="wrap showcase">
-  <div class="photo"><img src="/img/hero.jpg" alt="A stylist and her client laughing together in a beauty centre" onerror="this.remove()"></div>
-  <div class="wa en" aria-label="Example rhythm note from a beauty centre">
-    <div class="wa-head"><div class="av">L</div><div><b>Layali Beauty Lounge</b><span>Example message</span></div></div>
-    <div class="bubble">Your nails have been so loyal for 16 days… but they're dreaming of a fresh new look 💅 Joy is free Thursday at 6pm. Shall we?<span class="t">10:12</span></div>
-    <div class="qr"><span>Book Thursday 6pm</span><span>Another time</span></div>
-  </div>
-  <div class="wa ar" aria-label="مثال على رسالة من مركز تجميل">
-    <div class="wa-head"><div class="av">ل</div><div><b>ليالي بيوتي لاونج</b><span>مثال لرسالة</span></div></div>
-    <div class="bubble">صبرت أظافركِ 16 يومًا بكلّ وفاء، والآن بدأت تحلم بلون جديد 💅 جوي متفرّغة الخميس 6 مساءً. نحجزه لكِ؟<span class="t">10:12</span></div>
-    <div class="qr"><span>الخميس 6 مساءً</span><span>وقت آخر</span></div>
-  </div>
-</section>
-
-<!-- Research band: real findings from the founder's own group interviews with beauty centre clients in several emirates (2026), supplied by Mohammed Ajawi on 7 Nov 2026 and approved by him for the site. Not invented. Add the number of participants when known. -->
-<section class="wrap research">
-  <div class="kicker en">What clients told us</div><div class="kicker ar">ما قالته العميلات</div>
-  <h2 class="h2 en">More than 8 in 10 said a personal note would make them feel loved.</h2>
-  <h2 class="h2 ar">أكثر من 8 من كلّ 10 عميلات قلن إنّ الرسالة الشخصية تُشعرهنّ بالاهتمام والتقدير.</h2>
-  <p class="sub en">We sat down with women who visit beauty centres across the Emirates. Most said a note like that would nudge them to book. Matching suggestions were "a great idea", and some said they'd always wanted this. Mass salon offers? Mostly ignored.</p>
-  <p class="sub ar">جلسنا مع عميلات مراكز التجميل في عدّة إمارات. قالت معظمهنّ إنّ رسالة كهذه تدفعهنّ إلى الحجز، ووصفن اقتراح الخدمات التي تكمّل بعضها بأنّه «فكرة رائعة»، وقالت بعضهنّ إنّهنّ انتظرن شيئًا كهذا طويلًا. أمّا العروض الجماعية التي تصلهنّ، فأغلبها يمرّ دون أن يُقرأ.</p>
-  <p class="fine en">Group interviews with beauty centre clients in the UAE, 2026.</p>
-  <p class="fine ar">مقابلات جماعية مع عميلات مراكز تجميل في الإمارات، 2026.</p>
-</section>
-
-<section class="wrap words" id="messages">
-  <div class="words-head">
-    <div>
-      <div class="kicker en">The messages</div><div class="kicker ar">الرسائل</div>
-      <h2 class="h2 en">Not reminders. Little love notes.</h2>
-      <h2 class="h2 ar">ليست تذكيرات، بل لفتات اهتمام.</h2>
-    </div>
-    <p class="sub en">Every note is built on behavioural science and signed by the person your client already trusts. It remembers her treatment, her stylist and her shade, so she feels known, not marketed to. Here are four of them, and why they work.</p>
-    <p class="sub ar">كلّ رسالة مبنيّة على علم السلوك، وتصل باسم من تثق به عميلتكم. وتحمل كلّ رسالة تفاصيل تخصّها وحدها: خدمتها، وخبيرتها، ولونها المفضّل، فتشعر بأنّكم تعرفونها، لا بأنّها تتلقّى إعلانًا. هذه أربع منها، ومع كلّ واحدة سرّها.</p>
-  </div>
-  <div class="msg-grid en">
-    <article class="mcard">
-      <div class="moment">Day 16 · just before she notices</div>
-      <div class="bubble">Your nails have been so loyal for 16 days… but they're dreaming of a fresh new look 💅 Joy is free Thursday at 6pm. Shall we?</div>
-      <ul class="why">
-        <li><b>Perfect timing</b>It lands the day her gel starts to lift, not a week after it chips.</li>
-        <li><b>Playful, never pushy</b>The nails do the asking, so it reads like a smile, not an ad.</li>
-        <li><b>Her own stylist, a real slot</b>One tap and it's booked.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">On her way out</div>
-      <div class="bubble">Enjoy your new gel, Sophie 💛 It usually lasts about 3 weeks. Shall we book the same time with Joy on Monday 23 Nov? You're 3 of 8 visits to a free spa pedicure.</div>
-      <ul class="why">
-        <li><b>Asked at her best moment</b>A plan made when she feels great is the easiest yes.</li>
-        <li><b>Progress she can see</b>Three visits down, five to go. Hard to walk away from that.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">Day 26 · two treatments, one visit</div>
-      <div class="bubble">It's been almost a month since Dana worked her magic, and your brows are whispering "same again, please" 😄 Dana has Monday at 5pm, and Joy is free right after for your nails. Both in one visit?</div>
-      <ul class="why">
-        <li><b>What's due, plus what's nearly due</b>One trip for her, a bigger bill for you.</li>
-        <li><b>Humour that disarms</b>A smile gets read. A reminder gets ignored.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">Week 7 · if she goes quiet</div>
-      <div class="bubble">We've missed you, Sophie 🌸 No pressure at all. Joy still keeps your shade on her shelf. Whenever you're ready, one tap brings you back.</div>
-      <ul class="why">
-        <li><b>No discount, no guilt</b>Warmth works better than a coupon and keeps your prices whole.</li>
-        <li><b>She's remembered</b>Her shade, her stylist. That feeling brings people back.</li>
-      </ul>
-    </article>
-  </div>
-  <div class="msg-grid ar">
-    <article class="mcard">
-      <div class="moment">اليوم 16 · قبل أن تلاحظ</div>
-      <div class="bubble">صبرت أظافركِ 16 يومًا بكلّ وفاء، والآن بدأت تحلم بلون جديد 💅 جوي متفرّغة الخميس 6 مساءً. نحجزه لكِ؟</div>
-      <ul class="why">
-        <li><b>في وقتها تمامًا</b>تصلها يوم يبدأ الجل يرتفع عن الظفر، لا بعد أسبوع من تقشّره.</li>
-        <li><b>خفيفة الظلّ، بلا إلحاح</b>الطلب جاء من أظافرها، فتقرؤها كابتسامة لا كإعلان.</li>
-        <li><b>خبيرتها، وموعد متاح فعلًا</b>ضغطة واحدة ويُحجز.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">وهي تغادر المركز</div>
-      <div class="bubble">استمتعي بأظافركِ الجديدة يا صوفي 💛 الجل يدوم عادةً نحو 3 أسابيع. نحجز لكِ الموعد نفسه مع جوي يوم الاثنين 23 نوفمبر؟ هذه زيارتكِ 3 من 8 لجلسة باديكير سبا مجانية.</div>
-      <ul class="why">
-        <li><b>تسألها وهي في أحلى حالاتها</b>حين تكون سعيدة بالنتيجة، تخرج «نعم» بلا تفكير.</li>
-        <li><b>تقدّم تراه بعينها</b>3 من 8، والهدية تشدّها للعودة.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">اليوم 26 · خدمتان في زيارة واحدة</div>
-      <div class="bubble">مرّ قرابة شهر على لمسة دانة السحرية، وحاجباكِ بدآ يسألان عنها 😄 دانة متفرّغة الاثنين 5 مساءً، وجوي بعدها مباشرةً لأظافركِ. نجمعهما في زيارة واحدة؟</div>
-      <ul class="why">
-        <li><b>المستحقّ، ومعه ما اقترب موعده</b>مشوار واحد لها، وفاتورة أكبر لكم.</li>
-        <li><b>الضحكة أقوى من التذكير</b>رسالة تُضحكها تُقرأ، وتذكير جافّ يُمسح.</li>
-      </ul>
-    </article>
-    <article class="mcard">
-      <div class="moment">الأسبوع 7 · إذا غابت</div>
-      <div class="bubble">اشتقنا لكِ يا صوفي 🌸 ولا عجلة أبدًا. جوي ما زالت تحتفظ بلونكِ على رفّها، ومتى شئتِ، ضغطة واحدة وتعودين إلينا.</div>
-      <ul class="why">
-        <li><b>لا خصم ولا عتاب</b>الودّ يعيدها أكثر من أيّ كوبون، وأسعاركم تبقى كما هي.</li>
-        <li><b>تشعر أنها لم تُنسَ</b>لونها محفوظ وخبيرتها تذكرها، وهذا الشعور وحده يعيد الناس.</li>
-      </ul>
-    </article>
-  </div>
-  <p class="fine en">Every slot is real and every offer is yours. Romy never fakes urgency.</p>
-  <p class="fine ar">كلّ موعد في الرسائل متاح فعلًا، وكلّ عرض تضعونه أنتم. ولا تختلق رومي أيّ استعجال.</p>
-</section>
-
-<section class="rhythm" id="rhythm">
-  <div class="wrap rhythm-grid">
-    <div>
-      <div class="kicker en">How Romy works</div><div class="kicker ar">كيف تعمل رومي</div>
-      <h2 class="h2 en" data-c="h2">Same client. More visits.</h2>
-      <h2 class="h2 ar" data-c="h2">العميلة نفسها، وزيارات أكثر.</h2>
-      <p class="sub en" data-c="sub">Every service has a natural cycle. Loopdesk starts from it and, after two or three visits, knows each client's own rhythm the way her favourite stylist would.</p>
-      <p class="sub ar" data-c="sub">لكلّ خدمة دورة طبيعية تبدأ منها Loopdesk، ثمّ بعد زيارتين أو ثلاث تحفظ إيقاع كلّ عميلة كما تحفظه أقرب موظفة إليها.</p>
-      <ul class="steps en">
-        <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><div><h3>Learns</h3><p data-c="s1">Each client's real return cycle, for every service.</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v10H8l-4 4z"/></svg></span><div><h3>Invites</h3><p data-c="s2">A warm note in her usual stylist's name, always with "another time".</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><h3>Suggests</h3><p data-c="s3">One extra that suits her, at the moment she books. Never a sales list.</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span><div><h3>Respects</h3><p data-c="s4">Consent first. At most two notes a month, 10am to 9pm. STOP works instantly.</p></div></li>
-      </ul>
-      <ul class="steps ar">
-        <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><div><h3>تتعلّم</h3><p data-c="s1">متى تعود كلّ عميلة فعلًا، خدمةً خدمة.</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v10H8l-4 4z"/></svg></span><div><h3>تدعو</h3><p data-c="s2">برسالة لطيفة باسم خبيرتها المعتادة، وفيها دائمًا زرّ «وقت آخر».</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><h3>تقترح</h3><p data-c="s3">خدمة إضافية واحدة تناسبها، وهي تحجز. لا قوائم ولا إلحاح.</p></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span><div><h3>تحترم</h3><p data-c="s4">بإذنها أولًا. رسالتان في الشهر على الأكثر، بين 10 صباحًا و9 مساءً. وكلمة «توقّف» توقف كلّ شيء فورًا.</p></div></li>
-      </ul>
-    </div>
-    <div class="dial-card">
-      <div class="cmp">
-        <div class="who-line" id="who"></div>
-        <div class="track-block off">
-          <div class="tl-head"><b><span class="en">Without Loopdesk</span><span class="ar">بدون Loopdesk</span></b><span id="offnote"></span></div>
-          <div class="track" id="trackOff"></div>
-          <div class="tl-foot"><span id="offv"></span><strong id="offr"></strong></div>
-        </div>
-        <div class="track-block on">
-          <div class="tl-head"><b><span class="en">With Loopdesk</span><span class="ar">مع Loopdesk</span></b><span id="onnote"></span></div>
-          <div class="track" id="trackOn"></div>
-          <div class="tl-foot"><span id="onv"></span><strong id="onr"></strong></div>
-        </div>
-        <div class="months" id="months"></div>
-        <div class="gain">
-          <div><span class="big" id="gainv"></span><small class="en">more visits a year</small><small class="ar">زيارات إضافية في السنة</small></div>
-          <div><span class="big" id="gainr"></span><small class="en" id="gainlbl-en">more from one client</small><small class="ar" id="gainlbl-ar">دخل إضافي من عميلة واحدة</small></div>
-        </div>
-        <p class="scale" id="scale"></p>
-        <div class="example en">Example figures</div><div class="example ar">أرقام توضيحية</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap science social" id="social">
-  <div class="outcomes-head">
-    <div>
-      <div class="kicker en">Reviews, followers, new clients</div><div class="kicker ar">تقييمات، ومتابعات، وعميلات جديدات</div>
-      <h2 class="h2 en">Happy clients become your best marketing.</h2>
-      <h2 class="h2 ar">عميلاتكم السعيدات أفضل دعاية لكم.</h2>
-    </div>
-    <p class="sub en">The moment she leaves glowing is the moment she most wants to say so. Romy catches that moment and turns it into reviews, followers and new clients.</p>
-    <p class="sub ar">بعد زيارة أسعدتها، تطلب رومي من العميلة بلطف أن تشارك رأيها، ثمّ تدعوها لمتابعتكم. وهكذا تتحوّل كلّ زيارة جميلة إلى تقييمات ومتابعات وعميلات جديدات.</p>
-  </div>
-  <div class="cards3 cards4 en">
-    <div class="card"><span class="logos"><svg role="img" aria-label="Google" viewBox="0 0 24 24" fill="#4285F4"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></span><h3>Google reviews</h3><p>Right after a lovely visit, while the feeling is fresh, Romy asks for a review. One tap takes her to your Google page.</p></div>
-    <div class="card"><span class="logos"><svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="#FF0069"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><svg role="img" aria-label="Facebook" viewBox="0 0 24 24" fill="#0866FF"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></span><h3>Instagram and Facebook follows</h3><p>Once she has left a review, Romy invites her to follow you. One small yes makes the next one easy.</p></div>
-    <div class="card"><span class="logos"><svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="#FF0069"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><svg role="img" aria-label="Facebook" viewBox="0 0 24 24" fill="#0866FF"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span class="to" aria-hidden="true">→</span><svg role="img" aria-label="WhatsApp" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><h3>Ads that start a chat</h3><p>Your click-to-WhatsApp ads on Instagram and Facebook open a chat with Romy, who already knows which service the ad was about.</p></div>
-    <div class="card"><span class="logos"><svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="#FF0069"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><svg role="img" aria-label="Facebook" viewBox="0 0 24 24" fill="#0866FF"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></span><h3>Instagram and Facebook messages</h3><p>Romy answers your DMs too, and turns “how much is it?” into a booking.</p></div>
-  </div>
-  <div class="cards3 cards4 ar">
-    <div class="card"><span class="logos"><svg role="img" aria-label="Google" viewBox="0 0 24 24" fill="#4285F4"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></span><h3>تقييمات جوجل</h3><p>بعد الزيارة مباشرة، والإحساس الجميل ما زال حاضرًا، تطلب رومي تقييمًا بلطف. ونقرة واحدة تأخذ العميلة إلى صفحتكم على جوجل.</p></div>
-    <div class="card"><span class="logos"><svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="#FF0069"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><svg role="img" aria-label="Facebook" viewBox="0 0 24 24" fill="#0866FF"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></span><h3>متابعة على إنستغرام وفيسبوك</h3><p>بعد أن تترك تقييمها، تدعوها رومي لمتابعتكم. فمن قالت «نعم» مرّة، تقولها بسهولة مرّة ثانية.</p></div>
-    <div class="card"><span class="logos"><svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="#FF0069"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><svg role="img" aria-label="Facebook" viewBox="0 0 24 24" fill="#0866FF"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span class="to" aria-hidden="true">→</span><svg role="img" aria-label="WhatsApp" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><h3>إعلانات تفتح محادثة</h3><p>من تضغط على إعلانكم في إنستغرام أو فيسبوك تصل إلى محادثة واتساب مع رومي، ورومي تعرف مسبقًا الخدمة التي كان الإعلان عنها.</p></div>
-    <div class="card"><span class="logos"><svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="#FF0069"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><svg role="img" aria-label="Facebook" viewBox="0 0 24 24" fill="#0866FF"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></span><h3>رسائل إنستغرام وفيسبوك</h3><p>تردّ رومي على الرسائل الخاصّة أيضًا، وتحوّل سؤال «بكم؟» إلى موعد محجوز.</p></div>
-  </div>
-</section>
-
-<section class="wrap ease" id="ease">
-  <div class="ease-grid">
-    <div class="photo">
-      <img src="/img/owner.jpg" alt="A beauty centre owner checking last week's results on her phone" onerror="this.remove()">
-      <div class="wa en"><div class="wa-head"><div class="av">L</div><div><b>Loopdesk</b><span>Monday 09:00</span></div></div>
-        <div class="bubble">Good morning! Last week we invited 86 of your clients back. 61 rebooked, and 24 added an extra service.</div>
-        <div class="qr"><span>See details</span><span>Change rules</span></div><div class="example">Example</div></div>
-      <div class="wa ar"><div class="wa-head"><div class="av">L</div><div><b>Loopdesk</b><span>الإثنين 09:00</span></div></div>
-        <div class="bubble">صباح الخير! دعونا الأسبوع الماضي 86 من عميلاتكِ للعودة، فحجزت 61 منهنّ، وأضافت 24 منهنّ خدمةً أخرى.</div>
-        <div class="qr"><span>التفاصيل</span><span>تعديل القواعد</span></div><div class="example">مثال</div></div>
-    </div>
-    <div>
-      <div class="kicker en">Easy for everyone</div><div class="kicker ar">سهلة على الجميع</div>
-      <h2 class="h2 en">Nothing to install. Nothing to learn.</h2>
-      <h2 class="h2 ar">لا تحميل، ولا تدريب.</h2>
-      <p class="sub en" style="margin-top:18px">Everything happens on WhatsApp, the app your clients and team already open dozens of times a day.</p>
-      <p class="sub ar" style="margin-top:18px">كلّ شيء يحدث على واتساب، التطبيق الذي تفتحه عميلاتكم ويفتحه فريقكم عشرات المرّات في اليوم.</p>
-      <div class="rows en">
-        <div><b>Clients</b><span>Book, move and cancel in a chat, in English or Arabic, at any hour.</span></div>
-        <div><b>Your team</b><span>Log walk-ins and phone bookings on their own WhatsApp line.</span></div>
-        <div><b>You</b><span>Set the rules once. Romy takes it from there, and your results land on WhatsApp every week.</span></div>
-      </div>
-      <div class="rows ar">
-        <div><b>عميلاتكم</b><span>يحجزن ويغيّرن مواعيدهنّ ويلغينها في محادثة، بالعربية أو الإنجليزية، وفي أيّ ساعة.</span></div>
-        <div><b>فريقكم</b><span>يسجّل حجوزات الهاتف والعميلات اللواتي يحضرن بلا موعد، من رقم واتساب خاص به.</span></div>
-        <div><b>أنتم</b><span>تضعون القواعد مرّة واحدة، وتتولّى رومي الباقي. والنتائج تصلكم على واتساب كلّ أسبوع.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap pilot" id="demo">
-  <div class="pilot-card">
-    <div class="pilot-copy">
-      <h2 class="h2 en">See Romy with your own services.</h2>
-      <h2 class="h2 ar">جرّبوا رومي على خدماتكم أنتم.</h2>
-      <p class="sub en">Tell us when suits you and we'll call. Then we set up a live demo with your services, prices and team. Beauty centres and dental clinics come first. Cosmetic clinics and barbershops can reserve a place now.</p>
-      <p class="sub ar">اختاروا الوقت المناسب ونتصل بكم، ثمّ نعرض لكم مباشرةً كيف تعمل رومي بخدماتكم وأسعاركم وفريقكم. نبدأ بمراكز التجميل وعيادات الأسنان، وتستطيع عيادات التجميل وصالونات الحلاقة حجز مكانها من الآن.</p>
-      <ol class="next">
-        <li><b class="en">We call you</b><b class="ar">نتصل بكم</b><span class="en">At the time you pick, within one working day.</span><span class="ar">في الوقت الذي تختارونه، خلال يوم عمل واحد.</span></li>
-        <li><b class="en">You see it with your services</b><b class="ar">ترونها على خدماتكم</b><span class="en">A 20-minute demo with your own treatments and prices.</span><span class="ar">جولة من 20 دقيقة بخدماتكم وأسعاركم أنتم.</span></li>
-        <li><b class="en">You decide</b><b class="ar">والقرار لكم</b><span class="en">No commitment, no card, no pressure.</span><span class="ar">لا التزام، ولا بطاقة، ولا ضغط.</span></li>
-      </ol>
-      <div class="mailbox">
-      <a class="ld-chat" data-chat hidden href="#" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span class="en">Chat with us on WhatsApp</span><span class="ar">تحدّثوا معنا على واتساب</span></a>
-      <small class="en ld-chat-note" data-chat hidden>Ask Loopdesk anything, day or night. When you'd like a demo, we'll set it up with our team.</small><small class="ar ld-chat-note" data-chat hidden>اسألوا Loopdesk ما شئتم، في أيّ ساعة. ومتى أردتم جولة تعريفية، يرتّبها لكم فريقنا.</small>
-        <small class="en">Prefer email? We reply within one working day.</small><small class="ar">تفضّلون البريد الإلكتروني؟ نردّ خلال يوم عمل واحد.</small>
-        <div class="mailrow"><span class="ltr" id="mailaddr">sales@getloopdesk.com</span><button class="copy" type="button" data-copy="sales@getloopdesk.com"><span class="en">Copy</span><span class="ar">نسخ</span></button></div>
-      </div>
-    </div>
-
-    <div class="cb" id="callback">
+<section class="hero"><video autoplay muted loop playsinline preload="metadata" poster="/video/hero-romy.jpg" aria-hidden="true"><source src="/video/hero-romy.mp4" type="video/mp4"></video><div class="w"><span class="pill"><span class="en">Romy by Loopdesk · For beauty centres</span><span class="ar">رومي من Loopdesk · لمراكز التجميل</span> <small><span class="en">Coming soon</span><span class="ar">قريبًا</span></small></span><h1><span class="en">She knows beauty. She knows business.</span><span class="ar">تفهم الجمال، وتفهم البيع.</span></h1><p class="lead"><span class="en">Above all, Romy knows when to say what. A note in the stylist’s name at the right moment, one extra that suits her, and a warm welcome back.</span><span class="ar">والأهمّ أنّ رومي تعرف ماذا تقول، ومتى: رسالة باسم خبيرة التجميل في اللحظة المناسبة، وخدمة إضافية واحدة تناسبها، وترحيب دافئ بعودتها.</span></p>
+<div class="ctas"><a class="btn b-ivory" href="#talk"><span class="en">Ask about Romy</span><span class="ar">اسألوا عن رومي</span></a><a class="btn b-line" href="#day"><span class="en">See a day with Romy</span><span class="ar">شاهدوا يومًا مع رومي</span></a></div>
+<div class="trade"><span><span class="en">Arabic and English · Russian coming soon</span><span class="ar">العربية والإنجليزية · والروسية قريبًا</span></span></div></div></section>
+<section class="story" id="day"><div class="w"><div class="lab"><span class="en">How it works</span><span class="ar">كيف تعمل</span></div><h2 style="margin-top:12px;max-width:760px"><span class="en">A day with Romy at Layali Beauty Lounge.</span><span class="ar">يوم مع رومي في ليالي للتجميل.</span></h2>
+<div class="grid"><div class="steps"><div class="step"><div class="n"><span class="en">Step 1 of 6</span><span class="ar">الخطوة 1 من 6</span></div><h3><span class="en">9:00 · She reads your diary.</span><span class="ar">9:00 · تقرأ جدول مواعيدكم.</span></h3><p><span class="en">Romy knows every client’s rhythm: nails every 2 to 3 weeks, colour every 6, a facial every month. She finds who is due today.</span><span class="ar">تعرف رومي إيقاع كلّ عميلة: الأظافر كلّ أسبوعين إلى 3 أسابيع، والصبغة كلّ 6 أسابيع، وتنظيف البشرة كلّ شهر. وتجد مَن حان موعدها اليوم.</span></p><div class="sci"><b><span class="en">Why it works</span><span class="ar">لماذا تنجح</span></b><span><span class="en">People act when a need is fresh. She reaches out the week a visit is due.</span><span class="ar">يتحرّك الناس حين تكون الحاجة حاضرة، لذلك تتواصل رومي في الأسبوع الذي يحين فيه الموعد.</span></span></div><div class="mobile"></div></div><div class="step"><div class="n"><span class="en">Step 2 of 6</span><span class="ar">الخطوة 2 من 6</span></div><h3><span class="en">11:05 · Priya books her nails.</span><span class="ar">11:05 · بريا تحجز موعد أظافرها.</span></h3><p><span class="en">A playful note in Joy’s name, one real free slot, one tap to book.</span><span class="ar">رسالة مرحة باسم جوي، وموعد متاح حقيقي، ولمسة واحدة للحجز.</span></p><div class="sci"><b><span class="en">Why it works</span><span class="ar">لماذا تنجح</span></b><span><span class="en">A familiar name and one clear choice make yes the easy option.</span><span class="ar">الاسم المألوف والخيار الواحد الواضح يجعلان «نعم» هي الأسهل.</span></span></div><div class="mobile"></div></div><div class="step"><div class="n"><span class="en">Step 3 of 6</span><span class="ar">الخطوة 3 من 6</span></div><h3><span class="en">11:06 · One extra, at the happy moment.</span><span class="ar">11:06 · إضافة واحدة، في لحظة الفرح.</span></h3><p><span class="en">Right after a yes, and never before, Romy suggests one extra that suits her. “Not this time” is just as easy.</span><span class="ar">بعد «نعم» مباشرةً، ولا قبلها أبدًا، تقترح رومي خدمة إضافية واحدة تناسبها. وزرّ «ليس هذه المرّة» بالسهولة نفسها.</span></p><div class="sci"><b><span class="en">Why it works</span><span class="ar">لماذا تنجح</span></b><span><span class="en">People are most open right after a decision they feel good about.</span><span class="ar">يكون الناس أكثر انفتاحًا بعد قرار يشعرون بالرضا عنه.</span></span></div><div class="mobile"></div></div><div class="step"><div class="n"><span class="en">Step 4 of 6</span><span class="ar">الخطوة 4 من 6</span></div><h3><span class="en">15:20 · A new client books from Instagram.</span><span class="ar">15:20 · عميلة جديدة تحجز من Instagram.</span></h3><p><span class="en">Romy answers DMs and your website’s WhatsApp and books the slot in the chat.</span><span class="ar">تردّ رومي على الرسائل الخاصة وعلى WhatsApp موقعكم، وتحجز الموعد داخل المحادثة.</span></p><div class="sci"><b><span class="en">Why it works</span><span class="ar">لماذا تنجح</span></b><span><span class="en">Answering while interest is high turns a question into a visit.</span><span class="ar">الردّ في لحظة الاهتمام يحوّل السؤال إلى زيارة.</span></span></div><div class="mobile"></div></div><div class="step"><div class="n"><span class="en">Step 5 of 6</span><span class="ar">الخطوة 5 من 6</span></div><h3><span class="en">After the visit · Reviews and follows.</span><span class="ar">بعد الزيارة · تقييمات ومتابعات.</span></h3><p><span class="en">Romy asks for a Google review and an Instagram follow while the client still loves her new look. Birthdays get a warm note too.</span><span class="ar">تطلب رومي تقييمًا على Google ومتابعة على Instagram، والعميلة ما زالت فرحة بإطلالتها الجديدة. وفي أعياد الميلاد تصل رسالة دافئة أيضًا.</span></p><div class="sci"><b><span class="en">Why it works</span><span class="ar">لماذا تنجح</span></b><span><span class="en">People are most generous right after a good experience.</span><span class="ar">يكون الناس في أكرم حالاتهم بعد تجربة جيدة مباشرةً.</span></span></div><div class="mobile"></div></div><div class="step"><div class="n"><span class="en">Step 6 of 6</span><span class="ar">الخطوة 6 من 6</span></div><h3><span class="en">21:00 · You see what she brought back.</span><span class="ar">21:00 · ترون ما أعادته إليكم.</span></h3><p><span class="en">Your evening note on WhatsApp, and a dashboard with every visit, extra and returning regular.</span><span class="ar">رسالتكم المسائية على WhatsApp، ولوحة متابعة فيها كلّ زيارة، وكلّ إضافة، وكلّ عميلة دائمة عادت.</span></p><div class="sci"><b><span class="en">Why it works</span><span class="ar">لماذا تنجح</span></b><span><span class="en">One clear number makes the next decision easy.</span><span class="ar">الرقم الواحد الواضح يجعل القرار التالي سهلًا.</span></span></div><div class="mobile"></div></div></div><div class="phonewrap" aria-hidden="true"><div class="phone" id="phone"></div></div></div></div></section>
+<section class="tabs"><div class="w"><div class="lab"><span class="en">Her messages</span><span class="ar">رسائلها</span></div><h2 style="margin-top:12px;max-width:720px"><span class="en">Not reminders. Little love notes.</span><span class="ar">ليست تذكيرات، بل رسائل حبّ صغيرة.</span></h2>
+<div class="tablist" role="tablist"><button type="button" role="tab" id="t-due" aria-controls="p-due" data-p="p-due" aria-selected="true" tabindex="0"><span class="en">The right moment</span><span class="ar">اللحظة المناسبة</span></button><button type="button" role="tab" id="t-extra" aria-controls="p-extra" data-p="p-extra" aria-selected="false" tabindex="-1"><span class="en">One extra that suits her</span><span class="ar">إضافة تناسبها</span></button><button type="button" role="tab" id="t-back" aria-controls="p-back" data-p="p-back" aria-selected="false" tabindex="-1"><span class="en">Welcome back</span><span class="ar">أهلًا بعودتك</span></button></div><div class="panel" role="tabpanel" id="p-due" aria-labelledby="t-due"><div class="ph" style="background-image:url(/img/story/s3.jpg)"><div class="m"><small><span class="en">Layali Beauty Lounge</span><span class="ar">ليالي للتجميل</span></small><span class="en">Your nails have been so loyal for 16 days 💅 Joy is free Thursday at 6pm. Shall we?</span><span class="ar">أظافرك وفيّة لكِ منذ 16 يومًا 💅 جوي متاحة الخميس الساعة 6 مساءً. نحجز لكِ؟</span></div></div><div class="tx"><div class="lab"><span class="en">The right moment</span><span class="ar">اللحظة المناسبة</span></div><h3><span class="en">Due, and delighted</span><span class="ar">حان موعدها، وفرحت بالدعوة</span></h3><p><span class="en">She writes when the service is due, in the stylist’s name, with a smile.</span><span class="ar">تكتب حين يحين موعد الخدمة، باسم خبيرة التجميل، وبابتسامة.</span></p></div></div><div class="panel" role="tabpanel" id="p-extra" aria-labelledby="t-extra" hidden><div class="ph" style="background-image:url(/img/story/s5.jpg)"><div class="m"><small><span class="en">Layali Beauty Lounge</span><span class="ar">ليالي للتجميل</span></small><span class="en">Booked 🎉 While you’re with us, a 15-minute brow tidy with Dana?</span><span class="ar">تمّ الحجز 🎉 وبما أنّكِ عندنا، ما رأيك بتهذيب الحواجب مع دانة في 15 دقيقة؟</span></div></div><div class="tx"><div class="lab"><span class="en">One extra that suits her</span><span class="ar">إضافة تناسبها</span></div><h3><span class="en">At her happiest moment</span><span class="ar">في أسعد لحظاتها</span></h3><p><span class="en">One suggestion, right after booking. Never a list, never pushy.</span><span class="ar">اقتراح واحد بعد الحجز مباشرةً. لا قوائم، ولا إلحاح.</span></p></div></div><div class="panel" role="tabpanel" id="p-back" aria-labelledby="t-back" hidden><div class="ph" style="background-image:url(/img/story/s9.jpg)"><div class="m"><small><span class="en">Layali Beauty Lounge</span><span class="ar">ليالي للتجميل</span></small><span class="en">Fancy some time for you, Sophie? 💛 Joy has Saturday at 11am.</span><span class="ar">ما رأيك بوقت لنفسك يا صوفي؟ 💛 جوي متاحة السبت الساعة 11 صباحًا.</span></div></div><div class="tx"><div class="lab"><span class="en">Welcome back</span><span class="ar">أهلًا بعودتك</span></div><h3><span class="en">No guilt, just warmth</span><span class="ar">بلا لوم، بكلّ دفء</span></h3><p><span class="en">Quiet regulars get an invitation, not a reminder of how long it has been.</span><span class="ar">العميلات الدائمات اللواتي غبن تصلهنّ دعوة، لا تذكير بطول الغياب.</span></p></div></div></div></section>
+<section class="band"><div class="w grid"><div><div class="lab"><span class="en">For the owner</span><span class="ar">لصاحبة المركز</span></div><h2 style="margin-top:12px"><span class="en">Your regulars already hold your growth.</span><span class="ar">نموّكِ موجود أصلًا عند عميلاتك الدائمات.</span></h2><p><span class="en">Clients who are due, extras that suit them, regulars who went quiet. Romy brings them back in your stylists’ names, and shows you exactly what came back.</span><span class="ar">عميلات حان موعدهنّ، وإضافات تناسبهنّ، ودائمات غبن قليلًا. تعيدهنّ رومي باسم خبيرات التجميل لديكِ، وتريكِ بدقّة ما عاد إليكِ.</span></p><ul><li><span class="en">Visits and money Romy helped bring in</span><span class="ar">زيارات ودخل ساعدت رومي في إعادتها</span></li><li><span class="en">Extras added at booking</span><span class="ar">إضافات تمّت مع الحجز</span></li><li><span class="en">Regulars welcomed back</span><span class="ar">عميلات دائمات عدن</span></li><li><span class="en">An evening note on WhatsApp</span><span class="ar">رسالة مسائية على WhatsApp</span></li></ul></div>
+<div class="dash"><h4><span class="en">This month at Layali Beauty Lounge</span><span class="ar">هذا الشهر في ليالي للتجميل</span></h4><span class="s"><span class="en">Sample centre · illustrative figures</span><span class="ar">مركز نموذجي · أرقام توضيحية</span></span><div class="big"><b><span class="en">AED 28,400</span><span class="ar">28,400 درهم</span></b><span class="en">in visits Romy helped bring in</span><span class="ar">قيمة زيارات ساعدت رومي في إعادتها</span></div><div class="t"><div><b>46</b><span class="en">clients came back sooner</span><span class="ar">عميلة عادت أبكر</span></div><div><b>31</b><span class="en">extras added</span><span class="ar">خدمة إضافية</span></div><div><b>12</b><span class="en">regulars welcomed back</span><span class="ar">عميلة دائمة عادت</span></div></div><div class="bars" aria-hidden="true"><i class="" style="height:30%"></i><i class="" style="height:34%"></i><i class="" style="height:32%"></i><i class="" style="height:38%"></i><i class="" style="height:36%"></i><i class="" style="height:41%"></i><i class="" style="height:44%"></i><i class="" style="height:46%"></i><i class="n" style="height:58%"></i><i class="n" style="height:66%"></i><i class="n" style="height:72%"></i><i class="n" style="height:80%"></i></div><div class="cap"><span><span class="en">Before Romy</span><span class="ar">قبل رومي</span></span><span><span class="en">With Romy</span><span class="ar">مع رومي</span></span></div></div></div></section>
+<section><div class="w duo">
+<div class="box"><div class="lab"><span class="en">For your team</span><span class="ar">لفريقكم</span></div><h3><span class="en">Everyone sees what they need.</span><span class="ar">كلّ شخص يرى ما يحتاجه.</span></h3><p><span class="en">Give each person their own level. Owners can tick extra permissions per manager.</span><span class="ar">لكلّ شخص مستواه الخاص، ويستطيع المالك منح كلّ مدير صلاحيات إضافية.</span></p><div class="levels"><div><span class="en">Owner</span><span class="ar">المالكة</span><small><span class="en">sees everything</span><span class="ar">ترى كلّ شيء</span></small></div><div><span class="en">Manager</span><span class="ar">المديرة</span><small><span class="en">what you allow</span><span class="ar">ما تسمحين به</span></small></div><div><span class="en">Branch manager</span><span class="ar">مديرة الفرع</span><small><span class="en">their branch</span><span class="ar">فرعها فقط</span></small></div><div><span class="en">Reception</span><span class="ar">الاستقبال</span><small><span class="en">today’s clients</span><span class="ar">عميلات اليوم</span></small></div></div></div>
+<div class="box"><div class="lab"><span class="en">Happy clients, more of them</span><span class="ar">عميلات سعيدات، وعدد أكبر منهنّ</span></div><h3><span class="en">Your best marketing.</span><span class="ar">أفضل تسويق لكم.</span></h3><p><span class="en">She turns happy visits into reviews and followers, and answers new clients wherever they write.</span><span class="ar">تحوّل الزيارات السعيدة إلى تقييمات ومتابعات، وتردّ على العميلات الجدد أينما كتبن.</span></p><div class="chips2"><span><span class="en">Google reviews</span><span class="ar">تقييمات Google</span></span><span><span class="en">Instagram follows</span><span class="ar">متابعات Instagram</span></span><span><span class="en">Instagram and Facebook messages</span><span class="ar">رسائل Instagram وFacebook</span></span><span><span class="en">Click-to-WhatsApp ads</span><span class="ar">إعلانات تفتح محادثة WhatsApp</span></span><span><span class="en">Birthdays</span><span class="ar">أعياد الميلاد</span></span></div></div>
+</div></section>
+<section class="talk" id="talk"><span id="demo" class="anchor"></span><div class="w grid">
+<div><div class="lab"><span class="en">Before we talk</span><span class="ar">قبل أن نتحدّث</span></div><h2 style="margin-top:12px"><span class="en">Questions owners ask us first.</span><span class="ar">أسئلة يطرحها علينا أصحاب الأعمال أولًا.</span></h2><div class="faq"><details><summary><span class="en">Can we use it today?</span><span class="ar">هل يمكننا استخدامها اليوم؟</span></summary><p><span class="en">Sinan and Romy are coming soon. A call now is a chat about your business and what we are preparing for you.</span><span class="ar">سنان ورومي قريبًا. والاتصال الآن حديث عن عملكم وعمّا نجهّزه لكم.</span></p></details><details><summary><span class="en">Whose name do my clients see?</span><span class="ar">باسم مَن تصل الرسائل إلى عملائنا؟</span></summary><p><span class="en">Yours. Messages come from your business’s WhatsApp, in the name of your stylists.</span><span class="ar">باسمكم. تصل الرسائل من رقم WhatsApp الخاص بعملكم، باسم خبيرات التجميل لديكم.</span></p></details><details><summary><span class="en">Do we need new software?</span><span class="ar">هل نحتاج إلى برنامج جديد؟</span></summary><p><span class="en">No. It works with your WhatsApp, alongside the booking system you use today. Nothing for your team to install.</span><span class="ar">لا. تعمل مع رقم WhatsApp الخاص بكم، وإلى جانب نظام المواعيد الذي تستخدمونه اليوم. لا شيء يثبّته فريقكم.</span></p></details><details><summary><span class="en">Which languages?</span><span class="ar">بأيّ لغات؟</span></summary><p><span class="en">Arabic and English. Russian is coming soon.</span><span class="ar">العربية والإنجليزية، والروسية قريبًا.</span></p></details><details><summary><span class="en">Can clients stop the messages?</span><span class="ar">هل يستطيع العملاء إيقاف الرسائل؟</span></summary><p><span class="en">Always. Every client can reply STOP, and “Another time” is on every invitation.</span><span class="ar">دائمًا. يستطيع أيّ عميل الردّ بكلمة «إيقاف»، وزرّ «وقت آخر» موجود في كلّ دعوة.</span></p></details></div>
+<div class="reach">
+<a class="ld-chat" data-chat hidden href="#" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span class="en">Chat with us on WhatsApp</span><span class="ar">تحدّثوا معنا على WhatsApp</span></a>
+<p><span class="en">Prefer email? We reply within one working day.</span><span class="ar">تفضّلون البريد الإلكتروني؟ نردّ خلال يوم عمل واحد.</span></p>
+<div class="mailrow"><span class="ltr" id="mailaddr">sales@getloopdesk.com</span><button class="copy" type="button" data-copy="sales@getloopdesk.com"><span class="en">Copy</span><span class="ar">نسخ</span></button></div>
+</div></div>
+<div class="cb" id="callback">
       <form id="cbform" method="post" novalidate>
         <p class="cb-title"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></p>
         <div class="f2">
@@ -360,7 +123,7 @@
         <div class="trap" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
         <div class="consent">
           <p class="lbl"><span class="en">Want our ideas too?</span><span class="ar">تودّون أن تصلكم أفكارنا أيضًا؟</span> <span class="opt"><span class="en">optional, not needed for the call</span><span class="ar">اختياري، ولا يلزم للاتصال</span></span></p>
-          <label class="tick"><input type="checkbox" name="consentEmail"><span class="en">Email me ideas, tips and offers from Loopdesk. I can stop any time.</span><span class="ar">أرسلوا إليّ أفكارًا ونصائح وعروضًا من Loopdesk بالبريد الإلكتروني، ويمكنني إلغاء الاشتراك متى شئت.</span></label>
+          <label class="tick"><input type="checkbox" name="consentEmail"><span class="en">Email me ideas, tips and offers from Loopdesk. I can stop any time.</span><span class="ar">أرسلوا إليّ أفكارًا ونصائح وعروضًا من Loopdesk بالبريد الإلكتروني، ويمكنني الإيقاف متى شئت.</span></label>
           <label class="tick"><input type="checkbox" name="consentWhatsapp"><span class="en">Send me ideas, tips and offers from Loopdesk on WhatsApp. I can reply STOP any time.</span><span class="ar">أرسلوا إليّ أفكارًا ونصائح وعروضًا من Loopdesk عبر WhatsApp، ويمكنني إرسال «إيقاف» متى شئت.</span></label>
         </div>
         <button class="btn btn-dark cb-send" type="submit" id="cbsend"><span class="en">Call me back</span><span class="ar">اتصلوا بي</span></button>
@@ -375,58 +138,24 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mark"/></svg>
         <p class="cb-title"><span class="en">Thank you, <bdi data-out="name"></bdi>. Your call is in our diary.</span><span class="ar">شكرًا يا <bdi data-out="name"></bdi>، سجّلنا موعد الاتصال.</span></p>
         <p><span class="en">We'll call <bdi dir="ltr" data-out="phone"></bdi> <span data-out="time-en"></span>, within one working day.</span><span class="ar">سنتصل بكم على الرقم <bdi dir="ltr" data-out="phone"></bdi> <span data-out="time-ar"></span>، خلال يوم عمل واحد.</span></p>
-        <p class="muted"><span class="en">Have a price list handy? Bring it to the call and we'll show Romy with your own services.</span><span class="ar">إن كانت لديكم قائمة أسعار، فأبقوها قريبة أثناء الاتصال لنريكم رومي على خدماتكم.</span></p>
-        <a class="btn btn-light" href="#rhythm"><span class="en">Meanwhile, see the rhythm engine</span><span class="ar">وحتى ذلك الحين، ألقوا نظرة على محرّك الإيقاع</span></a>
+        <p class="muted"><span class="en">Have a price list handy? Bring it to the call and we'll show Loopdesk with your own services.</span><span class="ar">إن كانت لديكم قائمة أسعار، فأبقوها قريبة أثناء الاتصال لنريكم Loopdesk على خدماتكم.</span></p>
+        <a class="btn btn-light" href="#day"><span class="en">Meanwhile, see how it works</span><span class="ar">وحتى ذلك الحين، شاهدوا كيف تعمل</span></a>
       </div>
-    </div>
-  </div>
-</section>
-
-</div>
-
+    </div></div></section>
 </main>
-
-<a class="ld-float" data-chat hidden href="#" target="_blank" rel="noopener"><span class="face" aria-hidden="true">L</span><span class="en">Ask Loopdesk</span><span class="ar">اسألوا Loopdesk</span></a>
-
-<footer><div class="wrap">
-  <div class="ft-top">
-    <div class="ft-brand">
-      <a class="logo" href="/" aria-label="Loopdesk home"><svg aria-hidden="true"><use href="#mark"/></svg>Loopdesk</a>
-      <p><span class="en">Your growth partner. Behavioural science that brings clients back and sells more.</span><span class="ar">فنّ العودة… وسرّ الزيادة.</span></p>
-      <a class="ft-cta" href="#demo"><span class="en">Book a demo</span><span class="ar">احجزوا جولة تعريفية</span></a>
-    </div>
-    <nav class="ft-col" aria-label="Explore">
-      <p class="ft-h"><span class="en">Explore</span><span class="ar">تصفّحوا</span></p>
-      <ul>
-        <li><a href="/#science"><span class="en">Our science</span><span class="ar">علم السلوك</span></a></li>
-        <li><a href="/#rhythm"><span class="en">Rhythm engine</span><span class="ar">محرّك الإيقاع</span></a></li>
-        <li><a href="/romy"><span class="en">Romy, for beauty centres</span><span class="ar">رومي لمراكز التجميل</span></a></li>
-        <li><a href="/sinan"><span class="en">Sinan, for dental clinics</span><span class="ar">سنان لعيادات الأسنان</span></a></li>
-      </ul>
-    </nav>
-    <div class="ft-col" id="contact">
-      <p class="ft-h"><span class="en">Talk to us</span><span class="ar">تواصلوا معنا</span></p>
-      <ul>
-        <li><a href="#demo"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></a></li>
-        <li><small><span class="en">Sales</span><span class="ar">المبيعات</span></small><a class="ltr" href="mailto:sales@getloopdesk.com">sales@getloopdesk.com</a></li>
-        <li><small><span class="en">Everything else</span><span class="ar">لأيّ سؤال آخر</span></small><a class="ltr" href="mailto:hello@getloopdesk.com">hello@getloopdesk.com</a></li>
-      </ul>
-    </div>
-    <nav class="ft-col ft-legal" aria-label="Legal">
-      <p class="ft-h"><span class="en">Legal</span><span class="ar">معلومات قانونية</span></p>
-      <ul>
-        <li><a href="/privacy"><span class="en">Privacy policy</span><span class="ar">سياسة الخصوصية</span></a></li>
-        <li><a href="/terms"><span class="en">Terms of service</span><span class="ar">شروط الخدمة</span></a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="ft-bottom">
-    <span><span class="en">© 2026 Loopdesk · United Arab Emirates</span><span class="ar"><span class="ltr">© 2026 Loopdesk</span> · الإمارات العربية المتحدة</span></span>
-    <span class="tm"><span class="en">Loopdesk is operated by <span class="ltr">LOOP DESK SOLUTIONS - FZCO</span>, Service Licence no. <span class="ltr">94491</span> issued by the Dubai Integrated Economic Zones Authority · Registered address: <span class="ltr">DSO-THUB-G-D-FLEX-G039E, THUB, Dubai Silicon Oasis, Dubai, United Arab Emirates</span> · Phone: <a class="ltr" href="tel:+971501472513">+971 50 147 2513</a></span><span class="ar">تشغّل <span class="ltr">Loopdesk</span> شركة لوب ديسك سولوشنز - ش م ح، رخصة مهنية رقم <span class="ltr">94491</span> صادرة عن سلطة دبي للمناطق الاقتصادية المتكاملة · العنوان المسجّل: <span class="ltr">DSO-THUB-G-D-FLEX-G039E</span>، مبنى <span class="ltr">THUB</span>، واحة دبي للسيليكون، دبي، الإمارات العربية المتحدة · الهاتف: <a class="ltr" href="tel:+971501472513">+971 50 147 2513</a></span></span>
-    <span class="tm"><span class="en">WhatsApp, Instagram and Facebook are trademarks of Meta Platforms, Inc. Google is a trademark of Google LLC. Loopdesk is an independent company and is not affiliated with or endorsed by Meta.</span><span class="ar"><span class="ltr">WhatsApp</span> علامة تجارية مملوكة لشركة <span class="ltr">Meta Platforms, Inc.</span>، و<span class="ltr">Loopdesk</span> شركة مستقلة لا ترتبط بشركة Meta ولا تحظى بتأييدها. وكذلك <span class="ltr">Instagram</span> و<span class="ltr">Facebook</span> علامتان تجاريتان لشركة Meta، و<span class="ltr">Google</span> علامة تجارية لشركة <span class="ltr">Google LLC</span>.</span></span>
-  </div>
-</div></footer>
-
-<script src="/site.js"></script>
+<footer><div class="w"><div class="grid">
+<div><a class="logo" href="/" aria-label="Loopdesk home"><span class="mark" aria-hidden="true"></span>Loopdesk</a><p class="tag"><span class="en">Your growth partner. Behavioural science that brings clients back and sells more.</span><span class="ar">فنّ العودة… وسرّ الزيادة.</span></p></div>
+<nav aria-label="Products"><b><span class="en">Products</span><span class="ar">منتجاتنا</span></b><a href="/sinan"><span class="en">Sinan for dental clinics</span><span class="ar">سنان لعيادات الأسنان</span></a><a href="/romy"><span class="en">Romy for beauty centres</span><span class="ar">رومي لمراكز التجميل</span></a><a href="/#science"><span class="en">Our science</span><span class="ar">علم السلوك</span></a></nav>
+<div><b><span class="en">Talk to us</span><span class="ar">تواصلوا معنا</span></b><a href="#talk"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></a><small><span class="en">Sales</span><span class="ar">المبيعات</span></small><a class="ltr" href="mailto:sales@getloopdesk.com">sales@getloopdesk.com</a><small><span class="en">Everything else</span><span class="ar">لأيّ سؤال آخر</span></small><a class="ltr" href="mailto:hello@getloopdesk.com">hello@getloopdesk.com</a></div>
+<nav aria-label="Legal"><b><span class="en">Legal</span><span class="ar">معلومات قانونية</span></b><a href="/privacy"><span class="en">Privacy policy</span><span class="ar">سياسة الخصوصية</span></a><a href="/terms"><span class="en">Terms of service</span><span class="ar">شروط الخدمة</span></a></nav></div>
+<div class="legal">
+<p><span class="en">© 2026 Loopdesk · United Arab Emirates</span><span class="ar"><span class="ltr">© 2026 Loopdesk</span> · الإمارات العربية المتحدة</span></p>
+<p><span class="en">Loopdesk is operated by <span class="ltr">LOOP DESK SOLUTIONS - FZCO</span>, Service Licence no. <span class="ltr">94491</span> issued by the Dubai Integrated Economic Zones Authority · Registered address: <span class="ltr">DSO-THUB-G-D-FLEX-G039E, THUB, Dubai Silicon Oasis, Dubai, United Arab Emirates</span> · Phone: <a class="ltr" href="tel:+971501472513">+971 50 147 2513</a></span><span class="ar">تشغّل <span class="ltr">Loopdesk</span> شركة لوب ديسك سولوشنز - ش م ح، رخصة مهنية رقم <span class="ltr">94491</span> صادرة عن سلطة دبي للمناطق الاقتصادية المتكاملة · العنوان المسجّل: <span class="ltr">DSO-THUB-G-D-FLEX-G039E</span>، مبنى <span class="ltr">THUB</span>، واحة دبي للسيليكون، دبي، الإمارات العربية المتحدة · الهاتف: <a class="ltr" href="tel:+971501472513">+971 50 147 2513</a></span></p>
+<p><span class="en">WhatsApp, Instagram and Facebook are trademarks of Meta Platforms, Inc. Loopdesk is an independent company and is not affiliated with or endorsed by Meta.</span><span class="ar"><span class="ltr">WhatsApp</span> و<span class="ltr">Instagram</span> و<span class="ltr">Facebook</span> علامات تجارية مملوكة لشركة <span class="ltr">Meta Platforms, Inc.</span>، و<span class="ltr">Loopdesk</span> شركة مستقلة لا ترتبط بشركة Meta ولا تحظى بتأييدها.</span></p>
+</div></div></footer>
+<a class="ld-float" data-chat hidden href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3.2 29l6.5-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.9 1 1-3.7-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5.2 9.9 10 5.2 16 5.2s10.8 4.7 10.8 10.6S22 26.6 16 26.6zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.8 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span class="lbl"><span class="en">Chat with us</span><span class="ar">تحدّثوا معنا</span></span></a>
+<div class="mcta"><a class="btn b-ink" href="#talk"><span class="en">Ask for a call</span><span class="ar">اطلبوا اتصالًا</span></a></div>
+<script>window.STORY={"en": {"all": [{"who": "Layali Beauty Lounge", "sub": "9:00 · today’s diary", "html": "<div class=\"diary\"><div class=\"r\"><span>Priya · gel nails<\/span><span class=\"due\">16 days · due<\/span><\/div><div class=\"r\"><span>Sophie · colour<\/span><span class=\"due\">6 weeks · due<\/span><\/div><div class=\"r\"><span>Maya<\/span><span class=\"due\">3 months · welcome back<\/span><\/div><div class=\"r\"><span>Dana · blow-dry<\/span><span class=\"\">Booked ✓<\/span><\/div><\/div>"}, {"who": "Layali Beauty Lounge", "sub": "11:05", "html": "<div class=\"m\">Your nails have been so loyal for 16 days 💅 Joy is free Thursday at 6pm. Shall we?<span class=\"ch\">Book Thursday 6pm<\/span><span class=\"ch\">Another time<\/span><\/div><div class=\"m me\">Book Thursday 6pm<\/div><div class=\"m\">It’s a date, Priya 🎉 Thursday at 6pm with Joy.<\/div>"}, {"who": "Layali Beauty Lounge", "sub": "11:06 · right after yes", "html": "<div class=\"m\">It’s a date, Priya 🎉 Thursday at 6pm with Joy.<\/div><div class=\"m\">While you’re with us, a 15-minute brow tidy with Dana? ✨<span class=\"ch\">Add it<\/span><span class=\"ch\">Not this time<\/span><\/div><div class=\"m me\">Add it<\/div><div class=\"m\">Added ✨ See you Thursday!<\/div>"}, {"who": "Layali Beauty Lounge", "sub": "15:20 · Instagram", "html": "<div class=\"m me\">Hi! Anything on Saturday for gel nails?<\/div><div class=\"m\">Saturday at 2pm with Joy is free 💅 Shall we keep it for you?<\/div><div class=\"m me\">Yes please!<\/div><div class=\"m\">Your name and mobile, please?<\/div><div class=\"m me\">Maya Fernandes · <bdi dir=\"ltr\">050 1234567<\/bdi><\/div><div class=\"m\">It’s a date, Maya 🎉 Saturday at 2pm.<\/div>"}, {"who": "Layali Beauty Lounge", "sub": "After the visit", "html": "<div class=\"m\">Loved your nails, Priya? ⭐<span class=\"ch\">Leave a Google review<\/span><\/div><div class=\"m\">Come and see our latest looks 📸<span class=\"ch\">Follow on Instagram<\/span><\/div>"}, {"who": "Loopdesk for owners", "sub": "21:00 · your evening note", "html": "<div class=\"m\">Today: Priya booked her nails, Sophie added brows to Saturday, Maya is back after 3 months 💛<\/div><div class=\"dashm\"><b>This month at Layali Beauty Lounge<\/b><br><span class=\"s\">Sample centre · illustrative figures<\/span><div class=\"big\"><b>AED 28,400<\/b>in visits Romy helped bring in<\/div><div class=\"t\"><div><b>46<\/b>came back<\/div><div><b>31<\/b>extras<\/div><div><b>12<\/b>welcomed<\/div><\/div><\/div>"}]}, "ar": {"all": [{"who": "ليالي للتجميل", "sub": "9:00 · جدول اليوم", "html": "<div class=\"diary\"><div class=\"r\"><span>بريا · أظافر جل<\/span><span class=\"due\">16 يومًا · حان الموعد<\/span><\/div><div class=\"r\"><span>صوفي · صبغة<\/span><span class=\"due\">6 أسابيع · حان الموعد<\/span><\/div><div class=\"r\"><span>مايا<\/span><span class=\"due\">3 أشهر · أهلًا بعودتها<\/span><\/div><div class=\"r\"><span>دانة · تصفيف<\/span><span class=\"\">محجوز ✓<\/span><\/div><\/div>"}, {"who": "ليالي للتجميل", "sub": "11:05", "html": "<div class=\"m\">أظافرك وفيّة لكِ منذ 16 يومًا 💅 جوي متاحة الخميس الساعة 6 مساءً. نحجز لكِ؟<span class=\"ch\">احجزي الخميس 6 مساءً<\/span><span class=\"ch\">وقت آخر<\/span><\/div><div class=\"m me\">احجزي الخميس 6 مساءً<\/div><div class=\"m\">تمّ يا بريا 🎉 موعدك الخميس الساعة 6 مساءً مع جوي.<\/div>"}, {"who": "ليالي للتجميل", "sub": "11:06 · بعد «نعم» مباشرةً", "html": "<div class=\"m\">تمّ يا بريا 🎉 موعدك الخميس الساعة 6 مساءً مع جوي.<\/div><div class=\"m\">وبما أنّكِ عندنا، ما رأيك بتهذيب الحواجب مع دانة في 15 دقيقة؟ ✨<span class=\"ch\">أضيفيها<\/span><span class=\"ch\">ليس هذه المرّة<\/span><\/div><div class=\"m me\">أضيفيها<\/div><div class=\"m\">تمّت الإضافة ✨ نراكِ الخميس!<\/div>"}, {"who": "ليالي للتجميل", "sub": "15:20 · Instagram", "html": "<div class=\"m me\">مرحبًا! هل يوجد موعد يوم السبت لأظافر الجل؟<\/div><div class=\"m\">السبت الساعة 2 ظهرًا مع جوي متاح 💅 نحجزه لكِ؟<\/div><div class=\"m me\">نعم، من فضلكم!<\/div><div class=\"m\">اسمك ورقم جوالك من فضلك؟<\/div><div class=\"m me\">مايا فرنانديز · <bdi dir=\"ltr\">050 1234567<\/bdi><\/div><div class=\"m\">تمّ يا مايا 🎉 موعدك السبت الساعة 2 ظهرًا.<\/div>"}, {"who": "ليالي للتجميل", "sub": "بعد الزيارة", "html": "<div class=\"m\">هل أحببتِ أظافرك يا بريا؟ ⭐<span class=\"ch\">اكتبي تقييمًا على Google<\/span><\/div><div class=\"m\">تعالي وشاهدي أحدث إطلالاتنا 📸<span class=\"ch\">تابعينا على Instagram<\/span><\/div>"}, {"who": "Loopdesk لأصحاب الأعمال", "sub": "21:00 · رسالتكم المسائية", "html": "<div class=\"m\">اليوم: حجزت بريا موعد أظافرها، وأضافت صوفي الحواجب إلى موعد السبت، وعادت مايا بعد 3 أشهر 💛<\/div><div class=\"dashm\"><b>هذا الشهر في ليالي للتجميل<\/b><br><span class=\"s\">مركز نموذجي · أرقام توضيحية<\/span><div class=\"big\"><b>28,400 درهم<\/b>قيمة زيارات ساعدت رومي في إعادتها<\/div><div class=\"t\"><div><b>46<\/b>عادت<\/div><div><b>31<\/b>إضافات<\/div><div><b>12<\/b>رجعت بعد غياب<\/div><\/div><\/div>"}]}};</script>
+<script src="/site.js?v=2"></script>
 </body>
 </html>
